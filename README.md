@@ -20,7 +20,7 @@ We are actively working on porting the core features from the original 1.7.10/1.
 ## ⚠️ Important Disclaimer (Alpha Status)
 Please note that this project is currently in its **Early Alpha** stage. We have rewritten a massive chunk of the codebase to make it work properly on modern versions. 
 *   **Survival Ready?** Partially. You can use it in survival, but many late-game features are still being ported.
-*   **Recipe Viewers:** Using **EMI / JEI** is highly recommended due to the complexity of custom machine recipes.
+*   **Recipe Viewers:** Using **JEI** is highly recommended due to the complexity of custom machine recipes.
 *   **Bugs:** Since the mod is under heavy development, unexpected behavior may occur. Please report all crashes and visual artifacts to our GitHub Issue Tracker!
 
 ---
