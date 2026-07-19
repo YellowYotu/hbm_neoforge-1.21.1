@@ -9,7 +9,7 @@ An unofficial modern community-driven port of the legendary Hbm's Nuclear Tech M
 *   **Advanced Material Processing:** Classic NTM ores, custom fluids, and logistics adapted for modern world generation.
 *   **Hazard System:** Realism-focused mechanics including electricity transmission, custom gases, and dangerous radiation filters.
 
-## 🛠️ What is Planned?
+##  What is Planned?
 We are actively working on porting the core features from the original 1.7.10/1.12.2 versions, including:
 *   **Iconic Nuclear Reactors:** The infamous RBMK, fusion reactors, and breeding facilities.
 *   **Ballistic Logistics:** Missiles, rocket launchpads, and high-tier defensive automated turrets.
