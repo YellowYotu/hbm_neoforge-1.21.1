@@ -14,9 +14,9 @@ public final class SolderTauParticle extends TextureSheetParticle {
 
     private SolderTauParticle(ClientLevel level, double x, double y, double z, SpriteSet sprites) {
         super(level, x, y, z);
-        lifetime = 10;
-        baseSize = 0.35F;
-        quadSize = 0.08F;
+        lifetime = 8;
+        baseSize = 0.12F;
+        quadSize = baseSize;
         alpha = 1.0F;
         hasPhysics = false;
         pickSprite(sprites);
@@ -32,8 +32,8 @@ public final class SolderTauParticle extends TextureSheetParticle {
             return;
         }
         float progress = age / (float) lifetime;
-        quadSize = baseSize + age * 0.22F;
-        alpha = 1.0F - progress;
+        quadSize = baseSize + progress * 0.45F;
+        alpha = (1.0F - progress) * (1.0F - progress);
     }
 
     @Override

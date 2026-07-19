@@ -2,8 +2,10 @@ package com.yellowyotu.hbmneoforge.client.screen;
 
 import com.yellowyotu.hbmneoforge.HBMsNuclearTechModUnofficialNeoForgeEdition;
 import com.yellowyotu.hbmneoforge.blockentity.SolderingStationBlockEntity;
+import com.yellowyotu.hbmneoforge.item.ItemMachineUpgrade;
 import com.yellowyotu.hbmneoforge.item.ItemSolderingFluidCell;
 import com.yellowyotu.hbmneoforge.menu.SolderingStationMenu;
+import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Nonnull;
 import net.minecraft.ChatFormatting;
@@ -15,6 +17,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.item.ItemStack;
 
 public final class SolderingStationScreen extends AbstractContainerScreen<SolderingStationMenu> {
 
@@ -74,9 +77,7 @@ public final class SolderingStationScreen extends AbstractContainerScreen<Solder
 
     private void drawCollisionIndicator(GuiGraphics graphics) {
         if (menu.isCollisionPreventionEnabled()) {
-            graphics.fill(leftPos + 7, topPos + 68, leftPos + 13, topPos + 74, 0xFF4BB543);
-        } else {
-            graphics.fill(leftPos + 7, topPos + 68, leftPos + 13, topPos + 74, 0xFF9F2525);
+            graphics.blit(TEXTURE, leftPos + 5, topPos + 66, 192, 14, 10, 10, TEXTURE_SIZE, TEXTURE_SIZE);
         }
     }
 
@@ -104,8 +105,45 @@ public final class SolderingStationScreen extends AbstractContainerScreen<Solder
             return;
         }
         if (isHovering(78, 67, 8, 8, mouseX, mouseY)) {
-            graphics.renderComponentTooltip(font, List.of(Component.translatable("gui.hbm_neoforge.soldering_station.upgrades"), Component.translatable("gui.hbm_neoforge.soldering_station.upgrades_hint").withStyle(ChatFormatting.GRAY)), mouseX, mouseY);
+            graphics.renderComponentTooltip(font, getUpgradeTooltip(), mouseX, mouseY);
         }
+    }
+
+    private List<Component> getUpgradeTooltip() {
+        List<Component> tooltip = new ArrayList<>();
+        tooltip.add(Component.translatable("gui.hbm_neoforge.soldering_station.upgrades"));
+        boolean hasUpgrade = false;
+
+        for (ItemMachineUpgrade.UpgradeType type : ItemMachineUpgrade.UpgradeType.values()) {
+            int level = getUpgradeLevel(type);
+            if (level <= 0) {
+                continue;
+            }
+
+            hasUpgrade = true;
+            switch (type) {
+                case SPEED -> tooltip.add(Component.translatable("gui.hbm_neoforge.soldering_station.upgrade_speed", level, level * 100 / 6, level * 100).withStyle(ChatFormatting.GRAY));
+                case POWER -> tooltip.add(Component.translatable("gui.hbm_neoforge.soldering_station.upgrade_power", level, level * 100 / 6, level * 100 / 3).withStyle(ChatFormatting.GRAY));
+                case OVERDRIVE -> tooltip.add(Component.translatable("gui.hbm_neoforge.soldering_station.upgrade_overdrive", level, 1 << level, level + 1).withStyle(ChatFormatting.DARK_GRAY));
+            }
+        }
+
+        if (!hasUpgrade) {
+            tooltip.add(Component.translatable("gui.hbm_neoforge.soldering_station.upgrades_none").withStyle(ChatFormatting.GRAY));
+        }
+
+        return tooltip;
+    }
+
+    private int getUpgradeLevel(ItemMachineUpgrade.UpgradeType type) {
+        int level = 0;
+        for (int slotIndex = SolderingStationBlockEntity.SLOT_UPGRADE_1; slotIndex <= SolderingStationBlockEntity.SLOT_UPGRADE_2; slotIndex++) {
+            ItemStack stack = menu.getSlot(slotIndex).getItem();
+            if (stack.getItem() instanceof ItemMachineUpgrade upgrade && upgrade.getUpgradeType() == type) {
+                level += upgrade.getLevel();
+            }
+        }
+        return Math.min(level, 3);
     }
 
     private static String fluidTranslationKey(int id) {

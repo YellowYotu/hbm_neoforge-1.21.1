@@ -118,9 +118,14 @@ public final class SolderingStationRecipes {
                 List.of(ingredient(ModItems.CIRCUIT_PCB, 1)),
                 List.of(ingredient(ModItems.WIRE_FINE_LEAD, 3))));
 
-        recipes.add(recipe("bismoid_circuit", ModItems.CIRCUIT_BISMOID, 400, 10_000, fluid(ItemSolderingFluidCell.FluidType.SOLVENT, 1_000),
+        recipes.add(recipe("bismoid_circuit_polymer", ModItems.CIRCUIT_BISMOID, 400, 10_000, fluid(ItemSolderingFluidCell.FluidType.SOLVENT, 1_000),
                 List.of(ingredient(ModItems.CIRCUIT_CHIP_BISMOID, 4), ingredient(ModItems.CIRCUIT_CHIP, 16), ingredient(ModItems.CIRCUIT_CAPACITOR, 24)),
                 List.of(ingredient(ModItems.CIRCUIT_PCB, 12), ingredient(ModItems.INGOT_POLYMER, 2)),
+                List.of(ingredient(ModItems.WIRE_FINE_LEAD, 12))));
+
+        recipes.add(recipe("bismoid_circuit_bakelite", ModItems.CIRCUIT_BISMOID, 400, 10_000, fluid(ItemSolderingFluidCell.FluidType.SOLVENT, 1_000),
+                List.of(ingredient(ModItems.CIRCUIT_CHIP_BISMOID, 4), ingredient(ModItems.CIRCUIT_CHIP, 16), ingredient(ModItems.CIRCUIT_CAPACITOR, 24)),
+                List.of(ingredient(ModItems.CIRCUIT_PCB, 12), ingredient(ModItems.INGOT_BAKELITE, 2)),
                 List.of(ingredient(ModItems.WIRE_FINE_LEAD, 12))));
 
         recipes.add(recipe("quantum_circuit", ModItems.CIRCUIT_QUANTUM, 400, 100_000, fluid(ItemSolderingFluidCell.FluidType.HELIUM4, 1_000),
@@ -145,10 +150,10 @@ public final class SolderingStationRecipes {
 
         recipes.add(upgradeOne("upgrade_speed_1", ModItems.UPGRADE_SPEED_1, ModItems.POWDER_RED_COPPER));
         recipes.add(upgradeOne("upgrade_power_1", ModItems.UPGRADE_POWER_1, ModItems.POWDER_GOLD));
-        recipes.add(upgradeTwo("upgrade_speed_2", ModItems.UPGRADE_SPEED_1, ModItems.UPGRADE_SPEED_2));
-        recipes.add(upgradeTwo("upgrade_power_2", ModItems.UPGRADE_POWER_1, ModItems.UPGRADE_POWER_2));
-        recipes.add(upgradeThree("upgrade_speed_3", ModItems.UPGRADE_SPEED_2, ModItems.UPGRADE_SPEED_3));
-        recipes.add(upgradeThree("upgrade_power_3", ModItems.UPGRADE_POWER_2, ModItems.UPGRADE_POWER_3));
+        recipes.addAll(upgradeTwo("upgrade_speed_2", ModItems.UPGRADE_SPEED_1, ModItems.UPGRADE_SPEED_2));
+        recipes.addAll(upgradeTwo("upgrade_power_2", ModItems.UPGRADE_POWER_1, ModItems.UPGRADE_POWER_2));
+        recipes.addAll(upgradeThree("upgrade_speed_3", ModItems.UPGRADE_SPEED_2, ModItems.UPGRADE_SPEED_3));
+        recipes.addAll(upgradeThree("upgrade_power_3", ModItems.UPGRADE_POWER_2, ModItems.UPGRADE_POWER_3));
 
         return List.copyOf(recipes);
     }
@@ -160,18 +165,28 @@ public final class SolderingStationRecipes {
                 List.of());
     }
 
-    private static Recipe upgradeTwo(String id, Supplier<? extends net.minecraft.world.item.Item> lower, Supplier<? extends net.minecraft.world.item.Item> output) {
-        return recipe(id, output, 300, 10_000, null,
-                List.of(ingredient(ModItems.CIRCUIT_CHIP, 8), ingredient(ModItems.CIRCUIT_CAPACITOR, 4)),
-                List.of(ingredient(lower, 1), ingredient(ModItems.INGOT_POLYMER, 4)),
-                List.of());
+    private static List<Recipe> upgradeTwo(String id, Supplier<? extends net.minecraft.world.item.Item> lower, Supplier<? extends net.minecraft.world.item.Item> output) {
+        return List.of(
+                recipe(id + "_polymer", output, 300, 10_000, null,
+                        List.of(ingredient(ModItems.CIRCUIT_CHIP, 8), ingredient(ModItems.CIRCUIT_CAPACITOR, 4)),
+                        List.of(ingredient(lower, 1), ingredient(ModItems.INGOT_POLYMER, 4)),
+                        List.of()),
+                recipe(id + "_bakelite", output, 300, 10_000, null,
+                        List.of(ingredient(ModItems.CIRCUIT_CHIP, 8), ingredient(ModItems.CIRCUIT_CAPACITOR, 4)),
+                        List.of(ingredient(lower, 1), ingredient(ModItems.INGOT_BAKELITE, 4)),
+                        List.of()));
     }
 
-    private static Recipe upgradeThree(String id, Supplier<? extends net.minecraft.world.item.Item> lower, Supplier<? extends net.minecraft.world.item.Item> output) {
-        return recipe(id, output, 400, 25_000, fluid(ItemSolderingFluidCell.FluidType.SOLVENT, 500),
-                List.of(ingredient(ModItems.CIRCUIT_CHIP, 16), ingredient(ModItems.CIRCUIT_CAPACITOR, 16)),
-                List.of(ingredient(lower, 1), ingredient(ModItems.INGOT_RUBBER, 4)),
-                List.of());
+    private static List<Recipe> upgradeThree(String id, Supplier<? extends net.minecraft.world.item.Item> lower, Supplier<? extends net.minecraft.world.item.Item> output) {
+        return List.of(
+                recipe(id + "_biorubber", output, 400, 25_000, fluid(ItemSolderingFluidCell.FluidType.SOLVENT, 500),
+                        List.of(ingredient(ModItems.CIRCUIT_CHIP, 16), ingredient(ModItems.CIRCUIT_CAPACITOR, 16)),
+                        List.of(ingredient(lower, 1), ingredient(ModItems.INGOT_BIORUBBER, 4)),
+                        List.of()),
+                recipe(id + "_rubber", output, 400, 25_000, fluid(ItemSolderingFluidCell.FluidType.SOLVENT, 500),
+                        List.of(ingredient(ModItems.CIRCUIT_CHIP, 16), ingredient(ModItems.CIRCUIT_CAPACITOR, 16)),
+                        List.of(ingredient(lower, 1), ingredient(ModItems.INGOT_RUBBER, 4)),
+                        List.of()));
     }
 
     private static Recipe recipe(String id, Supplier<? extends net.minecraft.world.item.Item> output, int duration, int energyPerTick, FluidRequirement fluid, List<Ingredient> toppings, List<Ingredient> pcb, List<Ingredient> solder) {

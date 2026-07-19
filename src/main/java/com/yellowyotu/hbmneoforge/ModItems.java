@@ -125,6 +125,8 @@ public final class ModItems {
     public static final DeferredItem<ItemMachineUpgrade> UPGRADE_POWER_2 = upgrade("upgrade_power_2", ItemMachineUpgrade.UpgradeType.POWER, 2);
     public static final DeferredItem<ItemMachineUpgrade> UPGRADE_POWER_3 = upgrade("upgrade_power_3", ItemMachineUpgrade.UpgradeType.POWER, 3);
     public static final DeferredItem<ItemMachineUpgrade> UPGRADE_OVERDRIVE_1 = upgrade("upgrade_overdrive_1", ItemMachineUpgrade.UpgradeType.OVERDRIVE, 1);
+    public static final DeferredItem<ItemMachineUpgrade> UPGRADE_OVERDRIVE_2 = upgrade("upgrade_overdrive_2", ItemMachineUpgrade.UpgradeType.OVERDRIVE, 2);
+    public static final DeferredItem<ItemMachineUpgrade> UPGRADE_OVERDRIVE_3 = upgrade("upgrade_overdrive_3", ItemMachineUpgrade.UpgradeType.OVERDRIVE, 3);
     public static final DeferredItem<ItemSolderingFluidCell> CELL_SULFURIC_ACID = fluidCell("cell_sulfuric_acid", ItemSolderingFluidCell.FluidType.SULFURIC_ACID);
     public static final DeferredItem<ItemSolderingFluidCell> CELL_PEROXIDE = fluidCell("cell_peroxide", ItemSolderingFluidCell.FluidType.PEROXIDE);
     public static final DeferredItem<ItemSolderingFluidCell> CELL_SOLVENT = fluidCell("cell_solvent", ItemSolderingFluidCell.FluidType.SOLVENT);

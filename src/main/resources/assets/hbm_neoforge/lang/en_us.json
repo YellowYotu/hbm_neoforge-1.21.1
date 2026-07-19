@@ -319,5 +319,11 @@
   "item.hbm_neoforge.cell_solvent": "Solvent Cell",
   "item.hbm_neoforge.cell_helium4": "Helium-4 Cell",
   "item.hbm_neoforge.cell_perfluoromethyl": "Perfluoromethyl Cell",
-  "item.hbm_neoforge.cell_perfluoromethyl_cold": "Cryogenic Perfluoromethyl Cell"
+  "item.hbm_neoforge.cell_perfluoromethyl_cold": "Cryogenic Perfluoromethyl Cell",
+  "item.hbm_neoforge.upgrade_overdrive_2": "Overdrive Upgrade Mk2",
+  "item.hbm_neoforge.upgrade_overdrive_3": "Overdrive Upgrade Mk3",
+  "gui.hbm_neoforge.soldering_station.upgrades_none": "No upgrades installed",
+  "gui.hbm_neoforge.soldering_station.upgrade_speed": "Speed Mk.%s: -%s%% time, +%s%% consumption",
+  "gui.hbm_neoforge.soldering_station.upgrade_power": "Power Mk.%s: -%s%% consumption, +%s%% time",
+  "gui.hbm_neoforge.soldering_station.upgrade_overdrive": "Overdrive Mk.%s: x%s consumption, x%s progress steps"
 }

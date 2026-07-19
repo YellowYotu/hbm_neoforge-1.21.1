@@ -10,6 +10,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.core.Direction;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
@@ -118,20 +119,40 @@ public final class AssemblyMachineBlockEntityRenderer implements BlockEntityRend
 
     private static void renderDisplayedItem(AssemblyMachineBlockEntity machine, PoseStack poseStack, MultiBufferSource buffer, int packedLight, int packedOverlay) {
         ItemStack stack = machine.getDisplayedRecipeStack();
-
         if (stack.isEmpty()) {
             return;
         }
 
         poseStack.pushPose();
-
-        poseStack.translate(DISPLAYED_ITEM_X, DISPLAYED_ITEM_Y, DISPLAYED_ITEM_Z);
+        poseStack.translate(0.5D, 1.0625D, 0.5D);
         poseStack.mulPose(Axis.YP.rotationDegrees(90.0F));
+
+        boolean blockItem = stack.getItem() instanceof BlockItem;
+        boolean threeDimensional = Minecraft.getInstance().getItemRenderer().getModel(stack, machine.getLevel(), null, 0).isGui3d();
+        if (blockItem && threeDimensional) {
+            poseStack.translate(0.0D, -0.0625D, 0.0D);
+        } else if (blockItem) {
+            poseStack.translate(0.0D, -0.125D, 0.0D);
+            poseStack.scale(0.5F, 0.5F, 0.5F);
+        } else {
+            poseStack.mulPose(Axis.XP.rotationDegrees(-90.0F));
+            poseStack.translate(0.0D, -0.25D, 0.0D);
+        }
+
         poseStack.scale(1.25F, 1.25F, 1.25F);
-
-        Minecraft.getInstance().getItemRenderer().renderStatic(stack, ItemDisplayContext.FIXED, packedLight, packedOverlay, poseStack, buffer, machine.getLevel(), 0);
-
+        poseStack.translate(0.5D, 0.5D, 0.5D);
+        Minecraft.getInstance().getItemRenderer().renderStatic(stack.copyWithCount(1), ItemDisplayContext.NONE, packedLight, packedOverlay, poseStack, buffer, machine.getLevel(), 0);
         poseStack.popPose();
+    }
+
+    @Override
+    public boolean shouldRenderOffScreen(AssemblyMachineBlockEntity blockEntity) {
+        return true;
+    }
+
+    @Override
+    public int getViewDistance() {
+        return 256;
     }
 
     private static void renderPart(AssemblyMachineBlockEntity machine, Item part, PoseStack poseStack, MultiBufferSource buffer, int packedLight, int packedOverlay) {

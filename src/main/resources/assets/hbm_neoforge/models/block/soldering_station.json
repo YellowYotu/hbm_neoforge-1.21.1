@@ -1,6 +1,6 @@
 {
   "loader": "neoforge:obj",
-  "model": "hbm_neoforge:models/block/soldering_station.obj",
+  "model": "hbm_neoforge:models/block/soldering_station_east.obj",
   "textures": {
     "particle": "hbm_neoforge:block/soldering_station",
     "soldering_station": "hbm_neoforge:block/soldering_station"

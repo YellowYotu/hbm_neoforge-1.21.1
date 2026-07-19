@@ -6,12 +6,15 @@ import com.yellowyotu.hbmneoforge.blockentity.HBMAnvilRecipes;
 import com.yellowyotu.hbmneoforge.blockentity.MachinePressRecipes;
 import com.yellowyotu.hbmneoforge.blockentity.ShredderRecipes;
 import com.yellowyotu.hbmneoforge.blockentity.SolderingStationRecipes;
+import com.yellowyotu.hbmneoforge.client.screen.SolderingStationScreen;
 import java.util.List;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
+import mezz.jei.api.registration.IGuiHandlerRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
+import mezz.jei.api.registration.IRecipeTransferRegistration;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
@@ -40,6 +43,16 @@ public final class HBMJeiPlugin implements IModPlugin {
         registration.addRecipes(SolderingRecipeCategory.RECIPE_TYPE, SolderingStationRecipes.RECIPES);
         registration.addRecipes(AnvilRecipeCategory.RECIPE_TYPE, HBMAnvilRecipes.all());
         registration.addRecipes(AssemblyRecipeCategory.RECIPE_TYPE, com.yellowyotu.hbmneoforge.blockentity.AssemblyMachineRecipes.RECIPES);
+    }
+
+    @Override
+    public void registerRecipeTransferHandlers(IRecipeTransferRegistration registration) {
+        registration.addRecipeTransferHandler(new SolderingStationTransferInfo());
+    }
+
+    @Override
+    public void registerGuiHandlers(IGuiHandlerRegistration registration) {
+        registration.addRecipeClickArea(SolderingStationScreen.class, 72, 29, 32, 13, SolderingRecipeCategory.RECIPE_TYPE);
     }
 
     @Override

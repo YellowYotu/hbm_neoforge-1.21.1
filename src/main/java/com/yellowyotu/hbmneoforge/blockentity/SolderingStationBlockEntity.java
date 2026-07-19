@@ -62,26 +62,33 @@ public final class SolderingStationBlockEntity extends BlockEntity implements Me
         @Override
         public boolean isItemValid(int slot, ItemStack stack) {
             if (slot >= SLOT_TOPPING_START && slot < SLOT_TOPPING_START + SLOT_TOPPING_COUNT) {
-                return SolderingStationRecipes.isValidTopping(stack);
+                return SolderingStationRecipes.isValidTopping(stack) && !hasDuplicateInGroup(slot, SLOT_TOPPING_START, SLOT_TOPPING_COUNT, stack);
             }
+
             if (slot >= SLOT_PCB_START && slot < SLOT_PCB_START + SLOT_PCB_COUNT) {
-                return SolderingStationRecipes.isValidPcb(stack);
+                return SolderingStationRecipes.isValidPcb(stack) && !hasDuplicateInGroup(slot, SLOT_PCB_START, SLOT_PCB_COUNT, stack);
             }
+
             if (slot == SLOT_SOLDER) {
                 return SolderingStationRecipes.isValidSolder(stack);
             }
+
             if (slot == SLOT_OUTPUT) {
                 return false;
             }
+
             if (slot == SLOT_BATTERY) {
                 return stack.is(ModItems.BATTERY_PACK.get());
             }
+
             if (slot == SLOT_FLUID_CELL) {
                 return stack.is(ModItems.CELL_EMPTY.get()) || stack.getItem() instanceof ItemSolderingFluidCell;
             }
+
             if (slot == SLOT_UPGRADE_1 || slot == SLOT_UPGRADE_2) {
                 return stack.getItem() instanceof ItemMachineUpgrade;
             }
+
             return false;
         }
 
@@ -95,12 +102,15 @@ public final class SolderingStationBlockEntity extends BlockEntity implements Me
             if (!loading && slot == SLOT_FLUID_CELL && !handlingFluidSlot) {
                 handleFluidCell();
             }
+
             if (!loading && (slot == SLOT_UPGRADE_1 || slot == SLOT_UPGRADE_2)) {
                 ItemStack stack = getStackInSlot(slot);
+
                 if (!stack.isEmpty() && stack.getItem() instanceof ItemMachineUpgrade && level != null && !level.isClientSide()) {
                     level.playSound(null, worldPosition, ModSounds.UPGRADE_PLUG.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
                 }
             }
+
             setChangedAndSync();
         }
     };
@@ -121,6 +131,7 @@ public final class SolderingStationBlockEntity extends BlockEntity implements Me
             if (!inventory.isItemValid(slot, stack)) {
                 return stack;
             }
+
             return inventory.insertItem(slot, stack, simulate);
         }
 
@@ -129,6 +140,7 @@ public final class SolderingStationBlockEntity extends BlockEntity implements Me
             if (slot == SLOT_OUTPUT || slot == SLOT_FLUID_CELL) {
                 return inventory.extractItem(slot, amount, simulate);
             }
+
             return ItemStack.EMPTY;
         }
 
@@ -203,9 +215,11 @@ public final class SolderingStationBlockEntity extends BlockEntity implements Me
         station.pullEnergyFromNetwork();
 
         SolderingStationRecipes.Recipe recipe = SolderingStationRecipes.find(station.inventory);
+        ItemStack previousDisplay = station.display;
         station.display = recipe == null ? ItemStack.EMPTY : recipe.resultStack();
         station.updateRecipeParameters(recipe);
 
+        boolean displayChanged = !sameStack(previousDisplay, station.display);
         boolean wasProcessing = station.processing;
         station.processing = recipe != null && station.canProcess(recipe);
 
@@ -214,7 +228,11 @@ public final class SolderingStationBlockEntity extends BlockEntity implements Me
             station.energy -= station.consumption;
             station.progress += 1 + overdrive;
 
-            if (level.getGameTime() % 20L == 0L) {
+            if (!wasProcessing || level.getGameTime() % 52L == 0L) {
+                level.playSound(null, pos, ModSounds.SOLDERING_OPERATE.get(), SoundSource.BLOCKS, 0.75F, 1.0F);
+            }
+
+            if (level.getGameTime() % 4L == 0L) {
                 station.spawnSolderingEffect((ServerLevel) level, state);
             }
 
@@ -228,7 +246,7 @@ public final class SolderingStationBlockEntity extends BlockEntity implements Me
             station.progress = 0;
         }
 
-        if (wasProcessing != station.processing || level.getGameTime() % 5L == 0L) {
+        if (displayChanged || wasProcessing != station.processing || level.getGameTime() % 5L == 0L) {
             station.setChangedAndSync();
         } else {
             station.setChanged();
@@ -247,22 +265,24 @@ public final class SolderingStationBlockEntity extends BlockEntity implements Me
         int power = getUpgradeLevel(ItemMachineUpgrade.UpgradeType.POWER);
         int overdrive = getUpgradeLevel(ItemMachineUpgrade.UpgradeType.OVERDRIVE);
         processTime = Math.max(1, recipe.duration() - recipe.duration() * speed / 6 + recipe.duration() * power / 3);
-        double speedMultiplier = 1.0D + speed * 0.5D;
-        double powerMultiplier = Math.max(0.25D, 1.0D - power * 0.25D);
-        long calculatedConsumption = Math.max(1L, (long) Math.ceil(recipe.energyPerTick() * speedMultiplier * powerMultiplier));
+        long calculatedConsumption = recipe.energyPerTick() + (long) recipe.energyPerTick() * speed - (long) recipe.energyPerTick() * power / 6L;
         calculatedConsumption *= 1L << Math.min(overdrive, 20);
         consumption = (int) Math.clamp(calculatedConsumption, 1L, Integer.MAX_VALUE);
-        maxEnergy = Math.max(Math.max(DEFAULT_MAX_ENERGY, consumption * 20), energy);
+        long intendedMaxEnergy = Math.max(DEFAULT_MAX_ENERGY, calculatedConsumption * 20L);
+        maxEnergy = (int) Math.clamp(Math.max(intendedMaxEnergy, energy), DEFAULT_MAX_ENERGY, Integer.MAX_VALUE);
     }
 
     private int getUpgradeLevel(ItemMachineUpgrade.UpgradeType type) {
         int level = 0;
+
         for (int slot = SLOT_UPGRADE_1; slot <= SLOT_UPGRADE_2; slot++) {
             ItemStack stack = inventory.getStackInSlot(slot);
+
             if (stack.getItem() instanceof ItemMachineUpgrade upgrade && upgrade.getUpgradeType() == type) {
                 level += upgrade.getLevel();
             }
         }
+
         return Math.min(level, 3);
     }
 
@@ -270,6 +290,7 @@ public final class SolderingStationBlockEntity extends BlockEntity implements Me
         if (energy < consumption || !canAcceptOutput(recipe.resultStack())) {
             return false;
         }
+
         if (recipe.fluid() != null) {
             if (fluidType != recipe.fluid().type() || fluidAmount < recipe.fluid().amount()) {
                 return false;
@@ -277,6 +298,7 @@ public final class SolderingStationBlockEntity extends BlockEntity implements Me
         } else if (collisionPrevention && fluidAmount > 0) {
             return false;
         }
+
         return true;
     }
 
@@ -288,19 +310,23 @@ public final class SolderingStationBlockEntity extends BlockEntity implements Me
 
     private void consumeGroup(int firstSlot, int slotCount, List<SolderingStationRecipes.Ingredient> ingredients) {
         List<SolderingStationRecipes.Ingredient> remaining = new java.util.ArrayList<>(ingredients);
+
         for (int slot = firstSlot; slot < firstSlot + slotCount; slot++) {
             ItemStack input = inventory.getStackInSlot(slot);
+
             if (input.isEmpty()) {
                 continue;
             }
 
             SolderingStationRecipes.Ingredient match = null;
+
             for (SolderingStationRecipes.Ingredient ingredient : remaining) {
                 if (input.getCount() >= ingredient.count() && ItemStack.isSameItemSameComponents(input, ingredient.stack().get())) {
                     match = ingredient;
                     break;
                 }
             }
+
             if (match != null) {
                 input.shrink(match.count());
                 inventory.setStackInSlot(slot, input.isEmpty() ? ItemStack.EMPTY : input);
@@ -313,7 +339,9 @@ public final class SolderingStationBlockEntity extends BlockEntity implements Me
         if (recipe.fluid() == null) {
             return;
         }
+
         fluidAmount -= recipe.fluid().amount();
+
         if (fluidAmount <= 0) {
             fluidAmount = 0;
             fluidType = null;
@@ -327,6 +355,7 @@ public final class SolderingStationBlockEntity extends BlockEntity implements Me
 
     private void insertOutput(ItemStack result) {
         ItemStack output = inventory.getStackInSlot(SLOT_OUTPUT);
+
         if (output.isEmpty()) {
             inventory.setStackInSlot(SLOT_OUTPUT, result.copy());
         } else {
@@ -337,18 +366,21 @@ public final class SolderingStationBlockEntity extends BlockEntity implements Me
 
     private void spawnSolderingEffect(ServerLevel level, BlockState state) {
         Direction facing = state.getValue(SolderingStationBlock.FACING);
+        Direction back = facing.getOpposite();
         Direction right = facing.getClockWise();
-        double x = worldPosition.getX() + 0.5D - facing.getStepX() * 0.5D + right.getStepX() * 0.5D;
-        double y = worldPosition.getY() + 1.125D;
-        double z = worldPosition.getZ() + 0.5D - facing.getStepZ() * 0.5D + right.getStepZ() * 0.5D;
-        level.sendParticles(ModParticles.SOLDER_TAU.get(), x, y, z, 3, 0.05D, 0.03D, 0.05D, 0.0D);
+        double x = worldPosition.getX() + 0.5D + (back.getStepX() + right.getStepX()) * 0.5D;
+        double y = worldPosition.getY() + 1.16D;
+        double z = worldPosition.getZ() + 0.5D + (back.getStepZ() + right.getStepZ()) * 0.5D;
+        level.sendParticles(ModParticles.SOLDER_TAU.get(), x, y, z, 2, 0.035D, 0.02D, 0.035D, 0.0D);
     }
 
     private void chargeFromBattery() {
         ItemStack stack = inventory.getStackInSlot(SLOT_BATTERY);
+
         if (!stack.is(ModItems.BATTERY_PACK.get()) || energy >= maxEnergy) {
             return;
         }
+
         energy += ItemBatteryPack.extractEnergy(stack, Math.min(1_000, maxEnergy - energy));
     }
 
@@ -356,7 +388,9 @@ public final class SolderingStationBlockEntity extends BlockEntity implements Me
         if (level == null || energy >= maxEnergy) {
             return;
         }
+
         BatterySocketBlockEntity source = findPowerSource();
+
         if (source != null) {
             energy += source.extractEnergyForMachine(Math.min(1_000, maxEnergy - energy));
         }
@@ -367,47 +401,78 @@ public final class SolderingStationBlockEntity extends BlockEntity implements Me
         if (level == null) {
             return null;
         }
+
         Set<BlockPos> visited = new HashSet<>();
         Set<BlockPos> controllers = new HashSet<>();
         ArrayDeque<BlockPos> queue = new ArrayDeque<>();
         Direction facing = getBlockState().getValue(SolderingStationBlock.FACING);
+
         for (BlockPos part : SolderingStationBlock.getAllPositions(worldPosition, facing)) {
             for (Direction direction : Direction.values()) {
                 queue.add(part.relative(direction));
             }
         }
+
         int scanned = 0;
+
         while (!queue.isEmpty() && scanned++ < 4_096) {
             BlockPos current = queue.removeFirst();
+
             if (!visited.add(current) || current.distManhattan(worldPosition) > 64) {
                 continue;
             }
+
             BlockState state = level.getBlockState(current);
+
             if (state.is(ModBlocks.RED_CABLE.get())) {
                 for (Direction direction : Direction.values()) {
                     queue.add(current.relative(direction));
                 }
+
                 continue;
             }
+
             BlockPos controller = null;
+
             if (state.is(ModBlocks.MACHINE_BATTERY_SOCKET.get())) {
                 controller = current;
             } else if (state.is(ModBlocks.MACHINE_BATTERY_SOCKET_DUMMY.get())) {
                 controller = BatterySocketDummyBlock.findController(level, current);
             }
+
             if (controller != null && controllers.add(controller) && level.getBlockEntity(controller) instanceof BatterySocketBlockEntity socket && socket.canOutput() && socket.getEnergy() > 0) {
                 return socket;
             }
         }
+
         return null;
+    }
+
+    private boolean hasDuplicateInGroup(int slot, int firstSlot, int slotCount, ItemStack stack) {
+        for (int currentSlot = firstSlot; currentSlot < firstSlot + slotCount; currentSlot++) {
+            if (currentSlot != slot && ItemStack.isSameItemSameComponents(inventory.getStackInSlot(currentSlot), stack)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static boolean sameStack(ItemStack first, ItemStack second) {
+        if (first.isEmpty() || second.isEmpty()) {
+            return first.isEmpty() && second.isEmpty();
+        }
+        return first.getCount() == second.getCount() && ItemStack.isSameItemSameComponents(first, second);
     }
 
     private void handleFluidCell() {
         ItemStack stack = inventory.getStackInSlot(SLOT_FLUID_CELL);
+
         if (stack.isEmpty()) {
             return;
         }
+
         handlingFluidSlot = true;
+
         try {
             if (stack.getItem() instanceof ItemSolderingFluidCell cell) {
                 if ((fluidType == null || fluidType == cell.getFluidType()) && fluidAmount + FLUID_CELL_AMOUNT <= FLUID_CAPACITY) {
@@ -419,6 +484,7 @@ public final class SolderingStationBlockEntity extends BlockEntity implements Me
                 Item fluidCell = getFluidCellItem(fluidType);
                 fluidAmount -= FLUID_CELL_AMOUNT;
                 inventory.setStackInSlot(SLOT_FLUID_CELL, new ItemStack(fluidCell));
+
                 if (fluidAmount == 0) {
                     fluidType = null;
                 }
@@ -479,8 +545,10 @@ public final class SolderingStationBlockEntity extends BlockEntity implements Me
         if (level == null) {
             return;
         }
+
         for (int slot = 0; slot < inventory.getSlots(); slot++) {
             ItemStack stack = inventory.extractItem(slot, inventory.getStackInSlot(slot).getCount(), false);
+
             if (!stack.isEmpty()) {
                 Block.popResource(level, worldPosition, stack);
             }
@@ -489,6 +557,7 @@ public final class SolderingStationBlockEntity extends BlockEntity implements Me
 
     private void setChangedAndSync() {
         setChanged();
+
         if (level instanceof ServerLevel serverLevel) {
             serverLevel.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), Block.UPDATE_CLIENTS);
         }
@@ -514,11 +583,13 @@ public final class SolderingStationBlockEntity extends BlockEntity implements Me
     protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
         super.loadAdditional(tag, registries);
         loading = true;
+
         try {
             inventory.deserializeNBT(registries, tag.getCompound("Inventory"));
         } finally {
             loading = false;
         }
+
         energy = tag.getInt("Energy");
         maxEnergy = Math.max(DEFAULT_MAX_ENERGY, tag.getInt("MaxEnergy"));
         consumption = Math.max(1, tag.getInt("Consumption"));

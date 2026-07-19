@@ -49,9 +49,11 @@ public final class AssemblyMachineBlockEntity extends BlockEntity implements Men
             if (slot == SLOT_BATTERY) {
                 return stack.is(ModItems.BATTERY_PACK.get());
             }
+
             if (slot == SLOT_FILTER || slot == SLOT_UPGRADE_1 || slot == SLOT_UPGRADE_2) {
                 return stack.getItem() instanceof ItemMachineUpgrade;
             }
+
             return slot != SLOT_FILTER && slot != SLOT_OUTPUT;
         }
 
@@ -60,6 +62,7 @@ public final class AssemblyMachineBlockEntity extends BlockEntity implements Men
             setChangedAndSync();
         }
     };
+
     private int energy;
     private int progress;
     private int selectedRecipe = -1;
@@ -128,6 +131,7 @@ public final class AssemblyMachineBlockEntity extends BlockEntity implements Men
         } else {
             selectedRecipe = index;
         }
+
         progress = 0;
         setChangedAndSync();
     }
@@ -143,22 +147,23 @@ public final class AssemblyMachineBlockEntity extends BlockEntity implements Men
     public static void serverTick(Level level, BlockPos pos, BlockState state, AssemblyMachineBlockEntity machine) {
         machine.chargeFromBattery();
         machine.pullEnergyFromNetwork();
+
         AssemblyMachineRecipes.Recipe recipe = machine.getSelectedRecipe();
         boolean canCraft = recipe != null && machine.hasIngredients(recipe) && machine.canAcceptOutput(recipe.resultStack());
-        boolean wasProcessing = machine.processing;
+
         int speedLevel = machine.getUpgradeLevel(ItemMachineUpgrade.UpgradeType.SPEED);
         int powerLevel = machine.getUpgradeLevel(ItemMachineUpgrade.UpgradeType.POWER);
         int overdriveLevel = machine.getUpgradeLevel(ItemMachineUpgrade.UpgradeType.OVERDRIVE);
-        double speed = 1.0D + Math.min(speedLevel, 3) * 0.25D + Math.min(overdriveLevel, 3) * 3.0D;
-        double powerMultiplier = Math.max(0.25D, 1.0D - Math.min(powerLevel, 3) * 0.25D) * (1.0D + Math.min(speedLevel, 3) * 0.5D + Math.min(overdriveLevel, 3) * 3.0D);
+
+        double speed = 1.0D + Math.min(speedLevel, 3) / 3.0D + Math.min(overdriveLevel, 3);
+        double powerMultiplier = 1.0D - Math.min(powerLevel, 3) * 0.25D + Math.min(speedLevel, 3) + Math.min(overdriveLevel, 3) * 10.0D / 3.0D;
         int consumption = recipe == null ? 0 : Math.max(1, (int) Math.ceil(recipe.energyPerTick() * powerMultiplier));
+
         if (canCraft && machine.energy >= consumption) {
             machine.energy -= consumption;
             machine.progress += Math.max(1, (int) Math.floor(speed));
             machine.processing = true;
-            if (!wasProcessing || level.getGameTime() % 45L == 0L) {
-                level.playSound(null, pos, ModSounds.ASSEMBLER_OPERATE.get(), SoundSource.BLOCKS, 0.5F, 0.75F);
-            }
+
             if (machine.progress >= recipe.duration()) {
                 machine.consumeIngredients(recipe);
                 machine.insertOutput(recipe.resultStack());
@@ -167,29 +172,30 @@ public final class AssemblyMachineBlockEntity extends BlockEntity implements Men
         } else {
             machine.processing = false;
             machine.progress = 0;
-            if (wasProcessing) {
-                level.playSound(null, pos, ModSounds.ASSEMBLER_STOP.get(), SoundSource.BLOCKS, 0.25F, 1.5F);
-            }
         }
+
         machine.updateAnimation(level.random);
         machine.setChangedAndSync();
     }
 
-
     private int getUpgradeLevel(ItemMachineUpgrade.UpgradeType type) {
         int level = 0;
+
         for (int slot : new int[]{SLOT_FILTER, SLOT_UPGRADE_1, SLOT_UPGRADE_2}) {
             ItemStack stack = inventory.getStackInSlot(slot);
+
             if (stack.getItem() instanceof ItemMachineUpgrade upgrade && upgrade.getUpgradeType() == type) {
                 level += upgrade.getLevel();
             }
         }
+
         return Math.min(level, 3);
     }
 
     private void updateAnimation(RandomSource random) {
         for (AssemblerArm arm : arms) {
             arm.updateInterpolation();
+
             if (processing) {
                 if (arm.updateArm() && arm.justStruck()) {
                     if (level != null) {
@@ -200,12 +206,16 @@ public final class AssemblyMachineBlockEntity extends BlockEntity implements Men
                 arm.returnToNullPosition();
             }
         }
+
         previousRing = ring;
+
         if (!processing) {
             return;
         }
+
         if (ring != ringTarget) {
             double delta = Math.abs(ringTarget - ring);
+
             if (delta <= ringSpeed) {
                 ring = ringTarget;
             } else if (ringTarget > ring) {
@@ -213,6 +223,7 @@ public final class AssemblyMachineBlockEntity extends BlockEntity implements Men
             } else {
                 ring -= ringSpeed;
             }
+
             if (ring == ringTarget) {
                 double correction = ringTarget >= 360.0D ? -360.0D : 360.0D;
                 ringTarget += correction;
@@ -225,6 +236,7 @@ public final class AssemblyMachineBlockEntity extends BlockEntity implements Men
         } else {
             ringTarget += (random.nextDouble() * 2.0D - 1.0D) * 135.0D;
             ringSpeed = 10.0D + random.nextDouble() * 5.0D;
+
             if (level != null) {
                 level.playSound(null, worldPosition, ModSounds.ASSEMBLER_START.get(), SoundSource.BLOCKS, 0.25F, 1.25F + random.nextFloat() * 0.25F);
             }
@@ -233,9 +245,11 @@ public final class AssemblyMachineBlockEntity extends BlockEntity implements Men
 
     private void chargeFromBattery() {
         ItemStack stack = inventory.getStackInSlot(SLOT_BATTERY);
+
         if (!stack.is(ModItems.BATTERY_PACK.get()) || energy >= MAX_ENERGY) {
             return;
         }
+
         int extracted = ItemBatteryPack.extractEnergy(stack, Math.min(1000, MAX_ENERGY - energy));
         energy += extracted;
     }
@@ -244,10 +258,13 @@ public final class AssemblyMachineBlockEntity extends BlockEntity implements Men
         if (level == null || energy >= MAX_ENERGY) {
             return;
         }
+
         BatterySocketBlockEntity source = findPowerSource();
+
         if (source == null) {
             return;
         }
+
         energy += source.extractEnergyForMachine(Math.min(1000, MAX_ENERGY - energy));
     }
 
@@ -255,45 +272,59 @@ public final class AssemblyMachineBlockEntity extends BlockEntity implements Men
         if (level == null) {
             return null;
         }
+
         Set<BlockPos> visited = new HashSet<>();
         Set<BlockPos> controllers = new HashSet<>();
         ArrayDeque<BlockPos> queue = new ArrayDeque<>();
+
         for (int y = 0; y < 3; y++) {
             for (int x = -1; x <= 1; x++) {
                 for (int z = -1; z <= 1; z++) {
                     BlockPos part = worldPosition.offset(x, y, z);
+
                     for (Direction direction : Direction.values()) {
                         queue.add(part.relative(direction));
                     }
                 }
             }
         }
+
         int scanned = 0;
+
         while (!queue.isEmpty() && scanned++ < 4096) {
             BlockPos current = queue.removeFirst();
+
             if (!visited.add(current) || current.distManhattan(worldPosition) > 64) {
                 continue;
             }
+
             BlockState state = level.getBlockState(current);
+
             if (state.is(ModBlocks.RED_CABLE.get())) {
                 for (Direction direction : Direction.values()) {
                     queue.add(current.relative(direction));
                 }
+
                 continue;
             }
+
             BlockPos controller = null;
+
             if (state.is(ModBlocks.MACHINE_BATTERY_SOCKET.get())) {
                 controller = current;
             } else if (state.is(ModBlocks.MACHINE_BATTERY_SOCKET_DUMMY.get())) {
                 controller = BatterySocketDummyBlock.findController(level, current);
             }
+
             if (controller == null || !controllers.add(controller)) {
                 continue;
             }
+
             if (level.getBlockEntity(controller) instanceof BatterySocketBlockEntity socket && socket.canOutput() && socket.getEnergy() > 0) {
                 return socket;
             }
         }
+
         return null;
     }
 
@@ -301,16 +332,20 @@ public final class AssemblyMachineBlockEntity extends BlockEntity implements Men
         for (AssemblyMachineRecipes.Ingredient ingredient : recipe.ingredients()) {
             int remaining = ingredient.count();
             ItemStack expected = ingredient.stack().get();
+
             for (int slot = INPUT_START; slot < INPUT_START + INPUT_COUNT; slot++) {
                 ItemStack found = inventory.getStackInSlot(slot);
+
                 if (ItemStack.isSameItemSameComponents(found, expected)) {
                     remaining -= found.getCount();
                 }
             }
+
             if (remaining > 0) {
                 return false;
             }
         }
+
         return true;
     }
 
@@ -318,11 +353,14 @@ public final class AssemblyMachineBlockEntity extends BlockEntity implements Men
         for (AssemblyMachineRecipes.Ingredient ingredient : recipe.ingredients()) {
             int remaining = ingredient.count();
             ItemStack expected = ingredient.stack().get();
+
             for (int slot = INPUT_START; slot < INPUT_START + INPUT_COUNT && remaining > 0; slot++) {
                 ItemStack found = inventory.getStackInSlot(slot);
+
                 if (!ItemStack.isSameItemSameComponents(found, expected)) {
                     continue;
                 }
+
                 int removed = Math.min(remaining, found.getCount());
                 found.shrink(removed);
                 inventory.setStackInSlot(slot, found.isEmpty() ? ItemStack.EMPTY : found);
@@ -338,6 +376,7 @@ public final class AssemblyMachineBlockEntity extends BlockEntity implements Men
 
     private void insertOutput(ItemStack result) {
         ItemStack output = inventory.getStackInSlot(SLOT_OUTPUT);
+
         if (output.isEmpty()) {
             inventory.setStackInSlot(SLOT_OUTPUT, result.copy());
         } else {
@@ -350,8 +389,10 @@ public final class AssemblyMachineBlockEntity extends BlockEntity implements Men
         if (level == null) {
             return;
         }
+
         for (int slot = 0; slot < inventory.getSlots(); slot++) {
             ItemStack stack = inventory.extractItem(slot, inventory.getStackInSlot(slot).getCount(), false);
+
             if (!stack.isEmpty()) {
                 Block.popResource(level, worldPosition, stack);
             }
@@ -360,6 +401,7 @@ public final class AssemblyMachineBlockEntity extends BlockEntity implements Men
 
     private void setChangedAndSync() {
         setChanged();
+
         if (level instanceof ServerLevel serverLevel) {
             serverLevel.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), Block.UPDATE_CLIENTS);
         }
@@ -395,9 +437,11 @@ public final class AssemblyMachineBlockEntity extends BlockEntity implements Men
         ringSpeed = tag.getDouble("RingSpeed");
         ringTarget = tag.getDouble("RingTarget");
         ringDelay = tag.getInt("RingDelay");
+
         if (tag.contains("Arm0")) {
             arms[0].load(tag.getCompound("Arm0"));
         }
+
         if (tag.contains("Arm1")) {
             arms[1].load(tag.getCompound("Arm1"));
         }
@@ -433,7 +477,14 @@ public final class AssemblyMachineBlockEntity extends BlockEntity implements Men
     }
 
     private static final class AssemblerArm {
-        private static final double[][] POSITIONS = {{45.0D, -15.0D, -5.0D}, {15.0D, 15.0D, -15.0D}, {25.0D, 10.0D, -15.0D}, {30.0D, 0.0D, -10.0D}, {70.0D, -10.0D, -25.0D}};
+        private static final double[][] POSITIONS = {
+                {45.0D, -15.0D, -5.0D},
+                {15.0D, 15.0D, -15.0D},
+                {25.0D, 10.0D, -15.0D},
+                {30.0D, 0.0D, -10.0D},
+                {70.0D, -10.0D, -25.0D}
+        };
+
         private final double[] angles = new double[4];
         private final double[] previousAngles = new double[4];
         private final double[] targetAngles = new double[4];
@@ -457,9 +508,11 @@ public final class AssemblyMachineBlockEntity extends BlockEntity implements Men
             for (int i = 0; i < 4; i++) {
                 targetAngles[i] = 0.0D;
             }
+
             for (int i = 0; i < 3; i++) {
                 speed[i] = 3.0D;
             }
+
             speed[3] = 0.25D;
             state = ArmActionState.RETRACT_STRIKER;
             move();
@@ -474,10 +527,12 @@ public final class AssemblyMachineBlockEntity extends BlockEntity implements Men
 
         private boolean updateArm() {
             resetSpeed();
+
             if (actionDelay > 0) {
                 actionDelay--;
                 return false;
             }
+
             switch (state) {
                 case ASSUME_POSITION -> {
                     if (move()) {
@@ -501,6 +556,7 @@ public final class AssemblyMachineBlockEntity extends BlockEntity implements Men
                     }
                 }
             }
+
             return struck;
         }
 
@@ -517,12 +573,15 @@ public final class AssemblyMachineBlockEntity extends BlockEntity implements Men
 
         private boolean move() {
             boolean moved = false;
+
             for (int i = 0; i < angles.length; i++) {
                 if (angles[i] == targetAngles[i]) {
                     continue;
                 }
+
                 moved = true;
                 double delta = Math.abs(angles[i] - targetAngles[i]);
+
                 if (delta <= speed[i]) {
                     angles[i] = targetAngles[i];
                 } else if (angles[i] < targetAngles[i]) {
@@ -531,24 +590,29 @@ public final class AssemblyMachineBlockEntity extends BlockEntity implements Men
                     angles[i] -= speed[i];
                 }
             }
+
             return !moved;
         }
 
         private double[] getPositions(float partialTick) {
             double[] result = new double[4];
+
             for (int i = 0; i < result.length; i++) {
                 result[i] = previousAngles[i] + (angles[i] - previousAngles[i]) * partialTick;
             }
+
             return result;
         }
 
         private CompoundTag save() {
             CompoundTag tag = new CompoundTag();
+
             for (int i = 0; i < 4; i++) {
                 tag.putDouble("Angle" + i, angles[i]);
                 tag.putDouble("PreviousAngle" + i, previousAngles[i]);
                 tag.putDouble("TargetAngle" + i, targetAngles[i]);
             }
+
             tag.putInt("State", state.ordinal());
             tag.putInt("ActionDelay", actionDelay);
             return tag;
@@ -560,6 +624,7 @@ public final class AssemblyMachineBlockEntity extends BlockEntity implements Men
                 previousAngles[i] = tag.getDouble("PreviousAngle" + i);
                 targetAngles[i] = tag.getDouble("TargetAngle" + i);
             }
+
             int stateIndex = tag.getInt("State");
             state = ArmActionState.values()[Math.max(0, Math.min(stateIndex, ArmActionState.values().length - 1))];
             actionDelay = tag.getInt("ActionDelay");
@@ -571,5 +636,4 @@ public final class AssemblyMachineBlockEntity extends BlockEntity implements Men
         EXTEND_STRIKER,
         RETRACT_STRIKER
     }
-
 }

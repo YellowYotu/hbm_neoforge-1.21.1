@@ -183,5 +183,11 @@
   "item.hbm_neoforge.cell_solvent": "Ячейка с растворителем",
   "item.hbm_neoforge.cell_helium4": "Ячейка с гелием-4",
   "item.hbm_neoforge.cell_perfluoromethyl": "Ячейка с перфторметилом",
-  "item.hbm_neoforge.cell_perfluoromethyl_cold": "Ячейка с криогенным перфторметилом"
+  "item.hbm_neoforge.cell_perfluoromethyl_cold": "Ячейка с криогенным перфторметилом",
+  "item.hbm_neoforge.upgrade_overdrive_2": "Улучшение форсажа II",
+  "item.hbm_neoforge.upgrade_overdrive_3": "Улучшение форсажа III",
+  "gui.hbm_neoforge.soldering_station.upgrades_none": "Улучшения не установлены",
+  "gui.hbm_neoforge.soldering_station.upgrade_speed": "Скорость Mk.%s: -%s%% времени, +%s%% расхода",
+  "gui.hbm_neoforge.soldering_station.upgrade_power": "Экономия Mk.%s: -%s%% расхода, +%s%% времени",
+  "gui.hbm_neoforge.soldering_station.upgrade_overdrive": "Разгон Mk.%s: x%s расхода, x%s шага прогресса"
 }

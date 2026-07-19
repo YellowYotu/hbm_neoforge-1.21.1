@@ -29,12 +29,11 @@ public final class SolderingStationBlockEntityRenderer implements BlockEntityRen
         poseStack.translate(0.5D, 0.0D, 0.5D);
         poseStack.mulPose(Axis.YP.rotationDegrees(rotationFor(facing)));
         poseStack.translate(-0.5D, 0.0D, 0.5D);
-        poseStack.translate(0.0625D * 2.5D, 1.125D, 0.0D);
+        poseStack.translate(0.0D, 1.125D, 0.0D);
         poseStack.mulPose(Axis.YP.rotationDegrees(90.0F));
         poseStack.mulPose(Axis.XP.rotationDegrees(-90.0F));
-        poseStack.scale(0.75F, 0.75F, 0.75F);
-        stack.setCount(1);
-        Minecraft.getInstance().getItemRenderer().renderStatic(stack, ItemDisplayContext.NONE, packedLight, packedOverlay, poseStack, bufferSource, station.getLevel(), 0);
+        poseStack.scale(0.76923075F, 0.76923075F, 0.76923075F);
+        Minecraft.getInstance().getItemRenderer().renderStatic(stack.copyWithCount(1), ItemDisplayContext.FIXED, packedLight, packedOverlay, poseStack, bufferSource, station.getLevel(), 0);
         poseStack.popPose();
     }
 
@@ -51,5 +50,10 @@ public final class SolderingStationBlockEntityRenderer implements BlockEntityRen
     @Override
     public boolean shouldRenderOffScreen(SolderingStationBlockEntity blockEntity) {
         return true;
+    }
+
+    @Override
+    public int getViewDistance() {
+        return 256;
     }
 }

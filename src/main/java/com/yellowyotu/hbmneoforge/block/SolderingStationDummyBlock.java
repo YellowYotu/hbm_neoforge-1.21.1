@@ -8,8 +8,8 @@ import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.RenderShape;
@@ -42,10 +42,7 @@ public final class SolderingStationDummyBlock extends Block {
             for (int z = -1; z <= 1; z++) {
                 BlockPos candidate = pos.offset(x, 0, z);
                 BlockState state = level.getBlockState(candidate);
-                if (!state.is(ModBlocks.SOLDERING_STATION.get())) {
-                    continue;
-                }
-                if (SolderingStationBlock.getAllPositions(candidate, state.getValue(SolderingStationBlock.FACING)).contains(pos)) {
+                if (state.is(ModBlocks.SOLDERING_STATION.get()) && SolderingStationBlock.containsPosition(candidate, state.getValue(SolderingStationBlock.FACING), pos)) {
                     return candidate;
                 }
             }
@@ -67,7 +64,7 @@ public final class SolderingStationDummyBlock extends Block {
 
     @Override
     protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
-        if (!state.is(newState.getBlock()) && !level.isClientSide()) {
+        if (!state.is(newState.getBlock()) && !level.isClientSide() && !SolderingStationBlock.isRemovingMachine()) {
             BlockPos controller = findController(level, pos);
             if (controller != null) {
                 level.destroyBlock(controller, true);
