@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "hbm_neoforge:block/spotlight_incandescent_east"
+    },
+    "facing=west": {
+      "model": "hbm_neoforge:block/spotlight_incandescent_west"
+    },
+    "facing=south": {
+      "model": "hbm_neoforge:block/spotlight_incandescent_south"
+    },
+    "facing=north": {
+      "model": "hbm_neoforge:block/spotlight_incandescent_north"
+    },
+    "facing=up": {
+      "model": "hbm_neoforge:block/spotlight_incandescent_up"
+    },
+    "facing=down": {
+      "model": "hbm_neoforge:block/spotlight_incandescent_down"
+    }
+  }
+}

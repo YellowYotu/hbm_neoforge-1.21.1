@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "hbm_neoforge:concrete_silver"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:concrete_silver_slab",
+    "count": 6
+  }
+}

@@ -1,0 +1,2628 @@
+{
+  "variants": {
+    "facing=east,half=lower,open=false,progress=0": {
+      "model": "hbm_neoforge:block/sliding_seal_door_0",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=0": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=1": {
+      "model": "hbm_neoforge:block/sliding_seal_door_1",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=1": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=2": {
+      "model": "hbm_neoforge:block/sliding_seal_door_2",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=2": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=3": {
+      "model": "hbm_neoforge:block/sliding_seal_door_3",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=3": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=4": {
+      "model": "hbm_neoforge:block/sliding_seal_door_4",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=4": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=5": {
+      "model": "hbm_neoforge:block/sliding_seal_door_5",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=5": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=6": {
+      "model": "hbm_neoforge:block/sliding_seal_door_6",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=6": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=7": {
+      "model": "hbm_neoforge:block/sliding_seal_door_7",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=7": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=8": {
+      "model": "hbm_neoforge:block/sliding_seal_door_8",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=8": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=9": {
+      "model": "hbm_neoforge:block/sliding_seal_door_9",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=9": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=10": {
+      "model": "hbm_neoforge:block/sliding_seal_door_10",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=10": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=11": {
+      "model": "hbm_neoforge:block/sliding_seal_door_11",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=11": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=12": {
+      "model": "hbm_neoforge:block/sliding_seal_door_12",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=12": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=13": {
+      "model": "hbm_neoforge:block/sliding_seal_door_13",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=13": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=14": {
+      "model": "hbm_neoforge:block/sliding_seal_door_14",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=14": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=15": {
+      "model": "hbm_neoforge:block/sliding_seal_door_15",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=15": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=16": {
+      "model": "hbm_neoforge:block/sliding_seal_door_16",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=16": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=17": {
+      "model": "hbm_neoforge:block/sliding_seal_door_17",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=17": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=18": {
+      "model": "hbm_neoforge:block/sliding_seal_door_18",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=18": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=19": {
+      "model": "hbm_neoforge:block/sliding_seal_door_19",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=19": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=20": {
+      "model": "hbm_neoforge:block/sliding_seal_door_20",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=20": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=21": {
+      "model": "hbm_neoforge:block/sliding_seal_door_21",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=21": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=22": {
+      "model": "hbm_neoforge:block/sliding_seal_door_22",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=22": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=23": {
+      "model": "hbm_neoforge:block/sliding_seal_door_23",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=23": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=24": {
+      "model": "hbm_neoforge:block/sliding_seal_door_24",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=24": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=25": {
+      "model": "hbm_neoforge:block/sliding_seal_door_25",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=25": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=26": {
+      "model": "hbm_neoforge:block/sliding_seal_door_26",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=26": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=27": {
+      "model": "hbm_neoforge:block/sliding_seal_door_27",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=27": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=28": {
+      "model": "hbm_neoforge:block/sliding_seal_door_28",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=28": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=29": {
+      "model": "hbm_neoforge:block/sliding_seal_door_29",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=29": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=30": {
+      "model": "hbm_neoforge:block/sliding_seal_door_30",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=30": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=31": {
+      "model": "hbm_neoforge:block/sliding_seal_door_31",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=31": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=32": {
+      "model": "hbm_neoforge:block/sliding_seal_door_32",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=32": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=33": {
+      "model": "hbm_neoforge:block/sliding_seal_door_33",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=33": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=34": {
+      "model": "hbm_neoforge:block/sliding_seal_door_34",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=34": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=35": {
+      "model": "hbm_neoforge:block/sliding_seal_door_35",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=35": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=36": {
+      "model": "hbm_neoforge:block/sliding_seal_door_36",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=36": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=37": {
+      "model": "hbm_neoforge:block/sliding_seal_door_37",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=37": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=38": {
+      "model": "hbm_neoforge:block/sliding_seal_door_38",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=38": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=39": {
+      "model": "hbm_neoforge:block/sliding_seal_door_39",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=39": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=false,progress=40": {
+      "model": "hbm_neoforge:block/sliding_seal_door_40",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=false,progress=40": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=0": {
+      "model": "hbm_neoforge:block/sliding_seal_door_0",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=0": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=1": {
+      "model": "hbm_neoforge:block/sliding_seal_door_1",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=1": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=2": {
+      "model": "hbm_neoforge:block/sliding_seal_door_2",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=2": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=3": {
+      "model": "hbm_neoforge:block/sliding_seal_door_3",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=3": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=4": {
+      "model": "hbm_neoforge:block/sliding_seal_door_4",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=4": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=5": {
+      "model": "hbm_neoforge:block/sliding_seal_door_5",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=5": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=6": {
+      "model": "hbm_neoforge:block/sliding_seal_door_6",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=6": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=7": {
+      "model": "hbm_neoforge:block/sliding_seal_door_7",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=7": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=8": {
+      "model": "hbm_neoforge:block/sliding_seal_door_8",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=8": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=9": {
+      "model": "hbm_neoforge:block/sliding_seal_door_9",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=9": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=10": {
+      "model": "hbm_neoforge:block/sliding_seal_door_10",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=10": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=11": {
+      "model": "hbm_neoforge:block/sliding_seal_door_11",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=11": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=12": {
+      "model": "hbm_neoforge:block/sliding_seal_door_12",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=12": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=13": {
+      "model": "hbm_neoforge:block/sliding_seal_door_13",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=13": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=14": {
+      "model": "hbm_neoforge:block/sliding_seal_door_14",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=14": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=15": {
+      "model": "hbm_neoforge:block/sliding_seal_door_15",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=15": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=16": {
+      "model": "hbm_neoforge:block/sliding_seal_door_16",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=16": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=17": {
+      "model": "hbm_neoforge:block/sliding_seal_door_17",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=17": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=18": {
+      "model": "hbm_neoforge:block/sliding_seal_door_18",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=18": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=19": {
+      "model": "hbm_neoforge:block/sliding_seal_door_19",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=19": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=20": {
+      "model": "hbm_neoforge:block/sliding_seal_door_20",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=20": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=21": {
+      "model": "hbm_neoforge:block/sliding_seal_door_21",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=21": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=22": {
+      "model": "hbm_neoforge:block/sliding_seal_door_22",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=22": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=23": {
+      "model": "hbm_neoforge:block/sliding_seal_door_23",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=23": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=24": {
+      "model": "hbm_neoforge:block/sliding_seal_door_24",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=24": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=25": {
+      "model": "hbm_neoforge:block/sliding_seal_door_25",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=25": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=26": {
+      "model": "hbm_neoforge:block/sliding_seal_door_26",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=26": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=27": {
+      "model": "hbm_neoforge:block/sliding_seal_door_27",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=27": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=28": {
+      "model": "hbm_neoforge:block/sliding_seal_door_28",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=28": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=29": {
+      "model": "hbm_neoforge:block/sliding_seal_door_29",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=29": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=30": {
+      "model": "hbm_neoforge:block/sliding_seal_door_30",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=30": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=31": {
+      "model": "hbm_neoforge:block/sliding_seal_door_31",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=31": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=32": {
+      "model": "hbm_neoforge:block/sliding_seal_door_32",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=32": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=33": {
+      "model": "hbm_neoforge:block/sliding_seal_door_33",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=33": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=34": {
+      "model": "hbm_neoforge:block/sliding_seal_door_34",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=34": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=35": {
+      "model": "hbm_neoforge:block/sliding_seal_door_35",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=35": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=36": {
+      "model": "hbm_neoforge:block/sliding_seal_door_36",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=36": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=37": {
+      "model": "hbm_neoforge:block/sliding_seal_door_37",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=37": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=38": {
+      "model": "hbm_neoforge:block/sliding_seal_door_38",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=38": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=39": {
+      "model": "hbm_neoforge:block/sliding_seal_door_39",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=39": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=east,half=lower,open=true,progress=40": {
+      "model": "hbm_neoforge:block/sliding_seal_door_40",
+      "y": 0,
+      "uvlock": false
+    },
+    "facing=east,half=upper,open=true,progress=40": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=0": {
+      "model": "hbm_neoforge:block/sliding_seal_door_0",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=0": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=1": {
+      "model": "hbm_neoforge:block/sliding_seal_door_1",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=1": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=2": {
+      "model": "hbm_neoforge:block/sliding_seal_door_2",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=2": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=3": {
+      "model": "hbm_neoforge:block/sliding_seal_door_3",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=3": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=4": {
+      "model": "hbm_neoforge:block/sliding_seal_door_4",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=4": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=5": {
+      "model": "hbm_neoforge:block/sliding_seal_door_5",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=5": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=6": {
+      "model": "hbm_neoforge:block/sliding_seal_door_6",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=6": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=7": {
+      "model": "hbm_neoforge:block/sliding_seal_door_7",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=7": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=8": {
+      "model": "hbm_neoforge:block/sliding_seal_door_8",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=8": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=9": {
+      "model": "hbm_neoforge:block/sliding_seal_door_9",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=9": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=10": {
+      "model": "hbm_neoforge:block/sliding_seal_door_10",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=10": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=11": {
+      "model": "hbm_neoforge:block/sliding_seal_door_11",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=11": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=12": {
+      "model": "hbm_neoforge:block/sliding_seal_door_12",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=12": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=13": {
+      "model": "hbm_neoforge:block/sliding_seal_door_13",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=13": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=14": {
+      "model": "hbm_neoforge:block/sliding_seal_door_14",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=14": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=15": {
+      "model": "hbm_neoforge:block/sliding_seal_door_15",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=15": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=16": {
+      "model": "hbm_neoforge:block/sliding_seal_door_16",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=16": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=17": {
+      "model": "hbm_neoforge:block/sliding_seal_door_17",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=17": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=18": {
+      "model": "hbm_neoforge:block/sliding_seal_door_18",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=18": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=19": {
+      "model": "hbm_neoforge:block/sliding_seal_door_19",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=19": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=20": {
+      "model": "hbm_neoforge:block/sliding_seal_door_20",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=20": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=21": {
+      "model": "hbm_neoforge:block/sliding_seal_door_21",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=21": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=22": {
+      "model": "hbm_neoforge:block/sliding_seal_door_22",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=22": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=23": {
+      "model": "hbm_neoforge:block/sliding_seal_door_23",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=23": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=24": {
+      "model": "hbm_neoforge:block/sliding_seal_door_24",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=24": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=25": {
+      "model": "hbm_neoforge:block/sliding_seal_door_25",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=25": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=26": {
+      "model": "hbm_neoforge:block/sliding_seal_door_26",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=26": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=27": {
+      "model": "hbm_neoforge:block/sliding_seal_door_27",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=27": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=28": {
+      "model": "hbm_neoforge:block/sliding_seal_door_28",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=28": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=29": {
+      "model": "hbm_neoforge:block/sliding_seal_door_29",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=29": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=30": {
+      "model": "hbm_neoforge:block/sliding_seal_door_30",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=30": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=31": {
+      "model": "hbm_neoforge:block/sliding_seal_door_31",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=31": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=32": {
+      "model": "hbm_neoforge:block/sliding_seal_door_32",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=32": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=33": {
+      "model": "hbm_neoforge:block/sliding_seal_door_33",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=33": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=34": {
+      "model": "hbm_neoforge:block/sliding_seal_door_34",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=34": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=35": {
+      "model": "hbm_neoforge:block/sliding_seal_door_35",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=35": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=36": {
+      "model": "hbm_neoforge:block/sliding_seal_door_36",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=36": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=37": {
+      "model": "hbm_neoforge:block/sliding_seal_door_37",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=37": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=38": {
+      "model": "hbm_neoforge:block/sliding_seal_door_38",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=38": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=39": {
+      "model": "hbm_neoforge:block/sliding_seal_door_39",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=39": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=false,progress=40": {
+      "model": "hbm_neoforge:block/sliding_seal_door_40",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=false,progress=40": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=0": {
+      "model": "hbm_neoforge:block/sliding_seal_door_0",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=0": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=1": {
+      "model": "hbm_neoforge:block/sliding_seal_door_1",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=1": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=2": {
+      "model": "hbm_neoforge:block/sliding_seal_door_2",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=2": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=3": {
+      "model": "hbm_neoforge:block/sliding_seal_door_3",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=3": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=4": {
+      "model": "hbm_neoforge:block/sliding_seal_door_4",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=4": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=5": {
+      "model": "hbm_neoforge:block/sliding_seal_door_5",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=5": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=6": {
+      "model": "hbm_neoforge:block/sliding_seal_door_6",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=6": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=7": {
+      "model": "hbm_neoforge:block/sliding_seal_door_7",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=7": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=8": {
+      "model": "hbm_neoforge:block/sliding_seal_door_8",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=8": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=9": {
+      "model": "hbm_neoforge:block/sliding_seal_door_9",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=9": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=10": {
+      "model": "hbm_neoforge:block/sliding_seal_door_10",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=10": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=11": {
+      "model": "hbm_neoforge:block/sliding_seal_door_11",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=11": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=12": {
+      "model": "hbm_neoforge:block/sliding_seal_door_12",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=12": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=13": {
+      "model": "hbm_neoforge:block/sliding_seal_door_13",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=13": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=14": {
+      "model": "hbm_neoforge:block/sliding_seal_door_14",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=14": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=15": {
+      "model": "hbm_neoforge:block/sliding_seal_door_15",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=15": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=16": {
+      "model": "hbm_neoforge:block/sliding_seal_door_16",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=16": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=17": {
+      "model": "hbm_neoforge:block/sliding_seal_door_17",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=17": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=18": {
+      "model": "hbm_neoforge:block/sliding_seal_door_18",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=18": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=19": {
+      "model": "hbm_neoforge:block/sliding_seal_door_19",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=19": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=20": {
+      "model": "hbm_neoforge:block/sliding_seal_door_20",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=20": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=21": {
+      "model": "hbm_neoforge:block/sliding_seal_door_21",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=21": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=22": {
+      "model": "hbm_neoforge:block/sliding_seal_door_22",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=22": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=23": {
+      "model": "hbm_neoforge:block/sliding_seal_door_23",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=23": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=24": {
+      "model": "hbm_neoforge:block/sliding_seal_door_24",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=24": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=25": {
+      "model": "hbm_neoforge:block/sliding_seal_door_25",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=25": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=26": {
+      "model": "hbm_neoforge:block/sliding_seal_door_26",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=26": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=27": {
+      "model": "hbm_neoforge:block/sliding_seal_door_27",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=27": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=28": {
+      "model": "hbm_neoforge:block/sliding_seal_door_28",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=28": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=29": {
+      "model": "hbm_neoforge:block/sliding_seal_door_29",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=29": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=30": {
+      "model": "hbm_neoforge:block/sliding_seal_door_30",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=30": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=31": {
+      "model": "hbm_neoforge:block/sliding_seal_door_31",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=31": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=32": {
+      "model": "hbm_neoforge:block/sliding_seal_door_32",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=32": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=33": {
+      "model": "hbm_neoforge:block/sliding_seal_door_33",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=33": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=34": {
+      "model": "hbm_neoforge:block/sliding_seal_door_34",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=34": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=35": {
+      "model": "hbm_neoforge:block/sliding_seal_door_35",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=35": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=36": {
+      "model": "hbm_neoforge:block/sliding_seal_door_36",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=36": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=37": {
+      "model": "hbm_neoforge:block/sliding_seal_door_37",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=37": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=38": {
+      "model": "hbm_neoforge:block/sliding_seal_door_38",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=38": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=39": {
+      "model": "hbm_neoforge:block/sliding_seal_door_39",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=39": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=south,half=lower,open=true,progress=40": {
+      "model": "hbm_neoforge:block/sliding_seal_door_40",
+      "y": 270,
+      "uvlock": false
+    },
+    "facing=south,half=upper,open=true,progress=40": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=0": {
+      "model": "hbm_neoforge:block/sliding_seal_door_0",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=0": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=1": {
+      "model": "hbm_neoforge:block/sliding_seal_door_1",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=1": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=2": {
+      "model": "hbm_neoforge:block/sliding_seal_door_2",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=2": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=3": {
+      "model": "hbm_neoforge:block/sliding_seal_door_3",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=3": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=4": {
+      "model": "hbm_neoforge:block/sliding_seal_door_4",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=4": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=5": {
+      "model": "hbm_neoforge:block/sliding_seal_door_5",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=5": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=6": {
+      "model": "hbm_neoforge:block/sliding_seal_door_6",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=6": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=7": {
+      "model": "hbm_neoforge:block/sliding_seal_door_7",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=7": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=8": {
+      "model": "hbm_neoforge:block/sliding_seal_door_8",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=8": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=9": {
+      "model": "hbm_neoforge:block/sliding_seal_door_9",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=9": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=10": {
+      "model": "hbm_neoforge:block/sliding_seal_door_10",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=10": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=11": {
+      "model": "hbm_neoforge:block/sliding_seal_door_11",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=11": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=12": {
+      "model": "hbm_neoforge:block/sliding_seal_door_12",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=12": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=13": {
+      "model": "hbm_neoforge:block/sliding_seal_door_13",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=13": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=14": {
+      "model": "hbm_neoforge:block/sliding_seal_door_14",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=14": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=15": {
+      "model": "hbm_neoforge:block/sliding_seal_door_15",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=15": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=16": {
+      "model": "hbm_neoforge:block/sliding_seal_door_16",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=16": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=17": {
+      "model": "hbm_neoforge:block/sliding_seal_door_17",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=17": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=18": {
+      "model": "hbm_neoforge:block/sliding_seal_door_18",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=18": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=19": {
+      "model": "hbm_neoforge:block/sliding_seal_door_19",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=19": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=20": {
+      "model": "hbm_neoforge:block/sliding_seal_door_20",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=20": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=21": {
+      "model": "hbm_neoforge:block/sliding_seal_door_21",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=21": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=22": {
+      "model": "hbm_neoforge:block/sliding_seal_door_22",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=22": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=23": {
+      "model": "hbm_neoforge:block/sliding_seal_door_23",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=23": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=24": {
+      "model": "hbm_neoforge:block/sliding_seal_door_24",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=24": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=25": {
+      "model": "hbm_neoforge:block/sliding_seal_door_25",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=25": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=26": {
+      "model": "hbm_neoforge:block/sliding_seal_door_26",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=26": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=27": {
+      "model": "hbm_neoforge:block/sliding_seal_door_27",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=27": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=28": {
+      "model": "hbm_neoforge:block/sliding_seal_door_28",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=28": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=29": {
+      "model": "hbm_neoforge:block/sliding_seal_door_29",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=29": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=30": {
+      "model": "hbm_neoforge:block/sliding_seal_door_30",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=30": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=31": {
+      "model": "hbm_neoforge:block/sliding_seal_door_31",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=31": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=32": {
+      "model": "hbm_neoforge:block/sliding_seal_door_32",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=32": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=33": {
+      "model": "hbm_neoforge:block/sliding_seal_door_33",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=33": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=34": {
+      "model": "hbm_neoforge:block/sliding_seal_door_34",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=34": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=35": {
+      "model": "hbm_neoforge:block/sliding_seal_door_35",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=35": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=36": {
+      "model": "hbm_neoforge:block/sliding_seal_door_36",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=36": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=37": {
+      "model": "hbm_neoforge:block/sliding_seal_door_37",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=37": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=38": {
+      "model": "hbm_neoforge:block/sliding_seal_door_38",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=38": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=39": {
+      "model": "hbm_neoforge:block/sliding_seal_door_39",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=39": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=false,progress=40": {
+      "model": "hbm_neoforge:block/sliding_seal_door_40",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=false,progress=40": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=0": {
+      "model": "hbm_neoforge:block/sliding_seal_door_0",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=0": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=1": {
+      "model": "hbm_neoforge:block/sliding_seal_door_1",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=1": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=2": {
+      "model": "hbm_neoforge:block/sliding_seal_door_2",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=2": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=3": {
+      "model": "hbm_neoforge:block/sliding_seal_door_3",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=3": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=4": {
+      "model": "hbm_neoforge:block/sliding_seal_door_4",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=4": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=5": {
+      "model": "hbm_neoforge:block/sliding_seal_door_5",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=5": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=6": {
+      "model": "hbm_neoforge:block/sliding_seal_door_6",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=6": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=7": {
+      "model": "hbm_neoforge:block/sliding_seal_door_7",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=7": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=8": {
+      "model": "hbm_neoforge:block/sliding_seal_door_8",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=8": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=9": {
+      "model": "hbm_neoforge:block/sliding_seal_door_9",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=9": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=10": {
+      "model": "hbm_neoforge:block/sliding_seal_door_10",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=10": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=11": {
+      "model": "hbm_neoforge:block/sliding_seal_door_11",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=11": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=12": {
+      "model": "hbm_neoforge:block/sliding_seal_door_12",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=12": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=13": {
+      "model": "hbm_neoforge:block/sliding_seal_door_13",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=13": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=14": {
+      "model": "hbm_neoforge:block/sliding_seal_door_14",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=14": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=15": {
+      "model": "hbm_neoforge:block/sliding_seal_door_15",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=15": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=16": {
+      "model": "hbm_neoforge:block/sliding_seal_door_16",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=16": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=17": {
+      "model": "hbm_neoforge:block/sliding_seal_door_17",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=17": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=18": {
+      "model": "hbm_neoforge:block/sliding_seal_door_18",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=18": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=19": {
+      "model": "hbm_neoforge:block/sliding_seal_door_19",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=19": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=20": {
+      "model": "hbm_neoforge:block/sliding_seal_door_20",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=20": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=21": {
+      "model": "hbm_neoforge:block/sliding_seal_door_21",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=21": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=22": {
+      "model": "hbm_neoforge:block/sliding_seal_door_22",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=22": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=23": {
+      "model": "hbm_neoforge:block/sliding_seal_door_23",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=23": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=24": {
+      "model": "hbm_neoforge:block/sliding_seal_door_24",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=24": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=25": {
+      "model": "hbm_neoforge:block/sliding_seal_door_25",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=25": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=26": {
+      "model": "hbm_neoforge:block/sliding_seal_door_26",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=26": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=27": {
+      "model": "hbm_neoforge:block/sliding_seal_door_27",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=27": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=28": {
+      "model": "hbm_neoforge:block/sliding_seal_door_28",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=28": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=29": {
+      "model": "hbm_neoforge:block/sliding_seal_door_29",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=29": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=30": {
+      "model": "hbm_neoforge:block/sliding_seal_door_30",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=30": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=31": {
+      "model": "hbm_neoforge:block/sliding_seal_door_31",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=31": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=32": {
+      "model": "hbm_neoforge:block/sliding_seal_door_32",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=32": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=33": {
+      "model": "hbm_neoforge:block/sliding_seal_door_33",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=33": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=34": {
+      "model": "hbm_neoforge:block/sliding_seal_door_34",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=34": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=35": {
+      "model": "hbm_neoforge:block/sliding_seal_door_35",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=35": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=36": {
+      "model": "hbm_neoforge:block/sliding_seal_door_36",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=36": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=37": {
+      "model": "hbm_neoforge:block/sliding_seal_door_37",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=37": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=38": {
+      "model": "hbm_neoforge:block/sliding_seal_door_38",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=38": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=39": {
+      "model": "hbm_neoforge:block/sliding_seal_door_39",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=39": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=west,half=lower,open=true,progress=40": {
+      "model": "hbm_neoforge:block/sliding_seal_door_40",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west,half=upper,open=true,progress=40": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=0": {
+      "model": "hbm_neoforge:block/sliding_seal_door_0",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=0": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=1": {
+      "model": "hbm_neoforge:block/sliding_seal_door_1",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=1": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=2": {
+      "model": "hbm_neoforge:block/sliding_seal_door_2",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=2": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=3": {
+      "model": "hbm_neoforge:block/sliding_seal_door_3",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=3": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=4": {
+      "model": "hbm_neoforge:block/sliding_seal_door_4",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=4": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=5": {
+      "model": "hbm_neoforge:block/sliding_seal_door_5",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=5": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=6": {
+      "model": "hbm_neoforge:block/sliding_seal_door_6",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=6": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=7": {
+      "model": "hbm_neoforge:block/sliding_seal_door_7",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=7": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=8": {
+      "model": "hbm_neoforge:block/sliding_seal_door_8",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=8": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=9": {
+      "model": "hbm_neoforge:block/sliding_seal_door_9",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=9": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=10": {
+      "model": "hbm_neoforge:block/sliding_seal_door_10",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=10": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=11": {
+      "model": "hbm_neoforge:block/sliding_seal_door_11",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=11": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=12": {
+      "model": "hbm_neoforge:block/sliding_seal_door_12",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=12": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=13": {
+      "model": "hbm_neoforge:block/sliding_seal_door_13",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=13": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=14": {
+      "model": "hbm_neoforge:block/sliding_seal_door_14",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=14": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=15": {
+      "model": "hbm_neoforge:block/sliding_seal_door_15",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=15": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=16": {
+      "model": "hbm_neoforge:block/sliding_seal_door_16",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=16": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=17": {
+      "model": "hbm_neoforge:block/sliding_seal_door_17",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=17": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=18": {
+      "model": "hbm_neoforge:block/sliding_seal_door_18",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=18": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=19": {
+      "model": "hbm_neoforge:block/sliding_seal_door_19",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=19": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=20": {
+      "model": "hbm_neoforge:block/sliding_seal_door_20",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=20": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=21": {
+      "model": "hbm_neoforge:block/sliding_seal_door_21",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=21": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=22": {
+      "model": "hbm_neoforge:block/sliding_seal_door_22",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=22": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=23": {
+      "model": "hbm_neoforge:block/sliding_seal_door_23",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=23": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=24": {
+      "model": "hbm_neoforge:block/sliding_seal_door_24",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=24": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=25": {
+      "model": "hbm_neoforge:block/sliding_seal_door_25",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=25": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=26": {
+      "model": "hbm_neoforge:block/sliding_seal_door_26",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=26": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=27": {
+      "model": "hbm_neoforge:block/sliding_seal_door_27",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=27": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=28": {
+      "model": "hbm_neoforge:block/sliding_seal_door_28",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=28": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=29": {
+      "model": "hbm_neoforge:block/sliding_seal_door_29",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=29": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=30": {
+      "model": "hbm_neoforge:block/sliding_seal_door_30",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=30": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=31": {
+      "model": "hbm_neoforge:block/sliding_seal_door_31",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=31": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=32": {
+      "model": "hbm_neoforge:block/sliding_seal_door_32",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=32": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=33": {
+      "model": "hbm_neoforge:block/sliding_seal_door_33",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=33": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=34": {
+      "model": "hbm_neoforge:block/sliding_seal_door_34",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=34": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=35": {
+      "model": "hbm_neoforge:block/sliding_seal_door_35",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=35": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=36": {
+      "model": "hbm_neoforge:block/sliding_seal_door_36",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=36": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=37": {
+      "model": "hbm_neoforge:block/sliding_seal_door_37",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=37": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=38": {
+      "model": "hbm_neoforge:block/sliding_seal_door_38",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=38": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=39": {
+      "model": "hbm_neoforge:block/sliding_seal_door_39",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=39": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=false,progress=40": {
+      "model": "hbm_neoforge:block/sliding_seal_door_40",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=false,progress=40": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=0": {
+      "model": "hbm_neoforge:block/sliding_seal_door_0",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=0": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=1": {
+      "model": "hbm_neoforge:block/sliding_seal_door_1",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=1": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=2": {
+      "model": "hbm_neoforge:block/sliding_seal_door_2",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=2": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=3": {
+      "model": "hbm_neoforge:block/sliding_seal_door_3",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=3": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=4": {
+      "model": "hbm_neoforge:block/sliding_seal_door_4",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=4": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=5": {
+      "model": "hbm_neoforge:block/sliding_seal_door_5",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=5": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=6": {
+      "model": "hbm_neoforge:block/sliding_seal_door_6",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=6": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=7": {
+      "model": "hbm_neoforge:block/sliding_seal_door_7",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=7": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=8": {
+      "model": "hbm_neoforge:block/sliding_seal_door_8",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=8": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=9": {
+      "model": "hbm_neoforge:block/sliding_seal_door_9",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=9": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=10": {
+      "model": "hbm_neoforge:block/sliding_seal_door_10",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=10": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=11": {
+      "model": "hbm_neoforge:block/sliding_seal_door_11",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=11": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=12": {
+      "model": "hbm_neoforge:block/sliding_seal_door_12",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=12": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=13": {
+      "model": "hbm_neoforge:block/sliding_seal_door_13",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=13": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=14": {
+      "model": "hbm_neoforge:block/sliding_seal_door_14",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=14": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=15": {
+      "model": "hbm_neoforge:block/sliding_seal_door_15",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=15": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=16": {
+      "model": "hbm_neoforge:block/sliding_seal_door_16",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=16": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=17": {
+      "model": "hbm_neoforge:block/sliding_seal_door_17",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=17": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=18": {
+      "model": "hbm_neoforge:block/sliding_seal_door_18",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=18": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=19": {
+      "model": "hbm_neoforge:block/sliding_seal_door_19",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=19": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=20": {
+      "model": "hbm_neoforge:block/sliding_seal_door_20",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=20": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=21": {
+      "model": "hbm_neoforge:block/sliding_seal_door_21",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=21": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=22": {
+      "model": "hbm_neoforge:block/sliding_seal_door_22",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=22": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=23": {
+      "model": "hbm_neoforge:block/sliding_seal_door_23",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=23": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=24": {
+      "model": "hbm_neoforge:block/sliding_seal_door_24",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=24": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=25": {
+      "model": "hbm_neoforge:block/sliding_seal_door_25",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=25": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=26": {
+      "model": "hbm_neoforge:block/sliding_seal_door_26",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=26": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=27": {
+      "model": "hbm_neoforge:block/sliding_seal_door_27",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=27": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=28": {
+      "model": "hbm_neoforge:block/sliding_seal_door_28",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=28": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=29": {
+      "model": "hbm_neoforge:block/sliding_seal_door_29",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=29": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=30": {
+      "model": "hbm_neoforge:block/sliding_seal_door_30",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=30": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=31": {
+      "model": "hbm_neoforge:block/sliding_seal_door_31",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=31": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=32": {
+      "model": "hbm_neoforge:block/sliding_seal_door_32",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=32": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=33": {
+      "model": "hbm_neoforge:block/sliding_seal_door_33",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=33": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=34": {
+      "model": "hbm_neoforge:block/sliding_seal_door_34",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=34": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=35": {
+      "model": "hbm_neoforge:block/sliding_seal_door_35",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=35": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=36": {
+      "model": "hbm_neoforge:block/sliding_seal_door_36",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=36": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=37": {
+      "model": "hbm_neoforge:block/sliding_seal_door_37",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=37": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=38": {
+      "model": "hbm_neoforge:block/sliding_seal_door_38",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=38": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=39": {
+      "model": "hbm_neoforge:block/sliding_seal_door_39",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=39": {
+      "model": "hbm_neoforge:block/empty"
+    },
+    "facing=north,half=lower,open=true,progress=40": {
+      "model": "hbm_neoforge:block/sliding_seal_door_40",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=north,half=upper,open=true,progress=40": {
+      "model": "hbm_neoforge:block/empty"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "ingredient": {
+    "item": "hbm_neoforge:gravel_obsidian"
+  },
+  "result": {
+    "id": "minecraft:obsidian"
+  },
+  "experience": 0.0,
+  "cookingtime": 200
+}

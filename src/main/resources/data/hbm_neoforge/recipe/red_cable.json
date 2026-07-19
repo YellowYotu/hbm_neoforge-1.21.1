@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " I ",
+    "WWW",
+    " I "
+  ],
+  "key": {
+    "I": {
+      "item": "hbm_neoforge:plate_polymer"
+    },
+    "W": {
+      "item": "hbm_neoforge:wire_red_copper"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:red_cable",
+    "count": 1
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+    "hbm_neoforge:ore_uranium",
+    "hbm_neoforge:ore_titanium",
+    "hbm_neoforge:ore_tungsten",
+    "hbm_neoforge:ore_aluminium",
+    "hbm_neoforge:ore_beryllium",
+    "hbm_neoforge:ore_lead",
+    "hbm_neoforge:ore_cobalt",
+    "hbm_neoforge:ore_rare_earth",
+    "hbm_neoforge:block_cobalt",
+    "hbm_neoforge:red_cable",
+    "hbm_neoforge:machine_battery_socket",
+    "hbm_neoforge:machine_shredder",
+    "hbm_neoforge:gravel_obsidian"
+  ]
+}

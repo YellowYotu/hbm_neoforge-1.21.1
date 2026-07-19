@@ -1,0 +1,121 @@
+{
+  "player.cough": {
+    "subtitle": "subtitles.hbm_neoforge.player.cough",
+    "sounds": [
+      "hbm_neoforge:player/cough1",
+      "hbm_neoforge:player/cough2",
+      "hbm_neoforge:player/cough3",
+      "hbm_neoforge:player/cough4"
+    ]
+  },
+  "player.vomit": {
+    "subtitle": "subtitles.hbm_neoforge.player.vomit",
+    "sounds": [
+      "hbm_neoforge:player/vomit"
+    ]
+  },
+  "item.geiger1": {
+    "subtitle": "subtitles.hbm_neoforge.item.geiger",
+    "sounds": [
+      "hbm_neoforge:tool/geiger1"
+    ]
+  },
+  "item.geiger2": {
+    "subtitle": "subtitles.hbm_neoforge.item.geiger",
+    "sounds": [
+      "hbm_neoforge:tool/geiger2"
+    ]
+  },
+  "item.geiger3": {
+    "subtitle": "subtitles.hbm_neoforge.item.geiger",
+    "sounds": [
+      "hbm_neoforge:tool/geiger3"
+    ]
+  },
+  "item.geiger4": {
+    "subtitle": "subtitles.hbm_neoforge.item.geiger",
+    "sounds": [
+      "hbm_neoforge:tool/geiger4"
+    ]
+  },
+  "item.geiger5": {
+    "subtitle": "subtitles.hbm_neoforge.item.geiger",
+    "sounds": [
+      "hbm_neoforge:tool/geiger5"
+    ]
+  },
+  "item.geiger6": {
+    "subtitle": "subtitles.hbm_neoforge.item.geiger",
+    "sounds": [
+      "hbm_neoforge:tool/geiger6"
+    ]
+  },
+  "block.soldering_operate": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "hbm_neoforge:block/assemblercut",
+        "stream": true
+      }
+    ]
+  },
+  "block.assembler_operate": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "hbm_neoforge:block/motor",
+        "stream": true
+      }
+    ]
+  },
+  "block.assembler_strike": {
+    "category": "block",
+    "sounds": [
+      "hbm_neoforge:block/assembler_strike1",
+      "hbm_neoforge:block/assembler_strike2"
+    ]
+  },
+  "door.sliding_seal_move": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "hbm_neoforge:block/door/doormove2",
+        "stream": false
+      }
+    ]
+  },
+  "door.sliding_seal_stop": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "hbm_neoforge:block/door/metal_stop1",
+        "stream": false
+      }
+    ]
+  },
+  "item.radaway": {
+    "subtitle": "subtitles.hbm_neoforge.item.radaway",
+    "sounds": [
+      "hbm_neoforge:tool/radaway"
+    ]
+  },
+  "item.upgrade_plug": {
+    "category": "block",
+    "subtitle": "subtitles.hbm_neoforge.item.upgrade_plug",
+    "sounds": [
+      "hbm_neoforge:tool/upgradeplug"
+    ]
+  },
+  "block.assembler_start": {
+    "category": "block",
+    "sounds": [
+      "hbm_neoforge:block/assemblerstart"
+    ]
+  },
+  "block.assembler_stop": {
+    "category": "block",
+    "sounds": [
+      "hbm_neoforge:block/assemblerstop"
+    ]
+  }
+}

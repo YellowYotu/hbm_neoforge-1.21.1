@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "hbm_neoforge:ore_uranium"
+        }
+      ]
+    }
+  ],
+  "random_sequence": "hbm_neoforge:blocks/ore_uranium"
+}

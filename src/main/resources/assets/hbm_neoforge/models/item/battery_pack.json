@@ -1,0 +1,54 @@
+{
+  "loader": "neoforge:obj",
+  "model": "hbm_neoforge:models/obj/battery_pack.obj",
+  "flip_v": true,
+  "automatic_culling": false,
+  "shade_quads": true,
+  "visibility": {
+    "Supports": false,
+    "Capacitor": false,
+    "Battery": true,
+    "Socket": false
+  },
+  "textures": {
+    "texture0": "hbm_neoforge:item/battery_pack",
+    "particle": "hbm_neoforge:item/battery_pack"
+  },
+  "display": {
+    "gui": {
+      "rotation": [20, 225, 0],
+      "translation": [0, -1, 0],
+      "scale": [0.42, 0.42, 0.42]
+    },
+    "ground": {
+      "rotation": [0, 0, 0],
+      "translation": [0, 2, 0],
+      "scale": [0.22, 0.22, 0.22]
+    },
+    "fixed": {
+      "rotation": [0, 180, 0],
+      "translation": [0, 0, 0],
+      "scale": [0.30, 0.30, 0.30]
+    },
+    "firstperson_righthand": {
+      "rotation": [0, 180, 0],
+      "translation": [0, 0, 0],
+      "scale": [0.28, 0.28, 0.28]
+    },
+    "firstperson_lefthand": {
+      "rotation": [0, 180, 0],
+      "translation": [0, 0, 0],
+      "scale": [0.28, 0.28, 0.28]
+    },
+    "thirdperson_righthand": {
+      "rotation": [75, 180, 0],
+      "translation": [0, 2, 0],
+      "scale": [0.24, 0.24, 0.24]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [75, 180, 0],
+      "translation": [0, 2, 0],
+      "scale": [0.24, 0.24, 0.24]
+    }
+  }
+}

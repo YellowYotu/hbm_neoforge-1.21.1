@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=east": { "model": "hbm_neoforge:block/soldering_station" },
+    "facing=north": { "model": "hbm_neoforge:block/soldering_station", "y": 90 },
+    "facing=west": { "model": "hbm_neoforge:block/soldering_station", "y": 180 },
+    "facing=south": { "model": "hbm_neoforge:block/soldering_station", "y": 270 }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_glass_pane_side_alt",
+  "textures": {
+    "pane": "hbm_neoforge:block/reinforced_glass_pane",
+    "edge": "hbm_neoforge:block/reinforced_glass_pane"
+  }
+}

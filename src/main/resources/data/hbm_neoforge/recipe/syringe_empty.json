@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "P  ",
+    "B  ",
+    "C  "
+  ],
+  "key": {
+    "P": {
+      "item": "hbm_neoforge:plate_iron"
+    },
+    "B": {
+      "item": "minecraft:iron_bars"
+    },
+    "C": {
+      "item": "hbm_neoforge:cell_empty"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:syringe_empty",
+    "count": 6
+  }
+}

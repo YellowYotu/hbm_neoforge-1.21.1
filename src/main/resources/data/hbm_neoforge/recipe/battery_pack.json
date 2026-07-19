@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IRI",
+    "RCR",
+    "IRI"
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "C": {
+      "item": "hbm_neoforge:wire_copper"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:battery_pack",
+    "count": 1
+  }
+}

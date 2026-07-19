@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "G  ",
+    "W  ",
+    "I  "
+  ],
+  "key": {
+    "G": {
+      "tag": "minecraft:glass_panes"
+    },
+    "W": {
+      "item": "hbm_neoforge:wire_tungsten"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:spotlight_incandescent",
+    "count": 8
+  }
+}

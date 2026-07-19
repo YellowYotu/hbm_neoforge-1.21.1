@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    " C ",
+    "   "
+  ],
+  "key": {
+    "C": {
+      "item": "hbm_neoforge:geiger_counter"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:geiger",
+    "count": 1
+  }
+}

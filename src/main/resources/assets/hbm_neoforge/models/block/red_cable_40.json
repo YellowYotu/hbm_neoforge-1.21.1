@@ -1,0 +1,22 @@
+{
+  "loader": "neoforge:obj",
+  "model": "hbm_neoforge:models/block/cable_neo.obj",
+  "flip_v": true,
+  "automatic_culling": false,
+  "shade_quads": true,
+  "visibility": {
+    "negY": true,
+    "negX": false,
+    "negZ": false,
+    "posX": true,
+    "posY": false,
+    "Core": true,
+    "posZ": false,
+    "CZ": false,
+    "CX": false,
+    "CY": false
+  },
+  "textures": {
+    "particle": "hbm_neoforge:block/cable_neo"
+  }
+}

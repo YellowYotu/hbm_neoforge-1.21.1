@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " S ",
+    "G G",
+    " S "
+  ],
+  "key": {
+    "S": {
+      "item": "hbm_neoforge:plate_steel"
+    },
+    "G": {
+      "tag": "minecraft:glass_panes"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:cell_empty",
+    "count": 6
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "ingredient": {
+    "item": "hbm_neoforge:ore_tungsten"
+  },
+  "result": {
+    "id": "hbm_neoforge:ingot_tungsten"
+  },
+  "experience": 0.7,
+  "cookingtime": 100
+}

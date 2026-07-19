@@ -1,0 +1,5 @@
+{
+  "loader": "neoforge:obj",
+  "model": "hbm_neoforge:models/block/spotlight_incandescent_north.obj",
+  "flip_v": true
+}

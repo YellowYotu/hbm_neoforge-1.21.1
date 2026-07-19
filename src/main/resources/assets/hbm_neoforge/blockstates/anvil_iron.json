@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "hbm_neoforge:block/anvil_iron", "y": 0 },
+    "facing=east": { "model": "hbm_neoforge:block/anvil_iron", "y": 90 },
+    "facing=south": { "model": "hbm_neoforge:block/anvil_iron", "y": 180 },
+    "facing=west": { "model": "hbm_neoforge:block/anvil_iron", "y": 270 }
+  }
+}

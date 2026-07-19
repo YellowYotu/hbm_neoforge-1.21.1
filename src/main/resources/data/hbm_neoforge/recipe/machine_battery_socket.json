@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ISI",
+    "RCR",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "S": {
+      "item": "hbm_neoforge:plate_steel"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "C": {
+      "item": "hbm_neoforge:red_cable"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:machine_battery_socket",
+    "count": 1
+  }
+}

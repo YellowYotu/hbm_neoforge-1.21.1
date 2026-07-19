@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "hbm_neoforge:block/concrete_lime",
+    "top": "hbm_neoforge:block/concrete_lime",
+    "side": "hbm_neoforge:block/concrete_lime"
+  }
+}
