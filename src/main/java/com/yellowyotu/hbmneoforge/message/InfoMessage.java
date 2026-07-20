@@ -32,7 +32,7 @@ public final class InfoMessage {
         player.sendSystemMessage(Component.literal("HBM's Nuclear Tech - Unofficial NeoForge Edition").withStyle(ChatFormatting.GOLD, ChatFormatting.BOLD));
         player.sendSystemMessage(Component.literal("PRE-ALPHA VERSION WARNING").withStyle(ChatFormatting.RED, ChatFormatting.BOLD));
         player.sendSystemMessage(Component.empty());
-        player.sendSystemMessage(Component.literal("This mod is currently in alpha and is not ready for survival gameplay.").withStyle(ChatFormatting.YELLOW));
+        player.sendSystemMessage(Component.literal("This mod is currently in pre-alpha and is not ready for survival gameplay.").withStyle(ChatFormatting.YELLOW));
         player.sendSystemMessage(Component.literal("Features may be unfinished, unbalanced, missing or changed in future updates.").withStyle(ChatFormatting.YELLOW));
         player.sendSystemMessage(Component.literal("Bugs, crashes and world-breaking changes may occur.").withStyle(ChatFormatting.RED));
         player.sendSystemMessage(Component.empty());
