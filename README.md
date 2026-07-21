@@ -27,3 +27,4 @@ Please note that this project is currently in its **Early Alpha** stage. We have
 
 ##  Links & Credits
 *   **Original Mod by:** [HbmMods](https://github.com/HbmMods/Hbm-s-Nuclear-Tech-GIT) (Huge thanks to the original creators!)
+*   **CurseForge [Mod](https://www.curseforge.com/minecraft/mc-mods/hbms-nuclear-tech-unofficial-neoforge-edition)
