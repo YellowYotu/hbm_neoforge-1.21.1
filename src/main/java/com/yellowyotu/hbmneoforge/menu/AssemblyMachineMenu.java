@@ -39,7 +39,7 @@ public final class AssemblyMachineMenu extends AbstractContainerMenu {
         access = ContainerLevelAccess.create(inventory.player.level(), machine.getBlockPos());
         ItemStackHandler handler = machine.getInventory();
         addSlot(new BatterySlot(handler, AssemblyMachineBlockEntity.SLOT_BATTERY, 152, 81));
-        addSlot(new UpgradeSlot(handler, AssemblyMachineBlockEntity.SLOT_FILTER, 35, 126));
+        addSlot(new DisabledSlot(handler, AssemblyMachineBlockEntity.SLOT_FILTER));
         addSlot(new UpgradeSlot(handler, AssemblyMachineBlockEntity.SLOT_UPGRADE_1, 152, 108));
         addSlot(new UpgradeSlot(handler, AssemblyMachineBlockEntity.SLOT_UPGRADE_2, 170, 108));
         for (int row = 0; row < 4; row++) {
@@ -133,7 +133,7 @@ public final class AssemblyMachineMenu extends AbstractContainerMenu {
                 return ItemStack.EMPTY;
             }
         } else if (source.getItem() instanceof com.yellowyotu.hbmneoforge.item.ItemMachineUpgrade) {
-            if (!moveItemStackTo(source, 1, 4, false)) {
+            if (!moveItemStackTo(source, 2, 4, false)) {
                 return ItemStack.EMPTY;
             }
         } else if (!moveItemStackTo(source, 4, 16, false)) {
@@ -156,6 +156,17 @@ public final class AssemblyMachineMenu extends AbstractContainerMenu {
         @Override
         public boolean mayPlace(ItemStack stack) {
             return stack.is(ModItems.BATTERY_PACK.get());
+        }
+    }
+
+    private static final class DisabledSlot extends SlotItemHandler {
+        private DisabledSlot(ItemStackHandler handler, int slot) {
+            super(handler, slot, -1000, -1000);
+        }
+
+        @Override
+        public boolean mayPlace(ItemStack stack) {
+            return false;
         }
     }
 
