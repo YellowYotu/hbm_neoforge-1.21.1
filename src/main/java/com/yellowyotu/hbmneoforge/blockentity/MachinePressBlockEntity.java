@@ -1,7 +1,6 @@
 package com.yellowyotu.hbmneoforge.blockentity;
 
 import com.yellowyotu.hbmneoforge.ModBlockEntities;
-import com.yellowyotu.hbmneoforge.ModItems;
 import com.yellowyotu.hbmneoforge.menu.MachinePressMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
@@ -14,17 +13,13 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.items.ItemStackHandler;
 
-public final class MachinePressBlockEntity
-        extends BlockEntity
-        implements MenuProvider {
+public final class MachinePressBlockEntity extends BlockEntity implements MenuProvider {
 
     public static final int SLOT_FUEL = 0;
     public static final int SLOT_STAMP = 1;
@@ -53,27 +48,22 @@ public final class MachinePressBlockEntity
      */
     private int previousClientPressProgress;
 
-    private final ItemStackHandler inventory =
-            new ItemStackHandler(INVENTORY_SIZE) {
-
-                @Override
-                public boolean isItemValid(int slot, ItemStack stack) {
-                    return switch (slot) {
-                        case SLOT_FUEL -> stack.getBurnTime(null) > 0;
-
-                        case SLOT_STAMP -> stack.getItem() instanceof com.yellowyotu.hbmneoforge.item.ItemStamp;
-
-                        case SLOT_OUTPUT -> false;
-
-                        default -> true;
-                    };
-                }
-
-                @Override
-                protected void onContentsChanged(int slot) {
-                    setChanged();
-                }
+    private final ItemStackHandler inventory = new ItemStackHandler(INVENTORY_SIZE) {
+        @Override
+        public boolean isItemValid(int slot, ItemStack stack) {
+            return switch (slot) {
+                case SLOT_FUEL -> stack.getBurnTime(null) > 0;
+                case SLOT_STAMP -> stack.getItem() instanceof com.yellowyotu.hbmneoforge.item.ItemStamp;
+                case SLOT_OUTPUT -> false;
+                default -> true;
             };
+        }
+
+        @Override
+        protected void onContentsChanged(int slot) {
+            setChangedAndSync();
+        }
+    };
 
     /*
      * 0 — скорость;
@@ -82,7 +72,6 @@ public final class MachinePressBlockEntity
      * 3 — возвращается ли головка.
      */
     private final ContainerData data = new ContainerData() {
-
         @Override
         public int get(int index) {
             return switch (index) {
@@ -116,12 +105,7 @@ public final class MachinePressBlockEntity
         super(ModBlockEntities.MACHINE_PRESS.get(), pos, state);
     }
 
-    public static void tick(
-            Level level,
-            BlockPos pos,
-            BlockState state,
-            MachinePressBlockEntity press
-    ) {
+    public static void tick(Level level, BlockPos pos, BlockState state, MachinePressBlockEntity press) {
         if (level.isClientSide()) {
             return;
         }
@@ -134,9 +118,7 @@ public final class MachinePressBlockEntity
 
         boolean canProcess = press.canProcess();
 
-        if ((canProcess || press.retracting)
-                && press.burnTime >= FUEL_PER_OPERATION) {
-
+        if ((canProcess || press.retracting) && press.burnTime >= FUEL_PER_OPERATION) {
             if (press.speed < MAX_SPEED) {
                 press.speed++;
                 changed = true;
@@ -150,8 +132,7 @@ public final class MachinePressBlockEntity
             press.delay--;
             changed = true;
         } else {
-            int movement =
-                    press.speed * PROGRESS_AT_MAX_SPEED / MAX_SPEED;
+            int movement = press.speed * PROGRESS_AT_MAX_SPEED / MAX_SPEED;
 
             if (press.retracting) {
                 press.pressProgress -= movement;
@@ -181,16 +162,7 @@ public final class MachinePressBlockEntity
         }
 
         if (changed) {
-            press.setChanged();
-
-            if (level instanceof ServerLevel serverLevel) {
-                serverLevel.sendBlockUpdated(
-                        pos,
-                        state,
-                        state,
-                        3
-                );
-            }
+            press.setChangedAndSync();
         }
     }
 
@@ -200,7 +172,6 @@ public final class MachinePressBlockEntity
         }
 
         ItemStack fuel = inventory.getStackInSlot(SLOT_FUEL);
-
         if (fuel.isEmpty()) {
             return false;
         }
@@ -239,13 +210,11 @@ public final class MachinePressBlockEntity
         }
 
         ItemStack result = getRecipeResult(input, stamp);
-
         if (result.isEmpty()) {
             return false;
         }
 
         ItemStack output = inventory.getStackInSlot(SLOT_OUTPUT);
-
         if (output.isEmpty()) {
             return true;
         }
@@ -254,82 +223,57 @@ public final class MachinePressBlockEntity
             return false;
         }
 
-        return output.getCount() + result.getCount()
-                <= output.getMaxStackSize();
+        return output.getCount() + result.getCount() <= output.getMaxStackSize();
     }
 
     private void completeOperation() {
-        ItemStack input =
-                inventory.getStackInSlot(SLOT_INPUT);
-
-        ItemStack stamp =
-                inventory.getStackInSlot(SLOT_STAMP);
-
-        ItemStack result =
-                getRecipeResult(input, stamp);
+        ItemStack input = inventory.getStackInSlot(SLOT_INPUT);
+        ItemStack stamp = inventory.getStackInSlot(SLOT_STAMP);
+        ItemStack result = getRecipeResult(input, stamp);
 
         if (result.isEmpty()) {
             return;
         }
 
-        ItemStack output =
-                inventory.getStackInSlot(SLOT_OUTPUT);
-
+        ItemStack output = inventory.getStackInSlot(SLOT_OUTPUT);
         if (output.isEmpty()) {
-            inventory.setStackInSlot(
-                    SLOT_OUTPUT,
-                    result.copy()
-            );
+            inventory.setStackInSlot(SLOT_OUTPUT, result.copy());
         } else {
             output.grow(result.getCount());
-
-            inventory.setStackInSlot(
-                    SLOT_OUTPUT,
-                    output
-            );
+            inventory.setStackInSlot(SLOT_OUTPUT, output);
         }
 
         input.shrink(1);
-
-        inventory.setStackInSlot(
-                SLOT_INPUT,
-                input.isEmpty()
-                        ? ItemStack.EMPTY
-                        : input
-        );
+        inventory.setStackInSlot(SLOT_INPUT, input.isEmpty() ? ItemStack.EMPTY : input);
 
         damageStamp();
 
         burnTime -= FUEL_PER_OPERATION;
-
         if (burnTime < 0) {
             burnTime = 0;
         }
     }
 
     private void damageStamp() {
-        ItemStack stamp =
-                inventory.getStackInSlot(SLOT_STAMP);
-
+        ItemStack stamp = inventory.getStackInSlot(SLOT_STAMP);
         if (stamp.isEmpty() || !stamp.isDamageableItem()) {
             return;
         }
 
-        int newDamage =
-                stamp.getDamageValue() + 1;
-
+        int newDamage = stamp.getDamageValue() + 1;
         if (newDamage >= stamp.getMaxDamage()) {
-            inventory.setStackInSlot(
-                    SLOT_STAMP,
-                    ItemStack.EMPTY
-            );
+            inventory.setStackInSlot(SLOT_STAMP, ItemStack.EMPTY);
         } else {
             stamp.setDamageValue(newDamage);
+            inventory.setStackInSlot(SLOT_STAMP, stamp);
+        }
+    }
 
-            inventory.setStackInSlot(
-                    SLOT_STAMP,
-                    stamp
-            );
+    private void setChangedAndSync() {
+        setChanged();
+        if (level instanceof ServerLevel serverLevel) {
+            BlockState state = getBlockState();
+            serverLevel.sendBlockUpdated(worldPosition, state, state, 3);
         }
     }
 
@@ -350,45 +294,23 @@ public final class MachinePressBlockEntity
     }
 
     public float getInterpolatedPressProgress(float partialTick) {
-        return previousClientPressProgress
-                + (pressProgress - previousClientPressProgress)
-                * partialTick;
+        return previousClientPressProgress + (pressProgress - previousClientPressProgress) * partialTick;
     }
 
     @Override
     public Component getDisplayName() {
-        return Component.translatable(
-                "container.hbm_neoforge.machine_press"
-        );
+        return Component.translatable("container.hbm_neoforge.machine_press");
     }
 
     @Override
-    public AbstractContainerMenu createMenu(
-            int containerId,
-            Inventory playerInventory,
-            Player player
-    ) {
-        return new MachinePressMenu(
-                containerId,
-                playerInventory,
-                inventory,
-                data,
-                worldPosition
-        );
+    public AbstractContainerMenu createMenu(int containerId, Inventory playerInventory, Player player) {
+        return new MachinePressMenu(containerId, playerInventory, inventory, data, worldPosition);
     }
 
     @Override
-    protected void saveAdditional(
-            CompoundTag tag,
-            HolderLookup.Provider registries
-    ) {
+    protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
         super.saveAdditional(tag, registries);
-
-        tag.put(
-                "inventory",
-                inventory.serializeNBT(registries)
-        );
-
+        tag.put("inventory", inventory.serializeNBT(registries));
         tag.putInt("speed", speed);
         tag.putInt("burn_time", burnTime);
         tag.putInt("press_progress", pressProgress);
@@ -397,10 +319,7 @@ public final class MachinePressBlockEntity
     }
 
     @Override
-    protected void loadAdditional(
-            CompoundTag tag,
-            HolderLookup.Provider registries
-    ) {
+    protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
         super.loadAdditional(tag, registries);
 
         if (level != null && level.isClientSide()) {
@@ -408,10 +327,7 @@ public final class MachinePressBlockEntity
         }
 
         if (tag.contains("inventory")) {
-            inventory.deserializeNBT(
-                    registries,
-                    tag.getCompound("inventory")
-            );
+            inventory.deserializeNBT(registries, tag.getCompound("inventory"));
         }
 
         speed = tag.getInt("speed");
@@ -422,9 +338,7 @@ public final class MachinePressBlockEntity
     }
 
     @Override
-    public CompoundTag getUpdateTag(
-            HolderLookup.Provider registries
-    ) {
+    public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
         CompoundTag tag = new CompoundTag();
         saveAdditional(tag, registries);
         return tag;
