@@ -38,7 +38,7 @@ public final class MachinePressBlockEntity
     public static final int MAX_PRESS = 200;
     public static final int FUEL_PER_OPERATION = 200;
 
-    private static final int PROGRESS_AT_MAX_SPEED = 8;
+    private static final int PROGRESS_AT_MAX_SPEED = 25;
     private static final int DIRECTION_CHANGE_DELAY = 5;
 
     private int speed;
@@ -59,9 +59,7 @@ public final class MachinePressBlockEntity
                 @Override
                 public boolean isItemValid(int slot, ItemStack stack) {
                     return switch (slot) {
-                        case SLOT_FUEL ->
-                                stack.is(Items.COAL)
-                                        || stack.is(Items.CHARCOAL);
+                        case SLOT_FUEL -> stack.getBurnTime(null) > 0;
 
                         case SLOT_STAMP -> stack.getItem() instanceof com.yellowyotu.hbmneoforge.item.ItemStamp;
 
@@ -207,17 +205,19 @@ public final class MachinePressBlockEntity
             return false;
         }
 
-        if (!fuel.is(Items.COAL) && !fuel.is(Items.CHARCOAL)) {
+        int fuelBurnTime = fuel.getBurnTime(null);
+        if (fuelBurnTime <= 0) {
             return false;
         }
 
-        burnTime += 1600;
-        fuel.shrink(1);
+        burnTime += fuelBurnTime;
 
-        inventory.setStackInSlot(
-                SLOT_FUEL,
-                fuel.isEmpty() ? ItemStack.EMPTY : fuel
-        );
+        if (fuel.getCount() == 1 && fuel.hasCraftingRemainingItem()) {
+            inventory.setStackInSlot(SLOT_FUEL, fuel.getCraftingRemainingItem().copy());
+        } else {
+            fuel.shrink(1);
+            inventory.setStackInSlot(SLOT_FUEL, fuel.isEmpty() ? ItemStack.EMPTY : fuel);
+        }
 
         return true;
     }
