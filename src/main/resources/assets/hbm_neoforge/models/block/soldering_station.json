@@ -1,11 +1,12 @@
 {
   "loader": "neoforge:obj",
-  "model": "hbm_neoforge:models/block/soldering_station_east.obj",
+  "model": "hbm_neoforge:models/obj/soldering_station.obj",
   "textures": {
     "particle": "hbm_neoforge:block/soldering_station",
+    "texture0": "hbm_neoforge:block/soldering_station",
     "soldering_station": "hbm_neoforge:block/soldering_station"
   },
   "flip_v": true,
   "automatic_culling": false,
-  "shade_quads": true
+  "shade_quads": false
 }
