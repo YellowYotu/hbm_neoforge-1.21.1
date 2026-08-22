@@ -47,7 +47,6 @@ public final class HBMJeiPlugin implements IModPlugin {
 
     @Override
     public void registerRecipeTransferHandlers(IRecipeTransferRegistration registration) {
-        registration.addRecipeTransferHandler(new SolderingStationTransferInfo());
     }
 
     @Override

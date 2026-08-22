@@ -15,7 +15,6 @@ import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import net.neoforged.neoforge.items.SlotItemHandler;
 
@@ -34,37 +33,17 @@ public final class MachinePressMenu extends AbstractContainerMenu {
     /*
      * Клиентский конструктор.
      */
-    public MachinePressMenu(
-            int containerId,
-            Inventory playerInventory,
-            RegistryFriendlyByteBuf buffer
-    ) {
-        this(
-                containerId,
-                playerInventory,
-                new ItemStackHandler(MACHINE_SLOT_COUNT),
-                new SimpleContainerData(4),
-                buffer.readBlockPos()
-        );
+    public MachinePressMenu(int containerId, Inventory playerInventory, RegistryFriendlyByteBuf buffer) {
+        this(containerId, playerInventory, new ItemStackHandler(MACHINE_SLOT_COUNT), new SimpleContainerData(4), buffer.readBlockPos());
     }
 
     /*
      * Серверный конструктор.
      */
-    public MachinePressMenu(
-            int containerId,
-            Inventory playerInventory,
-            ItemStackHandler machineInventory,
-            ContainerData data,
-            BlockPos pos
-    ) {
+    public MachinePressMenu(int containerId, Inventory playerInventory, ItemStackHandler machineInventory, ContainerData data, BlockPos pos) {
         super(ModMenus.MACHINE_PRESS.get(), containerId);
 
-        this.access = ContainerLevelAccess.create(
-                playerInventory.player.level(),
-                pos
-        );
-
+        this.access = ContainerLevelAccess.create(playerInventory.player.level(), pos);
         this.data = data;
 
         checkContainerDataCount(data, 4);
@@ -78,79 +57,40 @@ public final class MachinePressMenu extends AbstractContainerMenu {
 
     private void addMachineSlots(ItemStackHandler inventory) {
         // Топливо
-        addSlot(new FuelSlot(
-                inventory,
-                MachinePressBlockEntity.SLOT_FUEL,
-                26,
-                53
-        ));
+        addSlot(new FuelSlot(inventory, MachinePressBlockEntity.SLOT_FUEL, 26, 53));
 
         // Any iron or steel press stamp
-        addSlot(new StampSlot(
-                inventory,
-                MachinePressBlockEntity.SLOT_STAMP,
-                80,
-                17
-        ));
+        addSlot(new StampSlot(inventory, MachinePressBlockEntity.SLOT_STAMP, 80, 17));
 
         // Входной материал
-        addSlot(new SlotItemHandler(
-                inventory,
-                MachinePressBlockEntity.SLOT_INPUT,
-                80,
-                53
-        ));
+        addSlot(new SlotItemHandler(inventory, MachinePressBlockEntity.SLOT_INPUT, 80, 53));
 
         // Результат
-        addSlot(new OutputSlot(
-                inventory,
-                MachinePressBlockEntity.SLOT_OUTPUT,
-                140,
-                35
-        ));
+        addSlot(new OutputSlot(inventory, MachinePressBlockEntity.SLOT_OUTPUT, 140, 35));
 
         // Девять дополнительных слотов
         for (int i = 0; i < 9; i++) {
-            addSlot(new SlotItemHandler(
-                    inventory,
-                    MachinePressBlockEntity.STORAGE_START + i,
-                    8 + i * 18,
-                    84
-            ));
+            addSlot(new SlotItemHandler(inventory, MachinePressBlockEntity.STORAGE_START + i, 8 + i * 18, 84));
         }
     }
 
     private void addPlayerInventory(Inventory inventory) {
         for (int row = 0; row < 3; row++) {
             for (int column = 0; column < 9; column++) {
-                addSlot(new Slot(
-                        inventory,
-                        column + row * 9 + 9,
-                        8 + column * 18,
-                        132 + row * 18
-                ));
+                addSlot(new Slot(inventory, column + row * 9 + 9, 8 + column * 18, 132 + row * 18));
             }
         }
     }
 
     private void addPlayerHotbar(Inventory inventory) {
         for (int column = 0; column < 9; column++) {
-            addSlot(new Slot(
-                    inventory,
-                    column,
-                    8 + column * 18,
-                    190
-            ));
+            addSlot(new Slot(inventory, column, 8 + column * 18, 190));
         }
     }
 
     @Override
     public boolean stillValid(Player player) {
-        return stillValid(
-                access,
-                player,
-                ModBlocks.MACHINE_PRESS.get()
-        );
+        return stillValid(access, player, ModBlocks.MACHINE_PRESS.get());
     }
 
     @Override
@@ -165,21 +105,14 @@ public final class MachinePressMenu extends AbstractContainerMenu {
         ItemStack original = source.copy();
 
         if (slotIndex < MACHINE_SLOT_COUNT) {
-            if (!moveItemStackTo(
-                    source,
-                    PLAYER_INVENTORY_START,
-                    HOTBAR_END,
-                    true
-            )) {
+            if (!moveItemStackTo(source, PLAYER_INVENTORY_START, HOTBAR_END, true)) {
                 return ItemStack.EMPTY;
             }
         } else if (source.getItem() instanceof ItemStamp) {
             if (!moveItemStackTo(source, 1, 2, false)) {
                 return ItemStack.EMPTY;
             }
-        } else if (source.is(Items.COAL)
-                || source.is(Items.CHARCOAL)) {
-
+        } else if (source.getBurnTime(null) > 0) {
             if (!moveItemStackTo(source, 0, 1, false)) {
                 return ItemStack.EMPTY;
             }
@@ -218,30 +151,19 @@ public final class MachinePressMenu extends AbstractContainerMenu {
 
     private static final class FuelSlot extends SlotItemHandler {
 
-        private FuelSlot(
-                ItemStackHandler inventory,
-                int index,
-                int x,
-                int y
-        ) {
+        private FuelSlot(ItemStackHandler inventory, int index, int x, int y) {
             super(inventory, index, x, y);
         }
 
         @Override
         public boolean mayPlace(ItemStack stack) {
-            return stack.is(Items.COAL)
-                    || stack.is(Items.CHARCOAL);
+            return stack.getBurnTime(null) > 0;
         }
     }
 
     private static final class StampSlot extends SlotItemHandler {
 
-        private StampSlot(
-                ItemStackHandler inventory,
-                int index,
-                int x,
-                int y
-        ) {
+        private StampSlot(ItemStackHandler inventory, int index, int x, int y) {
             super(inventory, index, x, y);
         }
 
@@ -258,12 +180,7 @@ public final class MachinePressMenu extends AbstractContainerMenu {
 
     private static final class OutputSlot extends SlotItemHandler {
 
-        private OutputSlot(
-                ItemStackHandler inventory,
-                int index,
-                int x,
-                int y
-        ) {
+        private OutputSlot(ItemStackHandler inventory, int index, int x, int y) {
             super(inventory, index, x, y);
         }
 
