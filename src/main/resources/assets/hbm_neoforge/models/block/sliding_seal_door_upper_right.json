@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/door_top_right",
-  "textures": {
-    "texture0": "hbm_neoforge:block/sliding_seal_door",
-    "particle": "hbm_neoforge:block/sliding_seal_door"
-  }
-}

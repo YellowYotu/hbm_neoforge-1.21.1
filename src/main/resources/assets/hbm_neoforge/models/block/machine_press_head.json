@@ -1,5 +1,0 @@
-{
-  "loader": "neoforge:obj",
-  "model": "hbm_neoforge:models/block/press_head.obj",
-  "flip_v": true
-}

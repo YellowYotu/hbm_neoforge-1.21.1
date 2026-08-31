@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "hbm_neoforge:block/concrete_green",
-    "top": "hbm_neoforge:block/concrete_green",
-    "side": "hbm_neoforge:block/concrete_green"
-  }
-}
