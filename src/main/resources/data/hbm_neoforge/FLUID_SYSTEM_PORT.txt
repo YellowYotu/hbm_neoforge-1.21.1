@@ -1,0 +1,19 @@
+HBM NTM NeoForge 1.21.1 fluid-system pass
+
+Implemented in this source package:
+- Connected 6-direction fluid duct rendering/collision.
+- Standard, box, paintable, gauge, valve and pump duct variants.
+- Runtime fluid filters attached with Fluid Identifier items.
+- Filter state is stored in the pipe block entity and visibly adds a collar to the duct.
+- 12 early fluid types with original HBM colors where available.
+- Fluid storage GUI with amount, capacity, transfer rate, mode and direct type selection.
+- Storage modes: input, buffer, output, locked.
+- Plastic/corroded/steel barrels.
+- 256,000 mB Fluid Tank using the original HBM fluidtank OBJ.
+- Tank multiblock volumes and proxy/dummy fluid nodes; any dummy can connect to pipes or open the controller GUI.
+- Infinite Water 50 mB/t, Infinite Water Mk II 500 mB/t, and original-style universal Infinite Fluid Barrel behavior.
+- Original HBM fluid identifier base art with per-fluid colored indicators.
+
+Notes:
+- This is a native 1.21.1 implementation and therefore does not copy the 1.7.10 FluidNet internals byte-for-byte.
+- Existing soldering-station fluid-node integration is preserved.

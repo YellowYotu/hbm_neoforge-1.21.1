@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " I ",
+    " I "
+  ],
+  "key": {
+    "I": {
+      "item": "hbm_neoforge:ingot_dura_steel"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:bolt_dura_steel",
+    "count": 4
+  }
+}

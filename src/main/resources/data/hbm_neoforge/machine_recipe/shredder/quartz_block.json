@@ -1,0 +1,9 @@
+{
+  "input": {
+    "item": "minecraft:quartz_block"
+  },
+  "output": {
+    "item": "hbm_neoforge:powder_quartz",
+    "count": 4
+  }
+}

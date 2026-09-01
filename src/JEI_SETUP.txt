@@ -1,0 +1,3 @@
+JEI integration source is included for Minecraft 1.21.1 NeoForge.
+The project build must expose the JEI 1.21.1 API at compile time and JEI itself at runtime.
+The provided archive did not contain build.gradle or gradle.properties, so those dependency declarations could not be edited here.

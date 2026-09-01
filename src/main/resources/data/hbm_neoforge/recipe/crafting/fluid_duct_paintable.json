@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "SAS",
+    "A A",
+    "SAS"
+  ],
+  "key": {
+    "S": {
+      "item": "hbm_neoforge:ingot_steel"
+    },
+    "A": {
+      "item": "hbm_neoforge:plate_aluminium"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:fluid_duct_paintable",
+    "count": 8
+  }
+}

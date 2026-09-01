@@ -1,0 +1,80 @@
+{
+  "textures": {
+    "particle": "hbm_neoforge:block/fluid_duct_paintable",
+    "base": "hbm_neoforge:block/fluid_duct_paintable",
+    "color": "hbm_neoforge:block/fluid_duct_paintable_color"
+  },
+  "elements": [
+    {
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ],
+      "faces": {
+        "down": {
+          "texture": "#base"
+        },
+        "up": {
+          "texture": "#base"
+        },
+        "north": {
+          "texture": "#base"
+        },
+        "south": {
+          "texture": "#base"
+        },
+        "west": {
+          "texture": "#base"
+        },
+        "east": {
+          "texture": "#base"
+        }
+      }
+    },
+    {
+      "from": [
+        -0.001,
+        -0.001,
+        -0.001
+      ],
+      "to": [
+        16.001,
+        16.001,
+        16.001
+      ],
+      "faces": {
+        "down": {
+          "texture": "#color",
+          "tintindex": 1
+        },
+        "up": {
+          "texture": "#color",
+          "tintindex": 1
+        },
+        "north": {
+          "texture": "#color",
+          "tintindex": 1
+        },
+        "south": {
+          "texture": "#color",
+          "tintindex": 1
+        },
+        "west": {
+          "texture": "#color",
+          "tintindex": 1
+        },
+        "east": {
+          "texture": "#color",
+          "tintindex": 1
+        }
+      }
+    }
+  ],
+  "render_type": "minecraft:cutout"
+}

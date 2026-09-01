@@ -1,0 +1,9 @@
+{
+  "input": {
+    "item": "minecraft:zombie_head"
+  },
+  "output": {
+    "item": "hbm_neoforge:biomass",
+    "count": 4
+  }
+}

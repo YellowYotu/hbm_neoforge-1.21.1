@@ -1,0 +1,17 @@
+{
+  "loader": "neoforge:obj",
+  "model": "hbm_neoforge:models/obj/battery_socket.obj",
+  "flip_v": true,
+  "automatic_culling": false,
+  "shade_quads": true,
+  "visibility": {
+    "Supports": true,
+    "Capacitor": false,
+    "Battery": false,
+    "Socket": true
+  },
+  "textures": {
+    "texture0": "hbm_neoforge:block/battery_socket",
+    "particle": "hbm_neoforge:block/battery_socket"
+  }
+}

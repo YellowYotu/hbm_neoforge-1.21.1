@@ -1,0 +1,8 @@
+{
+  "input": "hbm_neoforge:powder_lignite",
+  "stamp": "flat",
+  "output": {
+    "item": "hbm_neoforge:briquette_lignite",
+    "count": 1
+  }
+}

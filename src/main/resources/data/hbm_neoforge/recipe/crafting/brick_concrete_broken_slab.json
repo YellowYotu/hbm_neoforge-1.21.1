@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "hbm_neoforge:brick_concrete_broken"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:brick_concrete_broken_slab",
+    "count": 6
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "input": {
+    "item": "minecraft:chipped_anvil"
+  },
+  "output": {
+    "item": "hbm_neoforge:powder_iron",
+    "count": 31
+  }
+}

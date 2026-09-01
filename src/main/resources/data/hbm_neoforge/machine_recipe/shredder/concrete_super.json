@@ -1,0 +1,9 @@
+{
+  "input": {
+    "item": "hbm_neoforge:concrete_super"
+  },
+  "output": {
+    "item": "minecraft:gravel",
+    "count": 1
+  }
+}

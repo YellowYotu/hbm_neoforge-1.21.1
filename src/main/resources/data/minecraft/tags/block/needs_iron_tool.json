@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "hbm_neoforge:ore_uranium",
+    "hbm_neoforge:ore_aluminium",
+    "hbm_neoforge:ore_lead"
+  ]
+}

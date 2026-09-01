@@ -1,0 +1,9 @@
+{
+  "input": {
+    "item": "hbm_neoforge:ingot_polymer"
+  },
+  "output": {
+    "item": "hbm_neoforge:powder_polymer",
+    "count": 1
+  }
+}

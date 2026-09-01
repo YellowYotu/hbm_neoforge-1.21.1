@@ -1,0 +1,2500 @@
+{
+  "variants": {
+    "facing=north,fluid_model=0": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_0",
+      "y": 0
+    },
+    "facing=north,fluid_model=1": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_1",
+      "y": 0
+    },
+    "facing=north,fluid_model=2": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_2",
+      "y": 0
+    },
+    "facing=north,fluid_model=3": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_3",
+      "y": 0
+    },
+    "facing=north,fluid_model=4": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_4",
+      "y": 0
+    },
+    "facing=north,fluid_model=5": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_5",
+      "y": 0
+    },
+    "facing=north,fluid_model=6": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_6",
+      "y": 0
+    },
+    "facing=north,fluid_model=7": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_7",
+      "y": 0
+    },
+    "facing=north,fluid_model=8": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_8",
+      "y": 0
+    },
+    "facing=north,fluid_model=9": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_9",
+      "y": 0
+    },
+    "facing=north,fluid_model=10": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_10",
+      "y": 0
+    },
+    "facing=north,fluid_model=11": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_11",
+      "y": 0
+    },
+    "facing=north,fluid_model=12": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_12",
+      "y": 0
+    },
+    "facing=north,fluid_model=13": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_13",
+      "y": 0
+    },
+    "facing=north,fluid_model=14": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_14",
+      "y": 0
+    },
+    "facing=north,fluid_model=15": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_15",
+      "y": 0
+    },
+    "facing=north,fluid_model=16": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_16",
+      "y": 0
+    },
+    "facing=north,fluid_model=17": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_17",
+      "y": 0
+    },
+    "facing=north,fluid_model=18": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_18",
+      "y": 0
+    },
+    "facing=north,fluid_model=19": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_19",
+      "y": 0
+    },
+    "facing=north,fluid_model=20": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_20",
+      "y": 0
+    },
+    "facing=north,fluid_model=21": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_21",
+      "y": 0
+    },
+    "facing=north,fluid_model=22": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_22",
+      "y": 0
+    },
+    "facing=north,fluid_model=23": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_23",
+      "y": 0
+    },
+    "facing=north,fluid_model=24": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_24",
+      "y": 0
+    },
+    "facing=north,fluid_model=25": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_25",
+      "y": 0
+    },
+    "facing=north,fluid_model=26": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_26",
+      "y": 0
+    },
+    "facing=north,fluid_model=27": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_27",
+      "y": 0
+    },
+    "facing=north,fluid_model=28": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_28",
+      "y": 0
+    },
+    "facing=north,fluid_model=29": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_29",
+      "y": 0
+    },
+    "facing=north,fluid_model=30": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_30",
+      "y": 0
+    },
+    "facing=north,fluid_model=31": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_31",
+      "y": 0
+    },
+    "facing=north,fluid_model=32": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_32",
+      "y": 0
+    },
+    "facing=north,fluid_model=33": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_33",
+      "y": 0
+    },
+    "facing=north,fluid_model=34": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_34",
+      "y": 0
+    },
+    "facing=north,fluid_model=35": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_35",
+      "y": 0
+    },
+    "facing=north,fluid_model=36": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_36",
+      "y": 0
+    },
+    "facing=north,fluid_model=37": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_37",
+      "y": 0
+    },
+    "facing=north,fluid_model=38": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_38",
+      "y": 0
+    },
+    "facing=north,fluid_model=39": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_39",
+      "y": 0
+    },
+    "facing=north,fluid_model=40": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_40",
+      "y": 0
+    },
+    "facing=north,fluid_model=41": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_41",
+      "y": 0
+    },
+    "facing=north,fluid_model=42": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_42",
+      "y": 0
+    },
+    "facing=north,fluid_model=43": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_43",
+      "y": 0
+    },
+    "facing=north,fluid_model=44": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_44",
+      "y": 0
+    },
+    "facing=north,fluid_model=45": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_45",
+      "y": 0
+    },
+    "facing=north,fluid_model=46": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_46",
+      "y": 0
+    },
+    "facing=north,fluid_model=47": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_47",
+      "y": 0
+    },
+    "facing=north,fluid_model=48": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_48",
+      "y": 0
+    },
+    "facing=north,fluid_model=49": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_49",
+      "y": 0
+    },
+    "facing=north,fluid_model=50": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_50",
+      "y": 0
+    },
+    "facing=north,fluid_model=51": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_51",
+      "y": 0
+    },
+    "facing=north,fluid_model=52": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_52",
+      "y": 0
+    },
+    "facing=north,fluid_model=53": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_53",
+      "y": 0
+    },
+    "facing=north,fluid_model=54": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_54",
+      "y": 0
+    },
+    "facing=north,fluid_model=55": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_55",
+      "y": 0
+    },
+    "facing=north,fluid_model=56": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_56",
+      "y": 0
+    },
+    "facing=north,fluid_model=57": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_57",
+      "y": 0
+    },
+    "facing=north,fluid_model=58": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_58",
+      "y": 0
+    },
+    "facing=north,fluid_model=59": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_59",
+      "y": 0
+    },
+    "facing=north,fluid_model=60": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_60",
+      "y": 0
+    },
+    "facing=north,fluid_model=61": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_61",
+      "y": 0
+    },
+    "facing=north,fluid_model=62": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_62",
+      "y": 0
+    },
+    "facing=north,fluid_model=63": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_63",
+      "y": 0
+    },
+    "facing=north,fluid_model=64": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_64",
+      "y": 0
+    },
+    "facing=north,fluid_model=65": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_65",
+      "y": 0
+    },
+    "facing=north,fluid_model=66": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_66",
+      "y": 0
+    },
+    "facing=north,fluid_model=67": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_67",
+      "y": 0
+    },
+    "facing=north,fluid_model=68": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_68",
+      "y": 0
+    },
+    "facing=north,fluid_model=69": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_69",
+      "y": 0
+    },
+    "facing=north,fluid_model=70": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_70",
+      "y": 0
+    },
+    "facing=north,fluid_model=71": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_71",
+      "y": 0
+    },
+    "facing=north,fluid_model=72": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_72",
+      "y": 0
+    },
+    "facing=north,fluid_model=73": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_73",
+      "y": 0
+    },
+    "facing=north,fluid_model=74": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_74",
+      "y": 0
+    },
+    "facing=north,fluid_model=75": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_75",
+      "y": 0
+    },
+    "facing=north,fluid_model=76": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_76",
+      "y": 0
+    },
+    "facing=north,fluid_model=77": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_77",
+      "y": 0
+    },
+    "facing=north,fluid_model=78": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_78",
+      "y": 0
+    },
+    "facing=north,fluid_model=79": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_79",
+      "y": 0
+    },
+    "facing=north,fluid_model=80": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_80",
+      "y": 0
+    },
+    "facing=north,fluid_model=81": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_81",
+      "y": 0
+    },
+    "facing=north,fluid_model=82": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_82",
+      "y": 0
+    },
+    "facing=north,fluid_model=83": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_83",
+      "y": 0
+    },
+    "facing=north,fluid_model=84": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_84",
+      "y": 0
+    },
+    "facing=north,fluid_model=85": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_85",
+      "y": 0
+    },
+    "facing=north,fluid_model=86": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_86",
+      "y": 0
+    },
+    "facing=north,fluid_model=87": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_87",
+      "y": 0
+    },
+    "facing=north,fluid_model=88": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_88",
+      "y": 0
+    },
+    "facing=north,fluid_model=89": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_89",
+      "y": 0
+    },
+    "facing=north,fluid_model=90": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_90",
+      "y": 0
+    },
+    "facing=north,fluid_model=91": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_91",
+      "y": 0
+    },
+    "facing=north,fluid_model=92": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_92",
+      "y": 0
+    },
+    "facing=north,fluid_model=93": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_93",
+      "y": 0
+    },
+    "facing=north,fluid_model=94": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_94",
+      "y": 0
+    },
+    "facing=north,fluid_model=95": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_95",
+      "y": 0
+    },
+    "facing=north,fluid_model=96": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_96",
+      "y": 0
+    },
+    "facing=north,fluid_model=97": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_97",
+      "y": 0
+    },
+    "facing=north,fluid_model=98": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_98",
+      "y": 0
+    },
+    "facing=north,fluid_model=99": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_99",
+      "y": 0
+    },
+    "facing=north,fluid_model=100": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_100",
+      "y": 0
+    },
+    "facing=north,fluid_model=101": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_101",
+      "y": 0
+    },
+    "facing=north,fluid_model=102": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_102",
+      "y": 0
+    },
+    "facing=north,fluid_model=103": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_103",
+      "y": 0
+    },
+    "facing=north,fluid_model=104": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_104",
+      "y": 0
+    },
+    "facing=north,fluid_model=105": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_105",
+      "y": 0
+    },
+    "facing=north,fluid_model=106": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_106",
+      "y": 0
+    },
+    "facing=north,fluid_model=107": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_107",
+      "y": 0
+    },
+    "facing=north,fluid_model=108": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_108",
+      "y": 0
+    },
+    "facing=north,fluid_model=109": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_109",
+      "y": 0
+    },
+    "facing=north,fluid_model=110": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_110",
+      "y": 0
+    },
+    "facing=north,fluid_model=111": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_111",
+      "y": 0
+    },
+    "facing=north,fluid_model=112": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_112",
+      "y": 0
+    },
+    "facing=north,fluid_model=113": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_113",
+      "y": 0
+    },
+    "facing=north,fluid_model=114": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_114",
+      "y": 0
+    },
+    "facing=north,fluid_model=115": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_115",
+      "y": 0
+    },
+    "facing=north,fluid_model=116": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_116",
+      "y": 0
+    },
+    "facing=north,fluid_model=117": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_117",
+      "y": 0
+    },
+    "facing=north,fluid_model=118": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_118",
+      "y": 0
+    },
+    "facing=north,fluid_model=119": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_119",
+      "y": 0
+    },
+    "facing=north,fluid_model=120": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_120",
+      "y": 0
+    },
+    "facing=north,fluid_model=121": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_121",
+      "y": 0
+    },
+    "facing=north,fluid_model=122": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_122",
+      "y": 0
+    },
+    "facing=north,fluid_model=123": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_123",
+      "y": 0
+    },
+    "facing=north,fluid_model=124": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_124",
+      "y": 0
+    },
+    "facing=north,fluid_model=125": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_125",
+      "y": 0
+    },
+    "facing=north,fluid_model=126": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_126",
+      "y": 0
+    },
+    "facing=north,fluid_model=127": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_127",
+      "y": 0
+    },
+    "facing=north,fluid_model=128": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_128",
+      "y": 0
+    },
+    "facing=north,fluid_model=129": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_129",
+      "y": 0
+    },
+    "facing=north,fluid_model=130": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_130",
+      "y": 0
+    },
+    "facing=north,fluid_model=131": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_131",
+      "y": 0
+    },
+    "facing=north,fluid_model=132": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_132",
+      "y": 0
+    },
+    "facing=north,fluid_model=133": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_133",
+      "y": 0
+    },
+    "facing=north,fluid_model=134": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_134",
+      "y": 0
+    },
+    "facing=north,fluid_model=135": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_135",
+      "y": 0
+    },
+    "facing=north,fluid_model=136": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_136",
+      "y": 0
+    },
+    "facing=north,fluid_model=137": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_137",
+      "y": 0
+    },
+    "facing=north,fluid_model=138": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_138",
+      "y": 0
+    },
+    "facing=north,fluid_model=139": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_139",
+      "y": 0
+    },
+    "facing=north,fluid_model=140": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_140",
+      "y": 0
+    },
+    "facing=north,fluid_model=141": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_141",
+      "y": 0
+    },
+    "facing=north,fluid_model=142": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_142",
+      "y": 0
+    },
+    "facing=north,fluid_model=143": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_143",
+      "y": 0
+    },
+    "facing=north,fluid_model=144": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_144",
+      "y": 0
+    },
+    "facing=north,fluid_model=145": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_145",
+      "y": 0
+    },
+    "facing=north,fluid_model=146": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_146",
+      "y": 0
+    },
+    "facing=north,fluid_model=147": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_147",
+      "y": 0
+    },
+    "facing=north,fluid_model=148": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_148",
+      "y": 0
+    },
+    "facing=north,fluid_model=149": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_149",
+      "y": 0
+    },
+    "facing=north,fluid_model=150": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_150",
+      "y": 0
+    },
+    "facing=north,fluid_model=151": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_151",
+      "y": 0
+    },
+    "facing=north,fluid_model=152": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_152",
+      "y": 0
+    },
+    "facing=north,fluid_model=153": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_153",
+      "y": 0
+    },
+    "facing=north,fluid_model=154": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_154",
+      "y": 0
+    },
+    "facing=north,fluid_model=155": {
+      "model": "hbm_neoforge:block/machine_fluidtank",
+      "y": 0
+    },
+    "facing=east,fluid_model=0": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_0",
+      "y": 90
+    },
+    "facing=east,fluid_model=1": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_1",
+      "y": 90
+    },
+    "facing=east,fluid_model=2": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_2",
+      "y": 90
+    },
+    "facing=east,fluid_model=3": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_3",
+      "y": 90
+    },
+    "facing=east,fluid_model=4": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_4",
+      "y": 90
+    },
+    "facing=east,fluid_model=5": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_5",
+      "y": 90
+    },
+    "facing=east,fluid_model=6": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_6",
+      "y": 90
+    },
+    "facing=east,fluid_model=7": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_7",
+      "y": 90
+    },
+    "facing=east,fluid_model=8": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_8",
+      "y": 90
+    },
+    "facing=east,fluid_model=9": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_9",
+      "y": 90
+    },
+    "facing=east,fluid_model=10": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_10",
+      "y": 90
+    },
+    "facing=east,fluid_model=11": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_11",
+      "y": 90
+    },
+    "facing=east,fluid_model=12": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_12",
+      "y": 90
+    },
+    "facing=east,fluid_model=13": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_13",
+      "y": 90
+    },
+    "facing=east,fluid_model=14": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_14",
+      "y": 90
+    },
+    "facing=east,fluid_model=15": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_15",
+      "y": 90
+    },
+    "facing=east,fluid_model=16": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_16",
+      "y": 90
+    },
+    "facing=east,fluid_model=17": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_17",
+      "y": 90
+    },
+    "facing=east,fluid_model=18": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_18",
+      "y": 90
+    },
+    "facing=east,fluid_model=19": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_19",
+      "y": 90
+    },
+    "facing=east,fluid_model=20": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_20",
+      "y": 90
+    },
+    "facing=east,fluid_model=21": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_21",
+      "y": 90
+    },
+    "facing=east,fluid_model=22": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_22",
+      "y": 90
+    },
+    "facing=east,fluid_model=23": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_23",
+      "y": 90
+    },
+    "facing=east,fluid_model=24": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_24",
+      "y": 90
+    },
+    "facing=east,fluid_model=25": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_25",
+      "y": 90
+    },
+    "facing=east,fluid_model=26": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_26",
+      "y": 90
+    },
+    "facing=east,fluid_model=27": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_27",
+      "y": 90
+    },
+    "facing=east,fluid_model=28": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_28",
+      "y": 90
+    },
+    "facing=east,fluid_model=29": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_29",
+      "y": 90
+    },
+    "facing=east,fluid_model=30": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_30",
+      "y": 90
+    },
+    "facing=east,fluid_model=31": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_31",
+      "y": 90
+    },
+    "facing=east,fluid_model=32": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_32",
+      "y": 90
+    },
+    "facing=east,fluid_model=33": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_33",
+      "y": 90
+    },
+    "facing=east,fluid_model=34": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_34",
+      "y": 90
+    },
+    "facing=east,fluid_model=35": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_35",
+      "y": 90
+    },
+    "facing=east,fluid_model=36": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_36",
+      "y": 90
+    },
+    "facing=east,fluid_model=37": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_37",
+      "y": 90
+    },
+    "facing=east,fluid_model=38": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_38",
+      "y": 90
+    },
+    "facing=east,fluid_model=39": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_39",
+      "y": 90
+    },
+    "facing=east,fluid_model=40": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_40",
+      "y": 90
+    },
+    "facing=east,fluid_model=41": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_41",
+      "y": 90
+    },
+    "facing=east,fluid_model=42": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_42",
+      "y": 90
+    },
+    "facing=east,fluid_model=43": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_43",
+      "y": 90
+    },
+    "facing=east,fluid_model=44": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_44",
+      "y": 90
+    },
+    "facing=east,fluid_model=45": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_45",
+      "y": 90
+    },
+    "facing=east,fluid_model=46": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_46",
+      "y": 90
+    },
+    "facing=east,fluid_model=47": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_47",
+      "y": 90
+    },
+    "facing=east,fluid_model=48": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_48",
+      "y": 90
+    },
+    "facing=east,fluid_model=49": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_49",
+      "y": 90
+    },
+    "facing=east,fluid_model=50": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_50",
+      "y": 90
+    },
+    "facing=east,fluid_model=51": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_51",
+      "y": 90
+    },
+    "facing=east,fluid_model=52": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_52",
+      "y": 90
+    },
+    "facing=east,fluid_model=53": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_53",
+      "y": 90
+    },
+    "facing=east,fluid_model=54": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_54",
+      "y": 90
+    },
+    "facing=east,fluid_model=55": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_55",
+      "y": 90
+    },
+    "facing=east,fluid_model=56": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_56",
+      "y": 90
+    },
+    "facing=east,fluid_model=57": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_57",
+      "y": 90
+    },
+    "facing=east,fluid_model=58": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_58",
+      "y": 90
+    },
+    "facing=east,fluid_model=59": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_59",
+      "y": 90
+    },
+    "facing=east,fluid_model=60": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_60",
+      "y": 90
+    },
+    "facing=east,fluid_model=61": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_61",
+      "y": 90
+    },
+    "facing=east,fluid_model=62": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_62",
+      "y": 90
+    },
+    "facing=east,fluid_model=63": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_63",
+      "y": 90
+    },
+    "facing=east,fluid_model=64": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_64",
+      "y": 90
+    },
+    "facing=east,fluid_model=65": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_65",
+      "y": 90
+    },
+    "facing=east,fluid_model=66": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_66",
+      "y": 90
+    },
+    "facing=east,fluid_model=67": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_67",
+      "y": 90
+    },
+    "facing=east,fluid_model=68": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_68",
+      "y": 90
+    },
+    "facing=east,fluid_model=69": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_69",
+      "y": 90
+    },
+    "facing=east,fluid_model=70": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_70",
+      "y": 90
+    },
+    "facing=east,fluid_model=71": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_71",
+      "y": 90
+    },
+    "facing=east,fluid_model=72": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_72",
+      "y": 90
+    },
+    "facing=east,fluid_model=73": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_73",
+      "y": 90
+    },
+    "facing=east,fluid_model=74": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_74",
+      "y": 90
+    },
+    "facing=east,fluid_model=75": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_75",
+      "y": 90
+    },
+    "facing=east,fluid_model=76": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_76",
+      "y": 90
+    },
+    "facing=east,fluid_model=77": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_77",
+      "y": 90
+    },
+    "facing=east,fluid_model=78": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_78",
+      "y": 90
+    },
+    "facing=east,fluid_model=79": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_79",
+      "y": 90
+    },
+    "facing=east,fluid_model=80": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_80",
+      "y": 90
+    },
+    "facing=east,fluid_model=81": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_81",
+      "y": 90
+    },
+    "facing=east,fluid_model=82": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_82",
+      "y": 90
+    },
+    "facing=east,fluid_model=83": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_83",
+      "y": 90
+    },
+    "facing=east,fluid_model=84": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_84",
+      "y": 90
+    },
+    "facing=east,fluid_model=85": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_85",
+      "y": 90
+    },
+    "facing=east,fluid_model=86": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_86",
+      "y": 90
+    },
+    "facing=east,fluid_model=87": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_87",
+      "y": 90
+    },
+    "facing=east,fluid_model=88": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_88",
+      "y": 90
+    },
+    "facing=east,fluid_model=89": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_89",
+      "y": 90
+    },
+    "facing=east,fluid_model=90": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_90",
+      "y": 90
+    },
+    "facing=east,fluid_model=91": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_91",
+      "y": 90
+    },
+    "facing=east,fluid_model=92": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_92",
+      "y": 90
+    },
+    "facing=east,fluid_model=93": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_93",
+      "y": 90
+    },
+    "facing=east,fluid_model=94": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_94",
+      "y": 90
+    },
+    "facing=east,fluid_model=95": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_95",
+      "y": 90
+    },
+    "facing=east,fluid_model=96": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_96",
+      "y": 90
+    },
+    "facing=east,fluid_model=97": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_97",
+      "y": 90
+    },
+    "facing=east,fluid_model=98": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_98",
+      "y": 90
+    },
+    "facing=east,fluid_model=99": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_99",
+      "y": 90
+    },
+    "facing=east,fluid_model=100": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_100",
+      "y": 90
+    },
+    "facing=east,fluid_model=101": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_101",
+      "y": 90
+    },
+    "facing=east,fluid_model=102": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_102",
+      "y": 90
+    },
+    "facing=east,fluid_model=103": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_103",
+      "y": 90
+    },
+    "facing=east,fluid_model=104": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_104",
+      "y": 90
+    },
+    "facing=east,fluid_model=105": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_105",
+      "y": 90
+    },
+    "facing=east,fluid_model=106": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_106",
+      "y": 90
+    },
+    "facing=east,fluid_model=107": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_107",
+      "y": 90
+    },
+    "facing=east,fluid_model=108": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_108",
+      "y": 90
+    },
+    "facing=east,fluid_model=109": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_109",
+      "y": 90
+    },
+    "facing=east,fluid_model=110": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_110",
+      "y": 90
+    },
+    "facing=east,fluid_model=111": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_111",
+      "y": 90
+    },
+    "facing=east,fluid_model=112": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_112",
+      "y": 90
+    },
+    "facing=east,fluid_model=113": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_113",
+      "y": 90
+    },
+    "facing=east,fluid_model=114": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_114",
+      "y": 90
+    },
+    "facing=east,fluid_model=115": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_115",
+      "y": 90
+    },
+    "facing=east,fluid_model=116": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_116",
+      "y": 90
+    },
+    "facing=east,fluid_model=117": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_117",
+      "y": 90
+    },
+    "facing=east,fluid_model=118": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_118",
+      "y": 90
+    },
+    "facing=east,fluid_model=119": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_119",
+      "y": 90
+    },
+    "facing=east,fluid_model=120": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_120",
+      "y": 90
+    },
+    "facing=east,fluid_model=121": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_121",
+      "y": 90
+    },
+    "facing=east,fluid_model=122": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_122",
+      "y": 90
+    },
+    "facing=east,fluid_model=123": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_123",
+      "y": 90
+    },
+    "facing=east,fluid_model=124": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_124",
+      "y": 90
+    },
+    "facing=east,fluid_model=125": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_125",
+      "y": 90
+    },
+    "facing=east,fluid_model=126": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_126",
+      "y": 90
+    },
+    "facing=east,fluid_model=127": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_127",
+      "y": 90
+    },
+    "facing=east,fluid_model=128": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_128",
+      "y": 90
+    },
+    "facing=east,fluid_model=129": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_129",
+      "y": 90
+    },
+    "facing=east,fluid_model=130": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_130",
+      "y": 90
+    },
+    "facing=east,fluid_model=131": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_131",
+      "y": 90
+    },
+    "facing=east,fluid_model=132": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_132",
+      "y": 90
+    },
+    "facing=east,fluid_model=133": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_133",
+      "y": 90
+    },
+    "facing=east,fluid_model=134": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_134",
+      "y": 90
+    },
+    "facing=east,fluid_model=135": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_135",
+      "y": 90
+    },
+    "facing=east,fluid_model=136": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_136",
+      "y": 90
+    },
+    "facing=east,fluid_model=137": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_137",
+      "y": 90
+    },
+    "facing=east,fluid_model=138": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_138",
+      "y": 90
+    },
+    "facing=east,fluid_model=139": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_139",
+      "y": 90
+    },
+    "facing=east,fluid_model=140": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_140",
+      "y": 90
+    },
+    "facing=east,fluid_model=141": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_141",
+      "y": 90
+    },
+    "facing=east,fluid_model=142": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_142",
+      "y": 90
+    },
+    "facing=east,fluid_model=143": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_143",
+      "y": 90
+    },
+    "facing=east,fluid_model=144": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_144",
+      "y": 90
+    },
+    "facing=east,fluid_model=145": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_145",
+      "y": 90
+    },
+    "facing=east,fluid_model=146": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_146",
+      "y": 90
+    },
+    "facing=east,fluid_model=147": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_147",
+      "y": 90
+    },
+    "facing=east,fluid_model=148": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_148",
+      "y": 90
+    },
+    "facing=east,fluid_model=149": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_149",
+      "y": 90
+    },
+    "facing=east,fluid_model=150": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_150",
+      "y": 90
+    },
+    "facing=east,fluid_model=151": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_151",
+      "y": 90
+    },
+    "facing=east,fluid_model=152": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_152",
+      "y": 90
+    },
+    "facing=east,fluid_model=153": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_153",
+      "y": 90
+    },
+    "facing=east,fluid_model=154": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_154",
+      "y": 90
+    },
+    "facing=east,fluid_model=155": {
+      "model": "hbm_neoforge:block/machine_fluidtank",
+      "y": 90
+    },
+    "facing=south,fluid_model=0": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_0",
+      "y": 180
+    },
+    "facing=south,fluid_model=1": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_1",
+      "y": 180
+    },
+    "facing=south,fluid_model=2": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_2",
+      "y": 180
+    },
+    "facing=south,fluid_model=3": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_3",
+      "y": 180
+    },
+    "facing=south,fluid_model=4": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_4",
+      "y": 180
+    },
+    "facing=south,fluid_model=5": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_5",
+      "y": 180
+    },
+    "facing=south,fluid_model=6": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_6",
+      "y": 180
+    },
+    "facing=south,fluid_model=7": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_7",
+      "y": 180
+    },
+    "facing=south,fluid_model=8": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_8",
+      "y": 180
+    },
+    "facing=south,fluid_model=9": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_9",
+      "y": 180
+    },
+    "facing=south,fluid_model=10": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_10",
+      "y": 180
+    },
+    "facing=south,fluid_model=11": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_11",
+      "y": 180
+    },
+    "facing=south,fluid_model=12": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_12",
+      "y": 180
+    },
+    "facing=south,fluid_model=13": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_13",
+      "y": 180
+    },
+    "facing=south,fluid_model=14": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_14",
+      "y": 180
+    },
+    "facing=south,fluid_model=15": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_15",
+      "y": 180
+    },
+    "facing=south,fluid_model=16": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_16",
+      "y": 180
+    },
+    "facing=south,fluid_model=17": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_17",
+      "y": 180
+    },
+    "facing=south,fluid_model=18": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_18",
+      "y": 180
+    },
+    "facing=south,fluid_model=19": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_19",
+      "y": 180
+    },
+    "facing=south,fluid_model=20": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_20",
+      "y": 180
+    },
+    "facing=south,fluid_model=21": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_21",
+      "y": 180
+    },
+    "facing=south,fluid_model=22": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_22",
+      "y": 180
+    },
+    "facing=south,fluid_model=23": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_23",
+      "y": 180
+    },
+    "facing=south,fluid_model=24": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_24",
+      "y": 180
+    },
+    "facing=south,fluid_model=25": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_25",
+      "y": 180
+    },
+    "facing=south,fluid_model=26": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_26",
+      "y": 180
+    },
+    "facing=south,fluid_model=27": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_27",
+      "y": 180
+    },
+    "facing=south,fluid_model=28": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_28",
+      "y": 180
+    },
+    "facing=south,fluid_model=29": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_29",
+      "y": 180
+    },
+    "facing=south,fluid_model=30": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_30",
+      "y": 180
+    },
+    "facing=south,fluid_model=31": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_31",
+      "y": 180
+    },
+    "facing=south,fluid_model=32": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_32",
+      "y": 180
+    },
+    "facing=south,fluid_model=33": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_33",
+      "y": 180
+    },
+    "facing=south,fluid_model=34": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_34",
+      "y": 180
+    },
+    "facing=south,fluid_model=35": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_35",
+      "y": 180
+    },
+    "facing=south,fluid_model=36": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_36",
+      "y": 180
+    },
+    "facing=south,fluid_model=37": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_37",
+      "y": 180
+    },
+    "facing=south,fluid_model=38": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_38",
+      "y": 180
+    },
+    "facing=south,fluid_model=39": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_39",
+      "y": 180
+    },
+    "facing=south,fluid_model=40": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_40",
+      "y": 180
+    },
+    "facing=south,fluid_model=41": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_41",
+      "y": 180
+    },
+    "facing=south,fluid_model=42": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_42",
+      "y": 180
+    },
+    "facing=south,fluid_model=43": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_43",
+      "y": 180
+    },
+    "facing=south,fluid_model=44": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_44",
+      "y": 180
+    },
+    "facing=south,fluid_model=45": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_45",
+      "y": 180
+    },
+    "facing=south,fluid_model=46": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_46",
+      "y": 180
+    },
+    "facing=south,fluid_model=47": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_47",
+      "y": 180
+    },
+    "facing=south,fluid_model=48": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_48",
+      "y": 180
+    },
+    "facing=south,fluid_model=49": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_49",
+      "y": 180
+    },
+    "facing=south,fluid_model=50": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_50",
+      "y": 180
+    },
+    "facing=south,fluid_model=51": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_51",
+      "y": 180
+    },
+    "facing=south,fluid_model=52": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_52",
+      "y": 180
+    },
+    "facing=south,fluid_model=53": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_53",
+      "y": 180
+    },
+    "facing=south,fluid_model=54": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_54",
+      "y": 180
+    },
+    "facing=south,fluid_model=55": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_55",
+      "y": 180
+    },
+    "facing=south,fluid_model=56": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_56",
+      "y": 180
+    },
+    "facing=south,fluid_model=57": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_57",
+      "y": 180
+    },
+    "facing=south,fluid_model=58": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_58",
+      "y": 180
+    },
+    "facing=south,fluid_model=59": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_59",
+      "y": 180
+    },
+    "facing=south,fluid_model=60": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_60",
+      "y": 180
+    },
+    "facing=south,fluid_model=61": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_61",
+      "y": 180
+    },
+    "facing=south,fluid_model=62": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_62",
+      "y": 180
+    },
+    "facing=south,fluid_model=63": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_63",
+      "y": 180
+    },
+    "facing=south,fluid_model=64": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_64",
+      "y": 180
+    },
+    "facing=south,fluid_model=65": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_65",
+      "y": 180
+    },
+    "facing=south,fluid_model=66": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_66",
+      "y": 180
+    },
+    "facing=south,fluid_model=67": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_67",
+      "y": 180
+    },
+    "facing=south,fluid_model=68": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_68",
+      "y": 180
+    },
+    "facing=south,fluid_model=69": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_69",
+      "y": 180
+    },
+    "facing=south,fluid_model=70": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_70",
+      "y": 180
+    },
+    "facing=south,fluid_model=71": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_71",
+      "y": 180
+    },
+    "facing=south,fluid_model=72": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_72",
+      "y": 180
+    },
+    "facing=south,fluid_model=73": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_73",
+      "y": 180
+    },
+    "facing=south,fluid_model=74": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_74",
+      "y": 180
+    },
+    "facing=south,fluid_model=75": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_75",
+      "y": 180
+    },
+    "facing=south,fluid_model=76": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_76",
+      "y": 180
+    },
+    "facing=south,fluid_model=77": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_77",
+      "y": 180
+    },
+    "facing=south,fluid_model=78": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_78",
+      "y": 180
+    },
+    "facing=south,fluid_model=79": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_79",
+      "y": 180
+    },
+    "facing=south,fluid_model=80": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_80",
+      "y": 180
+    },
+    "facing=south,fluid_model=81": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_81",
+      "y": 180
+    },
+    "facing=south,fluid_model=82": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_82",
+      "y": 180
+    },
+    "facing=south,fluid_model=83": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_83",
+      "y": 180
+    },
+    "facing=south,fluid_model=84": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_84",
+      "y": 180
+    },
+    "facing=south,fluid_model=85": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_85",
+      "y": 180
+    },
+    "facing=south,fluid_model=86": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_86",
+      "y": 180
+    },
+    "facing=south,fluid_model=87": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_87",
+      "y": 180
+    },
+    "facing=south,fluid_model=88": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_88",
+      "y": 180
+    },
+    "facing=south,fluid_model=89": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_89",
+      "y": 180
+    },
+    "facing=south,fluid_model=90": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_90",
+      "y": 180
+    },
+    "facing=south,fluid_model=91": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_91",
+      "y": 180
+    },
+    "facing=south,fluid_model=92": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_92",
+      "y": 180
+    },
+    "facing=south,fluid_model=93": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_93",
+      "y": 180
+    },
+    "facing=south,fluid_model=94": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_94",
+      "y": 180
+    },
+    "facing=south,fluid_model=95": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_95",
+      "y": 180
+    },
+    "facing=south,fluid_model=96": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_96",
+      "y": 180
+    },
+    "facing=south,fluid_model=97": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_97",
+      "y": 180
+    },
+    "facing=south,fluid_model=98": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_98",
+      "y": 180
+    },
+    "facing=south,fluid_model=99": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_99",
+      "y": 180
+    },
+    "facing=south,fluid_model=100": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_100",
+      "y": 180
+    },
+    "facing=south,fluid_model=101": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_101",
+      "y": 180
+    },
+    "facing=south,fluid_model=102": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_102",
+      "y": 180
+    },
+    "facing=south,fluid_model=103": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_103",
+      "y": 180
+    },
+    "facing=south,fluid_model=104": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_104",
+      "y": 180
+    },
+    "facing=south,fluid_model=105": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_105",
+      "y": 180
+    },
+    "facing=south,fluid_model=106": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_106",
+      "y": 180
+    },
+    "facing=south,fluid_model=107": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_107",
+      "y": 180
+    },
+    "facing=south,fluid_model=108": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_108",
+      "y": 180
+    },
+    "facing=south,fluid_model=109": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_109",
+      "y": 180
+    },
+    "facing=south,fluid_model=110": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_110",
+      "y": 180
+    },
+    "facing=south,fluid_model=111": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_111",
+      "y": 180
+    },
+    "facing=south,fluid_model=112": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_112",
+      "y": 180
+    },
+    "facing=south,fluid_model=113": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_113",
+      "y": 180
+    },
+    "facing=south,fluid_model=114": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_114",
+      "y": 180
+    },
+    "facing=south,fluid_model=115": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_115",
+      "y": 180
+    },
+    "facing=south,fluid_model=116": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_116",
+      "y": 180
+    },
+    "facing=south,fluid_model=117": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_117",
+      "y": 180
+    },
+    "facing=south,fluid_model=118": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_118",
+      "y": 180
+    },
+    "facing=south,fluid_model=119": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_119",
+      "y": 180
+    },
+    "facing=south,fluid_model=120": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_120",
+      "y": 180
+    },
+    "facing=south,fluid_model=121": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_121",
+      "y": 180
+    },
+    "facing=south,fluid_model=122": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_122",
+      "y": 180
+    },
+    "facing=south,fluid_model=123": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_123",
+      "y": 180
+    },
+    "facing=south,fluid_model=124": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_124",
+      "y": 180
+    },
+    "facing=south,fluid_model=125": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_125",
+      "y": 180
+    },
+    "facing=south,fluid_model=126": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_126",
+      "y": 180
+    },
+    "facing=south,fluid_model=127": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_127",
+      "y": 180
+    },
+    "facing=south,fluid_model=128": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_128",
+      "y": 180
+    },
+    "facing=south,fluid_model=129": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_129",
+      "y": 180
+    },
+    "facing=south,fluid_model=130": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_130",
+      "y": 180
+    },
+    "facing=south,fluid_model=131": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_131",
+      "y": 180
+    },
+    "facing=south,fluid_model=132": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_132",
+      "y": 180
+    },
+    "facing=south,fluid_model=133": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_133",
+      "y": 180
+    },
+    "facing=south,fluid_model=134": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_134",
+      "y": 180
+    },
+    "facing=south,fluid_model=135": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_135",
+      "y": 180
+    },
+    "facing=south,fluid_model=136": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_136",
+      "y": 180
+    },
+    "facing=south,fluid_model=137": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_137",
+      "y": 180
+    },
+    "facing=south,fluid_model=138": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_138",
+      "y": 180
+    },
+    "facing=south,fluid_model=139": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_139",
+      "y": 180
+    },
+    "facing=south,fluid_model=140": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_140",
+      "y": 180
+    },
+    "facing=south,fluid_model=141": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_141",
+      "y": 180
+    },
+    "facing=south,fluid_model=142": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_142",
+      "y": 180
+    },
+    "facing=south,fluid_model=143": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_143",
+      "y": 180
+    },
+    "facing=south,fluid_model=144": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_144",
+      "y": 180
+    },
+    "facing=south,fluid_model=145": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_145",
+      "y": 180
+    },
+    "facing=south,fluid_model=146": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_146",
+      "y": 180
+    },
+    "facing=south,fluid_model=147": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_147",
+      "y": 180
+    },
+    "facing=south,fluid_model=148": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_148",
+      "y": 180
+    },
+    "facing=south,fluid_model=149": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_149",
+      "y": 180
+    },
+    "facing=south,fluid_model=150": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_150",
+      "y": 180
+    },
+    "facing=south,fluid_model=151": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_151",
+      "y": 180
+    },
+    "facing=south,fluid_model=152": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_152",
+      "y": 180
+    },
+    "facing=south,fluid_model=153": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_153",
+      "y": 180
+    },
+    "facing=south,fluid_model=154": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_154",
+      "y": 180
+    },
+    "facing=south,fluid_model=155": {
+      "model": "hbm_neoforge:block/machine_fluidtank",
+      "y": 180
+    },
+    "facing=west,fluid_model=0": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_0",
+      "y": 270
+    },
+    "facing=west,fluid_model=1": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_1",
+      "y": 270
+    },
+    "facing=west,fluid_model=2": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_2",
+      "y": 270
+    },
+    "facing=west,fluid_model=3": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_3",
+      "y": 270
+    },
+    "facing=west,fluid_model=4": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_4",
+      "y": 270
+    },
+    "facing=west,fluid_model=5": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_5",
+      "y": 270
+    },
+    "facing=west,fluid_model=6": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_6",
+      "y": 270
+    },
+    "facing=west,fluid_model=7": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_7",
+      "y": 270
+    },
+    "facing=west,fluid_model=8": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_8",
+      "y": 270
+    },
+    "facing=west,fluid_model=9": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_9",
+      "y": 270
+    },
+    "facing=west,fluid_model=10": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_10",
+      "y": 270
+    },
+    "facing=west,fluid_model=11": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_11",
+      "y": 270
+    },
+    "facing=west,fluid_model=12": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_12",
+      "y": 270
+    },
+    "facing=west,fluid_model=13": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_13",
+      "y": 270
+    },
+    "facing=west,fluid_model=14": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_14",
+      "y": 270
+    },
+    "facing=west,fluid_model=15": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_15",
+      "y": 270
+    },
+    "facing=west,fluid_model=16": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_16",
+      "y": 270
+    },
+    "facing=west,fluid_model=17": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_17",
+      "y": 270
+    },
+    "facing=west,fluid_model=18": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_18",
+      "y": 270
+    },
+    "facing=west,fluid_model=19": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_19",
+      "y": 270
+    },
+    "facing=west,fluid_model=20": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_20",
+      "y": 270
+    },
+    "facing=west,fluid_model=21": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_21",
+      "y": 270
+    },
+    "facing=west,fluid_model=22": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_22",
+      "y": 270
+    },
+    "facing=west,fluid_model=23": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_23",
+      "y": 270
+    },
+    "facing=west,fluid_model=24": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_24",
+      "y": 270
+    },
+    "facing=west,fluid_model=25": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_25",
+      "y": 270
+    },
+    "facing=west,fluid_model=26": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_26",
+      "y": 270
+    },
+    "facing=west,fluid_model=27": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_27",
+      "y": 270
+    },
+    "facing=west,fluid_model=28": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_28",
+      "y": 270
+    },
+    "facing=west,fluid_model=29": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_29",
+      "y": 270
+    },
+    "facing=west,fluid_model=30": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_30",
+      "y": 270
+    },
+    "facing=west,fluid_model=31": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_31",
+      "y": 270
+    },
+    "facing=west,fluid_model=32": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_32",
+      "y": 270
+    },
+    "facing=west,fluid_model=33": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_33",
+      "y": 270
+    },
+    "facing=west,fluid_model=34": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_34",
+      "y": 270
+    },
+    "facing=west,fluid_model=35": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_35",
+      "y": 270
+    },
+    "facing=west,fluid_model=36": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_36",
+      "y": 270
+    },
+    "facing=west,fluid_model=37": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_37",
+      "y": 270
+    },
+    "facing=west,fluid_model=38": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_38",
+      "y": 270
+    },
+    "facing=west,fluid_model=39": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_39",
+      "y": 270
+    },
+    "facing=west,fluid_model=40": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_40",
+      "y": 270
+    },
+    "facing=west,fluid_model=41": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_41",
+      "y": 270
+    },
+    "facing=west,fluid_model=42": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_42",
+      "y": 270
+    },
+    "facing=west,fluid_model=43": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_43",
+      "y": 270
+    },
+    "facing=west,fluid_model=44": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_44",
+      "y": 270
+    },
+    "facing=west,fluid_model=45": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_45",
+      "y": 270
+    },
+    "facing=west,fluid_model=46": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_46",
+      "y": 270
+    },
+    "facing=west,fluid_model=47": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_47",
+      "y": 270
+    },
+    "facing=west,fluid_model=48": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_48",
+      "y": 270
+    },
+    "facing=west,fluid_model=49": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_49",
+      "y": 270
+    },
+    "facing=west,fluid_model=50": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_50",
+      "y": 270
+    },
+    "facing=west,fluid_model=51": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_51",
+      "y": 270
+    },
+    "facing=west,fluid_model=52": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_52",
+      "y": 270
+    },
+    "facing=west,fluid_model=53": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_53",
+      "y": 270
+    },
+    "facing=west,fluid_model=54": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_54",
+      "y": 270
+    },
+    "facing=west,fluid_model=55": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_55",
+      "y": 270
+    },
+    "facing=west,fluid_model=56": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_56",
+      "y": 270
+    },
+    "facing=west,fluid_model=57": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_57",
+      "y": 270
+    },
+    "facing=west,fluid_model=58": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_58",
+      "y": 270
+    },
+    "facing=west,fluid_model=59": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_59",
+      "y": 270
+    },
+    "facing=west,fluid_model=60": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_60",
+      "y": 270
+    },
+    "facing=west,fluid_model=61": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_61",
+      "y": 270
+    },
+    "facing=west,fluid_model=62": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_62",
+      "y": 270
+    },
+    "facing=west,fluid_model=63": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_63",
+      "y": 270
+    },
+    "facing=west,fluid_model=64": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_64",
+      "y": 270
+    },
+    "facing=west,fluid_model=65": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_65",
+      "y": 270
+    },
+    "facing=west,fluid_model=66": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_66",
+      "y": 270
+    },
+    "facing=west,fluid_model=67": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_67",
+      "y": 270
+    },
+    "facing=west,fluid_model=68": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_68",
+      "y": 270
+    },
+    "facing=west,fluid_model=69": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_69",
+      "y": 270
+    },
+    "facing=west,fluid_model=70": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_70",
+      "y": 270
+    },
+    "facing=west,fluid_model=71": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_71",
+      "y": 270
+    },
+    "facing=west,fluid_model=72": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_72",
+      "y": 270
+    },
+    "facing=west,fluid_model=73": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_73",
+      "y": 270
+    },
+    "facing=west,fluid_model=74": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_74",
+      "y": 270
+    },
+    "facing=west,fluid_model=75": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_75",
+      "y": 270
+    },
+    "facing=west,fluid_model=76": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_76",
+      "y": 270
+    },
+    "facing=west,fluid_model=77": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_77",
+      "y": 270
+    },
+    "facing=west,fluid_model=78": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_78",
+      "y": 270
+    },
+    "facing=west,fluid_model=79": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_79",
+      "y": 270
+    },
+    "facing=west,fluid_model=80": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_80",
+      "y": 270
+    },
+    "facing=west,fluid_model=81": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_81",
+      "y": 270
+    },
+    "facing=west,fluid_model=82": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_82",
+      "y": 270
+    },
+    "facing=west,fluid_model=83": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_83",
+      "y": 270
+    },
+    "facing=west,fluid_model=84": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_84",
+      "y": 270
+    },
+    "facing=west,fluid_model=85": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_85",
+      "y": 270
+    },
+    "facing=west,fluid_model=86": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_86",
+      "y": 270
+    },
+    "facing=west,fluid_model=87": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_87",
+      "y": 270
+    },
+    "facing=west,fluid_model=88": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_88",
+      "y": 270
+    },
+    "facing=west,fluid_model=89": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_89",
+      "y": 270
+    },
+    "facing=west,fluid_model=90": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_90",
+      "y": 270
+    },
+    "facing=west,fluid_model=91": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_91",
+      "y": 270
+    },
+    "facing=west,fluid_model=92": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_92",
+      "y": 270
+    },
+    "facing=west,fluid_model=93": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_93",
+      "y": 270
+    },
+    "facing=west,fluid_model=94": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_94",
+      "y": 270
+    },
+    "facing=west,fluid_model=95": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_95",
+      "y": 270
+    },
+    "facing=west,fluid_model=96": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_96",
+      "y": 270
+    },
+    "facing=west,fluid_model=97": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_97",
+      "y": 270
+    },
+    "facing=west,fluid_model=98": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_98",
+      "y": 270
+    },
+    "facing=west,fluid_model=99": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_99",
+      "y": 270
+    },
+    "facing=west,fluid_model=100": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_100",
+      "y": 270
+    },
+    "facing=west,fluid_model=101": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_101",
+      "y": 270
+    },
+    "facing=west,fluid_model=102": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_102",
+      "y": 270
+    },
+    "facing=west,fluid_model=103": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_103",
+      "y": 270
+    },
+    "facing=west,fluid_model=104": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_104",
+      "y": 270
+    },
+    "facing=west,fluid_model=105": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_105",
+      "y": 270
+    },
+    "facing=west,fluid_model=106": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_106",
+      "y": 270
+    },
+    "facing=west,fluid_model=107": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_107",
+      "y": 270
+    },
+    "facing=west,fluid_model=108": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_108",
+      "y": 270
+    },
+    "facing=west,fluid_model=109": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_109",
+      "y": 270
+    },
+    "facing=west,fluid_model=110": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_110",
+      "y": 270
+    },
+    "facing=west,fluid_model=111": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_111",
+      "y": 270
+    },
+    "facing=west,fluid_model=112": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_112",
+      "y": 270
+    },
+    "facing=west,fluid_model=113": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_113",
+      "y": 270
+    },
+    "facing=west,fluid_model=114": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_114",
+      "y": 270
+    },
+    "facing=west,fluid_model=115": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_115",
+      "y": 270
+    },
+    "facing=west,fluid_model=116": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_116",
+      "y": 270
+    },
+    "facing=west,fluid_model=117": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_117",
+      "y": 270
+    },
+    "facing=west,fluid_model=118": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_118",
+      "y": 270
+    },
+    "facing=west,fluid_model=119": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_119",
+      "y": 270
+    },
+    "facing=west,fluid_model=120": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_120",
+      "y": 270
+    },
+    "facing=west,fluid_model=121": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_121",
+      "y": 270
+    },
+    "facing=west,fluid_model=122": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_122",
+      "y": 270
+    },
+    "facing=west,fluid_model=123": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_123",
+      "y": 270
+    },
+    "facing=west,fluid_model=124": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_124",
+      "y": 270
+    },
+    "facing=west,fluid_model=125": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_125",
+      "y": 270
+    },
+    "facing=west,fluid_model=126": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_126",
+      "y": 270
+    },
+    "facing=west,fluid_model=127": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_127",
+      "y": 270
+    },
+    "facing=west,fluid_model=128": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_128",
+      "y": 270
+    },
+    "facing=west,fluid_model=129": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_129",
+      "y": 270
+    },
+    "facing=west,fluid_model=130": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_130",
+      "y": 270
+    },
+    "facing=west,fluid_model=131": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_131",
+      "y": 270
+    },
+    "facing=west,fluid_model=132": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_132",
+      "y": 270
+    },
+    "facing=west,fluid_model=133": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_133",
+      "y": 270
+    },
+    "facing=west,fluid_model=134": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_134",
+      "y": 270
+    },
+    "facing=west,fluid_model=135": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_135",
+      "y": 270
+    },
+    "facing=west,fluid_model=136": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_136",
+      "y": 270
+    },
+    "facing=west,fluid_model=137": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_137",
+      "y": 270
+    },
+    "facing=west,fluid_model=138": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_138",
+      "y": 270
+    },
+    "facing=west,fluid_model=139": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_139",
+      "y": 270
+    },
+    "facing=west,fluid_model=140": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_140",
+      "y": 270
+    },
+    "facing=west,fluid_model=141": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_141",
+      "y": 270
+    },
+    "facing=west,fluid_model=142": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_142",
+      "y": 270
+    },
+    "facing=west,fluid_model=143": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_143",
+      "y": 270
+    },
+    "facing=west,fluid_model=144": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_144",
+      "y": 270
+    },
+    "facing=west,fluid_model=145": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_145",
+      "y": 270
+    },
+    "facing=west,fluid_model=146": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_146",
+      "y": 270
+    },
+    "facing=west,fluid_model=147": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_147",
+      "y": 270
+    },
+    "facing=west,fluid_model=148": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_148",
+      "y": 270
+    },
+    "facing=west,fluid_model=149": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_149",
+      "y": 270
+    },
+    "facing=west,fluid_model=150": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_150",
+      "y": 270
+    },
+    "facing=west,fluid_model=151": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_151",
+      "y": 270
+    },
+    "facing=west,fluid_model=152": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_152",
+      "y": 270
+    },
+    "facing=west,fluid_model=153": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_153",
+      "y": 270
+    },
+    "facing=west,fluid_model=154": {
+      "model": "hbm_neoforge:block/machine_fluidtank_fluid_154",
+      "y": 270
+    },
+    "facing=west,fluid_model=155": {
+      "model": "hbm_neoforge:block/machine_fluidtank",
+      "y": 270
+    }
+  }
+}

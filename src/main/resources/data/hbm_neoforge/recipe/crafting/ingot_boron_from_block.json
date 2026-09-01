@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "hbm_neoforge:block_boron"
+    }
+  ],
+  "result": {
+    "id": "hbm_neoforge:ingot_boron",
+    "count": 9
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "R  ",
+    "P  ",
+    "R  "
+  ],
+  "key": {
+    "R": [
+      {
+        "item": "hbm_neoforge:ingot_biorubber"
+      },
+      {
+        "item": "hbm_neoforge:ingot_rubber"
+      }
+    ],
+    "P": {
+      "item": "hbm_neoforge:plate_iron"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:iv_bag",
+    "count": 4
+  }
+}

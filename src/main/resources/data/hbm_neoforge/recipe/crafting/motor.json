@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " W ",
+    "PCP",
+    " R "
+  ],
+  "key": {
+    "W": {
+      "item": "hbm_neoforge:wire_red_copper"
+    },
+    "P": {
+      "item": "hbm_neoforge:plate_iron"
+    },
+    "C": {
+      "item": "hbm_neoforge:copper_coil"
+    },
+    "R": {
+      "item": "hbm_neoforge:ring_coil"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:motor",
+    "count": 2
+  }
+}

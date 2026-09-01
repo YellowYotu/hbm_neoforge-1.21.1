@@ -1,0 +1,9 @@
+{
+  "input": {
+    "item": "hbm_neoforge:powder_cobalt_tiny"
+  },
+  "output": {
+    "item": "hbm_neoforge:dust",
+    "count": 1
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "result": {
+    "item": "hbm_neoforge:sliding_seal_door"
+  },
+  "duration": 200,
+  "energy_per_tick": 100,
+  "ingredients": [
+    {
+      "item": "hbm_neoforge:plate_steel",
+      "count": 12
+    },
+    {
+      "item": "hbm_neoforge:plate_polymer",
+      "count": 4
+    },
+    {
+      "item": "hbm_neoforge:motor",
+      "count": 2
+    },
+    {
+      "item": "hbm_neoforge:bolt_dura_steel",
+      "count": 4
+    },
+    {
+      "item": "minecraft:white_dye",
+      "count": 2
+    }
+  ]
+}

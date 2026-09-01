@@ -1,0 +1,13 @@
+{
+  "result": {
+    "item": "hbm_neoforge:plate_gunmetal"
+  },
+  "duration": 60,
+  "energy_per_tick": 100,
+  "ingredients": [
+    {
+      "item": "hbm_neoforge:ingot_gunmetal",
+      "count": 1
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "loader": "neoforge:obj",
+  "model": "hbm_neoforge:models/block/geiger.obj",
+  "flip_v": true,
+  "shade_quads": true
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "BBB",
+    "BBB",
+    "BBB"
+  ],
+  "key": {
+    "B": {
+      "item": "hbm_neoforge:ingot_boron"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:block_boron",
+    "count": 1
+  }
+}

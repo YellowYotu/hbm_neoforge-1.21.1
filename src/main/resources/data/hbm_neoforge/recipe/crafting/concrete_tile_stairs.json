@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "hbm_neoforge:concrete_tile"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:concrete_tile_stairs",
+    "count": 4
+  }
+}

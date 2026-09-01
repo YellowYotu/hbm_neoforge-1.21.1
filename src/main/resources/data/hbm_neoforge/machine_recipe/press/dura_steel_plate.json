@@ -1,0 +1,7 @@
+{
+  "input": "hbm_neoforge:ingot_dura_steel",
+  "stamp": "plate",
+  "output": {
+    "item": "hbm_neoforge:plate_dura_steel"
+  }
+}

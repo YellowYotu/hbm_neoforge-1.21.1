@@ -1,0 +1,9 @@
+{
+  "input": {
+    "item": "hbm_neoforge:ore_tungsten"
+  },
+  "output": {
+    "item": "hbm_neoforge:powder_tungsten",
+    "count": 2
+  }
+}

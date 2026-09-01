@@ -1,0 +1,8 @@
+{
+  "input": "hbm_neoforge:ingot_lead",
+  "stamp": "wire",
+  "output": {
+    "item": "hbm_neoforge:wire_fine_lead",
+    "count": 8
+  }
+}

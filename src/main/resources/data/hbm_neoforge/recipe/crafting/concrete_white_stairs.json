@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "hbm_neoforge:concrete_white"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:concrete_white_stairs",
+    "count": 4
+  }
+}

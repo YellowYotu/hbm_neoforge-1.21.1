@@ -1,0 +1,44 @@
+{
+  "loader": "neoforge:obj",
+  "model": "hbm_neoforge:models/block/assembly_machine.obj",
+  "flip_v": true,
+  "automatic_culling": false,
+  "shade_quads": true,
+  "visibility": {
+    "Ring2": false,
+    "Base": false,
+    "Frame": false,
+    "Spike1": false,
+    "Spike2": false,
+    "Head1": true,
+    "ArmUpper1": false,
+    "ArmUpper2": false,
+    "ArmLower2": false,
+    "ArmLower1": false,
+    "Ring": false,
+    "Head2": false
+  },
+  "textures": {
+    "texture0": "hbm_neoforge:block/assembly_machine",
+    "particle": "hbm_neoforge:block/assembly_machine"
+  },
+  "display": {
+    "fixed": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    }
+  }
+}

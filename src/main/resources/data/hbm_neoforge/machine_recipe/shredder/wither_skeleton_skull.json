@@ -1,0 +1,9 @@
+{
+  "input": {
+    "item": "minecraft:wither_skeleton_skull"
+  },
+  "output": {
+    "item": "hbm_neoforge:biomass",
+    "count": 4
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "hbm_neoforge:ingot_lead"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:block_lead",
+    "count": 1
+  }
+}

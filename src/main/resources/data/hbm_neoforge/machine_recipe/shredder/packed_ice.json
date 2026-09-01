@@ -1,0 +1,9 @@
+{
+  "input": {
+    "item": "minecraft:packed_ice"
+  },
+  "output": {
+    "item": "hbm_neoforge:powder_ice",
+    "count": 1
+  }
+}

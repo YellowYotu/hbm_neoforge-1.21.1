@@ -1,0 +1,9 @@
+{
+  "input": {
+    "item": "minecraft:sandstone_stairs"
+  },
+  "output": {
+    "item": "minecraft:sand",
+    "count": 6
+  }
+}
