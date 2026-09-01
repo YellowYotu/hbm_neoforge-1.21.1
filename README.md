@@ -1,31 +1,122 @@
 # HBM's Nuclear Tech Mod for Minecraft 1.21.1
 
-An unofficial modern community-driven port of the legendary Hbm's Nuclear Tech Mod, bringing advanced atomic science, material processing, and industrial hazards to the 1.21.1 NeoForge ecosystem.
+An unofficial modern community-driven port of the legendary HBM's Nuclear Tech Mod, bringing its industrial machinery, material processing, fluids, radiation mechanics, and nuclear technology to Minecraft 1.21.1 on NeoForge.
+
+> Current version: **0.0.2-A**
+>
+> Status: **Early Alpha**
 
 ---
 
-##  Key Features (Current Alpha):
-*   **Expansive Tech Tree:** Deep progression spanning over multi-block processing and utility machinery.
-*   **Advanced Material Processing:** Classic NTM ores, custom fluids, and logistics adapted for modern world generation.
-*   **Hazard System:** Realism-focused mechanics including electricity transmission, custom gases, and dangerous radiation filters.
+## Key Features
 
-##  What is Planned?
-We are actively working on porting the core features from the original 1.7.10/1.12.2 versions, including:
-*   **Iconic Nuclear Reactors:** The infamous RBMK, fusion reactors, and breeding facilities.
-*   **Ballistic Logistics:** Missiles, rocket launchpads, and high-tier defensive automated turrets.
-*   **Advanced Equipment:** Hazards suits, specialized heavy armor, and unique tools with custom modifiers.
+- **Classic HBM Machinery**
+  - Assembly Machine
+  - Blast Furnace
+  - Press
+  - Soldering Station
+  - HBM Anvils
+  - Additional utility and processing machines
+
+- **Anvil Progression**
+  - Tier-based anvil recipes
+  - Iron and Steel Anvils
+  - Multi-input construction recipes
+  - JEI integration for HBM anvil recipes
+
+- **Fluid System**
+  - Universal Fluid Ducts
+  - Dynamic fluid filtering
+  - Multi Fluid Identifier
+  - Fluid storage and tank systems
+  - Infinite Fluid Barrel support
+  - Fluid-specific duct coloring
+  - Painted / Coated Fluid Ducts
+
+- **Advanced Material Processing**
+  - Classic HBM materials
+  - Red Copper
+  - Steel
+  - Custom plates, wires, circuits, coils, and machine components
+  - HBM-specific fuels and briquettes
+
+- **Radiation & Hazards**
+  - Radiation shielding
+  - Reinforced Glass protection
+  - Hazmat-related materials and equipment
+  - Additional hazardous systems planned as the port expands
+
+- **Original HBM Assets**
+  - Many original textures, models, GUIs, and recipes have been preserved or adapted for modern Minecraft rendering.
+
+- **Decorative Blocks**
+  - Additional HBM / CE industrial and laboratory building blocks
+  - Steel Scaffold
+  - Reinforced Glass and Glass Panes
+  - Cage Lamps
+  - Industrial doors and structural blocks
+
+- **Localization**
+  - English
+  - Ukrainian localization for supported content
 
 ---
 
-##  Important Disclaimer (Alpha Status)
-Please note that this project is currently in its **Early Alpha** stage. We have rewritten a massive chunk of the codebase to make it work properly on modern versions. 
-*   **Survival Ready?** Partially. You can use it in survival, but many late-game features are still being ported.
-*   **Recipe Viewers:** Using **JEI** is highly recommended due to the complexity of custom machine recipes.
-*   **Bugs:** Since the mod is under heavy development, unexpected behavior may occur. Please report all crashes and visual artifacts to our GitHub Issue Tracker!
+## What is Planned?
+
+We are actively porting more systems from the original HBM Nuclear Tech Mod and Community Edition, including:
+
+- **Nuclear Reactors**
+  - RBMK reactors
+  - Research reactors
+  - Fusion systems
+  - Fuel processing and enrichment
+
+- **Missiles & Weapons**
+  - Missile launch systems
+  - Ballistic weapons
+  - Automated turrets
+  - High-tier explosives
+
+- **Advanced Industry**
+  - Additional processing machines
+  - Larger fluid systems
+  - Chemical processing
+  - Power generation and electricity networks
+
+- **Equipment**
+  - Hazmat suits
+  - Heavy armor
+  - Specialized tools
+  - Radiation protection equipment
 
 ---
 
-##  Links & Credits
-*   **Original Mod by:** [HbmMods](https://github.com/HbmMods/Hbm-s-Nuclear-Tech-GIT) (Huge thanks to the original creators!)
-*   CurseForge [YellowYotu](https://www.curseforge.com/minecraft/mc-mods/hbms-nuclear-tech-unofficial-neoforge-edition)
-*   Discord [chanel](https://discord.gg/A9NK8xypwU)
+## Important Disclaimer
+
+This project is currently in **Early Alpha**.
+
+A significant part of the original mod has to be rewritten or adapted for modern Minecraft, NeoForge, modern rendering, networking, data-driven recipes, and world systems.
+
+- **Survival Ready?**  
+  Partially. Early-game and some industrial progression is playable, but large parts of the original progression are still being ported.
+
+- **Recipe Viewers**  
+  **JEI is highly recommended**, especially for custom Anvil and machine recipes.
+
+- **Compatibility**  
+  Existing worlds may occasionally require migration between early alpha versions while core systems are still being developed.
+
+- **Bugs**  
+  Visual issues, missing recipes, incomplete mechanics, or crashes may still occur. Please report problems through GitHub Issues.
+
+---
+
+## Links & Credits
+
+- **Original Mod:** [HbmMods](https://github.com/HbmMods/Hbm-s-Nuclear-Tech-GIT)
+- **NeoForge Port:** [YellowYotu](https://github.com/YellowYotu/hbm_neoforge-1.21.1)
+- **CurseForge:** [HBM's Nuclear Tech - Unofficial NeoForge Edition](https://www.curseforge.com/minecraft/mc-mods/hbms-nuclear-tech-unofficial-neoforge-edition)
+- **Discord:** [Community Discord](https://discord.gg/A9NK8xypwU)
+
+Huge thanks to the original HBM developers and Community Edition contributors.
