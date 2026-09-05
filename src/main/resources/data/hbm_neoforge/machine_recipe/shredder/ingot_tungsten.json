@@ -1,9 +1,0 @@
-{
-  "input": {
-    "item": "hbm_neoforge:ingot_tungsten"
-  },
-  "output": {
-    "item": "hbm_neoforge:powder_tungsten",
-    "count": 1
-  }
-}

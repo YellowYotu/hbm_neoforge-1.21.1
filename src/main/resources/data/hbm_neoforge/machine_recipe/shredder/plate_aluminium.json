@@ -1,9 +1,0 @@
-{
-  "input": {
-    "item": "hbm_neoforge:plate_aluminium"
-  },
-  "output": {
-    "item": "hbm_neoforge:powder_aluminium",
-    "count": 1
-  }
-}

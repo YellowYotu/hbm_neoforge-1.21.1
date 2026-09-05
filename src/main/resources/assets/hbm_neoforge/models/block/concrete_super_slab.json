@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "hbm_neoforge:block/concrete_super",
-    "top": "hbm_neoforge:block/concrete_super",
-    "side": "hbm_neoforge:block/concrete_super"
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "input": {
-    "item": "hbm_neoforge:ingot_graphite"
-  },
-  "output": {
-    "item": "hbm_neoforge:powder_coal",
-    "count": 1
-  }
-}

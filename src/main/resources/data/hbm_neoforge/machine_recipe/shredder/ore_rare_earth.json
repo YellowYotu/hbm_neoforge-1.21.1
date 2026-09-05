@@ -1,9 +1,0 @@
-{
-  "input": {
-    "item": "hbm_neoforge:ore_rare_earth"
-  },
-  "output": {
-    "item": "hbm_neoforge:powder_desh_mix",
-    "count": 1
-  }
-}

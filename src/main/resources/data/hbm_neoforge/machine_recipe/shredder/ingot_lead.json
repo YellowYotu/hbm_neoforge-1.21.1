@@ -1,9 +1,0 @@
-{
-  "input": {
-    "item": "hbm_neoforge:ingot_lead"
-  },
-  "output": {
-    "item": "hbm_neoforge:powder_lead",
-    "count": 1
-  }
-}

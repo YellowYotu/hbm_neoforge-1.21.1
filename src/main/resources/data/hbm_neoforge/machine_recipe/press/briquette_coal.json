@@ -1,8 +1,0 @@
-{
-  "input": "hbm_neoforge:powder_coal",
-  "stamp": "flat",
-  "output": {
-    "item": "hbm_neoforge:briquette_coal",
-    "count": 1
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "input": {
-    "item": "hbm_neoforge:block_red_copper"
-  },
-  "output": {
-    "item": "hbm_neoforge:powder_red_copper",
-    "count": 9
-  }
-}

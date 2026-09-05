@@ -1,4 +1,0 @@
-{
-  "type": "minecraft:block",
-  "pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": "hbm_neoforge:red_cable"}], "conditions": [{"condition": "minecraft:survives_explosion"}]}]
-}

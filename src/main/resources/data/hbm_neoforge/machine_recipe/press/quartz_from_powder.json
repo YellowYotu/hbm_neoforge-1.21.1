@@ -1,7 +1,0 @@
-{
-  "input": "hbm_neoforge:powder_quartz",
-  "stamp": "flat",
-  "output": {
-    "item": "minecraft:quartz"
-  }
-}

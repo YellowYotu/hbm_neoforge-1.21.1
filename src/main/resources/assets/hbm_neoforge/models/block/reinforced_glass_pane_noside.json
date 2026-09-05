@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/template_glass_pane_noside",
-  "textures": {
-    "pane": "hbm_neoforge:block/reinforced_glass_pane",
-    "edge": "hbm_neoforge:block/reinforced_glass_pane_edge"
-  },
-  "render_type": "minecraft:cutout"
-}

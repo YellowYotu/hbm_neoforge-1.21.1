@@ -1,9 +1,0 @@
-{
-  "input": {
-    "item": "minecraft:nether_quartz_ore"
-  },
-  "output": {
-    "item": "hbm_neoforge:powder_quartz",
-    "count": 2
-  }
-}

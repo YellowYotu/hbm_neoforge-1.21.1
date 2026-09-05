@@ -1,8 +1,0 @@
-{
-  "input": "hbm_neoforge:ingot_red_copper",
-  "stamp": "flat",
-  "output": {
-    "item": "hbm_neoforge:wire_red_copper",
-    "count": 8
-  }
-}

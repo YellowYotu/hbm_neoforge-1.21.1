@@ -1,9 +1,0 @@
-{
-  "input": {
-    "item": "minecraft:stone_bricks"
-  },
-  "output": {
-    "item": "minecraft:gravel",
-    "count": 1
-  }
-}

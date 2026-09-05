@@ -1,8 +1,0 @@
-{
-  "input": "hbm_neoforge:powder_sawdust",
-  "stamp": "flat",
-  "output": {
-    "item": "hbm_neoforge:briquette_wood",
-    "count": 1
-  }
-}

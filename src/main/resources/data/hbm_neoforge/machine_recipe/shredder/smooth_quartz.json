@@ -1,9 +1,0 @@
-{
-  "input": {
-    "item": "minecraft:smooth_quartz"
-  },
-  "output": {
-    "item": "hbm_neoforge:powder_quartz",
-    "count": 4
-  }
-}

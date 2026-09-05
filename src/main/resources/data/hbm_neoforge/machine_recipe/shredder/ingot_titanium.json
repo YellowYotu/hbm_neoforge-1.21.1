@@ -1,9 +1,0 @@
-{
-  "input": {
-    "item": "hbm_neoforge:ingot_titanium"
-  },
-  "output": {
-    "item": "hbm_neoforge:powder_titanium",
-    "count": 1
-  }
-}

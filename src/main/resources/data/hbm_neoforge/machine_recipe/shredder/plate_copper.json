@@ -1,9 +1,0 @@
-{
-  "input": {
-    "item": "hbm_neoforge:plate_copper"
-  },
-  "output": {
-    "item": "hbm_neoforge:powder_copper",
-    "count": 1
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "input": {
-    "item": "hbm_neoforge:powder_boron"
-  },
-  "output": {
-    "item": "hbm_neoforge:dust",
-    "count": 1
-  }
-}

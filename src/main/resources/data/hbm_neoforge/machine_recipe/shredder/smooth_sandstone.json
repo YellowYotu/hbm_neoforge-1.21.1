@@ -1,9 +1,0 @@
-{
-  "input": {
-    "item": "minecraft:smooth_sandstone"
-  },
-  "output": {
-    "item": "minecraft:sand",
-    "count": 4
-  }
-}

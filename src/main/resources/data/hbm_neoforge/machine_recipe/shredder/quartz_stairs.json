@@ -1,9 +1,0 @@
-{
-  "input": {
-    "item": "minecraft:quartz_stairs"
-  },
-  "output": {
-    "item": "hbm_neoforge:powder_quartz",
-    "count": 3
-  }
-}
