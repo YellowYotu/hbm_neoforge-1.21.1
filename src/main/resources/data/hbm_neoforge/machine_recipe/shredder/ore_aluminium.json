@@ -1,0 +1,9 @@
+{
+  "input": {
+    "item": "hbm_neoforge:ore_aluminium"
+  },
+  "output": {
+    "item": "hbm_neoforge:powder_aluminium",
+    "count": 2
+  }
+}

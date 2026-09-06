@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "orientation=horizontal_ns": {
+      "model": "hbm_neoforge:block/steel_scaffold"
+    },
+    "orientation=horizontal_ew": {
+      "model": "hbm_neoforge:block/steel_scaffold",
+      "y": 90
+    },
+    "orientation=vertical_ns": {
+      "model": "hbm_neoforge:block/steel_scaffold",
+      "x": 90
+    },
+    "orientation=vertical_ew": {
+      "model": "hbm_neoforge:block/steel_scaffold",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

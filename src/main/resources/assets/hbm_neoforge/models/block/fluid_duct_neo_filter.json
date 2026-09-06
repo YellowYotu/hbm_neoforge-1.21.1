@@ -1,0 +1,72 @@
+{
+  "textures": {
+    "particle": "hbm_neoforge:block/pipe_neo",
+    "all": "hbm_neoforge:block/pipe_filter"
+  },
+  "elements": [
+    {
+      "from": [
+        4.25,
+        4.25,
+        4.25
+      ],
+      "to": [
+        11.75,
+        11.75,
+        5.25
+      ],
+      "faces": {
+        "down": {
+          "texture": "#all"
+        },
+        "up": {
+          "texture": "#all"
+        },
+        "north": {
+          "texture": "#all"
+        },
+        "south": {
+          "texture": "#all"
+        },
+        "west": {
+          "texture": "#all"
+        },
+        "east": {
+          "texture": "#all"
+        }
+      }
+    },
+    {
+      "from": [
+        4.25,
+        4.25,
+        10.75
+      ],
+      "to": [
+        11.75,
+        11.75,
+        11.75
+      ],
+      "faces": {
+        "down": {
+          "texture": "#all"
+        },
+        "up": {
+          "texture": "#all"
+        },
+        "north": {
+          "texture": "#all"
+        },
+        "south": {
+          "texture": "#all"
+        },
+        "west": {
+          "texture": "#all"
+        },
+        "east": {
+          "texture": "#all"
+        }
+      }
+    }
+  ]
+}

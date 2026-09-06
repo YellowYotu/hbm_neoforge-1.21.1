@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " G ",
+    "G G",
+    "GGG"
+  ],
+  "key": {
+    "G": {
+      "tag": "hbm_neoforge:glass_panes"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:bottle_empty",
+    "count": 6
+  }
+}

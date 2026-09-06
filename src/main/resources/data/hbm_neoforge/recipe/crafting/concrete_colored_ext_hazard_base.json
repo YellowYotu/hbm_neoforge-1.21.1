@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CCC",
+    "Y B",
+    "CCC"
+  ],
+  "key": {
+    "C": {
+      "item": "hbm_neoforge:concrete_smooth"
+    },
+    "Y": {
+      "item": "minecraft:yellow_dye"
+    },
+    "B": {
+      "item": "minecraft:black_dye"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:concrete_colored_ext_hazard",
+    "count": 6
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "L",
+    "W"
+  ],
+  "key": {
+    "L": {
+      "item": "minecraft:lever"
+    },
+    "W": {
+      "item": "hbm_neoforge:fluid_duct_paintable"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:fluid_valve",
+    "count": 1
+  }
+}

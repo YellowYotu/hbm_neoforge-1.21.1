@@ -1,0 +1,22 @@
+{
+  "duration": 20,
+  "energy_per_tick": 400,
+  "ingredients": [
+    {
+      "item": "hbm_neoforge:coke_petroleum",
+      "count": 1
+    }
+  ],
+  "input_fluids": [
+    {
+      "fluid": "water",
+      "amount": 8000
+    }
+  ],
+  "output_fluids": [
+    {
+      "fluid": "hydrogen",
+      "amount": 500
+    }
+  ]
+}

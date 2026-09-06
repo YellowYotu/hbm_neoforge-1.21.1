@@ -1,0 +1,15 @@
+newmtl Frame
+Kd 1 1 1
+map_Kd hbm_neoforge:block/tank_frame
+
+newmtl Tank
+Kd 1 1 1
+map_Kd hbm_neoforge:block/tank_fluids/coolant_hot
+
+newmtl None
+Kd 1 1 1
+map_Kd hbm_neoforge:block/tank_frame
+
+newmtl None_tank_new_eth.png
+Kd 1 1 1
+map_Kd hbm_neoforge:block/tank_fluids/coolant_hot

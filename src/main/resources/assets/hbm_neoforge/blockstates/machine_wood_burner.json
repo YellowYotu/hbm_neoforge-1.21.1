@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "hbm_neoforge:block/machine_wood_burner"
+    },
+    "facing=east": {
+      "model": "hbm_neoforge:block/machine_wood_burner",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "hbm_neoforge:block/machine_wood_burner",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "hbm_neoforge:block/machine_wood_burner",
+      "y": 270
+    }
+  }
+}

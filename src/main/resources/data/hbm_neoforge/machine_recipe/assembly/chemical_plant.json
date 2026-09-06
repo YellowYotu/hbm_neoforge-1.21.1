@@ -1,0 +1,33 @@
+{
+  "result": {
+    "item": "hbm_neoforge:machine_chemical_plant"
+  },
+  "duration": 200,
+  "energy_per_tick": 100,
+  "ingredients": [
+    {
+      "item": "hbm_neoforge:ingot_steel",
+      "count": 8
+    },
+    {
+      "item": "hbm_neoforge:pipe_copper",
+      "count": 2
+    },
+    {
+      "item": "hbm_neoforge:plate_polymer",
+      "count": 16
+    },
+    {
+      "item": "hbm_neoforge:motor",
+      "count": 2
+    },
+    {
+      "item": "hbm_neoforge:coil_tungsten",
+      "count": 2
+    },
+    {
+      "item": "hbm_neoforge:circuit_analog",
+      "count": 1
+    }
+  ]
+}

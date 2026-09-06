@@ -1,0 +1,8 @@
+{
+  "input": "minecraft:copper_ingot",
+  "stamp": "wire",
+  "output": {
+    "item": "hbm_neoforge:wire_copper",
+    "count": 8
+  }
+}

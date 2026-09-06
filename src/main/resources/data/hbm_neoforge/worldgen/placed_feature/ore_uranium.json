@@ -1,0 +1,27 @@
+{
+  "feature": "hbm_neoforge:ore_uranium",
+  "placement": [
+    {
+      "type": "minecraft:count",
+      "count": 7
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:height_range",
+      "height": {
+        "type": "minecraft:uniform",
+        "min_inclusive": {
+          "absolute": 12
+        },
+        "max_inclusive": {
+          "absolute": 27
+        }
+      }
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

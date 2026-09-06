@@ -1,0 +1,70 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "hbm_neoforge:block/fluid_duct_box_center"
+      }
+    },
+    {
+      "when": {
+        "north": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/fluid_duct_box_arm"
+      }
+    },
+    {
+      "when": {
+        "south": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/fluid_duct_box_arm",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "west": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/fluid_duct_box_arm",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "east": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/fluid_duct_box_arm",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "up": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/fluid_duct_box_arm",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "down": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/fluid_duct_box_arm",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "filtered": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/fluid_duct_box_filter"
+      }
+    }
+  ]
+}

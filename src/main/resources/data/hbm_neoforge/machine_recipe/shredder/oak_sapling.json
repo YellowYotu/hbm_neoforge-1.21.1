@@ -1,0 +1,9 @@
+{
+  "input": {
+    "item": "minecraft:oak_sapling"
+  },
+  "output": {
+    "item": "minecraft:stick",
+    "count": 1
+  }
+}

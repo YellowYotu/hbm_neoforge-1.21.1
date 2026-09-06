@@ -1,0 +1,9 @@
+{
+  "input": {
+    "item": "hbm_neoforge:ring_coil"
+  },
+  "output": {
+    "item": "hbm_neoforge:powder_red_copper",
+    "count": 2
+  }
+}

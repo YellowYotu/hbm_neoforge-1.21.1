@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "hbm_neoforge:block_fallout"
+    }
+  ],
+  "result": {
+    "id": "hbm_neoforge:fallout",
+    "count": 9
+  }
+}

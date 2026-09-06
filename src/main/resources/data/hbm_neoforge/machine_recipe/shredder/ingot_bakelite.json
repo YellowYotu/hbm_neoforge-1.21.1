@@ -1,0 +1,9 @@
+{
+  "input": {
+    "item": "hbm_neoforge:ingot_bakelite"
+  },
+  "output": {
+    "item": "hbm_neoforge:powder_bakelite",
+    "count": 1
+  }
+}

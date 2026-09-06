@@ -1,0 +1,28 @@
+{
+  "result": {
+    "item": "hbm_neoforge:upgrade_speed_1"
+  },
+  "duration": 200,
+  "energy_per_tick": 1000,
+  "toppings": [
+    {
+      "item": "hbm_neoforge:circuit_vacuum_tube",
+      "count": 4
+    },
+    {
+      "item": "hbm_neoforge:circuit_capacitor",
+      "count": 1
+    }
+  ],
+  "pcb": [
+    {
+      "item": "hbm_neoforge:upgrade_template",
+      "count": 1
+    },
+    {
+      "item": "hbm_neoforge:powder_red_copper",
+      "count": 4
+    }
+  ],
+  "solder": []
+}

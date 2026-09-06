@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "hbm_neoforge:concrete_white_slab"
+    },
+    {
+      "item": "hbm_neoforge:concrete_white_slab"
+    }
+  ],
+  "result": {
+    "id": "hbm_neoforge:concrete_white"
+  }
+}

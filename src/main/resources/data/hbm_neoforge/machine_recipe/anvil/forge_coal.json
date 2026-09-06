@@ -1,0 +1,19 @@
+{
+  "operation": "crafting",
+  "overlay": "construction",
+  "name": "anvil_recipe.hbm_neoforge.forge_coal",
+  "primary": {
+    "items": [
+      "hbm_neoforge:powder_coal"
+    ],
+    "count": 1
+  },
+  "secondary": {
+    "any": true,
+    "count": 0
+  },
+  "result": {
+    "item": "minecraft:coal",
+    "count": 1
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BB",
+    "BB"
+  ],
+  "key": {
+    "B": {
+      "item": "hbm_neoforge:depth_nether_brick"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:depth_nether_tiles",
+    "count": 4
+  }
+}

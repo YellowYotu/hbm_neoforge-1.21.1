@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "hbm_neoforge:concrete_pink_stairs"
+    },
+    {
+      "item": "hbm_neoforge:concrete_pink_stairs"
+    },
+    {
+      "item": "hbm_neoforge:concrete_pink_stairs"
+    },
+    {
+      "item": "hbm_neoforge:concrete_pink_stairs"
+    }
+  ],
+  "result": {
+    "id": "hbm_neoforge:concrete_pink",
+    "count": 3
+  }
+}

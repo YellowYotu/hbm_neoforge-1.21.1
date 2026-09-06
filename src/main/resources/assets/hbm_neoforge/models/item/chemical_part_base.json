@@ -1,0 +1,37 @@
+{
+  "loader": "neoforge:obj",
+  "model": "hbm_neoforge:models/block/machine_chemical_plant_full.obj",
+  "flip_v": true,
+  "automatic_culling": false,
+  "shade_quads": true,
+  "visibility": {
+    "Base": true,
+    "Frame": false,
+    "Slider": false,
+    "Spinner": false,
+    "Fluid": false
+  },
+  "textures": {
+    "texture0": "hbm_neoforge:block/machine_chemical_plant",
+    "particle": "hbm_neoforge:block/machine_chemical_plant"
+  },
+  "display": {
+    "fixed": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    }
+  }
+}

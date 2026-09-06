@@ -1,0 +1,19 @@
+{
+  "operation": "crafting",
+  "overlay": "construction",
+  "name": "anvil_recipe.hbm_neoforge.forge_plate_gold",
+  "primary": {
+    "items": [
+      "minecraft:gold_ingot"
+    ],
+    "count": 1
+  },
+  "secondary": {
+    "any": true,
+    "count": 0
+  },
+  "result": {
+    "item": "hbm_neoforge:plate_gold",
+    "count": 1
+  }
+}

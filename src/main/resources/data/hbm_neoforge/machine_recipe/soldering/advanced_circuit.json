@@ -1,0 +1,37 @@
+{
+  "result": {
+    "item": "hbm_neoforge:circuit_advanced"
+  },
+  "duration": 300,
+  "energy_per_tick": 1000,
+  "toppings": [
+    {
+      "item": "hbm_neoforge:circuit_chip",
+      "count": 16
+    },
+    {
+      "item": "hbm_neoforge:circuit_capacitor",
+      "count": 4
+    }
+  ],
+  "pcb": [
+    {
+      "item": "hbm_neoforge:circuit_pcb",
+      "count": 8
+    },
+    {
+      "item": "hbm_neoforge:ingot_rubber",
+      "count": 2
+    }
+  ],
+  "solder": [
+    {
+      "item": "hbm_neoforge:wire_fine_lead",
+      "count": 8
+    }
+  ],
+  "fluid": {
+    "type": "sulfuric_acid",
+    "amount": 1000
+  }
+}

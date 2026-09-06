@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "hbm_neoforge:block/brick_concrete_marked",
+    "top": "hbm_neoforge:block/brick_concrete_marked",
+    "side": "hbm_neoforge:block/brick_concrete_marked"
+  }
+}

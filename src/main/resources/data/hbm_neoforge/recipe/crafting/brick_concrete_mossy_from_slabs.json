@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "hbm_neoforge:brick_concrete_mossy_slab"
+    },
+    {
+      "item": "hbm_neoforge:brick_concrete_mossy_slab"
+    }
+  ],
+  "result": {
+    "id": "hbm_neoforge:brick_concrete_mossy"
+  }
+}

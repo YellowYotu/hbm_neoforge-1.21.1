@@ -1,0 +1,18 @@
+{
+  "input_a": {
+    "items": [
+      "minecraft:copper_ingot",
+      "hbm_neoforge:plate_copper",
+      "hbm_neoforge:powder_copper"
+    ]
+  },
+  "input_b": {
+    "items": [
+      "minecraft:redstone"
+    ]
+  },
+  "output": {
+    "item": "hbm_neoforge:ingot_red_copper",
+    "count": 2
+  }
+}

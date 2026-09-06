@@ -1,0 +1,9 @@
+{
+  "input": {
+    "item": "hbm_neoforge:ingot_plutonium_241"
+  },
+  "output": {
+    "item": "hbm_neoforge:powder_plutonium",
+    "count": 1
+  }
+}

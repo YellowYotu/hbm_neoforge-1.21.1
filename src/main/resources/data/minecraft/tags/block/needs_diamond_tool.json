@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "hbm_neoforge:ore_titanium",
+    "hbm_neoforge:ore_tungsten",
+    "hbm_neoforge:ore_beryllium",
+    "hbm_neoforge:ore_cobalt",
+    "hbm_neoforge:ore_rare_earth",
+    "hbm_neoforge:block_cobalt"
+  ]
+}

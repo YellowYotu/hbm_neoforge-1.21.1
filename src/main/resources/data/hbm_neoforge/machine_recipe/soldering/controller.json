@@ -1,0 +1,41 @@
+{
+  "result": {
+    "item": "hbm_neoforge:circuit_controller"
+  },
+  "duration": 400,
+  "energy_per_tick": 15000,
+  "toppings": [
+    {
+      "item": "hbm_neoforge:circuit_chip",
+      "count": 32
+    },
+    {
+      "item": "hbm_neoforge:circuit_capacitor",
+      "count": 32
+    },
+    {
+      "item": "hbm_neoforge:circuit_capacitor_tantalium",
+      "count": 16
+    }
+  ],
+  "pcb": [
+    {
+      "item": "hbm_neoforge:circuit_controller_chassis",
+      "count": 1
+    },
+    {
+      "item": "hbm_neoforge:upgrade_speed_1",
+      "count": 1
+    }
+  ],
+  "solder": [
+    {
+      "item": "hbm_neoforge:wire_fine_lead",
+      "count": 16
+    }
+  ],
+  "fluid": {
+    "type": "perfluoromethyl",
+    "amount": 1000
+  }
+}

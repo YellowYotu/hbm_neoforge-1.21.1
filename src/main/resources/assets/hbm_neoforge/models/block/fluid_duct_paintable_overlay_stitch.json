@@ -1,0 +1,21 @@
+{
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "hbm_neoforge:block/fluid_duct_paintable_overlay",
+    "overlay": "hbm_neoforge:block/fluid_duct_paintable_overlay"
+  },
+  "elements": [
+    {
+      "from": [-0.001, -0.001, -0.001],
+      "to": [16.001, 16.001, 16.001],
+      "faces": {
+        "down": {"texture": "#overlay"},
+        "up": {"texture": "#overlay"},
+        "north": {"texture": "#overlay"},
+        "south": {"texture": "#overlay"},
+        "west": {"texture": "#overlay"},
+        "east": {"texture": "#overlay"}
+      }
+    }
+  ]
+}

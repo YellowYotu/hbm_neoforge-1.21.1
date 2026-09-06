@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "hbm_neoforge:block/geiger", "y": 0 },
+    "facing=east": { "model": "hbm_neoforge:block/geiger", "y": 90 },
+    "facing=south": { "model": "hbm_neoforge:block/geiger", "y": 180 },
+    "facing=west": { "model": "hbm_neoforge:block/geiger", "y": 270 }
+  }
+}

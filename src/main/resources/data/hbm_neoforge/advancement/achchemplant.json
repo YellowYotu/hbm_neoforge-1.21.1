@@ -1,0 +1,12 @@
+{
+  "parent": "hbm_neoforge:achassembly",
+  "display": {
+    "icon": { "id": "hbm_neoforge:machine_chemical_plant" },
+    "title": { "translate": "achievement.chemplant" },
+    "description": { "translate": "achievement.chemplant.desc" },
+    "frame": "task", "show_toast": true, "announce_to_chat": true, "hidden": false
+  },
+  "criteria": {
+    "chemical_plant": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["hbm_neoforge:machine_chemical_plant"] }] } }
+  }
+}

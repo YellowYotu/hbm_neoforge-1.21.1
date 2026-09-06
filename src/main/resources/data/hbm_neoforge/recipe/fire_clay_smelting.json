@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "hbm_neoforge:fire_clay"
+  },
+  "result": {
+    "id": "hbm_neoforge:ingot_firebrick"
+  },
+  "experience": 0.1,
+  "cookingtime": 200
+}

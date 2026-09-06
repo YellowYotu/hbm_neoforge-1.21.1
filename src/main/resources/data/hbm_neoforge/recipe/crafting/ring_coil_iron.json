@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " C ",
+    "CPC",
+    " C "
+  ],
+  "key": {
+    "C": {
+      "item": "hbm_neoforge:copper_coil"
+    },
+    "P": {
+      "item": "hbm_neoforge:plate_iron"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:ring_coil",
+    "count": 2
+  }
+}

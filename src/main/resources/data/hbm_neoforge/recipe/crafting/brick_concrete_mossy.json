@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CCC",
+    "CVC",
+    "CCC"
+  ],
+  "key": {
+    "C": {
+      "item": "hbm_neoforge:brick_concrete"
+    },
+    "V": {
+      "item": "minecraft:vine"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:brick_concrete_mossy",
+    "count": 8
+  }
+}

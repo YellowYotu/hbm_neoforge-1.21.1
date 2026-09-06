@@ -1,0 +1,15 @@
+[
+  "concrete",
+  "concrete_asbestos",
+  "liquid_concrete",
+  "hydrogen_coal",
+  "hydrogen_coke_coal",
+  "hydrogen_coke_lignite",
+  "hydrogen_coke_petroleum",
+  "peroxide",
+  "sulfuric_acid",
+  "nitric_acid",
+  "ethanol",
+  "lead_battery",
+  "bio_solid_fuel"
+]

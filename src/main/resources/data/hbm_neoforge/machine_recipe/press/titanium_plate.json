@@ -1,0 +1,8 @@
+{
+  "input": "hbm_neoforge:ingot_titanium",
+  "stamp": "plate",
+  "output": {
+    "item": "hbm_neoforge:plate_titanium",
+    "count": 1
+  }
+}

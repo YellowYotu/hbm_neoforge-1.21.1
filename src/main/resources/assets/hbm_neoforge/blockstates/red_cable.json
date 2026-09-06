@@ -1,0 +1,196 @@
+{
+  "variants": {
+    "north=false,south=false,west=false,east=false,up=false,down=false": {
+      "model": "hbm_neoforge:block/red_cable_00"
+    },
+    "north=true,south=false,west=false,east=false,up=false,down=false": {
+      "model": "hbm_neoforge:block/red_cable_01"
+    },
+    "north=false,south=true,west=false,east=false,up=false,down=false": {
+      "model": "hbm_neoforge:block/red_cable_02"
+    },
+    "north=true,south=true,west=false,east=false,up=false,down=false": {
+      "model": "hbm_neoforge:block/red_cable_03"
+    },
+    "north=false,south=false,west=true,east=false,up=false,down=false": {
+      "model": "hbm_neoforge:block/red_cable_04"
+    },
+    "north=true,south=false,west=true,east=false,up=false,down=false": {
+      "model": "hbm_neoforge:block/red_cable_05"
+    },
+    "north=false,south=true,west=true,east=false,up=false,down=false": {
+      "model": "hbm_neoforge:block/red_cable_06"
+    },
+    "north=true,south=true,west=true,east=false,up=false,down=false": {
+      "model": "hbm_neoforge:block/red_cable_07"
+    },
+    "north=false,south=false,west=false,east=true,up=false,down=false": {
+      "model": "hbm_neoforge:block/red_cable_08"
+    },
+    "north=true,south=false,west=false,east=true,up=false,down=false": {
+      "model": "hbm_neoforge:block/red_cable_09"
+    },
+    "north=false,south=true,west=false,east=true,up=false,down=false": {
+      "model": "hbm_neoforge:block/red_cable_10"
+    },
+    "north=true,south=true,west=false,east=true,up=false,down=false": {
+      "model": "hbm_neoforge:block/red_cable_11"
+    },
+    "north=false,south=false,west=true,east=true,up=false,down=false": {
+      "model": "hbm_neoforge:block/red_cable_12"
+    },
+    "north=true,south=false,west=true,east=true,up=false,down=false": {
+      "model": "hbm_neoforge:block/red_cable_13"
+    },
+    "north=false,south=true,west=true,east=true,up=false,down=false": {
+      "model": "hbm_neoforge:block/red_cable_14"
+    },
+    "north=true,south=true,west=true,east=true,up=false,down=false": {
+      "model": "hbm_neoforge:block/red_cable_15"
+    },
+    "north=false,south=false,west=false,east=false,up=true,down=false": {
+      "model": "hbm_neoforge:block/red_cable_16"
+    },
+    "north=true,south=false,west=false,east=false,up=true,down=false": {
+      "model": "hbm_neoforge:block/red_cable_17"
+    },
+    "north=false,south=true,west=false,east=false,up=true,down=false": {
+      "model": "hbm_neoforge:block/red_cable_18"
+    },
+    "north=true,south=true,west=false,east=false,up=true,down=false": {
+      "model": "hbm_neoforge:block/red_cable_19"
+    },
+    "north=false,south=false,west=true,east=false,up=true,down=false": {
+      "model": "hbm_neoforge:block/red_cable_20"
+    },
+    "north=true,south=false,west=true,east=false,up=true,down=false": {
+      "model": "hbm_neoforge:block/red_cable_21"
+    },
+    "north=false,south=true,west=true,east=false,up=true,down=false": {
+      "model": "hbm_neoforge:block/red_cable_22"
+    },
+    "north=true,south=true,west=true,east=false,up=true,down=false": {
+      "model": "hbm_neoforge:block/red_cable_23"
+    },
+    "north=false,south=false,west=false,east=true,up=true,down=false": {
+      "model": "hbm_neoforge:block/red_cable_24"
+    },
+    "north=true,south=false,west=false,east=true,up=true,down=false": {
+      "model": "hbm_neoforge:block/red_cable_25"
+    },
+    "north=false,south=true,west=false,east=true,up=true,down=false": {
+      "model": "hbm_neoforge:block/red_cable_26"
+    },
+    "north=true,south=true,west=false,east=true,up=true,down=false": {
+      "model": "hbm_neoforge:block/red_cable_27"
+    },
+    "north=false,south=false,west=true,east=true,up=true,down=false": {
+      "model": "hbm_neoforge:block/red_cable_28"
+    },
+    "north=true,south=false,west=true,east=true,up=true,down=false": {
+      "model": "hbm_neoforge:block/red_cable_29"
+    },
+    "north=false,south=true,west=true,east=true,up=true,down=false": {
+      "model": "hbm_neoforge:block/red_cable_30"
+    },
+    "north=true,south=true,west=true,east=true,up=true,down=false": {
+      "model": "hbm_neoforge:block/red_cable_31"
+    },
+    "north=false,south=false,west=false,east=false,up=false,down=true": {
+      "model": "hbm_neoforge:block/red_cable_32"
+    },
+    "north=true,south=false,west=false,east=false,up=false,down=true": {
+      "model": "hbm_neoforge:block/red_cable_33"
+    },
+    "north=false,south=true,west=false,east=false,up=false,down=true": {
+      "model": "hbm_neoforge:block/red_cable_34"
+    },
+    "north=true,south=true,west=false,east=false,up=false,down=true": {
+      "model": "hbm_neoforge:block/red_cable_35"
+    },
+    "north=false,south=false,west=true,east=false,up=false,down=true": {
+      "model": "hbm_neoforge:block/red_cable_36"
+    },
+    "north=true,south=false,west=true,east=false,up=false,down=true": {
+      "model": "hbm_neoforge:block/red_cable_37"
+    },
+    "north=false,south=true,west=true,east=false,up=false,down=true": {
+      "model": "hbm_neoforge:block/red_cable_38"
+    },
+    "north=true,south=true,west=true,east=false,up=false,down=true": {
+      "model": "hbm_neoforge:block/red_cable_39"
+    },
+    "north=false,south=false,west=false,east=true,up=false,down=true": {
+      "model": "hbm_neoforge:block/red_cable_40"
+    },
+    "north=true,south=false,west=false,east=true,up=false,down=true": {
+      "model": "hbm_neoforge:block/red_cable_41"
+    },
+    "north=false,south=true,west=false,east=true,up=false,down=true": {
+      "model": "hbm_neoforge:block/red_cable_42"
+    },
+    "north=true,south=true,west=false,east=true,up=false,down=true": {
+      "model": "hbm_neoforge:block/red_cable_43"
+    },
+    "north=false,south=false,west=true,east=true,up=false,down=true": {
+      "model": "hbm_neoforge:block/red_cable_44"
+    },
+    "north=true,south=false,west=true,east=true,up=false,down=true": {
+      "model": "hbm_neoforge:block/red_cable_45"
+    },
+    "north=false,south=true,west=true,east=true,up=false,down=true": {
+      "model": "hbm_neoforge:block/red_cable_46"
+    },
+    "north=true,south=true,west=true,east=true,up=false,down=true": {
+      "model": "hbm_neoforge:block/red_cable_47"
+    },
+    "north=false,south=false,west=false,east=false,up=true,down=true": {
+      "model": "hbm_neoforge:block/red_cable_48"
+    },
+    "north=true,south=false,west=false,east=false,up=true,down=true": {
+      "model": "hbm_neoforge:block/red_cable_49"
+    },
+    "north=false,south=true,west=false,east=false,up=true,down=true": {
+      "model": "hbm_neoforge:block/red_cable_50"
+    },
+    "north=true,south=true,west=false,east=false,up=true,down=true": {
+      "model": "hbm_neoforge:block/red_cable_51"
+    },
+    "north=false,south=false,west=true,east=false,up=true,down=true": {
+      "model": "hbm_neoforge:block/red_cable_52"
+    },
+    "north=true,south=false,west=true,east=false,up=true,down=true": {
+      "model": "hbm_neoforge:block/red_cable_53"
+    },
+    "north=false,south=true,west=true,east=false,up=true,down=true": {
+      "model": "hbm_neoforge:block/red_cable_54"
+    },
+    "north=true,south=true,west=true,east=false,up=true,down=true": {
+      "model": "hbm_neoforge:block/red_cable_55"
+    },
+    "north=false,south=false,west=false,east=true,up=true,down=true": {
+      "model": "hbm_neoforge:block/red_cable_56"
+    },
+    "north=true,south=false,west=false,east=true,up=true,down=true": {
+      "model": "hbm_neoforge:block/red_cable_57"
+    },
+    "north=false,south=true,west=false,east=true,up=true,down=true": {
+      "model": "hbm_neoforge:block/red_cable_58"
+    },
+    "north=true,south=true,west=false,east=true,up=true,down=true": {
+      "model": "hbm_neoforge:block/red_cable_59"
+    },
+    "north=false,south=false,west=true,east=true,up=true,down=true": {
+      "model": "hbm_neoforge:block/red_cable_60"
+    },
+    "north=true,south=false,west=true,east=true,up=true,down=true": {
+      "model": "hbm_neoforge:block/red_cable_61"
+    },
+    "north=false,south=true,west=true,east=true,up=true,down=true": {
+      "model": "hbm_neoforge:block/red_cable_62"
+    },
+    "north=true,south=true,west=true,east=true,up=true,down=true": {
+      "model": "hbm_neoforge:block/red_cable_63"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "GGG",
+    "GGG"
+  ],
+  "key": {
+    "G": {
+      "item": "hbm_neoforge:reinforced_glass"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:reinforced_glass_pane",
+    "count": 16
+  }
+}

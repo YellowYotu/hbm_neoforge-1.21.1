@@ -1,0 +1,29 @@
+{
+  "operation": "crafting",
+  "overlay": "construction",
+  "name": "block.hbm_neoforge.machine_blast_furnace",
+  "primary": {
+    "items": [
+      "minecraft:stone_bricks"
+    ],
+    "count": 4
+  },
+  "secondary": {
+    "items": [
+      "hbm_neoforge:ingot_firebrick"
+    ],
+    "count": 4
+  },
+  "extra_inputs": [
+    {
+      "items": [
+        "hbm_neoforge:plate_copper"
+      ],
+      "count": 4
+    }
+  ],
+  "result": {
+    "item": "hbm_neoforge:machine_blast_furnace",
+    "count": 1
+  }
+}

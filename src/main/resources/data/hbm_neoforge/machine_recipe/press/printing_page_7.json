@@ -1,0 +1,7 @@
+{
+  "input": "minecraft:paper",
+  "stamp": "printing7",
+  "output": {
+    "item": "hbm_neoforge:page_7"
+  }
+}

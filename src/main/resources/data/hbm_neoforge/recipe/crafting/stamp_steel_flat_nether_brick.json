@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "BBB",
+    "MMM"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:nether_brick"
+    },
+    "M": {
+      "item": "hbm_neoforge:ingot_steel"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:stamp_steel_flat",
+    "count": 1
+  }
+}

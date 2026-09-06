@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "active=false": {
+      "model": "hbm_neoforge:block/fluid_valve_off"
+    },
+    "active=true": {
+      "model": "hbm_neoforge:block/fluid_valve_on"
+    }
+  }
+}

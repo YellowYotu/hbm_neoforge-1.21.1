@@ -1,0 +1,76 @@
+{
+  "variants": {
+    "facing=east,rotation=north": {
+      "model": "hbm_neoforge:block/spotlight_incandescent_east"
+    },
+    "facing=east,rotation=east": {
+      "model": "hbm_neoforge:block/spotlight_incandescent_east"
+    },
+    "facing=east,rotation=south": {
+      "model": "hbm_neoforge:block/spotlight_incandescent_east"
+    },
+    "facing=east,rotation=west": {
+      "model": "hbm_neoforge:block/spotlight_incandescent_east"
+    },
+    "facing=west,rotation=north": {
+      "model": "hbm_neoforge:block/spotlight_incandescent_west"
+    },
+    "facing=west,rotation=east": {
+      "model": "hbm_neoforge:block/spotlight_incandescent_west"
+    },
+    "facing=west,rotation=south": {
+      "model": "hbm_neoforge:block/spotlight_incandescent_west"
+    },
+    "facing=west,rotation=west": {
+      "model": "hbm_neoforge:block/spotlight_incandescent_west"
+    },
+    "facing=south,rotation=north": {
+      "model": "hbm_neoforge:block/spotlight_incandescent_south"
+    },
+    "facing=south,rotation=east": {
+      "model": "hbm_neoforge:block/spotlight_incandescent_south"
+    },
+    "facing=south,rotation=south": {
+      "model": "hbm_neoforge:block/spotlight_incandescent_south"
+    },
+    "facing=south,rotation=west": {
+      "model": "hbm_neoforge:block/spotlight_incandescent_south"
+    },
+    "facing=north,rotation=north": {
+      "model": "hbm_neoforge:block/spotlight_incandescent_north"
+    },
+    "facing=north,rotation=east": {
+      "model": "hbm_neoforge:block/spotlight_incandescent_north"
+    },
+    "facing=north,rotation=south": {
+      "model": "hbm_neoforge:block/spotlight_incandescent_north"
+    },
+    "facing=north,rotation=west": {
+      "model": "hbm_neoforge:block/spotlight_incandescent_north"
+    },
+    "facing=up,rotation=north": {
+      "model": "hbm_neoforge:block/spotlight_incandescent_up_north"
+    },
+    "facing=up,rotation=east": {
+      "model": "hbm_neoforge:block/spotlight_incandescent_up_east"
+    },
+    "facing=up,rotation=south": {
+      "model": "hbm_neoforge:block/spotlight_incandescent_up_south"
+    },
+    "facing=up,rotation=west": {
+      "model": "hbm_neoforge:block/spotlight_incandescent_up_west"
+    },
+    "facing=down,rotation=north": {
+      "model": "hbm_neoforge:block/spotlight_incandescent_down_north"
+    },
+    "facing=down,rotation=east": {
+      "model": "hbm_neoforge:block/spotlight_incandescent_down_east"
+    },
+    "facing=down,rotation=south": {
+      "model": "hbm_neoforge:block/spotlight_incandescent_down_south"
+    },
+    "facing=down,rotation=west": {
+      "model": "hbm_neoforge:block/spotlight_incandescent_down_west"
+    }
+  }
+}

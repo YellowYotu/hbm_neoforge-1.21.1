@@ -1,0 +1,9 @@
+{
+  "input": {
+    "item": "hbm_neoforge:stone_limestone"
+  },
+  "output": {
+    "item": "hbm_neoforge:powder_limestone",
+    "count": 4
+  }
+}

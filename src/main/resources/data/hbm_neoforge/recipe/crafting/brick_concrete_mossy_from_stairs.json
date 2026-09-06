@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "hbm_neoforge:brick_concrete_mossy_stairs"
+    },
+    {
+      "item": "hbm_neoforge:brick_concrete_mossy_stairs"
+    },
+    {
+      "item": "hbm_neoforge:brick_concrete_mossy_stairs"
+    },
+    {
+      "item": "hbm_neoforge:brick_concrete_mossy_stairs"
+    }
+  ],
+  "result": {
+    "id": "hbm_neoforge:brick_concrete_mossy",
+    "count": 3
+  }
+}

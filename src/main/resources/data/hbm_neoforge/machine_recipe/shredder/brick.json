@@ -1,0 +1,9 @@
+{
+  "input": {
+    "item": "minecraft:brick"
+  },
+  "output": {
+    "item": "minecraft:clay_ball",
+    "count": 1
+  }
+}

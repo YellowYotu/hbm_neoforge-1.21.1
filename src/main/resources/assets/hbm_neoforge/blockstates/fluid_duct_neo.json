@@ -1,0 +1,836 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "north": "false",
+        "south": "false",
+        "down": "false",
+        "up": "false",
+        "west": "false",
+        "east": "false"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_00"
+      }
+    },
+    {
+      "when": {
+        "north": "true",
+        "south": "false",
+        "down": "false",
+        "up": "false",
+        "west": "false",
+        "east": "false"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_01"
+      }
+    },
+    {
+      "when": {
+        "north": "false",
+        "south": "true",
+        "down": "false",
+        "up": "false",
+        "west": "false",
+        "east": "false"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_02"
+      }
+    },
+    {
+      "when": {
+        "north": "true",
+        "south": "true",
+        "down": "false",
+        "up": "false",
+        "west": "false",
+        "east": "false"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_03"
+      }
+    },
+    {
+      "when": {
+        "north": "false",
+        "south": "false",
+        "down": "true",
+        "up": "false",
+        "west": "false",
+        "east": "false"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_04"
+      }
+    },
+    {
+      "when": {
+        "north": "true",
+        "south": "false",
+        "down": "true",
+        "up": "false",
+        "west": "false",
+        "east": "false"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_05"
+      }
+    },
+    {
+      "when": {
+        "north": "false",
+        "south": "true",
+        "down": "true",
+        "up": "false",
+        "west": "false",
+        "east": "false"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_06"
+      }
+    },
+    {
+      "when": {
+        "north": "true",
+        "south": "true",
+        "down": "true",
+        "up": "false",
+        "west": "false",
+        "east": "false"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_07"
+      }
+    },
+    {
+      "when": {
+        "north": "false",
+        "south": "false",
+        "down": "false",
+        "up": "true",
+        "west": "false",
+        "east": "false"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_08"
+      }
+    },
+    {
+      "when": {
+        "north": "true",
+        "south": "false",
+        "down": "false",
+        "up": "true",
+        "west": "false",
+        "east": "false"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_09"
+      }
+    },
+    {
+      "when": {
+        "north": "false",
+        "south": "true",
+        "down": "false",
+        "up": "true",
+        "west": "false",
+        "east": "false"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_10"
+      }
+    },
+    {
+      "when": {
+        "north": "true",
+        "south": "true",
+        "down": "false",
+        "up": "true",
+        "west": "false",
+        "east": "false"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_11"
+      }
+    },
+    {
+      "when": {
+        "north": "false",
+        "south": "false",
+        "down": "true",
+        "up": "true",
+        "west": "false",
+        "east": "false"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_12"
+      }
+    },
+    {
+      "when": {
+        "north": "true",
+        "south": "false",
+        "down": "true",
+        "up": "true",
+        "west": "false",
+        "east": "false"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_13"
+      }
+    },
+    {
+      "when": {
+        "north": "false",
+        "south": "true",
+        "down": "true",
+        "up": "true",
+        "west": "false",
+        "east": "false"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_14"
+      }
+    },
+    {
+      "when": {
+        "north": "true",
+        "south": "true",
+        "down": "true",
+        "up": "true",
+        "west": "false",
+        "east": "false"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_15"
+      }
+    },
+    {
+      "when": {
+        "north": "false",
+        "south": "false",
+        "down": "false",
+        "up": "false",
+        "west": "true",
+        "east": "false"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_16"
+      }
+    },
+    {
+      "when": {
+        "north": "true",
+        "south": "false",
+        "down": "false",
+        "up": "false",
+        "west": "true",
+        "east": "false"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_17"
+      }
+    },
+    {
+      "when": {
+        "north": "false",
+        "south": "true",
+        "down": "false",
+        "up": "false",
+        "west": "true",
+        "east": "false"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_18"
+      }
+    },
+    {
+      "when": {
+        "north": "true",
+        "south": "true",
+        "down": "false",
+        "up": "false",
+        "west": "true",
+        "east": "false"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_19"
+      }
+    },
+    {
+      "when": {
+        "north": "false",
+        "south": "false",
+        "down": "true",
+        "up": "false",
+        "west": "true",
+        "east": "false"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_20"
+      }
+    },
+    {
+      "when": {
+        "north": "true",
+        "south": "false",
+        "down": "true",
+        "up": "false",
+        "west": "true",
+        "east": "false"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_21"
+      }
+    },
+    {
+      "when": {
+        "north": "false",
+        "south": "true",
+        "down": "true",
+        "up": "false",
+        "west": "true",
+        "east": "false"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_22"
+      }
+    },
+    {
+      "when": {
+        "north": "true",
+        "south": "true",
+        "down": "true",
+        "up": "false",
+        "west": "true",
+        "east": "false"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_23"
+      }
+    },
+    {
+      "when": {
+        "north": "false",
+        "south": "false",
+        "down": "false",
+        "up": "true",
+        "west": "true",
+        "east": "false"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_24"
+      }
+    },
+    {
+      "when": {
+        "north": "true",
+        "south": "false",
+        "down": "false",
+        "up": "true",
+        "west": "true",
+        "east": "false"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_25"
+      }
+    },
+    {
+      "when": {
+        "north": "false",
+        "south": "true",
+        "down": "false",
+        "up": "true",
+        "west": "true",
+        "east": "false"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_26"
+      }
+    },
+    {
+      "when": {
+        "north": "true",
+        "south": "true",
+        "down": "false",
+        "up": "true",
+        "west": "true",
+        "east": "false"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_27"
+      }
+    },
+    {
+      "when": {
+        "north": "false",
+        "south": "false",
+        "down": "true",
+        "up": "true",
+        "west": "true",
+        "east": "false"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_28"
+      }
+    },
+    {
+      "when": {
+        "north": "true",
+        "south": "false",
+        "down": "true",
+        "up": "true",
+        "west": "true",
+        "east": "false"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_29"
+      }
+    },
+    {
+      "when": {
+        "north": "false",
+        "south": "true",
+        "down": "true",
+        "up": "true",
+        "west": "true",
+        "east": "false"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_30"
+      }
+    },
+    {
+      "when": {
+        "north": "true",
+        "south": "true",
+        "down": "true",
+        "up": "true",
+        "west": "true",
+        "east": "false"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_31"
+      }
+    },
+    {
+      "when": {
+        "north": "false",
+        "south": "false",
+        "down": "false",
+        "up": "false",
+        "west": "false",
+        "east": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_32"
+      }
+    },
+    {
+      "when": {
+        "north": "true",
+        "south": "false",
+        "down": "false",
+        "up": "false",
+        "west": "false",
+        "east": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_33"
+      }
+    },
+    {
+      "when": {
+        "north": "false",
+        "south": "true",
+        "down": "false",
+        "up": "false",
+        "west": "false",
+        "east": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_34"
+      }
+    },
+    {
+      "when": {
+        "north": "true",
+        "south": "true",
+        "down": "false",
+        "up": "false",
+        "west": "false",
+        "east": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_35"
+      }
+    },
+    {
+      "when": {
+        "north": "false",
+        "south": "false",
+        "down": "true",
+        "up": "false",
+        "west": "false",
+        "east": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_36"
+      }
+    },
+    {
+      "when": {
+        "north": "true",
+        "south": "false",
+        "down": "true",
+        "up": "false",
+        "west": "false",
+        "east": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_37"
+      }
+    },
+    {
+      "when": {
+        "north": "false",
+        "south": "true",
+        "down": "true",
+        "up": "false",
+        "west": "false",
+        "east": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_38"
+      }
+    },
+    {
+      "when": {
+        "north": "true",
+        "south": "true",
+        "down": "true",
+        "up": "false",
+        "west": "false",
+        "east": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_39"
+      }
+    },
+    {
+      "when": {
+        "north": "false",
+        "south": "false",
+        "down": "false",
+        "up": "true",
+        "west": "false",
+        "east": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_40"
+      }
+    },
+    {
+      "when": {
+        "north": "true",
+        "south": "false",
+        "down": "false",
+        "up": "true",
+        "west": "false",
+        "east": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_41"
+      }
+    },
+    {
+      "when": {
+        "north": "false",
+        "south": "true",
+        "down": "false",
+        "up": "true",
+        "west": "false",
+        "east": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_42"
+      }
+    },
+    {
+      "when": {
+        "north": "true",
+        "south": "true",
+        "down": "false",
+        "up": "true",
+        "west": "false",
+        "east": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_43"
+      }
+    },
+    {
+      "when": {
+        "north": "false",
+        "south": "false",
+        "down": "true",
+        "up": "true",
+        "west": "false",
+        "east": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_44"
+      }
+    },
+    {
+      "when": {
+        "north": "true",
+        "south": "false",
+        "down": "true",
+        "up": "true",
+        "west": "false",
+        "east": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_45"
+      }
+    },
+    {
+      "when": {
+        "north": "false",
+        "south": "true",
+        "down": "true",
+        "up": "true",
+        "west": "false",
+        "east": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_46"
+      }
+    },
+    {
+      "when": {
+        "north": "true",
+        "south": "true",
+        "down": "true",
+        "up": "true",
+        "west": "false",
+        "east": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_47"
+      }
+    },
+    {
+      "when": {
+        "north": "false",
+        "south": "false",
+        "down": "false",
+        "up": "false",
+        "west": "true",
+        "east": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_48"
+      }
+    },
+    {
+      "when": {
+        "north": "true",
+        "south": "false",
+        "down": "false",
+        "up": "false",
+        "west": "true",
+        "east": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_49"
+      }
+    },
+    {
+      "when": {
+        "north": "false",
+        "south": "true",
+        "down": "false",
+        "up": "false",
+        "west": "true",
+        "east": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_50"
+      }
+    },
+    {
+      "when": {
+        "north": "true",
+        "south": "true",
+        "down": "false",
+        "up": "false",
+        "west": "true",
+        "east": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_51"
+      }
+    },
+    {
+      "when": {
+        "north": "false",
+        "south": "false",
+        "down": "true",
+        "up": "false",
+        "west": "true",
+        "east": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_52"
+      }
+    },
+    {
+      "when": {
+        "north": "true",
+        "south": "false",
+        "down": "true",
+        "up": "false",
+        "west": "true",
+        "east": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_53"
+      }
+    },
+    {
+      "when": {
+        "north": "false",
+        "south": "true",
+        "down": "true",
+        "up": "false",
+        "west": "true",
+        "east": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_54"
+      }
+    },
+    {
+      "when": {
+        "north": "true",
+        "south": "true",
+        "down": "true",
+        "up": "false",
+        "west": "true",
+        "east": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_55"
+      }
+    },
+    {
+      "when": {
+        "north": "false",
+        "south": "false",
+        "down": "false",
+        "up": "true",
+        "west": "true",
+        "east": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_56"
+      }
+    },
+    {
+      "when": {
+        "north": "true",
+        "south": "false",
+        "down": "false",
+        "up": "true",
+        "west": "true",
+        "east": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_57"
+      }
+    },
+    {
+      "when": {
+        "north": "false",
+        "south": "true",
+        "down": "false",
+        "up": "true",
+        "west": "true",
+        "east": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_58"
+      }
+    },
+    {
+      "when": {
+        "north": "true",
+        "south": "true",
+        "down": "false",
+        "up": "true",
+        "west": "true",
+        "east": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_59"
+      }
+    },
+    {
+      "when": {
+        "north": "false",
+        "south": "false",
+        "down": "true",
+        "up": "true",
+        "west": "true",
+        "east": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_60"
+      }
+    },
+    {
+      "when": {
+        "north": "true",
+        "south": "false",
+        "down": "true",
+        "up": "true",
+        "west": "true",
+        "east": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_61"
+      }
+    },
+    {
+      "when": {
+        "north": "false",
+        "south": "true",
+        "down": "true",
+        "up": "true",
+        "west": "true",
+        "east": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_62"
+      }
+    },
+    {
+      "when": {
+        "north": "true",
+        "south": "true",
+        "down": "true",
+        "up": "true",
+        "west": "true",
+        "east": "true"
+      },
+      "apply": {
+        "model": "hbm_neoforge:block/neo_63"
+      }
+    }
+  ]
+}

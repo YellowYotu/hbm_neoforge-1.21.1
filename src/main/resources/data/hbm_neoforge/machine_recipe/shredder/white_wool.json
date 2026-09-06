@@ -1,0 +1,9 @@
+{
+  "input": {
+    "item": "minecraft:white_wool"
+  },
+  "output": {
+    "item": "minecraft:string",
+    "count": 4
+  }
+}
