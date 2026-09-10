@@ -1,9 +1,0 @@
-{
-  "input": {
-    "item": "hbm_neoforge:ingot_dura_steel"
-  },
-  "output": {
-    "item": "hbm_neoforge:powder_dura_steel",
-    "count": 1
-  }
-}

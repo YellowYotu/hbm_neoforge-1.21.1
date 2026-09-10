@@ -1,9 +1,0 @@
-{
-  "input": {
-    "item": "minecraft:charcoal"
-  },
-  "output": {
-    "item": "hbm_neoforge:powder_coal",
-    "count": 1
-  }
-}

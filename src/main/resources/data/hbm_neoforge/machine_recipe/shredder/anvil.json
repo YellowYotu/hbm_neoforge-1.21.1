@@ -1,9 +1,0 @@
-{
-  "input": {
-    "item": "minecraft:anvil"
-  },
-  "output": {
-    "item": "hbm_neoforge:powder_iron",
-    "count": 31
-  }
-}

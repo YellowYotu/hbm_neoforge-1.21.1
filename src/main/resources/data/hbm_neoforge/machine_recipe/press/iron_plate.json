@@ -1,8 +1,0 @@
-{
-  "input": "minecraft:iron_ingot",
-  "stamp": "plate",
-  "output": {
-    "item": "hbm_neoforge:plate_iron",
-    "count": 1
-  }
-}

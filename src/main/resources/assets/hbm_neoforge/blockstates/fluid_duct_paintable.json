@@ -1,9 +1,0 @@
-{
-  "multipart": [
-    {
-      "apply": {
-        "model": "hbm_neoforge:block/fluid_duct_paintable"
-      }
-    }
-  ]
-}

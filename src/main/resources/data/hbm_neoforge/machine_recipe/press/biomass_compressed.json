@@ -1,7 +1,0 @@
-{
-  "input": "hbm_neoforge:biomass",
-  "stamp": "flat",
-  "output": {
-    "item": "hbm_neoforge:biomass_compressed"
-  }
-}

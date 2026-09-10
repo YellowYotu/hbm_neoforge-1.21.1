@@ -1,8 +1,0 @@
-{
-  "input": "minecraft:jungle_log",
-  "stamp": "flat",
-  "output": {
-    "item": "hbm_neoforge:ball_resin",
-    "count": 1
-  }
-}

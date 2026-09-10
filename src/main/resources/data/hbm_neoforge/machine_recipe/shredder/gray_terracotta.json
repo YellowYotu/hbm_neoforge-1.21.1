@@ -1,9 +1,0 @@
-{
-  "input": {
-    "item": "minecraft:gray_terracotta"
-  },
-  "output": {
-    "item": "minecraft:clay_ball",
-    "count": 4
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "input": {
-    "item": "minecraft:obsidian"
-  },
-  "output": {
-    "item": "hbm_neoforge:gravel_obsidian",
-    "count": 1
-  }
-}

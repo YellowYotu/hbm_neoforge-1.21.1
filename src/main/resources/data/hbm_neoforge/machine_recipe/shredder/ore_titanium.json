@@ -1,9 +1,0 @@
-{
-  "input": {
-    "item": "hbm_neoforge:ore_titanium"
-  },
-  "output": {
-    "item": "hbm_neoforge:powder_titanium",
-    "count": 2
-  }
-}

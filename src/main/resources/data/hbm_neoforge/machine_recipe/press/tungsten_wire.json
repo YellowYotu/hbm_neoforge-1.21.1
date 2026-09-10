@@ -1,8 +1,0 @@
-{
-  "input": "hbm_neoforge:ingot_tungsten",
-  "stamp": "wire",
-  "output": {
-    "item": "hbm_neoforge:wire_tungsten",
-    "count": 8
-  }
-}

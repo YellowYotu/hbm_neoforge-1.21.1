@@ -1,9 +1,0 @@
-{
-  "input": {
-    "item": "hbm_neoforge:concrete_colored_ext_hazard"
-  },
-  "output": {
-    "item": "minecraft:gravel",
-    "count": 1
-  }
-}

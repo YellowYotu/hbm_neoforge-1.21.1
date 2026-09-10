@@ -1,9 +1,0 @@
-{
-  "input": {
-    "item": "minecraft:tnt"
-  },
-  "output": {
-    "item": "minecraft:gunpowder",
-    "count": 5
-  }
-}

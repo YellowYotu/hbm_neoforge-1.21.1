@@ -1,6 +1,0 @@
-{
-  "loader": "neoforge:obj",
-  "model": "hbm_neoforge:models/block/machine_wood_burner.obj",
-  "flip_v": true,
-  "shade_quads": true
-}

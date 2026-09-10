@@ -1,9 +1,0 @@
-{
-  "input": {
-    "item": "minecraft:apple"
-  },
-  "output": {
-    "item": "minecraft:sugar",
-    "count": 1
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "loader": "neoforge:obj",
-  "model": "hbm_neoforge:models/block/anvil_steel.obj",
-  "textures": {
-    "particle": "hbm_neoforge:block/anvil_steel"
-  },
-  "flip_v": true,
-  "shade_quads": true
-}

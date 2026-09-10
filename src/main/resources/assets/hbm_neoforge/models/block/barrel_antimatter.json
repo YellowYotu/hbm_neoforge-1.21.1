@@ -1,5 +1,0 @@
-{
-  "loader": "neoforge:obj",
-  "model": "hbm_neoforge:models/block/barrel_antimatter.obj",
-  "flip_v": true
-}

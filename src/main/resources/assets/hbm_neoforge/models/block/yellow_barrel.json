@@ -1,6 +1,0 @@
-{
-  "loader": "neoforge:obj",
-  "model": "hbm_neoforge:models/block/yellow_barrel.obj",
-  "flip_v": true,
-  "shade_quads": true
-}

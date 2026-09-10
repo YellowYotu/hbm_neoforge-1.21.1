@@ -1,9 +1,0 @@
-{
-  "input": {
-    "item": "minecraft:sand"
-  },
-  "output": {
-    "item": "hbm_neoforge:dust",
-    "count": 2
-  }
-}

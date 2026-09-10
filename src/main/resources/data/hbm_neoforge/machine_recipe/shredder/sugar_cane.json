@@ -1,9 +1,0 @@
-{
-  "input": {
-    "item": "minecraft:sugar_cane"
-  },
-  "output": {
-    "item": "minecraft:sugar",
-    "count": 3
-  }
-}
