@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "hbm_neoforge:block/hemp_lower"
+  },
+  "render_type": "minecraft:cutout"
+}

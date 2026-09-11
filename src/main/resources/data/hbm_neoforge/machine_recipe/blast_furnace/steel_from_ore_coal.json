@@ -1,0 +1,18 @@
+{
+  "input_a": {
+    "items": [
+      "minecraft:iron_ore",
+      "minecraft:deepslate_iron_ore"
+    ]
+  },
+  "input_b": {
+    "items": [
+      "minecraft:coal",
+      "hbm_neoforge:powder_coal"
+    ]
+  },
+  "output": {
+    "item": "hbm_neoforge:ingot_steel",
+    "count": 2
+  }
+}

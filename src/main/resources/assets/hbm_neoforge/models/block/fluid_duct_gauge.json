@@ -1,0 +1,58 @@
+{
+  "textures": {
+    "particle": "hbm_neoforge:block/deco_steel",
+    "base": "hbm_neoforge:block/deco_steel",
+    "gauge": "hbm_neoforge:block/pipe_gauge"
+  },
+  "elements": [
+    {
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ],
+      "faces": {
+        "down": {
+          "texture": "#base"
+        },
+        "up": {
+          "texture": "#base"
+        },
+        "north": {
+          "texture": "#base"
+        },
+        "south": {
+          "texture": "#base"
+        },
+        "west": {
+          "texture": "#base"
+        },
+        "east": {
+          "texture": "#base"
+        }
+      }
+    },
+    {
+      "from": [
+        0,
+        0,
+        -0.01
+      ],
+      "to": [
+        16,
+        16,
+        0.01
+      ],
+      "faces": {
+        "north": {
+          "texture": "#gauge"
+        }
+      }
+    }
+  ]
+}

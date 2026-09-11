@@ -1,0 +1,9 @@
+{
+  "input": {
+    "item": "hbm_neoforge:concrete_light_blue"
+  },
+  "output": {
+    "item": "minecraft:gravel",
+    "count": 1
+  }
+}

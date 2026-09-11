@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "hbm_neoforge:concrete_green_stairs"
+    },
+    {
+      "item": "hbm_neoforge:concrete_green_stairs"
+    },
+    {
+      "item": "hbm_neoforge:concrete_green_stairs"
+    },
+    {
+      "item": "hbm_neoforge:concrete_green_stairs"
+    }
+  ],
+  "result": {
+    "id": "hbm_neoforge:concrete_green",
+    "count": 3
+  }
+}

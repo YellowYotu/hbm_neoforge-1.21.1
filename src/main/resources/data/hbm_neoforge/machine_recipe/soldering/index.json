@@ -1,0 +1,23 @@
+[
+  "analog_circuit",
+  "basic_circuit",
+  "advanced_circuit",
+  "capacitor_board",
+  "bismoid_circuit_polymer",
+  "bismoid_circuit_bakelite",
+  "quantum_circuit",
+  "controller",
+  "controller_advanced",
+  "controller_quantum",
+  "upgrade_speed_1",
+  "upgrade_power_1",
+  "upgrade_speed_2_polymer",
+  "upgrade_speed_2_bakelite",
+  "upgrade_speed_3_biorubber",
+  "upgrade_speed_3_rubber",
+  "upgrade_power_2_polymer",
+  "upgrade_power_2_bakelite",
+  "upgrade_power_3_biorubber",
+  "upgrade_power_3_rubber",
+  "sat_chip"
+]

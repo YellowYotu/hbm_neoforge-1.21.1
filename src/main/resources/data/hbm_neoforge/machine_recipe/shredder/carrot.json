@@ -1,0 +1,9 @@
+{
+  "input": {
+    "item": "minecraft:carrot"
+  },
+  "output": {
+    "item": "minecraft:sugar",
+    "count": 1
+  }
+}

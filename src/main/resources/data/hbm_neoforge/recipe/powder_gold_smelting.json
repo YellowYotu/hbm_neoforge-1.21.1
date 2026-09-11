@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "hbm_neoforge:powder_gold"
+  },
+  "result": {
+    "id": "minecraft:gold_ingot",
+    "count": 1
+  }
+}

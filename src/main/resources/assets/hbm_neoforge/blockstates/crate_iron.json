@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "hbm_neoforge:block/crate_iron"
+    },
+    "facing=south": {
+      "model": "hbm_neoforge:block/crate_iron",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "hbm_neoforge:block/crate_iron",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "hbm_neoforge:block/crate_iron",
+      "y": 90
+    }
+  }
+}

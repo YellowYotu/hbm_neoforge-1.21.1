@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    " P ",
+    "PPP",
+    " F "
+  ],
+  "key": {
+    "P": {
+      "item": "hbm_neoforge:ingot_rubber"
+    },
+    "F": {
+      "item": "hbm_neoforge:plate_iron"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:gas_mask_mono",
+    "count": 1
+  }
+}

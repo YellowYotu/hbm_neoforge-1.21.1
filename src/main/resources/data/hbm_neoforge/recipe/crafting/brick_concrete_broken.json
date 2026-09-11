@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " C ",
+    "C C",
+    " C "
+  ],
+  "key": {
+    "C": {
+      "item": "hbm_neoforge:brick_concrete_cracked"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:brick_concrete_broken",
+    "count": 6
+  }
+}

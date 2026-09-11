@@ -1,0 +1,9 @@
+{
+  "input": {
+    "item": "minecraft:cobblestone"
+  },
+  "output": {
+    "item": "minecraft:gravel",
+    "count": 1
+  }
+}

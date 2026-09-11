@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "hbm_neoforge:block/machine_crucible",
+      "y": 90
+    },
+    "facing=east": {
+      "model": "hbm_neoforge:block/machine_crucible",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "hbm_neoforge:block/machine_crucible",
+      "y": 270
+    },
+    "facing=west": {
+      "model": "hbm_neoforge:block/machine_crucible"
+    }
+  }
+}

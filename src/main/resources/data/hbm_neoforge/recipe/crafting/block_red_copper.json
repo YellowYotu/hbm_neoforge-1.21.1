@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "hbm_neoforge:ingot_red_copper"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:block_red_copper",
+    "count": 1
+  }
+}

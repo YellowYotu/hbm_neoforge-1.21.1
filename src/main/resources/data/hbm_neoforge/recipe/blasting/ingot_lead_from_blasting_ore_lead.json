@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "ingredient": {
+    "item": "hbm_neoforge:ore_lead"
+  },
+  "result": {
+    "id": "hbm_neoforge:ingot_lead"
+  },
+  "experience": 0.7,
+  "cookingtime": 100
+}

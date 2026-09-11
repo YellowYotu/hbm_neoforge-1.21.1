@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "TT",
+    "TT"
+  ],
+  "key": {
+    "T": {
+      "item": "hbm_neoforge:lightstone_tile"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:lightstone_bricks",
+    "count": 4
+  }
+}

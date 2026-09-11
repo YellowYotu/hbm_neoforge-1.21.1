@@ -1,0 +1,36 @@
+{
+  "operation": "crafting",
+  "overlay": "construction",
+  "name": "block.hbm_neoforge.machine_soldering_station",
+  "tier": 2,
+  "primary": {
+    "items": [
+      "hbm_neoforge:plate_steel_cast"
+    ],
+    "count": 2
+  },
+  "secondary": {
+    "items": [
+      "hbm_neoforge:copper_coil"
+    ],
+    "count": 4
+  },
+  "extra_inputs": [
+    {
+      "items": [
+        "hbm_neoforge:bolt_tungsten"
+      ],
+      "count": 4
+    },
+    {
+      "items": [
+        "hbm_neoforge:circuit_vacuum_tube"
+      ],
+      "count": 2
+    }
+  ],
+  "result": {
+    "item": "hbm_neoforge:machine_soldering_station",
+    "count": 1
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "hbm_neoforge:powder_titanium"
+  },
+  "result": {
+    "id": "hbm_neoforge:ingot_titanium",
+    "count": 1
+  }
+}

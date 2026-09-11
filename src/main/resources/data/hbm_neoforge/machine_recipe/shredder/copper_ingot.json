@@ -1,0 +1,9 @@
+{
+  "input": {
+    "item": "minecraft:copper_ingot"
+  },
+  "output": {
+    "item": "hbm_neoforge:powder_copper",
+    "count": 1
+  }
+}

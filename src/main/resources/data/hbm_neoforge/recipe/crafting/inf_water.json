@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "WDW",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "hbm_neoforge:plate_aluminium"
+    },
+    "W": {
+      "item": "minecraft:water_bucket"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:inf_water",
+    "count": 1
+  }
+}

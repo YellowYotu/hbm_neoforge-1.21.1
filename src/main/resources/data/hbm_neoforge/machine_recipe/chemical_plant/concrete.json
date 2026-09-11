@@ -1,0 +1,28 @@
+{
+  "duration": 100,
+  "energy_per_tick": 100,
+  "ingredients": [
+    {
+      "item": "hbm_neoforge:powder_cement",
+      "count": 1
+    },
+    {
+      "item": "minecraft:gravel",
+      "count": 8
+    },
+    {
+      "item": "minecraft:sand",
+      "count": 8
+    }
+  ],
+  "input_fluids": [
+    {
+      "fluid": "water",
+      "amount": 2000
+    }
+  ],
+  "result": {
+    "item": "hbm_neoforge:concrete_smooth",
+    "count": 16
+  }
+}

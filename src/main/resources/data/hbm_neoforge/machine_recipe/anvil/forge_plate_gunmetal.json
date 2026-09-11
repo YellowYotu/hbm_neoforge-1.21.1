@@ -1,0 +1,19 @@
+{
+  "operation": "crafting",
+  "overlay": "construction",
+  "name": "anvil_recipe.hbm_neoforge.forge_plate_gunmetal",
+  "primary": {
+    "items": [
+      "hbm_neoforge:ingot_gunmetal"
+    ],
+    "count": 1
+  },
+  "secondary": {
+    "any": true,
+    "count": 0
+  },
+  "result": {
+    "item": "hbm_neoforge:plate_gunmetal",
+    "count": 1
+  }
+}

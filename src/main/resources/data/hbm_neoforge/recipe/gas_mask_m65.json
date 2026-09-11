@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "PPP",
+    "GPG",
+    " F "
+  ],
+  "key": {
+    "P": {
+      "item": "hbm_neoforge:ingot_rubber"
+    },
+    "G": {
+      "item": "minecraft:glass_pane"
+    },
+    "F": {
+      "item": "hbm_neoforge:plate_iron"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:gas_mask_m65",
+    "count": 1
+  }
+}

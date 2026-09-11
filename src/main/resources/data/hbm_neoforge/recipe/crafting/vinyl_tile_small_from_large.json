@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "hbm_neoforge:vinyl_tile_large"
+    }
+  ],
+  "result": {
+    "id": "hbm_neoforge:vinyl_tile_small"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "ingredient": {
+    "item": "hbm_neoforge:ore_uranium"
+  },
+  "result": {
+    "id": "hbm_neoforge:ingot_uranium"
+  },
+  "experience": 6.0,
+  "cookingtime": 200
+}

@@ -1,0 +1,17 @@
+{
+  "parent": "hbm_neoforge:block/fluid_duct_gauge",
+  "display": {
+    "gui": {
+      "rotation": [
+        30,
+        225,
+        0
+      ],
+      "scale": [
+        0.65,
+        0.65,
+        0.65
+      ]
+    }
+  }
+}

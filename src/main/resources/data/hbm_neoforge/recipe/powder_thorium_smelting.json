@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "hbm_neoforge:powder_thorium"
+  },
+  "result": {
+    "id": "hbm_neoforge:ingot_th232",
+    "count": 1
+  }
+}

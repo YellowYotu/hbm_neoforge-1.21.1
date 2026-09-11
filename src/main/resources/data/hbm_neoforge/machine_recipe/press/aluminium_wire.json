@@ -1,0 +1,8 @@
+{
+  "input": "hbm_neoforge:ingot_aluminium",
+  "stamp": "wire",
+  "output": {
+    "item": "hbm_neoforge:wire_aluminium",
+    "count": 8
+  }
+}

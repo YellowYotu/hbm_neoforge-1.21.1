@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " C ",
+    "C C",
+    " C "
+  ],
+  "key": {
+    "C": {
+      "item": "hbm_neoforge:tile_lab"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:tile_lab_cracked",
+    "count": 6
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "detonated=false,facing=north": { "model": "hbm_neoforge:block/nuke_man", "y": 180 },
+    "detonated=false,facing=south": { "model": "hbm_neoforge:block/nuke_man", "y": 0 },
+    "detonated=false,facing=west": { "model": "hbm_neoforge:block/nuke_man", "y": 270 },
+    "detonated=false,facing=east": { "model": "hbm_neoforge:block/nuke_man", "y": 90 },
+    "detonated=true,facing=north": { "model": "hbm_neoforge:block/nuke_man", "y": 180 },
+    "detonated=true,facing=south": { "model": "hbm_neoforge:block/nuke_man", "y": 0 },
+    "detonated=true,facing=west": { "model": "hbm_neoforge:block/nuke_man", "y": 270 },
+    "detonated=true,facing=east": { "model": "hbm_neoforge:block/nuke_man", "y": 90 }
+  }
+}

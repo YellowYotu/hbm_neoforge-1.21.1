@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "hbm_neoforge:concrete_colored_ext_hazard"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:concrete_colored_ext_hazard_stairs",
+    "count": 4
+  }
+}

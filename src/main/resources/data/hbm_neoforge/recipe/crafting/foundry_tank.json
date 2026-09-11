@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "B B",
+    "I I",
+    "BSB"
+  ],
+  "key": {
+    "B": {
+      "item": "hbm_neoforge:ingot_firebrick"
+    },
+    "I": {
+      "item": "hbm_neoforge:ingot_steel"
+    },
+    "S": {
+      "item": "minecraft:stone_slab"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:foundry_tank"
+  }
+}

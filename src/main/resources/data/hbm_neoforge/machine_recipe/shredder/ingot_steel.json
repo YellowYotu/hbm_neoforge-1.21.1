@@ -1,0 +1,9 @@
+{
+  "input": {
+    "item": "hbm_neoforge:ingot_steel"
+  },
+  "output": {
+    "item": "hbm_neoforge:powder_steel",
+    "count": 1
+  }
+}

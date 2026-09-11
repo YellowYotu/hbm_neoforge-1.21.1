@@ -1,0 +1,20 @@
+{
+  "operation": "crafting",
+  "overlay": "construction",
+  "name": "anvil_recipe.hbm_neoforge.lead_pipe",
+  "tier": 1,
+  "primary": {
+    "items": [
+      "hbm_neoforge:plate_lead"
+    ],
+    "count": 3
+  },
+  "secondary": {
+    "any": true,
+    "count": 0
+  },
+  "result": {
+    "item": "hbm_neoforge:pipe_lead",
+    "count": 1
+  }
+}

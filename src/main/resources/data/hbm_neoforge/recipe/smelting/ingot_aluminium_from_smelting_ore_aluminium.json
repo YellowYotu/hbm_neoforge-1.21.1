@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "ingredient": {
+    "item": "hbm_neoforge:ore_aluminium"
+  },
+  "result": {
+    "id": "hbm_neoforge:ingot_aluminium"
+  },
+  "experience": 0.7,
+  "cookingtime": 200
+}

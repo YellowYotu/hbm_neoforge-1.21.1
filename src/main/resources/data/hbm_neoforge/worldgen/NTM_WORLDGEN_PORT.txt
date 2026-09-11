@@ -1,0 +1,15 @@
+HBM NTM worldgen adaptation for Minecraft/NeoForge 1.21.1
+
+Spawn counts and vein sizes follow the HbmMods/Hbm-s-Nuclear-Tech-GIT defaults for the ores currently implemented in this port.
+Vertical ranges are shifted upward for the modern 1.21.1 terrain so these classic HBM ores stay in the stone layer and do not spawn in deepslate.
+Configured ore targets use minecraft:stone_ore_replaceables only; minecraft:deepslate_ore_replaceables is intentionally not used.
+
+Current adapted ranges:
+uranium: 7/chunk, size 5, Y 12..27
+titanium: 8/chunk, size 6, Y 12..37
+aluminium: 7/chunk, size 6, Y 12..47
+tungsten: 10/chunk, size 8, Y 12..37
+lead: 6/chunk, size 9, Y 12..37
+beryllium: 6/chunk, size 4, Y 12..37
+rare earth: 6/chunk, size 5, Y 12..27
+cobalt: 2/chunk, size 4, Y 12..16

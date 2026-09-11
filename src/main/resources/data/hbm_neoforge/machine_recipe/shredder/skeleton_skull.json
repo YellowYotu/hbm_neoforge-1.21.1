@@ -1,0 +1,9 @@
+{
+  "input": {
+    "item": "minecraft:skeleton_skull"
+  },
+  "output": {
+    "item": "hbm_neoforge:biomass",
+    "count": 4
+  }
+}

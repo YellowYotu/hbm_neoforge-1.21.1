@@ -1,0 +1,28 @@
+{
+  "result": {
+    "item": "hbm_neoforge:upgrade_power_2"
+  },
+  "duration": 300,
+  "energy_per_tick": 10000,
+  "toppings": [
+    {
+      "item": "hbm_neoforge:circuit_chip",
+      "count": 8
+    },
+    {
+      "item": "hbm_neoforge:circuit_capacitor",
+      "count": 4
+    }
+  ],
+  "pcb": [
+    {
+      "item": "hbm_neoforge:upgrade_power_1",
+      "count": 1
+    },
+    {
+      "item": "hbm_neoforge:ingot_polymer",
+      "count": 4
+    }
+  ],
+  "solder": []
+}

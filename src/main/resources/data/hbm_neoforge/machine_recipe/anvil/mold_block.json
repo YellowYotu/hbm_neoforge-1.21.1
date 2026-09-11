@@ -1,0 +1,21 @@
+{
+  "operation": "crafting",
+  "overlay": "smithing",
+  "name": "anvil_recipe.hbm_neoforge.mold_block",
+  "primary": {
+    "items": [
+      "minecraft:iron_block"
+    ],
+    "count": 1
+  },
+  "secondary": {
+    "items": [
+      "hbm_neoforge:mold_base"
+    ],
+    "count": 1
+  },
+  "result": {
+    "item": "hbm_neoforge:mold_block"
+  },
+  "tier": 1
+}

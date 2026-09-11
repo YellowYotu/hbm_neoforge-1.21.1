@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "FBF",
+    "BFB",
+    "FBF"
+  ],
+  "key": {
+    "F": {
+      "item": "minecraft:iron_bars"
+    },
+    "B": {
+      "item": "hbm_neoforge:brick_concrete"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:reinforced_brick",
+    "count": 4
+  }
+}

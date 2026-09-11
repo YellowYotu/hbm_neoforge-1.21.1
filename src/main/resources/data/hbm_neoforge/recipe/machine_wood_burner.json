@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "pattern": [
+    "PPP",
+    "CFC",
+    "I I"
+  ],
+  "key": {
+    "P": {
+      "item": "hbm_neoforge:plate_steel"
+    },
+    "C": {
+      "item": "hbm_neoforge:copper_coil"
+    },
+    "F": {
+      "item": "minecraft:furnace"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:machine_wood_burner",
+    "count": 1
+  }
+}

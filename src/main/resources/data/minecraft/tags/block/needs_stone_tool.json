@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "hbm_neoforge:ore_aluminium",
+    "hbm_neoforge:ore_asbestos",
+    "hbm_neoforge:ore_cinnebar",
+    "hbm_neoforge:ore_fluorite",
+    "hbm_neoforge:ore_niter",
+    "hbm_neoforge:ore_sulfur",
+    "hbm_neoforge:ore_uranium"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "operation": "crafting",
+  "overlay": "construction",
+  "name": "anvil_recipe.hbm_neoforge.iron_pipe",
+  "primary": {
+    "items": [
+      "hbm_neoforge:plate_iron"
+    ],
+    "count": 3
+  },
+  "secondary": {
+    "any": true,
+    "count": 0
+  },
+  "result": {
+    "item": "hbm_neoforge:iron_pipe"
+  },
+  "tier": 1
+}

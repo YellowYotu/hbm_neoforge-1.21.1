@@ -1,0 +1,9 @@
+{
+  "input": {
+    "item": "hbm_neoforge:block_lead"
+  },
+  "output": {
+    "item": "hbm_neoforge:powder_lead",
+    "count": 9
+  }
+}

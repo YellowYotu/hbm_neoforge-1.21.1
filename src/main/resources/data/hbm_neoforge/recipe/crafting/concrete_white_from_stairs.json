@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "hbm_neoforge:concrete_white_stairs"
+    },
+    {
+      "item": "hbm_neoforge:concrete_white_stairs"
+    },
+    {
+      "item": "hbm_neoforge:concrete_white_stairs"
+    },
+    {
+      "item": "hbm_neoforge:concrete_white_stairs"
+    }
+  ],
+  "result": {
+    "id": "hbm_neoforge:concrete_white",
+    "count": 3
+  }
+}

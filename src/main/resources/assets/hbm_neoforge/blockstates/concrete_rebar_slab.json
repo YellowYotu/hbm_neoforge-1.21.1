@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "type=bottom,waterlogged=false": {
+      "model": "hbm_neoforge:block/concrete_rebar_slab"
+    },
+    "type=bottom,waterlogged=true": {
+      "model": "hbm_neoforge:block/concrete_rebar_slab"
+    },
+    "type=top,waterlogged=false": {
+      "model": "hbm_neoforge:block/concrete_rebar_slab_top"
+    },
+    "type=top,waterlogged=true": {
+      "model": "hbm_neoforge:block/concrete_rebar_slab_top"
+    },
+    "type=double,waterlogged=false": {
+      "model": "hbm_neoforge:block/concrete_rebar"
+    },
+    "type=double,waterlogged=true": {
+      "model": "hbm_neoforge:block/concrete_rebar"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "BBB",
+    "MMM"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:brick"
+    },
+    "M": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:stamp_iron_flat",
+    "count": 1
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "I",
+    "P"
+  ],
+  "key": {
+    "I": {
+      "item": "hbm_neoforge:plate_polymer"
+    },
+    "P": {
+      "item": "hbm_neoforge:plate_gold"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:circuit_pcb",
+    "count": 4
+  }
+}

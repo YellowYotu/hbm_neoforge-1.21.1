@@ -1,0 +1,25 @@
+{
+  "result": {
+    "item": "hbm_neoforge:assembly_machine"
+  },
+  "duration": 200,
+  "energy_per_tick": 100,
+  "ingredients": [
+    {
+      "item": "hbm_neoforge:ingot_steel",
+      "count": 4
+    },
+    {
+      "item": "hbm_neoforge:plate_copper",
+      "count": 4
+    },
+    {
+      "item": "hbm_neoforge:motor",
+      "count": 2
+    },
+    {
+      "item": "hbm_neoforge:circuit_analog",
+      "count": 1
+    }
+  ]
+}

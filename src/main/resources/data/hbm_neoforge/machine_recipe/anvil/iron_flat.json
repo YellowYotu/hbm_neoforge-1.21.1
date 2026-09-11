@@ -1,0 +1,21 @@
+{
+  "operation": "crafting",
+  "overlay": "construction",
+  "name": "anvil_recipe.hbm_neoforge.iron_flat",
+  "primary": {
+    "items": [
+      "minecraft:brick",
+      "minecraft:nether_brick"
+    ],
+    "count": 3
+  },
+  "secondary": {
+    "items": [
+      "minecraft:iron_ingot"
+    ],
+    "count": 3
+  },
+  "result": {
+    "item": "hbm_neoforge:stamp_iron_flat"
+  }
+}

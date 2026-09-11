@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "hbm_neoforge:block/assembly_machine"
+    },
+    "facing=east": {
+      "model": "hbm_neoforge:block/assembly_machine",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "hbm_neoforge:block/assembly_machine",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "hbm_neoforge:block/assembly_machine",
+      "y": 270
+    }
+  }
+}

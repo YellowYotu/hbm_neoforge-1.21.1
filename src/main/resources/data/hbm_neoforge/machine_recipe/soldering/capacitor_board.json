@@ -1,0 +1,29 @@
+{
+  "result": {
+    "item": "hbm_neoforge:circuit_capacitor_board"
+  },
+  "duration": 200,
+  "energy_per_tick": 300,
+  "toppings": [
+    {
+      "item": "hbm_neoforge:circuit_capacitor_tantalium",
+      "count": 3
+    }
+  ],
+  "pcb": [
+    {
+      "item": "hbm_neoforge:circuit_pcb",
+      "count": 1
+    }
+  ],
+  "solder": [
+    {
+      "item": "hbm_neoforge:wire_fine_lead",
+      "count": 3
+    }
+  ],
+  "fluid": {
+    "type": "peroxide",
+    "amount": 250
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "IPI",
+    "I I",
+    "IPI"
+  ],
+  "key": {
+    "I": {
+      "item": "hbm_neoforge:plate_steel"
+    },
+    "P": {
+      "item": "hbm_neoforge:ingot_steel"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:barrel_steel",
+    "count": 1
+  }
+}

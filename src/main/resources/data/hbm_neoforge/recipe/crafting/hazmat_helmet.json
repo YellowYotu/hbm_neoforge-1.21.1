@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "EEE",
+    "EIE",
+    " P "
+  ],
+  "key": {
+    "E": {
+      "item": "hbm_neoforge:hazmat_cloth"
+    },
+    "I": {
+      "item": "minecraft:glass_pane"
+    },
+    "P": {
+      "item": "hbm_neoforge:plate_iron"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:hazmat_helmet",
+    "count": 1
+  }
+}

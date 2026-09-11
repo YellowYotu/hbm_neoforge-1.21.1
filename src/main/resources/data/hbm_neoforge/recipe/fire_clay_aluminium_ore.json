@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:clay_ball"
+    },
+    {
+      "item": "minecraft:clay_ball"
+    },
+    {
+      "item": "minecraft:clay_ball"
+    },
+    {
+      "item": "hbm_neoforge:ore_aluminium"
+    }
+  ],
+  "result": {
+    "id": "hbm_neoforge:fire_clay",
+    "count": 4
+  }
+}

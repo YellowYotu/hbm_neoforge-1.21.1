@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "G",
+    "W",
+    "I"
+  ],
+  "key": {
+    "G": {
+      "tag": "hbm_neoforge:glass_panes"
+    },
+    "W": {
+      "item": "hbm_neoforge:wire_tungsten"
+    },
+    "I": {
+      "item": "hbm_neoforge:plate_polymer"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:circuit_vacuum_tube",
+    "count": 1
+  }
+}

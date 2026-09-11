@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BB",
+    "BB"
+  ],
+  "key": {
+    "B": {
+      "item": "hbm_neoforge:basalt_brick"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:basalt_tiles",
+    "count": 4
+  }
+}

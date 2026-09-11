@@ -1,0 +1,21 @@
+{
+  "operation": "crafting",
+  "overlay": "smithing",
+  "name": "anvil_recipe.hbm_neoforge.mold_stamp",
+  "primary": {
+    "items": [
+      "hbm_neoforge:stamp_iron_flat"
+    ],
+    "count": 1
+  },
+  "secondary": {
+    "items": [
+      "hbm_neoforge:mold_base"
+    ],
+    "count": 1
+  },
+  "result": {
+    "item": "hbm_neoforge:mold_stamp"
+  },
+  "tier": 1
+}

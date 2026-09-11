@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": ["BPB", "BPB", "BPB"],
+  "key": {
+    "B": {"item": "hbm_neoforge:bolt_steel"},
+    "P": {"item": "hbm_neoforge:plate_iron"}
+  },
+  "result": {"id": "hbm_neoforge:plate_cast", "count": 1}
+}

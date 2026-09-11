@@ -1,0 +1,21 @@
+{
+  "operation": "crafting",
+  "overlay": "construction",
+  "name": "anvil_recipe.hbm_neoforge.gunmetal",
+  "primary": {
+    "items": [
+      "minecraft:copper_ingot"
+    ],
+    "count": 1
+  },
+  "secondary": {
+    "items": [
+      "hbm_neoforge:ingot_aluminium"
+    ],
+    "count": 1
+  },
+  "result": {
+    "item": "hbm_neoforge:ingot_gunmetal"
+  },
+  "selectable": false
+}

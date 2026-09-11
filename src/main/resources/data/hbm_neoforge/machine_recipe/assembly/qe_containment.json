@@ -1,0 +1,12 @@
+{
+  "result": {"item": "hbm_neoforge:qe_containment"},
+  "duration": 400,
+  "energy_per_tick": 100,
+  "ingredients": [
+    {"item": "hbm_neoforge:plate_steel_cast", "count": 6},
+    {"item": "hbm_neoforge:plate_polymer", "count": 8},
+    {"item": "hbm_neoforge:motor", "count": 2},
+    {"item": "hbm_neoforge:bolt_dura_steel", "count": 32},
+    {"item": "minecraft:black_dye", "count": 4}
+  ]
+}

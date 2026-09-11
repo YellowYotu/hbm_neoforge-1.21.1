@@ -1,0 +1,9 @@
+{
+  "input": {
+    "item": "hbm_neoforge:ore_beryllium"
+  },
+  "output": {
+    "item": "hbm_neoforge:powder_beryllium",
+    "count": 2
+  }
+}

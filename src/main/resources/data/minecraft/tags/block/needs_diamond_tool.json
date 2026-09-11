@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "hbm_neoforge:ore_cobalt",
+    "hbm_neoforge:depth_brick",
+    "hbm_neoforge:depth_tiles",
+    "hbm_neoforge:depth_nether_brick",
+    "hbm_neoforge:depth_nether_tiles"
+  ]
+}

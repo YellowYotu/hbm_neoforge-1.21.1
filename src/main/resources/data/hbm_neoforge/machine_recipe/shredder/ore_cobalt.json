@@ -1,0 +1,9 @@
+{
+  "input": {
+    "item": "hbm_neoforge:ore_cobalt"
+  },
+  "output": {
+    "item": "hbm_neoforge:powder_cobalt",
+    "count": 2
+  }
+}

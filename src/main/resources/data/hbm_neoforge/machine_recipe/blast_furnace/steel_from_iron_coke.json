@@ -1,0 +1,20 @@
+{
+  "input_a": {
+    "items": [
+      "minecraft:iron_ingot",
+      "hbm_neoforge:plate_iron",
+      "hbm_neoforge:powder_iron"
+    ]
+  },
+  "input_b": {
+    "items": [
+      "hbm_neoforge:coke_coal",
+      "hbm_neoforge:coke_lignite",
+      "hbm_neoforge:coke_petroleum"
+    ]
+  },
+  "output": {
+    "item": "hbm_neoforge:ingot_steel",
+    "count": 1
+  }
+}

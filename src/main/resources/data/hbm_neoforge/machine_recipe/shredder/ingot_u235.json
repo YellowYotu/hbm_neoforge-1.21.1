@@ -1,0 +1,9 @@
+{
+  "input": {
+    "item": "hbm_neoforge:ingot_u235"
+  },
+  "output": {
+    "item": "hbm_neoforge:powder_uranium",
+    "count": 1
+  }
+}

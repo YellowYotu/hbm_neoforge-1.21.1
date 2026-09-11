@@ -1,0 +1,11 @@
+{
+  "loader": "neoforge:obj",
+  "model": "hbm_neoforge:models/block/foundry_basin.obj",
+  "textures": {
+    "particle": "hbm_neoforge:block/foundry_basin_side"
+  },
+  "flip_v": true,
+  "automatic_culling": false,
+  "shade_quads": true,
+  "render_type": "minecraft:cutout"
+}

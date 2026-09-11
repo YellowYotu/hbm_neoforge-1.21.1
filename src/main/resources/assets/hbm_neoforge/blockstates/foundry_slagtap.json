@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "hbm_neoforge:block/foundry_slagtap",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "hbm_neoforge:block/foundry_slagtap",
+      "y": 270
+    },
+    "facing=west": {
+      "model": "hbm_neoforge:block/foundry_slagtap"
+    },
+    "facing=east": {
+      "model": "hbm_neoforge:block/foundry_slagtap",
+      "y": 180
+    }
+  }
+}

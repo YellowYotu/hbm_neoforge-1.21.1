@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "hbm_neoforge:ingot_cobalt"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:block_cobalt",
+    "count": 1
+  }
+}

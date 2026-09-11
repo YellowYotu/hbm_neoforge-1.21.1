@@ -1,0 +1,9 @@
+{
+  "input": {
+    "item": "minecraft:oak_planks"
+  },
+  "output": {
+    "item": "hbm_neoforge:powder_sawdust",
+    "count": 1
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "result": {
+    "item": "hbm_neoforge:filter_coal"
+  },
+  "duration": 50,
+  "energy_per_tick": 100,
+  "ingredients": [
+    {
+      "item": "hbm_neoforge:powder_coal",
+      "count": 4
+    },
+    {
+      "item": "minecraft:string",
+      "count": 2
+    },
+    {
+      "item": "minecraft:paper",
+      "count": 1
+    }
+  ]
+}

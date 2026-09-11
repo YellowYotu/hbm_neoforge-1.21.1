@@ -1,0 +1,21 @@
+{
+  "operation": "crafting",
+  "overlay": "smithing",
+  "name": "anvil_recipe.hbm_neoforge.mold_plate_cast",
+  "primary": {
+    "items": [
+      "hbm_neoforge:plate_cast"
+    ],
+    "count": 1
+  },
+  "secondary": {
+    "items": [
+      "hbm_neoforge:mold_base"
+    ],
+    "count": 1
+  },
+  "result": {
+    "item": "hbm_neoforge:mold_plate_cast"
+  },
+  "tier": 1
+}

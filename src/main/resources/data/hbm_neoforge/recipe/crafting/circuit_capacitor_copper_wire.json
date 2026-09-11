@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "IAI",
+    "W W"
+  ],
+  "key": {
+    "I": {
+      "item": "hbm_neoforge:plate_polymer"
+    },
+    "A": {
+      "item": "hbm_neoforge:powder_aluminium"
+    },
+    "W": {
+      "item": "hbm_neoforge:wire_copper"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:circuit_capacitor",
+    "count": 2
+  }
+}

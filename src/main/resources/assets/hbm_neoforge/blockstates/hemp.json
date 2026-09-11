@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "stage=single": { "model": "hbm_neoforge:block/hemp_single" },
+    "stage=lower": { "model": "hbm_neoforge:block/hemp_lower" },
+    "stage=upper": { "model": "hbm_neoforge:block/hemp_upper" }
+  }
+}

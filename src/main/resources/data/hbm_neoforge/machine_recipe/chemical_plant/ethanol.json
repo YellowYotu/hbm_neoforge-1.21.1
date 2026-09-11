@@ -1,0 +1,16 @@
+{
+  "duration": 50,
+  "energy_per_tick": 100,
+  "ingredients": [
+    {
+      "item": "minecraft:sugar",
+      "count": 10
+    }
+  ],
+  "output_fluids": [
+    {
+      "fluid": "ethanol",
+      "amount": 1000
+    }
+  ]
+}

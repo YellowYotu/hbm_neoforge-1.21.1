@@ -1,0 +1,1 @@
+{"type":"minecraft:block","pools":[{"rolls":1,"entries":[{"type":"minecraft:item","name":"hbm_neoforge:crate_iron"}],"conditions":[{"condition":"minecraft:survives_explosion"}]}],"random_sequence":"hbm_neoforge:blocks/crate_iron"}
