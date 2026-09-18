@@ -1,5 +1,6 @@
 package com.yellowyotu.hbmneoforge.client.renderer;
 
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import com.yellowyotu.hbmneoforge.blockentity.FoundryCastingBlockEntity;
@@ -10,6 +11,7 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.phys.AABB;
 
 public final class FoundryCastingBlockEntityRenderer implements BlockEntityRenderer<FoundryCastingBlockEntity> {
     public FoundryCastingBlockEntityRenderer(BlockEntityRendererProvider.Context context) {
@@ -18,20 +20,26 @@ public final class FoundryCastingBlockEntityRenderer implements BlockEntityRende
     @Override
     public void render(FoundryCastingBlockEntity casting, float partialTick, PoseStack poseStack,
                        MultiBufferSource buffers, int packedLight, int packedOverlay) {
-        ItemStack mold = casting.getInventory().getStackInSlot(0);
-        if (!mold.isEmpty()) {
-            renderItem(casting, mold, 0.13D, poseStack, buffers, packedLight, packedOverlay);
+        RenderSystem.disableCull();
+        try {
+                ItemStack mold = casting.getInventory().getStackInSlot(0);
+                if (!mold.isEmpty()) {
+                    renderItem(casting, mold, 0.13D, poseStack, buffers, packedLight, packedOverlay);
+                }
+                ItemStack output = casting.getInventory().getStackInSlot(1);
+                if (!output.isEmpty()) {
+                    renderItem(casting, output, casting.isBasin() ? 0.875D : 0.25D, poseStack, buffers, packedLight, packedOverlay);
+                }
+                if (casting.getAmount() <= 0 || casting.getCapacity() <= 0 || casting.getMaterial().isBlank()) {
+                    return;
+                }
+                float liquidY = (float) (0.125D + casting.getAmount() * (casting.isBasin() ? 0.75D : 0.25D) / casting.getCapacity());
+                FoundryRenderUtil.top(poseStack, buffers, FoundryRenderUtil.MOLTEN_TEXTURE, casting.getMoltenColor(),
+                        0.125F, liquidY, 0.125F, 0.875F, 0.875F);
+    
+        } finally {
+            RenderSystem.enableCull();
         }
-        ItemStack output = casting.getInventory().getStackInSlot(1);
-        if (!output.isEmpty()) {
-            renderItem(casting, output, casting.isBasin() ? 0.875D : 0.25D, poseStack, buffers, packedLight, packedOverlay);
-        }
-        if (casting.getAmount() <= 0 || casting.getCapacity() <= 0 || casting.getMaterial().isBlank()) {
-            return;
-        }
-        float liquidY = (float) (0.125D + casting.getAmount() * (casting.isBasin() ? 0.75D : 0.25D) / casting.getCapacity());
-        FoundryRenderUtil.top(poseStack, buffers, FoundryRenderUtil.MOLTEN_TEXTURE, casting.getMoltenColor(),
-                0.125F, liquidY, 0.125F, 0.875F, 0.875F);
     }
 
     private static void renderItem(FoundryCastingBlockEntity casting, ItemStack stack, double height,
@@ -50,5 +58,20 @@ public final class FoundryCastingBlockEntityRenderer implements BlockEntityRende
         Minecraft.getInstance().getItemRenderer().renderStatic(stack.copyWithCount(1), ItemDisplayContext.FIXED,
                 packedLight, packedOverlay, poseStack, buffers, casting.getLevel(), 0);
         poseStack.popPose();
+    }
+
+    @Override
+    public AABB getRenderBoundingBox(FoundryCastingBlockEntity blockEntity) {
+        return AABB.INFINITE;
+    }
+
+    @Override
+    public boolean shouldRenderOffScreen(FoundryCastingBlockEntity blockEntity) {
+        return true;
+    }
+
+    @Override
+    public int getViewDistance() {
+        return 256;
     }
 }

@@ -56,6 +56,12 @@
       "hbm_neoforge:tool/tech_boop"
     ]
   },
+  "block.press_operate": {
+    "category": "block",
+    "sounds": [
+      "hbm_neoforge:block/pressoperate"
+    ]
+  },
   "block.soldering_operate": {
     "category": "block",
     "sounds": [
@@ -88,6 +94,12 @@
         "name": "hbm_neoforge:block/door/metal_stop1",
         "stream": false
       }
+    ]
+  },
+  "item.syringe": {
+    "category": "player",
+    "sounds": [
+      "hbm_neoforge:tool/stim"
     ]
   },
   "item.radaway": {
@@ -184,6 +196,42 @@
         "name": "hbm_neoforge:block/crateclose",
         "stream": false
       }
+    ]
+  },
+  "block.motor": {
+    "subtitle": "subtitles.block.motor",
+    "sounds": [
+      {
+        "name": "hbm_neoforge:block/motor",
+        "stream": false
+      }
+    ]
+  },
+  "block.arc_welder_operate": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "hbm_neoforge:block/assemblercut",
+        "stream": true
+      }
+    ]
+  },
+  "block.spark": {
+    "subtitle": "subtitles.block.spark",
+    "category": "block",
+    "sounds": [
+      "hbm_neoforge:block/spark1",
+      "hbm_neoforge:block/spark2",
+      "hbm_neoforge:block/spark3",
+      "hbm_neoforge:block/spark4",
+      "hbm_neoforge:block/spark5",
+      "hbm_neoforge:block/spark6"
+    ]
+  },
+  "item.tech_bleep": {
+    "category": "player",
+    "sounds": [
+      "hbm_neoforge:tool/techbleep"
     ]
   }
 }

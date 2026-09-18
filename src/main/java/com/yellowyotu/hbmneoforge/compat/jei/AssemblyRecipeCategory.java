@@ -24,7 +24,7 @@ public final class AssemblyRecipeCategory implements IRecipeCategory<AssemblyMac
 
     public AssemblyRecipeCategory(IGuiHelper guiHelper) {
         icon = guiHelper.createDrawableItemStack(new ItemStack(ModBlocks.ASSEMBLY_MACHINE.get()));
-        background = guiHelper.createDrawable(TEXTURE, 0, 0, 176, 90);
+        background = guiHelper.createDrawable(TEXTURE, 0, 0, 176, 86);
     }
 
     @Override
@@ -49,7 +49,7 @@ public final class AssemblyRecipeCategory implements IRecipeCategory<AssemblyMac
 
     @Override
     public int getHeight() {
-        return 90;
+        return 86;
     }
 
     @Override
@@ -57,11 +57,19 @@ public final class AssemblyRecipeCategory implements IRecipeCategory<AssemblyMac
         for (int i = 0; i < recipe.ingredients().size(); i++) {
             builder.addSlot(RecipeIngredientRole.INPUT, 35 + i % 4 * 18, 17 + i / 4 * 18).addItemStack(recipe.ingredients().get(i).displayStack());
         }
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 144, 35).addItemStack(recipe.resultStack());
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 143, 35).addItemStack(recipe.resultStack());
     }
 
     @Override
     public void draw(AssemblyMachineRecipes.Recipe recipe, IRecipeSlotsView slots, GuiGraphics graphics, double mouseX, double mouseY) {
         background.draw(graphics, 0, 0);
+        int powerHeight = JeiAnimationHelper.filledHeight(52, Math.max(20, recipe.duration() * 2));
+        if (powerHeight > 0) {
+            graphics.blit(TEXTURE, 8, 69 - powerHeight, 0, 86 + 52 - powerHeight, 16, powerHeight, 256, 256);
+        }
+        int progressWidth = JeiAnimationHelper.filledWidth(36, Math.max(20, recipe.duration()));
+        if (progressWidth > 0) {
+            graphics.blit(TEXTURE, 106, 35, 16, 86, progressWidth, 18, 256, 256);
+        }
     }
 }

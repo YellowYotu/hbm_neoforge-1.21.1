@@ -84,7 +84,7 @@ public final class StorageCrateBlockEntity extends BlockEntity implements Contai
 
     @Override
     public boolean canPlaceItem(int slot, ItemStack stack) {
-        return !(stack.getItem() instanceof com.yellowyotu.hbmneoforge.item.StorageCrateBlockItem);
+        return !(stack.getItem() instanceof com.yellowyotu.hbmneoforge.item.StorageCrateBlockItem) || !com.yellowyotu.hbmneoforge.item.StorageCrateBlockItem.hasStoredContents(stack);
     }
 
     @Override

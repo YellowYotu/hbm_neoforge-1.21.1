@@ -3,6 +3,7 @@ package com.yellowyotu.hbmneoforge.block;
 import com.mojang.serialization.MapCodec;
 import com.yellowyotu.hbmneoforge.ModBlockEntities;
 import com.yellowyotu.hbmneoforge.ModItems;
+import com.yellowyotu.hbmneoforge.ModBlocks;
 import com.yellowyotu.hbmneoforge.blockentity.DoorAccessMode;
 import com.yellowyotu.hbmneoforge.blockentity.SlidingSealDoorBlockEntity;
 import com.yellowyotu.hbmneoforge.radiation.ChunkRadiationManager;
@@ -43,6 +44,8 @@ import org.jetbrains.annotations.Nullable;
 
 public final class SlidingSealDoorBlock extends BaseEntityBlock implements RadiationShielding {
     public static final int MAX_PROGRESS = 28;
+    public static final int SEAL_OPEN_TIME = 20;
+    public static final int GATE_OPEN_TIME = 28;
     public static final EnumProperty<Direction> FACING = BlockStateProperties.HORIZONTAL_FACING;
     public static final EnumProperty<DoubleBlockHalf> HALF = BlockStateProperties.DOUBLE_BLOCK_HALF;
     public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
@@ -230,7 +233,7 @@ public final class SlidingSealDoorBlock extends BaseEntityBlock implements Radia
 
     private static VoxelShape getDoorShape(BlockState state) {
         Direction facing = state.getValue(FACING);
-        double progress = Mth.clamp(state.getValue(PROGRESS) / (double) MAX_PROGRESS, 0.0D, 1.0D);
+        double progress = Mth.clamp(state.getValue(PROGRESS) / (double) getOpenTime(state), 0.0D, 1.0D);
         double eased = progress * progress * (3.0D - 2.0D * progress);
         double shift = eased * MAX_SLIDE;
 
@@ -273,6 +276,14 @@ public final class SlidingSealDoorBlock extends BaseEntityBlock implements Radia
             return null;
         }
         return createTickerHelper(type, ModBlockEntities.SLIDING_SEAL_DOOR.get(), SlidingSealDoorBlockEntity::tick);
+    }
+
+    public static int getOpenTime(BlockState state) {
+        return state.is(ModBlocks.SLIDING_GATE_DOOR.get()) ? GATE_OPEN_TIME : SEAL_OPEN_TIME;
+    }
+
+    public static float getMoveSoundVolume(BlockState state) {
+        return state.is(ModBlocks.SLIDING_GATE_DOOR.get()) ? 3.0F : 1.0F;
     }
 
     public static BlockPos getLowerPos(BlockState state, BlockPos pos) {

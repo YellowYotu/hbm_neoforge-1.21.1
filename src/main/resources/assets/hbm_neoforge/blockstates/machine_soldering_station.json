@@ -1,16 +1,8 @@
 {
   "variants": {
-    "facing=north": {
-      "model": "hbm_neoforge:block/soldering_station"
-    },
-    "facing=east": {
-      "model": "hbm_neoforge:block/soldering_station"
-    },
-    "facing=south": {
-      "model": "hbm_neoforge:block/soldering_station"
-    },
-    "facing=west": {
-      "model": "hbm_neoforge:block/soldering_station"
-    }
+    "facing=north": { "model": "hbm_neoforge:block/empty" },
+    "facing=east": { "model": "hbm_neoforge:block/empty" },
+    "facing=south": { "model": "hbm_neoforge:block/empty" },
+    "facing=west": { "model": "hbm_neoforge:block/empty" }
   }
 }

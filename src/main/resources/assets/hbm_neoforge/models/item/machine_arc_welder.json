@@ -1,0 +1,83 @@
+{
+  "loader": "neoforge:obj",
+  "model": "hbm_neoforge:models/block/machine_arc_welder.obj",
+  "flip_v": true,
+  "automatic_culling": false,
+  "shade_quads": true,
+  "textures": {
+    "particle": "hbm_neoforge:block/machine_arc_welder",
+    "texture0": "hbm_neoforge:block/machine_arc_welder"
+  },
+  "display": {
+    "gui": {
+      "rotation": [
+        25,
+        225,
+        0
+      ],
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.23,
+        0.23,
+        0.23
+      ]
+    },
+    "ground": {
+      "translation": [
+        0,
+        2,
+        0
+      ],
+      "scale": [
+        0.12,
+        0.12,
+        0.12
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        0,
+        225,
+        0
+      ],
+      "translation": [
+        0,
+        1,
+        0
+      ],
+      "scale": [
+        0.1,
+        0.1,
+        0.1
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        75,
+        225,
+        0
+      ],
+      "translation": [
+        0,
+        2,
+        0
+      ],
+      "scale": [
+        0.08,
+        0.08,
+        0.08
+      ]
+    }
+  },
+  "transform": {
+    "translation": [
+      0.5,
+      -0.6397655,
+      0.5
+    ]
+  }
+}

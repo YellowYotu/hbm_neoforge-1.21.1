@@ -1,6 +1,7 @@
 package com.yellowyotu.hbmneoforge.blockentity;
 
 import com.yellowyotu.hbmneoforge.ModBlockEntities;
+import com.yellowyotu.hbmneoforge.ModSounds;
 import com.yellowyotu.hbmneoforge.menu.MachinePressMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
@@ -8,6 +9,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -247,6 +249,9 @@ public final class MachinePressBlockEntity extends BlockEntity implements MenuPr
         inventory.setStackInSlot(SLOT_INPUT, input.isEmpty() ? ItemStack.EMPTY : input);
 
         damageStamp();
+        if (level != null) {
+            level.playSound(null, worldPosition, ModSounds.PRESS_OPERATE.get(), SoundSource.BLOCKS, 1.5F, 1.0F);
+        }
 
         burnTime -= FUEL_PER_OPERATION;
         if (burnTime < 0) {

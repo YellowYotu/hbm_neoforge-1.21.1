@@ -16,5 +16,6 @@ public final class ModCapabilities {
     private static void registerCapabilities(RegisterCapabilitiesEvent event) {
         event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ModBlockEntities.SHREDDER.get(), (shredder, side) -> shredder.getAutomationInventory());
         event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ModBlockEntities.SOLDERING_STATION.get(), (station, side) -> station.getAutomationInventory());
+        event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ModBlockEntities.ARC_WELDER.get(), (welder, side) -> welder.getAutomationInventory());
     }
 }

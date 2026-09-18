@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GGG",
+    "PMP",
+    "PTP"
+  ],
+  "key": {
+    "G": {
+      "item": "hbm_neoforge:steel_grate"
+    },
+    "P": {
+      "item": "hbm_neoforge:plate_steel"
+    },
+    "M": {
+      "item": "hbm_neoforge:motor"
+    },
+    "T": {
+      "item": "hbm_neoforge:tank_steel"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:machine_intake",
+    "count": 1
+  }
+}

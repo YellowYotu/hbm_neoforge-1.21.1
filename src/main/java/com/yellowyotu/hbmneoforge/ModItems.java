@@ -26,11 +26,9 @@ public final class ModItems {
     public static final DeferredItem<BlockItem> STEEL_SCAFFOLD = ITEMS.register("steel_scaffold", () -> new HBMBlockItem(ModBlocks.STEEL_SCAFFOLD.get(), new Item.Properties()));
 
     public static final DeferredItem<BlockItem> FLUID_DUCT_NEO = ITEMS.register("fluid_duct_neo", () -> new HBMBlockItem(ModBlocks.FLUID_DUCT_NEO.get(), new Item.Properties()));
-    public static final DeferredItem<BlockItem> FLUID_DUCT_BOX = ITEMS.register("fluid_duct_box", () -> new HBMBlockItem(ModBlocks.FLUID_DUCT_BOX.get(), new Item.Properties()));
     public static final DeferredItem<BlockItem> FLUID_DUCT_PAINTABLE = ITEMS.register("fluid_duct_paintable", () -> new HBMBlockItem(ModBlocks.FLUID_DUCT_PAINTABLE.get(), new Item.Properties()));
     public static final DeferredItem<BlockItem> FLUID_DUCT_GAUGE = ITEMS.register("fluid_duct_gauge", () -> new HBMBlockItem(ModBlocks.FLUID_DUCT_GAUGE.get(), new Item.Properties()));
     public static final DeferredItem<BlockItem> FLUID_VALVE = ITEMS.register("fluid_valve", () -> new HBMBlockItem(ModBlocks.FLUID_VALVE.get(), new Item.Properties()));
-    public static final DeferredItem<BlockItem> FLUID_PUMP = ITEMS.register("fluid_pump", () -> new HBMBlockItem(ModBlocks.FLUID_PUMP.get(), new Item.Properties()));
     public static final DeferredItem<FluidStorageBlockItem> BARREL_PLASTIC = ITEMS.register("barrel_plastic", () -> new FluidStorageBlockItem(ModBlocks.BARREL_PLASTIC.get(), new Item.Properties(), 12_000, com.yellowyotu.hbmneoforge.block.FluidStorageBlock.StorageKind.PLASTIC_BARREL));
     public static final DeferredItem<FluidStorageBlockItem> BARREL_CORRODED = ITEMS.register("barrel_corroded", () -> new FluidStorageBlockItem(ModBlocks.BARREL_CORRODED.get(), new Item.Properties(), 6_000, com.yellowyotu.hbmneoforge.block.FluidStorageBlock.StorageKind.CORRODED_BARREL));
     public static final DeferredItem<FluidStorageBlockItem> BARREL_STEEL = ITEMS.register("barrel_steel", () -> new FluidStorageBlockItem(ModBlocks.BARREL_STEEL.get(), new Item.Properties(), 16_000, com.yellowyotu.hbmneoforge.block.FluidStorageBlock.StorageKind.STEEL_BARREL));
@@ -39,6 +37,7 @@ public final class ModItems {
 
     public static final DeferredItem<ItemFluidIdentifierMulti> FLUID_IDENTIFIER = ITEMS.register("fluid_identifier", () -> new ItemFluidIdentifierMulti(new Item.Properties().stacksTo(1)));
     public static final DeferredItem<ItemFluidIcon> FLUID_ICON = ITEMS.register("fluid_icon", () -> new ItemFluidIcon(new Item.Properties()));
+    public static final DeferredItem<ItemFluidIcon> JEI_FLUID_PROXY = ITEMS.register("jei_fluid_proxy", () -> new ItemFluidIcon(new Item.Properties()));
     public static final DeferredItem<ItemFluidIdentifier> FLUID_IDENTIFIER_WATER = identifier("fluid_identifier_water", NTMFluidType.WATER);
     public static final DeferredItem<ItemFluidIdentifier> FLUID_IDENTIFIER_COOLANT = identifier("fluid_identifier_coolant", NTMFluidType.COOLANT);
     public static final DeferredItem<ItemFluidIdentifier> FLUID_IDENTIFIER_SULFURIC_ACID = identifier("fluid_identifier_sulfuric_acid", NTMFluidType.SULFURIC_ACID);
@@ -208,6 +207,9 @@ public final class ModItems {
     public static final DeferredItem<Item> PIPE_RUBBER = simple("pipe_rubber");
     public static final DeferredItem<Item> WIRE_RED_COPPER = simple("wire_red_copper");
     public static final DeferredItem<Item> WIRE_GOLD = simple("wire_gold");
+    public static final DeferredItem<Item> WIRE_DENSE_COPPER = simple("wire_dense_copper");
+    public static final DeferredItem<Item> WIRE_DENSE_MINGRADE = simple("wire_dense_mingrade");
+    public static final DeferredItem<Item> WIRE_DENSE_GOLD = simple("wire_dense_gold");
     public static final DeferredItem<Item> INGOT_RED_COPPER = simple("ingot_red_copper");
     public static final DeferredItem<Item> PLATE_POLYMER = simple("plate_polymer");
     public static final DeferredItem<Item> BALL_RESIN = simple("ball_resin");
@@ -215,6 +217,7 @@ public final class ModItems {
     public static final DeferredItem<Item> INGOT_DURA_STEEL = simple("ingot_dura_steel");
     public static final DeferredItem<Item> BOLT_DURA_STEEL = simple("bolt_dura_steel");
     public static final DeferredItem<Item> MOTOR = simple("motor");
+    public static final DeferredItem<Item> DRILL_TITANIUM = simple("drill_titanium");
     public static final DeferredItem<Item> COPPER_COIL = simple("copper_coil");
     public static final DeferredItem<Item> RING_COIL = simple("ring_coil");
     public static final DeferredItem<Item> COIL_TUNGSTEN = simple("coil_tungsten");
@@ -222,6 +225,13 @@ public final class ModItems {
     public static final DeferredItem<Item> BOLT_STEEL = simple("bolt_steel");
     public static final DeferredItem<Item> BOLT_TUNGSTEN = simple("bolt_tungsten");
     public static final DeferredItem<Item> BOLT_LEAD = simple("bolt_lead");
+    public static final DeferredItem<Item> ARC_ELECTRODE = simple("arc_electrode");
+    public static final DeferredItem<Item> PLATE_WELDED_IRON = simple("plate_welded_iron");
+    public static final DeferredItem<Item> PLATE_WELDED_STEEL = simple("plate_welded_steel");
+    public static final DeferredItem<Item> PLATE_WELDED_COPPER = simple("plate_welded_copper");
+    public static final DeferredItem<Item> PLATE_WELDED_TITANIUM = simple("plate_welded_titanium");
+    public static final DeferredItem<Item> PLATE_WELDED_ALUMINIUM = simple("plate_welded_aluminium");
+    public static final DeferredItem<Item> PLATE_WELDED_TUNGSTEN = simple("plate_welded_tungsten");
     public static final DeferredItem<RadioactiveItem> INGOT_PLUTONIUM_239 = radioactive("ingot_plutonium_239", RadiationValues.PLUTONIUM_239_INGOT);
     public static final DeferredItem<RadioactiveItem> INGOT_PLUTONIUM_240 = radioactive("ingot_plutonium_240", RadiationValues.PLUTONIUM_240_INGOT);
     public static final DeferredItem<RadioactiveItem> INGOT_PLUTONIUM_241 = radioactive("ingot_plutonium_241", RadiationValues.PLUTONIUM_241_INGOT);
@@ -318,6 +328,7 @@ public final class ModItems {
     public static final DeferredItem<ItemCigarette> CIGARETTE = ITEMS.register("cigarette", () -> new ItemCigarette(new Item.Properties().stacksTo(16)));
     public static final DeferredItem<RadioactiveItem> PELLET_RTG = ITEMS.register("pellet_rtg", () -> new RadioactiveItem(new Item.Properties().stacksTo(1), RadiationValues.PELLET_RTG));
     public static final DeferredItem<ItemGeigerCounter> GEIGER_COUNTER = ITEMS.register("geiger_counter", () -> new ItemGeigerCounter(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<ItemOilDetector> OIL_DETECTOR = ITEMS.register("oil_detector", () -> new ItemOilDetector(new Item.Properties().stacksTo(1)));
     public static final DeferredItem<ItemBatteryPack> BATTERY_PACK = ITEMS.register("battery_pack", () -> new ItemBatteryPack(new Item.Properties(), 1_800_000, 1_000, 100));
     public static final DeferredItem<ItemBatteryPack> BATTERY_LEAD = ITEMS.register("battery_lead", () -> new ItemBatteryPack(new Item.Properties(), 18_000_000, 10_000, 1_000));
     public static final DeferredItem<ItemBatteryPack> BATTERY_LITHIUM = ITEMS.register("battery_lithium", () -> new ItemBatteryPack(new Item.Properties(), 180_000_000, 100_000, 10_000));
@@ -349,11 +360,31 @@ public final class ModItems {
             "tooltip.hbm_neoforge.nuke_man_effects_only"));
     public static final DeferredItem<BlockItem> ASSEMBLY_MACHINE = ITEMS.register("assembly_machine", () -> new HBMBlockItem(ModBlocks.ASSEMBLY_MACHINE.get(), new Item.Properties()));
     public static final DeferredItem<BlockItem> CHEMICAL_PLANT = ITEMS.register("machine_chemical_plant", () -> new HBMBlockItem(ModBlocks.CHEMICAL_PLANT.get(), new Item.Properties()));
+    public static final DeferredItem<BlockItem> MIXER = ITEMS.register("machine_mixer", () -> new HBMBlockItem(ModBlocks.MIXER.get(), new Item.Properties()));
+    public static final DeferredItem<BlockItem> AIR_INTAKE = ITEMS.register("machine_intake", () -> new HBMBlockItem(ModBlocks.AIR_INTAKE.get(), new Item.Properties()));
+    public static final DeferredItem<BlockItem> ARC_WELDER = ITEMS.register("machine_arc_welder", () -> new HBMBlockItem(ModBlocks.ARC_WELDER.get(), new Item.Properties()));
+    public static final DeferredItem<BlockItem> MACHINE_TRANSFORMER = ITEMS.register("machine_transformer", () -> new HBMBlockItem(ModBlocks.MACHINE_TRANSFORMER.get(), new Item.Properties()));
+    public static final DeferredItem<Item> ARC_WELDER_PART = simple("arc_welder_part");
+    public static final DeferredItem<Item> AIR_INTAKE_PART_BASE = simple("air_intake_part_base");
+    public static final DeferredItem<Item> AIR_INTAKE_PART_FAN = simple("air_intake_part_fan");
+    public static final DeferredItem<BlockItem> STEEL_BEAM = ITEMS.register("steel_beam", () -> new HBMBlockItem(ModBlocks.STEEL_BEAM.get(), new Item.Properties()));
+    public static final DeferredItem<BlockItem> STEEL_GRATE = ITEMS.register("steel_grate", () -> new HBMBlockItem(ModBlocks.STEEL_GRATE.get(), new Item.Properties()));
+    public static final DeferredItem<Item> TANK_STEEL = simple("tank_steel");
+    public static final DeferredItem<Item> MIXER_PART_MAIN = simple("mixer_part_main");
+    public static final DeferredItem<Item> MIXER_PART_ROTOR = simple("mixer_part_rotor");
+    public static final DeferredItem<Item> MIXER_PART_FLUID = simple("mixer_part_fluid");
     public static final DeferredItem<BlockItem> MACHINE_BATTERY_SOCKET = ITEMS.register("machine_battery_socket", () -> new HBMBlockItem(ModBlocks.MACHINE_BATTERY_SOCKET.get(), new Item.Properties()));
     public static final DeferredItem<BlockItem> BLOCK_RED_COPPER = ITEMS.register("block_red_copper", () -> new HBMBlockItem(ModBlocks.BLOCK_RED_COPPER.get(), new Item.Properties()));
     public static final DeferredItem<BlockItem> RED_CABLE = ITEMS.register("red_cable", () -> new HBMBlockItem(ModBlocks.RED_CABLE.get(), new Item.Properties()));
     public static final DeferredItem<BlockItem> BLAST_FURNACE = ITEMS.register("machine_blast_furnace", () -> new HBMBlockItem(ModBlocks.BLAST_FURNACE.get(), new Item.Properties()));
     public static final DeferredItem<BlockItem> WOOD_BURNER = ITEMS.register("machine_wood_burner", () -> new HBMBlockItem(ModBlocks.WOOD_BURNER.get(), new Item.Properties()));
+    public static final DeferredItem<BlockItem> OIL_DERRICK = ITEMS.register("machine_well", () -> new HBMBlockItem(ModBlocks.OIL_DERRICK.get(), new Item.Properties()));
+    public static final DeferredItem<Item> OIL_DERRICK_PART = simple("oil_derrick_part");
+    public static final DeferredItem<BlockItem> ORE_OIL = ITEMS.register("ore_oil", () -> new HBMBlockItem(ModBlocks.ORE_OIL.get(), new Item.Properties()));
+    public static final DeferredItem<BlockItem> ORE_OIL_EMPTY = ITEMS.register("ore_oil_empty", () -> new HBMBlockItem(ModBlocks.ORE_OIL_EMPTY.get(), new Item.Properties()));
+    public static final DeferredItem<BlockItem> ORE_BEDROCK_OIL = ITEMS.register("ore_bedrock_oil", () -> new HBMBlockItem(ModBlocks.ORE_BEDROCK_OIL.get(), new Item.Properties()));
+    public static final DeferredItem<BlockItem> GAS_RADON_DENSE = ITEMS.register("gas_radon_dense", () -> new HBMBlockItem(ModBlocks.GAS_RADON_DENSE.get(), new Item.Properties()));
+    public static final DeferredItem<BlockItem> GAS_ASBESTOS = ITEMS.register("gas_asbestos", () -> new HBMBlockItem(ModBlocks.GAS_ASBESTOS.get(), new Item.Properties()));
     public static final DeferredItem<BlockItem> SHREDDER = ITEMS.register("machine_shredder", () -> new HBMBlockItem(ModBlocks.SHREDDER.get(), new Item.Properties()));
     public static final DeferredItem<BlockItem> SOLDERING_STATION = ITEMS.register("machine_soldering_station", () -> new HBMBlockItem(ModBlocks.SOLDERING_STATION.get(), new Item.Properties()));
     public static final DeferredItem<BlockItem> GRAVEL_OBSIDIAN = ITEMS.register("gravel_obsidian", () -> new HBMBlockItem(ModBlocks.GRAVEL_OBSIDIAN.get(), new Item.Properties()));

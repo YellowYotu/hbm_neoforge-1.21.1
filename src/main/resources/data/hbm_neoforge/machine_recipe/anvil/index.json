@@ -48,5 +48,6 @@
   "soldering_station",
   "heater_firebox",
   "heater_oven",
-  "machine_crucible"
+  "machine_crucible",
+  "arc_welder"
 ]

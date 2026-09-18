@@ -165,6 +165,12 @@ public final class FluidTankMultiblockBlock extends FluidStorageBlock {
         return InteractionResult.sidedSuccess(level.isClientSide());
     }
 
+    public List<BlockPos> getStructurePositions(BlockPos core, BlockState state) {
+        List<BlockPos> positions = new ArrayList<>();
+        forEachStructurePos(core, state, positions::add);
+        return List.copyOf(positions);
+    }
+
     private void forEachStructurePos(BlockPos core, BlockState state, java.util.function.Consumer<BlockPos> consumer) {
         Direction facing = state.getValue(FACING);
         Direction right = facing.getClockWise();

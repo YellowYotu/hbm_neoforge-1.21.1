@@ -24,9 +24,7 @@ public final class WasteEarthBlock extends Block {
 
     @Override
     protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        BlockPos abovePos = pos.above();
-        BlockState aboveState = level.getBlockState(abovePos);
-        if (RadiationConfig.CLEANUP_DEAD_DIRT.get() || (level.getRawBrightness(abovePos, 0) < 4 && aboveState.getLightBlock(level, abovePos) > 2)) {
+        if (RadiationConfig.CLEANUP_DEAD_DIRT.get()) {
             level.setBlockAndUpdate(pos, Blocks.DIRT.defaultBlockState());
         }
     }

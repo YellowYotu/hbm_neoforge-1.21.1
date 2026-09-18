@@ -63,10 +63,24 @@ public final class ChemicalPlantBlockEntity extends BlockEntity implements MenuP
                 return ItemBatteryPack.isBattery(stack);
             }
             if (slot >= INPUT_START && slot < INPUT_START + INPUT_COUNT) {
-                return true;
+                int inputIndex = slot - INPUT_START;
+                ChemicalPlantRecipes.Recipe recipe = ChemicalPlantBlockEntity.this.getSelectedRecipe();
+                if (recipe != null) {
+                    return inputIndex < recipe.ingredients().size() && stack.is(recipe.ingredients().get(inputIndex).item());
+                }
+                return ChemicalPlantRecipes.RECIPES.stream().anyMatch(candidate -> inputIndex < candidate.ingredients().size() && stack.is(candidate.ingredients().get(inputIndex).item()));
             }
             if (slot >= SLOT_FLUID_INPUT_CONTAINER_START && slot < SLOT_FLUID_INPUT_CONTAINER_START + FLUID_SLOT_COUNT) {
-                return stack.is(Items.WATER_BUCKET) || stack.is(Items.LAVA_BUCKET) || stack.getItem() instanceof ItemPortableFluidContainer;
+                int fluidIndex = slot - SLOT_FLUID_INPUT_CONTAINER_START;
+                NTMFluidType type = stack.is(Items.WATER_BUCKET) ? NTMFluidType.WATER : stack.is(Items.LAVA_BUCKET) ? NTMFluidType.LAVA : ItemPortableFluidContainer.getFluidType(stack);
+                if (type == null) {
+                    return false;
+                }
+                ChemicalPlantRecipes.Recipe recipe = ChemicalPlantBlockEntity.this.getSelectedRecipe();
+                if (recipe != null) {
+                    return fluidIndex < recipe.inputFluids().size() && recipe.inputFluids().get(fluidIndex).type() == type;
+                }
+                return ChemicalPlantRecipes.RECIPES.stream().anyMatch(candidate -> fluidIndex < candidate.inputFluids().size() && candidate.inputFluids().get(fluidIndex).type() == type);
             }
             if (slot >= SLOT_FLUID_OUTPUT_CONTAINER_START && slot < SLOT_FLUID_OUTPUT_CONTAINER_START + FLUID_SLOT_COUNT) {
                 return stack.is(Items.BUCKET) || stack.getItem() instanceof ItemEmptyPortableFluidContainer;
@@ -231,7 +245,7 @@ public final class ChemicalPlantBlockEntity extends BlockEntity implements MenuP
         if (input.getItem() instanceof ItemPortableFluidContainer container) {
             NTMFluidType type = ItemPortableFluidContainer.getFluidType(input);
             int stored = ItemPortableFluidContainer.getAmount(input);
-            if (type != expectedType || stored <= 0 || FLUID_CAPACITY - getAmount(type) < stored || fill(type, stored) != stored) {
+            if (type != expectedType || stored != container.getCapacity() || FLUID_CAPACITY - getAmount(type) < stored || fill(type, stored) != stored) {
                 return;
             }
             input.shrink(1);
@@ -271,12 +285,19 @@ public final class ChemicalPlantBlockEntity extends BlockEntity implements MenuP
             return;
         }
         if (input.getItem() instanceof ItemEmptyPortableFluidContainer empty) {
-            int moved = drain(type, Math.min(empty.getCapacity(), getAmount(type)));
-            if (moved <= 0) {
+            int capacity = empty.getCapacity();
+            if (getAmount(type) < capacity) {
+                return;
+            }
+            int moved = drain(type, capacity);
+            if (moved != capacity) {
+                if (moved > 0) {
+                    fill(type, moved);
+                }
                 return;
             }
             ItemStack filled = new ItemStack(empty.getFilledItem());
-            ItemPortableFluidContainer.setFluid(filled, type, moved);
+            ItemPortableFluidContainer.setFluid(filled, type, capacity);
             input.shrink(1);
             inventory.setStackInSlot(inputSlot, input.isEmpty() ? ItemStack.EMPTY : input);
             inventory.setStackInSlot(outputSlot, filled);

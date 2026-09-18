@@ -118,5 +118,6 @@
       ]
     }
   },
-  "shade_quads": true
+  "shade_quads": true,
+  "automatic_culling": false
 }

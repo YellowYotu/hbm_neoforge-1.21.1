@@ -20,9 +20,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
 public final class ShredderRecipeCategory implements IRecipeCategory<ShredderRecipes.Recipe> {
-
     public static final RecipeType<ShredderRecipes.Recipe> RECIPE_TYPE = RecipeType.create(HBMsNuclearTechModUnofficialNeoForgeEdition.MODID, "shredding", ShredderRecipes.Recipe.class);
-    private static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(HBMsNuclearTechModUnofficialNeoForgeEdition.MODID, "textures/gui/jei/shredder.png");
+    private static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(HBMsNuclearTechModUnofficialNeoForgeEdition.MODID, "textures/gui/jei/gui_nei_shredder.png");
     private final IDrawable icon;
     private final IDrawableStatic background;
 
@@ -31,30 +30,11 @@ public final class ShredderRecipeCategory implements IRecipeCategory<ShredderRec
         background = guiHelper.createDrawable(TEXTURE, 5, 11, 166, 65);
     }
 
-    @Override
-    public RecipeType<ShredderRecipes.Recipe> getRecipeType() {
-        return RECIPE_TYPE;
-    }
-
-    @Override
-    public Component getTitle() {
-        return Component.translatable("jei.hbm_neoforge.shredder");
-    }
-
-    @Override
-    public IDrawable getIcon() {
-        return icon;
-    }
-
-    @Override
-    public int getWidth() {
-        return 166;
-    }
-
-    @Override
-    public int getHeight() {
-        return 65;
-    }
+    @Override public RecipeType<ShredderRecipes.Recipe> getRecipeType() { return RECIPE_TYPE; }
+    @Override public Component getTitle() { return Component.translatable("jei.hbm_neoforge.shredder"); }
+    @Override public IDrawable getIcon() { return icon; }
+    @Override public int getWidth() { return 166; }
+    @Override public int getHeight() { return 65; }
 
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, ShredderRecipes.Recipe recipe, IFocusGroup focuses) {
@@ -68,5 +48,15 @@ public final class ShredderRecipeCategory implements IRecipeCategory<ShredderRec
     @Override
     public void draw(ShredderRecipes.Recipe recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics graphics, double mouseX, double mouseY) {
         background.draw(graphics, 0, 0);
+
+        int energyHeight = JeiAnimationHelper.filledHeight(52, 480);
+        if (energyHeight > 0) {
+            graphics.blit(TEXTURE, 3, 6 + 52 - energyHeight, 36, 86 + 52 - energyHeight, 16, energyHeight, 256, 256);
+        }
+
+        int progressWidth = JeiAnimationHelper.filledWidth(24, 48);
+        if (progressWidth > 0) {
+            graphics.blit(TEXTURE, 80, 23, 100, 118, progressWidth, 16, 256, 256);
+        }
     }
 }

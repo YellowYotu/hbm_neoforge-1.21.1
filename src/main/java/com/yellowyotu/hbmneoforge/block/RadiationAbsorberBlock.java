@@ -36,11 +36,6 @@ public final class RadiationAbsorberBlock extends Block {
         absorb(level, pos);
     }
 
-    @Override
-    protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        absorb(level, pos);
-    }
-
     private void absorb(ServerLevel level, BlockPos pos) {
         ChunkRadiationManager.decrementRadiation(level, pos, RadiationValues.BASIC_ABSORBER_AMOUNT_PER_TICK);
         level.scheduleTick(pos, this, RadiationValues.BASIC_ABSORBER_TICK_INTERVAL);

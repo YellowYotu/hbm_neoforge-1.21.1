@@ -1,5 +1,6 @@
 package com.yellowyotu.hbmneoforge.client.renderer;
 
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import com.yellowyotu.hbmneoforge.ModBlocks;
@@ -11,6 +12,7 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.phys.AABB;
 
 public final class MachinePressBlockEntityRenderer
         implements BlockEntityRenderer<MachinePressBlockEntity> {
@@ -35,60 +37,81 @@ public final class MachinePressBlockEntityRenderer
             int packedLight,
             int packedOverlay
     ) {
-        float progress =
-                press.getInterpolatedPressProgress(partialTick)
-                        / MachinePressBlockEntity.MAX_PRESS;
+        RenderSystem.disableCull();
+        try {
+                float progress =
+                        press.getInterpolatedPressProgress(partialTick)
+                                / MachinePressBlockEntity.MAX_PRESS;
 
-        progress =
-                Math.max(0.0F, Math.min(1.0F, progress));
+                progress =
+                        Math.max(0.0F, Math.min(1.0F, progress));
 
-        /*
-         * В оригинале:
-         *
-         * (1 - progress) * 0.875
-         *
-         * progress 0   → головка наверху;
-         * progress 1   → головка полностью опущена.
-         */
-        float yOffset =
-                (1.0F - progress) * MAX_HEAD_OFFSET;
+                /*
+                 * В оригинале:
+                 *
+                 * (1 - progress) * 0.875
+                 *
+                 * progress 0   → головка наверху;
+                 * progress 1   → головка полностью опущена.
+                 */
+                float yOffset =
+                        (1.0F - progress) * MAX_HEAD_OFFSET;
 
-        poseStack.pushPose();
+                poseStack.pushPose();
 
-        poseStack.translate(
-                0.0F,
-                yOffset,
-                0.0F
-        );
+                poseStack.translate(
+                        0.0F,
+                        yOffset,
+                        0.0F
+                );
 
-        blockRenderer.renderSingleBlock(
-                ModBlocks.MACHINE_PRESS_HEAD_RENDER
-                        .get()
-                        .defaultBlockState(),
-                poseStack,
-                bufferSource,
-                packedLight,
-                packedOverlay
-        );
+                blockRenderer.renderSingleBlock(
+                        ModBlocks.MACHINE_PRESS_HEAD_RENDER
+                                .get()
+                                .defaultBlockState(),
+                        poseStack,
+                        bufferSource,
+                        packedLight,
+                        packedOverlay
+                );
 
-        poseStack.popPose();
+                poseStack.popPose();
 
-        ItemStack input = press.getInventory().getStackInSlot(MachinePressBlockEntity.SLOT_INPUT);
-        ItemStack stamp = press.getInventory().getStackInSlot(MachinePressBlockEntity.SLOT_STAMP);
-        if (!input.isEmpty()) {
-            poseStack.pushPose();
-            poseStack.translate(0.5D, 1.01D, 0.5D);
-            poseStack.mulPose(Axis.XP.rotationDegrees(90.0F));
-            poseStack.scale(0.55F, 0.55F, 0.55F);
-            Minecraft.getInstance().getItemRenderer().renderStatic(input, ItemDisplayContext.FIXED, packedLight, packedOverlay, poseStack, bufferSource, press.getLevel(), 0);
-            poseStack.popPose();
+                ItemStack input = press.getInventory().getStackInSlot(MachinePressBlockEntity.SLOT_INPUT);
+                ItemStack stamp = press.getInventory().getStackInSlot(MachinePressBlockEntity.SLOT_STAMP);
+                if (!input.isEmpty()) {
+                    poseStack.pushPose();
+                    poseStack.translate(0.5D, 1.01D, 0.5D);
+                    poseStack.mulPose(Axis.XP.rotationDegrees(90.0F));
+                    poseStack.scale(0.55F, 0.55F, 0.55F);
+                    Minecraft.getInstance().getItemRenderer().renderStatic(input, ItemDisplayContext.FIXED, packedLight, packedOverlay, poseStack, bufferSource, press.getLevel(), 0);
+                    poseStack.popPose();
+                }
+                if (!stamp.isEmpty()) {
+                    poseStack.pushPose();
+                    poseStack.translate(0.5D, 1.38D + yOffset, 0.5D);
+                    poseStack.scale(0.45F, 0.45F, 0.45F);
+                    Minecraft.getInstance().getItemRenderer().renderStatic(stamp, ItemDisplayContext.FIXED, packedLight, packedOverlay, poseStack, bufferSource, press.getLevel(), 0);
+                    poseStack.popPose();
+                }
+    
+        } finally {
+            RenderSystem.enableCull();
         }
-        if (!stamp.isEmpty()) {
-            poseStack.pushPose();
-            poseStack.translate(0.5D, 1.38D + yOffset, 0.5D);
-            poseStack.scale(0.45F, 0.45F, 0.45F);
-            Minecraft.getInstance().getItemRenderer().renderStatic(stamp, ItemDisplayContext.FIXED, packedLight, packedOverlay, poseStack, bufferSource, press.getLevel(), 0);
-            poseStack.popPose();
-        }
+    }
+
+    @Override
+    public AABB getRenderBoundingBox(MachinePressBlockEntity blockEntity) {
+        return AABB.INFINITE;
+    }
+
+    @Override
+    public boolean shouldRenderOffScreen(MachinePressBlockEntity blockEntity) {
+        return true;
+    }
+
+    @Override
+    public int getViewDistance() {
+        return 256;
     }
 }

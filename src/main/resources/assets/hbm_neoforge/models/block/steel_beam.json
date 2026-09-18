@@ -1,0 +1,12 @@
+{
+  "loader": "neoforge:obj",
+  "model": "hbm_neoforge:models/block/steel_beam.obj",
+  "flip_v": true,
+  "automatic_culling": false,
+  "shade_quads": true,
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "hbm_neoforge:block/steel_beam",
+    "texture0": "hbm_neoforge:block/steel_beam"
+  }
+}

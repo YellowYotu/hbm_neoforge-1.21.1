@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "hbm_neoforge:block_fallout",
+    "hbm_neoforge:gravel_obsidian",
+    "hbm_neoforge:waste_earth"
+  ]
+}

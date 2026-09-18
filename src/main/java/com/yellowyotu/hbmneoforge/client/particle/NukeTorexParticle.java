@@ -33,7 +33,7 @@ public final class NukeTorexParticle extends TextureSheetParticle {
     public static final int FIRST_CONDENSE_HEIGHT = 130;
     public static final int SECOND_CONDENSE_HEIGHT = 170;
     public static final int BLAST_WAVE_HEADSTART = 5;
-    public static final int MAX_CLOUDLETS = 20_000;
+    public static final int MAX_CLOUDLETS = 12_000;
 
     private static final double NR1 = 2.5D;
     private static final double NG1 = 1.3D;

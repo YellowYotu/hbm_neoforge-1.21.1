@@ -47,17 +47,23 @@ public final class ModSounds {
 
 
     public static final Supplier<SoundEvent> RADAWAY = sound("item.radaway");
+    public static final Supplier<SoundEvent> SYRINGE = sound("item.syringe");
 
     public static final Supplier<SoundEvent> UPGRADE_PLUG = sound("item.upgrade_plug");
     public static final Supplier<SoundEvent> SOLDERING_OPERATE = sound("block.soldering_operate");
+    public static final Supplier<SoundEvent> SPARK = sound("block.spark");
+    public static final Supplier<SoundEvent> ARC_WELDER_OPERATE = sound("block.arc_welder_operate");
+    public static final Supplier<SoundEvent> PRESS_OPERATE = sound("block.press_operate");
     public static final Supplier<SoundEvent> ASSEMBLER_OPERATE = sound("block.assembler_operate");
     public static final Supplier<SoundEvent> ASSEMBLER_START = sound("block.assembler_start");
     public static final Supplier<SoundEvent> ASSEMBLER_STOP = sound("block.assembler_stop");
     public static final Supplier<SoundEvent> ASSEMBLER_STRIKE = sound("block.assembler_strike");
     public static final Supplier<SoundEvent> CHEMICAL_PLANT = sound("block.chemical_plant");
+    public static final Supplier<SoundEvent> MOTOR = sound("block.motor");
     public static final Supplier<SoundEvent> SLIDING_SEAL_OPEN = sound("door.sliding_seal_open");
     public static final Supplier<SoundEvent> SLIDING_SEAL_STOP = sound("door.sliding_seal_stop");
     public static final Supplier<SoundEvent> TECH_BOOP = sound("item.tech_boop");
+    public static final Supplier<SoundEvent> TECH_BLEEP = sound("item.tech_bleep");
     public static final Supplier<SoundEvent> NUCLEAR_EXPLOSION = sound("weapon.nuclear_explosion");
     public static final Supplier<SoundEvent> GAS_MASK_SCREW = sound("item.gasmask_screw");
     public static final Supplier<SoundEvent> QE_CONTAINMENT_MOVE = sound("block.door.wgh_start");

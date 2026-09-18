@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "hbm_neoforge:block/machine_transformer_top_iron",
+    "bottom": "hbm_neoforge:block/machine_transformer_bottom_iron",
+    "side": "hbm_neoforge:block/machine_transformer_iron"
+  }
+}

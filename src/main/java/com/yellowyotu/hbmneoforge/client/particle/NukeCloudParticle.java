@@ -24,7 +24,7 @@ final class NukeCloudParticle extends TextureSheetParticle {
         this.parent = cloud.owner();
         this.hasPhysics = false;
         this.gravity = 0.0F;
-        this.lifetime = Integer.MAX_VALUE;
+        this.lifetime = Math.max(1, cloud.cloudletLife + 2);
         this.pickSprite(sprites);
     }
 
@@ -67,6 +67,7 @@ final class NukeCloudParticle extends TextureSheetParticle {
 
     @Override
     public void tick() {
+        super.tick();
         if (!parent.isAlive() || cloud.isDead) {
             remove();
         }

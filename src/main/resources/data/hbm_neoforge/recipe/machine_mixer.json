@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "PIP",
+    "GCG",
+    "PMP"
+  ],
+  "key": {
+    "P": { "item": "hbm_neoforge:plate_steel" },
+    "I": { "item": "hbm_neoforge:ingot_dura_steel" },
+    "G": { "tag": "hbm_neoforge:glass_panes" },
+    "C": { "item": "hbm_neoforge:circuit_vacuum_tube" },
+    "M": { "item": "hbm_neoforge:motor" }
+  },
+  "result": {
+    "id": "hbm_neoforge:machine_mixer",
+    "count": 1
+  }
+}

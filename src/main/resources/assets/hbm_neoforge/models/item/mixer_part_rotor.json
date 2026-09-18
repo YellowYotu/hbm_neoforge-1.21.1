@@ -1,0 +1,35 @@
+{
+  "loader": "neoforge:obj",
+  "model": "hbm_neoforge:models/block/machine_mixer.obj",
+  "flip_v": true,
+  "automatic_culling": false,
+  "shade_quads": true,
+  "visibility": {
+    "Main": false,
+    "Mixer": true,
+    "Fluid": false
+  },
+  "textures": {
+    "particle": "hbm_neoforge:block/machine_mixer",
+    "texture0": "hbm_neoforge:block/machine_mixer"
+  },
+  "display": {
+    "fixed": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    }
+  }
+}

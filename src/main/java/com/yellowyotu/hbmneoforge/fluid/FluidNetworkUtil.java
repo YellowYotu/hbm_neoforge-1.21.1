@@ -147,6 +147,9 @@ public final class FluidNetworkUtil {
         if (node == null || targetPos == null || targetPos.equals(sourceCore) || !visitedTargets.add(targetPos)) {
             return 0;
         }
+        if (node instanceof FluidStorageBlockEntity storage && storage.getFluidType() != type) {
+            return 0;
+        }
         if (!node.accepts(type)) {
             return 0;
         }

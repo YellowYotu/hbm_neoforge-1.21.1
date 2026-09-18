@@ -5,6 +5,8 @@ import com.yellowyotu.hbmneoforge.ModBlockEntities;
 import com.yellowyotu.hbmneoforge.blockentity.FluidPipeBlockEntity;
 import com.yellowyotu.hbmneoforge.fluid.FluidNode;
 import com.yellowyotu.hbmneoforge.fluid.NTMFluidType;
+import com.yellowyotu.hbmneoforge.item.ItemFluidIdentifier;
+import com.yellowyotu.hbmneoforge.item.ItemFluidIdentifierMulti;
 import javax.annotation.Nullable;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -147,23 +149,40 @@ public class FluidPipeBlock extends BaseEntityBlock {
         if (selfEntity instanceof FluidPipeBlockEntity self && neighborEntity instanceof FluidPipeBlockEntity other) {
             return self.canConnectTo(other);
         }
-        if (selfEntity instanceof FluidPipeBlockEntity && neighborEntity instanceof com.yellowyotu.hbmneoforge.blockentity.FluidStorageDummyBlockEntity dummy) {
+        if (selfEntity instanceof FluidPipeBlockEntity self && neighborEntity instanceof com.yellowyotu.hbmneoforge.blockentity.OilDerrickBlockEntity) {
+            NTMFluidType filter = self.getFilter();
+            return filter == NTMFluidType.OIL || filter == NTMFluidType.GAS;
+        }
+        if (selfEntity instanceof FluidPipeBlockEntity self && neighborEntity instanceof com.yellowyotu.hbmneoforge.blockentity.FluidStorageDummyBlockEntity dummy) {
+            NTMFluidType filter = self.getFilter();
+            com.yellowyotu.hbmneoforge.blockentity.FluidStorageBlockEntity storage = dummy.getCoreStorage();
             BlockPos core = dummy.getController();
-            if (core == null) {
+            if (filter == null || storage == null || core == null || storage.getFluidType() != filter) {
                 return false;
             }
             BlockState coreState = level.getBlockState(core);
             return coreState.getBlock() instanceof FluidTankMultiblockBlock tank && tank.canConnectAt(level, neighborPos, direction.getOpposite());
         }
-        if (selfEntity instanceof FluidPipeBlockEntity && neighborEntity instanceof com.yellowyotu.hbmneoforge.blockentity.FluidStorageBlockEntity storage) {
+        if (selfEntity instanceof FluidPipeBlockEntity self && neighborEntity instanceof com.yellowyotu.hbmneoforge.blockentity.FluidStorageBlockEntity storage) {
+            NTMFluidType filter = self.getFilter();
+            if (filter == null || storage.getFluidType() != filter) {
+                return false;
+            }
             BlockState storageState = level.getBlockState(neighborPos);
             if (storageState.getBlock() instanceof FluidTankMultiblockBlock tank) {
                 return tank.canConnectAt(level, neighborPos, direction.getOpposite());
             }
             return true;
         }
-        if (selfEntity instanceof FluidPipeBlockEntity && neighborEntity instanceof FluidNode) {
-            return true;
+        if (selfEntity instanceof FluidPipeBlockEntity self && neighborEntity instanceof FluidNode node) {
+            NTMFluidType filter = self.getFilter();
+            if (filter == null) {
+                return false;
+            }
+            if (neighborEntity instanceof com.yellowyotu.hbmneoforge.blockentity.FluidStorageBlockEntity storage) {
+                return storage.getFluidType() == filter;
+            }
+            return node.getFluidType() == filter || node.accepts(filter);
         }
         return false;
     }
@@ -201,6 +220,18 @@ public class FluidPipeBlock extends BaseEntityBlock {
         return shape;
     }
 
+
+    @Override
+    public ItemStack getCloneItemStack(net.minecraft.world.level.LevelReader level, BlockPos pos, BlockState state) {
+        ItemStack stack = new ItemStack(asItem());
+        if (level.getBlockEntity(pos) instanceof FluidPipeBlockEntity pipe && pipe.getFilter() != null) {
+            net.minecraft.nbt.CompoundTag tag = stack.getOrDefault(net.minecraft.core.component.DataComponents.CUSTOM_DATA, net.minecraft.world.item.component.CustomData.EMPTY).copyTag();
+            tag.putString("filter", pipe.getFilter().id());
+            stack.set(net.minecraft.core.component.DataComponents.CUSTOM_DATA, net.minecraft.world.item.component.CustomData.of(tag));
+        }
+        return stack;
+    }
+
     @Override
     public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
         super.setPlacedBy(level, pos, state, placer, stack);
@@ -221,6 +252,20 @@ public class FluidPipeBlock extends BaseEntityBlock {
 
     @Override
     protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, net.minecraft.world.InteractionHand hand, BlockHitResult hit) {
+        if (level.getBlockEntity(pos) instanceof FluidPipeBlockEntity pipe) {
+            NTMFluidType selected = null;
+            if (stack.getItem() instanceof ItemFluidIdentifier identifier) {
+                selected = identifier.getFluidType();
+            } else if (stack.getItem() instanceof ItemFluidIdentifierMulti) {
+                selected = ItemFluidIdentifierMulti.getType(stack, true);
+            }
+            if (selected != null) {
+                if (!level.isClientSide()) {
+                    pipe.setFilter(selected);
+                }
+                return ItemInteractionResult.sidedSuccess(level.isClientSide());
+            }
+        }
         if (style == Style.PAINTABLE && stack.getItem() instanceof BlockItem blockItem && blockItem.getBlock() != this) {
             BlockState disguise = blockItem.getBlock().defaultBlockState();
             if (level.getBlockEntity(pos) instanceof FluidPipeBlockEntity pipe && pipe.getDisguiseState() == null) {

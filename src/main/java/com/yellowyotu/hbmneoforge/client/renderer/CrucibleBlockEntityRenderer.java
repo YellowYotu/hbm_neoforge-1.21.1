@@ -1,5 +1,6 @@
 package com.yellowyotu.hbmneoforge.client.renderer;
 
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.yellowyotu.hbmneoforge.block.CrucibleBlock;
 import com.yellowyotu.hbmneoforge.blockentity.CrucibleBlockEntity;
@@ -11,6 +12,7 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.block.entity.BlockEntity;
 
 public final class CrucibleBlockEntityRenderer implements BlockEntityRenderer<CrucibleBlockEntity> {
@@ -20,18 +22,24 @@ public final class CrucibleBlockEntityRenderer implements BlockEntityRenderer<Cr
     @Override
     public void render(CrucibleBlockEntity crucible, float partialTick, PoseStack poseStack,
                        MultiBufferSource buffers, int packedLight, int packedOverlay) {
-        int total = crucible.getMoltenAmount();
-        if (total > 0) {
-            float level = (float) (0.5D + ((double) total / (CrucibleBlockEntity.RECIPE_CAPACITY + CrucibleBlockEntity.WASTE_CAPACITY)) * 0.875D);
-            FoundryRenderUtil.top(poseStack, buffers, FoundryRenderUtil.CRUCIBLE_TEXTURE,
-                    crucible.getPrimaryMoltenColor(), -0.5F, level, -0.5F, 1.5F, 1.5F);
+        RenderSystem.disableCull();
+        try {
+                int total = crucible.getMoltenAmount();
+                if (total > 0) {
+                    float level = (float) (0.5D + ((double) total / (CrucibleBlockEntity.RECIPE_CAPACITY + CrucibleBlockEntity.WASTE_CAPACITY)) * 0.875D);
+                    FoundryRenderUtil.top(poseStack, buffers, FoundryRenderUtil.CRUCIBLE_TEXTURE,
+                            crucible.getPrimaryMoltenColor(), -0.5F, level, -0.5F, 1.5F, 1.5F);
+                }
+                if (crucible.getLevel() == null || !crucible.getBlockState().hasProperty(CrucibleBlock.FACING)) {
+                    return;
+                }
+                Direction front = crucible.getBlockState().getValue(CrucibleBlock.FACING);
+                renderStream(crucible, front, crucible.getRecipeStack(), poseStack, buffers);
+                renderStream(crucible, front.getOpposite(), crucible.getWasteStack(), poseStack, buffers);
+    
+        } finally {
+            RenderSystem.enableCull();
         }
-        if (crucible.getLevel() == null || !crucible.getBlockState().hasProperty(CrucibleBlock.FACING)) {
-            return;
-        }
-        Direction front = crucible.getBlockState().getValue(CrucibleBlock.FACING);
-        renderStream(crucible, front, crucible.getRecipeStack(), poseStack, buffers);
-        renderStream(crucible, front.getOpposite(), crucible.getWasteStack(), poseStack, buffers);
     }
 
     private static void renderStream(CrucibleBlockEntity crucible, Direction direction, Map<String, Integer> stack,
@@ -76,7 +84,17 @@ public final class CrucibleBlockEntityRenderer implements BlockEntityRenderer<Cr
     }
 
     @Override
+    public AABB getRenderBoundingBox(CrucibleBlockEntity blockEntity) {
+        return AABB.INFINITE;
+    }
+
+    @Override
     public boolean shouldRenderOffScreen(CrucibleBlockEntity blockEntity) {
         return true;
+    }
+
+    @Override
+    public int getViewDistance() {
+        return 256;
     }
 }

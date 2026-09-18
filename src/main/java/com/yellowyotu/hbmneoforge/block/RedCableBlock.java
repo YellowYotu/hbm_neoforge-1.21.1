@@ -70,7 +70,7 @@ public final class RedCableBlock extends Block {
     }
 
     private static boolean canConnect(BlockState state) {
-        return state.is(ModBlocks.RED_CABLE.get()) || state.is(ModBlocks.ASSEMBLY_MACHINE.get()) || state.is(ModBlocks.ASSEMBLY_MACHINE_DUMMY.get()) || state.is(ModBlocks.CHEMICAL_PLANT.get()) || state.is(ModBlocks.CHEMICAL_PLANT_DUMMY.get()) || state.is(ModBlocks.MACHINE_BATTERY_SOCKET.get()) || state.is(ModBlocks.MACHINE_BATTERY_SOCKET_DUMMY.get()) || state.is(ModBlocks.SHREDDER.get()) || state.is(ModBlocks.SOLDERING_STATION.get()) || state.is(ModBlocks.SOLDERING_STATION_DUMMY.get()) || state.is(ModBlocks.WOOD_BURNER.get()) || state.is(ModBlocks.WOOD_BURNER_DUMMY.get());
+        return state.is(ModBlocks.RED_CABLE.get()) || state.is(ModBlocks.ASSEMBLY_MACHINE.get()) || state.is(ModBlocks.ASSEMBLY_MACHINE_DUMMY.get()) || state.is(ModBlocks.CHEMICAL_PLANT.get()) || state.is(ModBlocks.CHEMICAL_PLANT_DUMMY.get()) || state.is(ModBlocks.MACHINE_BATTERY_SOCKET.get()) || state.is(ModBlocks.MACHINE_BATTERY_SOCKET_DUMMY.get()) || state.is(ModBlocks.SHREDDER.get()) || state.is(ModBlocks.SOLDERING_STATION.get()) || state.is(ModBlocks.SOLDERING_STATION_DUMMY.get()) || state.is(ModBlocks.WOOD_BURNER.get()) || state.is(ModBlocks.WOOD_BURNER_DUMMY.get()) || state.is(ModBlocks.AIR_INTAKE.get()) || state.is(ModBlocks.AIR_INTAKE_DUMMY.get()) || state.is(ModBlocks.ARC_WELDER.get()) || state.is(ModBlocks.ARC_WELDER_DUMMY.get());
     }
 
     private static BooleanProperty property(Direction direction) {

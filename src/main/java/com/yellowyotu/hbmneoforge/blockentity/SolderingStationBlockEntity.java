@@ -9,6 +9,8 @@ import com.yellowyotu.hbmneoforge.block.BatterySocketDummyBlock;
 import com.yellowyotu.hbmneoforge.block.SolderingStationBlock;
 import com.yellowyotu.hbmneoforge.item.ItemBatteryPack;
 import com.yellowyotu.hbmneoforge.item.ItemMachineUpgrade;
+import com.yellowyotu.hbmneoforge.item.ItemFluidIdentifier;
+import com.yellowyotu.hbmneoforge.item.ItemFluidIdentifierMulti;
 import com.yellowyotu.hbmneoforge.item.ItemSolderingFluidCell;
 import com.yellowyotu.hbmneoforge.menu.SolderingStationMenu;
 import com.yellowyotu.hbmneoforge.fluid.FluidNode;
@@ -31,7 +33,6 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -55,9 +56,7 @@ public final class SolderingStationBlockEntity extends BlockEntity implements Me
     public static final int INVENTORY_SIZE = 11;
     public static final int DEFAULT_MAX_ENERGY = 2_000;
     public static final int FLUID_CAPACITY = 8_000;
-    public static final int FLUID_CELL_AMOUNT = 1_000;
 
-    private boolean handlingFluidSlot;
     private boolean loading;
 
     private final ItemStackHandler inventory = new ItemStackHandler(INVENTORY_SIZE) {
@@ -84,7 +83,7 @@ public final class SolderingStationBlockEntity extends BlockEntity implements Me
             }
 
             if (slot == SLOT_FLUID_CELL) {
-                return stack.is(ModItems.CELL_EMPTY.get()) || stack.getItem() instanceof ItemSolderingFluidCell;
+                return stack.getItem() instanceof ItemFluidIdentifier || stack.getItem() instanceof ItemFluidIdentifierMulti;
             }
 
             if (slot == SLOT_UPGRADE_1 || slot == SLOT_UPGRADE_2) {
@@ -101,8 +100,8 @@ public final class SolderingStationBlockEntity extends BlockEntity implements Me
 
         @Override
         protected void onContentsChanged(int slot) {
-            if (!loading && slot == SLOT_FLUID_CELL && !handlingFluidSlot) {
-                handleFluidCell();
+            if (!loading && slot == SLOT_FLUID_CELL) {
+                syncFluidFilter();
             }
 
             if (!loading && (slot == SLOT_UPGRADE_1 || slot == SLOT_UPGRADE_2)) {
@@ -230,8 +229,9 @@ public final class SolderingStationBlockEntity extends BlockEntity implements Me
             station.energy -= station.consumption;
             station.progress += 1 + overdrive;
 
-            if (level.getGameTime() % 4L == 0L) {
+            if (level.getGameTime() % 20L == 0L) {
                 station.spawnSolderingEffect((ServerLevel) level, state);
+                level.playSound(null, pos, ModSounds.SPARK.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
             }
 
             if (station.progress >= station.processTime) {
@@ -342,7 +342,7 @@ public final class SolderingStationBlockEntity extends BlockEntity implements Me
 
         if (fluidAmount <= 0) {
             fluidAmount = 0;
-            fluidType = null;
+            fluidType = getSelectedFluidType();
         }
     }
 
@@ -363,13 +363,10 @@ public final class SolderingStationBlockEntity extends BlockEntity implements Me
     }
 
     private void spawnSolderingEffect(ServerLevel level, BlockState state) {
-        Direction facing = state.getValue(SolderingStationBlock.FACING);
-        Direction back = facing.getOpposite();
-        Direction right = facing.getClockWise();
-        double x = worldPosition.getX() + 0.5D + (back.getStepX() + right.getStepX()) * 0.5D;
+        double x = worldPosition.getX() + 1.0D;
         double y = worldPosition.getY() + 1.16D;
-        double z = worldPosition.getZ() + 0.5D + (back.getStepZ() + right.getStepZ()) * 0.5D;
-        level.sendParticles(ModParticles.SOLDER_TAU.get(), x, y, z, 2, 0.035D, 0.02D, 0.035D, 0.0D);
+        double z = worldPosition.getZ() + 1.0D;
+        level.sendParticles(ModParticles.SOLDER_TAU.get(), x, y, z, 3, 0.035D, 0.02D, 0.035D, 0.0D);
     }
 
     private void chargeFromBattery() {
@@ -474,69 +471,80 @@ public final class SolderingStationBlockEntity extends BlockEntity implements Me
         return first.getCount() == second.getCount() && ItemStack.isSameItemSameComponents(first, second);
     }
 
-    private void handleFluidCell() {
+    private void syncFluidFilter() {
+        ItemSolderingFluidCell.FluidType selected = getSelectedFluidType();
+        if (fluidAmount == 0) {
+            fluidType = selected;
+        }
+        setChangedAndSync();
+    }
+
+    @Nullable
+    private ItemSolderingFluidCell.FluidType getSelectedFluidType() {
         ItemStack stack = inventory.getStackInSlot(SLOT_FLUID_CELL);
-
-        if (stack.isEmpty()) {
-            return;
+        NTMFluidType selected = null;
+        if (stack.getItem() instanceof ItemFluidIdentifier identifier) {
+            selected = identifier.getFluidType();
+        } else if (stack.getItem() instanceof ItemFluidIdentifierMulti) {
+            selected = ItemFluidIdentifierMulti.getType(stack, true);
         }
-
-        handlingFluidSlot = true;
-
+        if (selected == null) {
+            return null;
+        }
         try {
-            if (stack.getItem() instanceof ItemSolderingFluidCell cell) {
-                if ((fluidType == null || fluidType == cell.getFluidType()) && fluidAmount + FLUID_CELL_AMOUNT <= FLUID_CAPACITY) {
-                    fluidType = cell.getFluidType();
-                    fluidAmount += FLUID_CELL_AMOUNT;
-                    inventory.setStackInSlot(SLOT_FLUID_CELL, new ItemStack(ModItems.CELL_EMPTY.get()));
-                }
-            } else if (stack.is(ModItems.CELL_EMPTY.get()) && fluidType != null && fluidAmount >= FLUID_CELL_AMOUNT) {
-                Item fluidCell = getFluidCellItem(fluidType);
-                fluidAmount -= FLUID_CELL_AMOUNT;
-                inventory.setStackInSlot(SLOT_FLUID_CELL, new ItemStack(fluidCell));
-
-                if (fluidAmount == 0) {
-                    fluidType = null;
-                }
-            }
-        } finally {
-            handlingFluidSlot = false;
+            return ItemSolderingFluidCell.FluidType.valueOf(selected.name());
+        } catch (IllegalArgumentException exception) {
+            return null;
         }
     }
 
-    private static Item getFluidCellItem(ItemSolderingFluidCell.FluidType type) {
-        return switch (type) {
-            case SULFURIC_ACID -> ModItems.CELL_SULFURIC_ACID.get();
-            case PEROXIDE -> ModItems.CELL_PEROXIDE.get();
-            case SOLVENT -> ModItems.CELL_SOLVENT.get();
-            case HELIUM4 -> ModItems.CELL_HELIUM4.get();
-            case PERFLUOROMETHYL -> ModItems.CELL_PERFLUOROMETHYL.get();
-            case PERFLUOROMETHYL_COLD -> ModItems.CELL_PERFLUOROMETHYL_COLD.get();
-        };
+
+    @Override
+    public NTMFluidType getFluidType() {
+        return fluidType == null ? null : NTMFluidType.valueOf(fluidType.name());
     }
 
-
-    @Override public NTMFluidType getFluidType() { return fluidType == null ? null : NTMFluidType.valueOf(fluidType.name()); }
-    @Override public int getFluidAmount() { return fluidAmount; }
-    @Override public int getFluidCapacity() { return FLUID_CAPACITY; }
-    @Override public boolean accepts(NTMFluidType type) {
-        if (type == null || type == NTMFluidType.WATER || type == NTMFluidType.COOLANT) { return false; }
-        try { ItemSolderingFluidCell.FluidType.valueOf(type.name()); return true; } catch (IllegalArgumentException exception) { return false; }
+    @Override
+    public int getFluidAmount() {
+        return fluidAmount;
     }
-    @Override public int fill(NTMFluidType type, int amount) {
-        if (!accepts(type) || amount <= 0 || (fluidType != null && !fluidType.name().equals(type.name()))) { return 0; }
+
+    @Override
+    public int getFluidCapacity() {
+        return FLUID_CAPACITY;
+    }
+
+    @Override
+    public boolean accepts(NTMFluidType type) {
+        ItemSolderingFluidCell.FluidType selected = getSelectedFluidType();
+        return type != null && selected != null && selected.name().equals(type.name());
+    }
+
+    @Override
+    public int fill(NTMFluidType type, int amount) {
+        if (!accepts(type) || amount <= 0 || (fluidType != null && !fluidType.name().equals(type.name()))) {
+            return 0;
+        }
         int accepted = Math.min(amount, FLUID_CAPACITY - fluidAmount);
-        if (accepted <= 0) { return 0; }
+        if (accepted <= 0) {
+            return 0;
+        }
         fluidType = ItemSolderingFluidCell.FluidType.valueOf(type.name());
         fluidAmount += accepted;
         setChangedAndSync();
         return accepted;
     }
-    @Override public int drain(NTMFluidType type, int amount) {
-        if (type == null || fluidType == null || !fluidType.name().equals(type.name()) || amount <= 0) { return 0; }
+
+    @Override
+    public int drain(NTMFluidType type, int amount) {
+        if (type == null || fluidType == null || !fluidType.name().equals(type.name()) || amount <= 0) {
+            return 0;
+        }
         int drained = Math.min(amount, fluidAmount);
         fluidAmount -= drained;
-        if (fluidAmount == 0) { fluidType = null; }
+        if (fluidAmount == 0) {
+            fluidType = getSelectedFluidType();
+        }
         setChangedAndSync();
         return drained;
     }

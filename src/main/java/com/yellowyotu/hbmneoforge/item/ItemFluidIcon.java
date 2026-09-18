@@ -17,7 +17,11 @@ public final class ItemFluidIcon extends Item {
     }
 
     public static ItemStack make(NTMFluidType type, int amount) {
-        ItemStack stack = new ItemStack(ModItems.FLUID_ICON.get());
+        return make(ModItems.FLUID_ICON.get(), type, amount);
+    }
+
+    public static ItemStack make(Item item, NTMFluidType type, int amount) {
+        ItemStack stack = new ItemStack(item);
         CompoundTag tag = new CompoundTag();
         tag.putString("Fluid", type.id());
         tag.putInt("Amount", Math.max(0, amount));

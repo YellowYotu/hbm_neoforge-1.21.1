@@ -31,7 +31,7 @@ public final class SlidingSealDoorBlockEntity extends BlockEntity {
     }
 
     public boolean isMoving() {
-        return progress > 0 && progress < SlidingSealDoorBlock.MAX_PROGRESS;
+        return progress > 0 && progress < SlidingSealDoorBlock.getOpenTime(getBlockState());
     }
 
     public boolean isPowered() {
@@ -47,11 +47,11 @@ public final class SlidingSealDoorBlockEntity extends BlockEntity {
         if (level.isClientSide()) {
             return;
         }
-        int target = state.getValue(SlidingSealDoorBlock.OPEN) ? SlidingSealDoorBlock.MAX_PROGRESS : 0;
+        int target = state.getValue(SlidingSealDoorBlock.OPEN) ? SlidingSealDoorBlock.getOpenTime(state) : 0;
         int next = door.progress;
-        boolean starting = next != target && (next == 0 || next == SlidingSealDoorBlock.MAX_PROGRESS);
+        boolean starting = next != target && (next == 0 || next == SlidingSealDoorBlock.getOpenTime(state));
         if (starting) {
-            level.playSound(null, pos, ModSounds.SLIDING_SEAL_OPEN.get(), SoundSource.BLOCKS, 2.0F, 1.0F);
+            level.playSound(null, pos, ModSounds.SLIDING_SEAL_OPEN.get(), SoundSource.BLOCKS, SlidingSealDoorBlock.getMoveSoundVolume(state), 1.0F);
         }
         if (next < target) {
             next++;
@@ -65,7 +65,7 @@ public final class SlidingSealDoorBlockEntity extends BlockEntity {
         door.setChanged();
         SlidingSealDoorBlock.updateProgress(level, pos, state, next);
         if (next == target) {
-            level.playSound(null, pos, ModSounds.SLIDING_SEAL_STOP.get(), SoundSource.BLOCKS, 2.0F, 1.0F);
+            level.playSound(null, pos, ModSounds.SLIDING_SEAL_STOP.get(), SoundSource.BLOCKS, SlidingSealDoorBlock.getMoveSoundVolume(state), 1.0F);
         }
     }
 

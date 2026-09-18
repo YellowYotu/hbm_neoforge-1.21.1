@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "W I",
+    "WCI",
+    "PPP"
+  ],
+  "key": {
+    "W": {
+      "item": "hbm_neoforge:wire_gold"
+    },
+    "I": {
+      "item": "minecraft:copper_ingot"
+    },
+    "C": {
+      "item": "hbm_neoforge:circuit_analog"
+    },
+    "P": {
+      "item": "hbm_neoforge:plate_steel"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:oil_detector",
+    "count": 1
+  }
+}

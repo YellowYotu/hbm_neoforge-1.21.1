@@ -13,10 +13,15 @@ import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 
 @EventBusSubscriber(modid = HBMsNuclearTechModUnofficialNeoForgeEdition.MODID)
 public final class InfoMessage {
-    private static final String DISCORD_URL = "https://discord.gg/A9NK8xypwU";
-    private static final String CURSEFORGE_URL = "https://www.curseforge.com/minecraft/mc-mods/hbms-nuclear-tech-unofficial-neoforge-edition";
-    private static final String GITHUB_URL = "https://github.com/YellowYotu/hbm_neoforge-1.21.1";
-    private static final String CONTACT_EMAIL = "hbm_neoforge_edition@outlook.com";
+
+    private static final String GITHUB_URL =
+            "https://github.com/YellowYotu/hbm_neoforge-1.21.1";
+
+    private static final String CURSEFORGE_URL =
+            "https://www.curseforge.com/minecraft/mc-mods/hbms-nuclear-tech-unofficial-neoforge-edition";
+
+    private static final String DISCORD_URL =
+            "https://discord.gg/A9NK8xypwU";
 
     private InfoMessage() {
     }
@@ -28,29 +33,89 @@ public final class InfoMessage {
         }
 
         player.sendSystemMessage(Component.empty());
-        player.sendSystemMessage(Component.literal("====================================================").withStyle(ChatFormatting.DARK_RED));
-        player.sendSystemMessage(Component.literal("HBM's Nuclear Tech - Unofficial NeoForge Edition").withStyle(ChatFormatting.GOLD, ChatFormatting.BOLD));
-        player.sendSystemMessage(Component.literal("PRE-ALPHA VERSION WARNING").withStyle(ChatFormatting.RED, ChatFormatting.BOLD));
+
+        player.sendSystemMessage(
+                Component.literal("====================================================")
+                        .withStyle(ChatFormatting.DARK_RED)
+        );
+
+        player.sendSystemMessage(
+                Component.literal("HBM's Nuclear Tech - Unofficial NeoForge Edition")
+                        .withStyle(ChatFormatting.GOLD, ChatFormatting.BOLD)
+        );
+
+        player.sendSystemMessage(
+                Component.literal("BETA")
+                        .withStyle(ChatFormatting.YELLOW, ChatFormatting.BOLD)
+        );
+
         player.sendSystemMessage(Component.empty());
-        player.sendSystemMessage(Component.literal("This mod is currently in pre-alpha and is not ready for survival gameplay.").withStyle(ChatFormatting.YELLOW));
-        player.sendSystemMessage(Component.literal("Features may be unfinished, unbalanced, missing or changed in future updates.").withStyle(ChatFormatting.YELLOW));
-        player.sendSystemMessage(Component.literal("Bugs, crashes and world-breaking changes may occur.").withStyle(ChatFormatting.RED));
+
+        player.sendSystemMessage(
+                Component.literal(
+                                "This is a Beta version of the NeoForge port. "
+                                        + "The mod is still under active development and some content "
+                                        + "from the original HBM's Nuclear Tech Mod CE has not been ported yet."
+                        )
+                        .withStyle(ChatFormatting.GRAY)
+        );
+
+        player.sendSystemMessage(
+                Component.literal(
+                                "Some machines, mechanics, recipes and visuals may still contain bugs "
+                                        + "or behave differently from the original version."
+                        )
+                        .withStyle(ChatFormatting.GRAY)
+        );
+
         player.sendSystemMessage(Component.empty());
-        player.sendSystemMessage(createLink("Discord server: ", DISCORD_URL));
-        player.sendSystemMessage(createLink("CurseForge: ", CURSEFORGE_URL));
-        player.sendSystemMessage(createLink("GitHub: ", GITHUB_URL));
+
+        player.sendSystemMessage(
+                Component.literal(
+                                "If you encounter a bug, please report it and include screenshots, logs "
+                                        + "and steps to reproduce the issue whenever possible."
+                        )
+                        .withStyle(ChatFormatting.GRAY)
+        );
+
         player.sendSystemMessage(Component.empty());
-        player.sendSystemMessage(Component.literal("Report bugs through Discord or email: ").withStyle(ChatFormatting.GRAY)
-                .append(Component.literal(CONTACT_EMAIL).withStyle(ChatFormatting.AQUA, ChatFormatting.UNDERLINE)));
-        player.sendSystemMessage(Component.literal("====================================================").withStyle(ChatFormatting.DARK_RED));
+
+        player.sendSystemMessage(
+                createLink("GitHub: ", GITHUB_URL)
+        );
+
+        player.sendSystemMessage(
+                createLink("CurseForge: ", CURSEFORGE_URL)
+        );
+
+        player.sendSystemMessage(
+                createLink("Discord: ", DISCORD_URL)
+        );
+
+        player.sendSystemMessage(
+                Component.literal("====================================================")
+                        .withStyle(ChatFormatting.DARK_RED)
+        );
+
         player.sendSystemMessage(Component.empty());
     }
 
-    private static MutableComponent createLink(String name, String url) {
-        return Component.literal(name).withStyle(ChatFormatting.GRAY)
-                .append(Component.literal(url).setStyle(Style.EMPTY
-                        .withColor(ChatFormatting.AQUA)
-                        .withUnderlined(true)
-                        .withClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, url))));
+    private static MutableComponent createLink(String prefix, String url) {
+        return Component.literal(prefix)
+                .withStyle(ChatFormatting.GRAY)
+                .append(
+                        Component.literal(url)
+                                .setStyle(
+                                        Style.EMPTY
+                                                .withColor(ChatFormatting.AQUA)
+                                                .withUnderlined(true)
+                                                .withClickEvent(
+                                                        new ClickEvent(
+                                                                ClickEvent.Action.OPEN_URL,
+                                                                url
+                                                        )
+                                                )
+                                )
+                );
     }
 }

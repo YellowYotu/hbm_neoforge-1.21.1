@@ -234,76 +234,95 @@ public class FluidStorageBlockEntity extends BlockEntity implements FluidNode, M
                 if (effective != null) {
                     fillInternal(effective, infinite.getRate());
                 }
-            } else if (inventory.getStackInSlot(3).isEmpty() && input.is(Items.WATER_BUCKET) && fillInternal(NTMFluidType.WATER, 1_000) == 1_000) {
-                inventory.setStackInSlot(2, ItemStack.EMPTY);
-                inventory.setStackInSlot(3, new ItemStack(Items.BUCKET));
-            } else if (inventory.getStackInSlot(3).isEmpty() && input.is(Items.LAVA_BUCKET) && fillInternal(NTMFluidType.LAVA, 1_000) == 1_000) {
-                inventory.setStackInSlot(2, ItemStack.EMPTY);
-                inventory.setStackInSlot(3, new ItemStack(Items.BUCKET));
-            } else if (inventory.getStackInSlot(3).isEmpty() && input.getItem() instanceof ItemSolderingFluidCell cell) {
+            } else if (input.is(Items.WATER_BUCKET)) {
+                ItemStack output = new ItemStack(Items.BUCKET);
+                if (canAcceptOutput(3, output) && fillInternal(NTMFluidType.WATER, 1_000) == 1_000) {
+                    input.shrink(1);
+                    inventory.setStackInSlot(2, input.isEmpty() ? ItemStack.EMPTY : input);
+                    addOutput(3, output);
+                }
+            } else if (input.is(Items.LAVA_BUCKET)) {
+                ItemStack output = new ItemStack(Items.BUCKET);
+                if (canAcceptOutput(3, output) && fillInternal(NTMFluidType.LAVA, 1_000) == 1_000) {
+                    input.shrink(1);
+                    inventory.setStackInSlot(2, input.isEmpty() ? ItemStack.EMPTY : input);
+                    addOutput(3, output);
+                }
+            } else if (input.getItem() instanceof ItemSolderingFluidCell cell) {
                 NTMFluidType fluid = NTMFluidType.valueOf(cell.getFluidType().name());
-                if (fillInternal(fluid, 1_000) == 1_000) {
-                    inventory.setStackInSlot(2, ItemStack.EMPTY);
-                    inventory.setStackInSlot(3, new ItemStack(ModItems.CELL_EMPTY.get()));
+                ItemStack output = new ItemStack(ModItems.CELL_EMPTY.get());
+                if (canAcceptOutput(3, output) && fillInternal(fluid, 1_000) == 1_000) {
+                    input.shrink(1);
+                    inventory.setStackInSlot(2, input.isEmpty() ? ItemStack.EMPTY : input);
+                    addOutput(3, output);
                 }
             } else if (input.getItem() instanceof ItemPortableFluidContainer container) {
                 NTMFluidType fluid = ItemPortableFluidContainer.getFluidType(input);
                 int stored = ItemPortableFluidContainer.getAmount(input);
                 int room = getFluidCapacity() - amount;
-                if (fluid != null && stored > 0 && (input.getCount() == 1 || room >= stored)) {
-                    int moved = fillInternal(fluid, Math.min(stored, room));
-                    if (moved > 0) {
-                        if (moved == stored) {
-                            input.shrink(1);
-                            inventory.setStackInSlot(2, input.isEmpty() ? ItemStack.EMPTY : input);
-                            if (inventory.getStackInSlot(3).isEmpty()) {
-                                inventory.setStackInSlot(3, new ItemStack(container.getEmptyItem()));
-                            }
-                        } else if (input.getCount() == 1) {
-                            ItemPortableFluidContainer.setFluid(input, fluid, stored - moved);
-                            inventory.setStackInSlot(2, input);
-                        }
-                    }
+                ItemStack output = new ItemStack(container.getEmptyItem());
+                if (fluid != null && stored == container.getCapacity() && room >= stored && canAcceptOutput(3, output) && fillInternal(fluid, stored) == stored) {
+                    input.shrink(1);
+                    inventory.setStackInSlot(2, input.isEmpty() ? ItemStack.EMPTY : input);
+                    addOutput(3, output);
                 }
             }
         }
 
         ItemStack empty = inventory.getStackInSlot(4);
-        if (type != null && amount > 0 && !empty.isEmpty() && inventory.getStackInSlot(5).isEmpty()) {
-            if (empty.getItem() instanceof ItemEmptyPortableFluidContainer portable) {
-                int moved = drainInternal(type, Math.min(portable.getCapacity(), amount));
-                if (moved > 0) {
-                    ItemStack filled = new ItemStack(portable.getFilledItem());
-                    ItemPortableFluidContainer.setFluid(filled, type, moved);
-                    empty.shrink(1);
-                    inventory.setStackInSlot(4, empty.isEmpty() ? ItemStack.EMPTY : empty);
-                    inventory.setStackInSlot(5, filled);
-                }
-                return;
+        if (type == null || amount <= 0 || empty.isEmpty()) {
+            return;
+        }
+
+        if (empty.getItem() instanceof ItemEmptyPortableFluidContainer portable) {
+            int capacity = portable.getCapacity();
+            ItemStack filled = new ItemStack(portable.getFilledItem());
+            ItemPortableFluidContainer.setFluid(filled, type, capacity);
+            if (amount >= capacity && canAcceptOutput(5, filled) && drainInternal(type, capacity) == capacity) {
+                empty.shrink(1);
+                inventory.setStackInSlot(4, empty.isEmpty() ? ItemStack.EMPTY : empty);
+                addOutput(5, filled);
             }
-            if (empty.getItem() instanceof ItemPortableFluidContainer portable) {
-                NTMFluidType storedType = ItemPortableFluidContainer.getFluidType(empty);
-                int stored = ItemPortableFluidContainer.getAmount(empty);
-                if (storedType == type && stored < portable.getCapacity()) {
-                    int moved = drainInternal(type, Math.min(portable.getCapacity() - stored, amount));
-                    if (moved > 0) {
-                        ItemStack filled = empty.copyWithCount(1);
-                        ItemPortableFluidContainer.setFluid(filled, type, stored + moved);
-                        empty.shrink(1);
-                        inventory.setStackInSlot(4, empty.isEmpty() ? ItemStack.EMPTY : empty);
-                        inventory.setStackInSlot(5, filled);
-                    }
-                }
-                return;
+            return;
+        }
+
+        if (empty.getItem() instanceof ItemPortableFluidContainer portable) {
+            NTMFluidType storedType = ItemPortableFluidContainer.getFluidType(empty);
+            int stored = ItemPortableFluidContainer.getAmount(empty);
+            int needed = portable.getCapacity() - stored;
+            ItemStack filled = empty.copyWithCount(1);
+            ItemPortableFluidContainer.setFluid(filled, type, portable.getCapacity());
+            if (storedType == type && stored > 0 && needed > 0 && amount >= needed && canAcceptOutput(5, filled) && drainInternal(type, needed) == needed) {
+                empty.shrink(1);
+                inventory.setStackInSlot(4, empty.isEmpty() ? ItemStack.EMPTY : empty);
+                addOutput(5, filled);
             }
-            if (amount >= 1_000) {
-                ItemStack filled = makeFilledContainer(empty, type);
-                if (!filled.isEmpty() && drainInternal(type, 1_000) == 1_000) {
-                    inventory.setStackInSlot(4, ItemStack.EMPTY);
-                    inventory.setStackInSlot(5, filled);
-                }
+            return;
+        }
+
+        if (amount >= 1_000) {
+            ItemStack filled = makeFilledContainer(empty, type);
+            if (!filled.isEmpty() && canAcceptOutput(5, filled) && drainInternal(type, 1_000) == 1_000) {
+                empty.shrink(1);
+                inventory.setStackInSlot(4, empty.isEmpty() ? ItemStack.EMPTY : empty);
+                addOutput(5, filled);
             }
         }
+    }
+
+    private boolean canAcceptOutput(int slot, ItemStack stack) {
+        ItemStack existing = inventory.getStackInSlot(slot);
+        return existing.isEmpty() || ItemStack.isSameItemSameComponents(existing, stack) && existing.getCount() + stack.getCount() <= existing.getMaxStackSize();
+    }
+
+    private void addOutput(int slot, ItemStack stack) {
+        ItemStack existing = inventory.getStackInSlot(slot);
+        if (existing.isEmpty()) {
+            inventory.setStackInSlot(slot, stack.copy());
+            return;
+        }
+        existing.grow(stack.getCount());
+        inventory.setStackInSlot(slot, existing);
     }
 
     private static ItemStack makeFilledContainer(ItemStack empty, NTMFluidType type) {

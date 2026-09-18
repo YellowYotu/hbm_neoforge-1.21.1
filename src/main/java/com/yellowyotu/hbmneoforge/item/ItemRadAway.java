@@ -23,14 +23,8 @@ public final class ItemRadAway extends Item {
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
         if (!level.isClientSide()) {
-            MobEffectInstance currentEffect = player.getEffect(ModEffects.RADAWAY);
-            int duration = RadiationValues.RADAWAY_DURATION_TICKS;
-            if (currentEffect != null) {
-                duration += currentEffect.getDuration();
-            }
-
             stack.shrink(1);
-            player.addEffect(new MobEffectInstance(ModEffects.RADAWAY, duration, 0));
+            player.addEffect(new MobEffectInstance(ModEffects.RADAWAY, RadiationValues.RADAWAY_DURATION_TICKS, 24));
             level.playSound(null, player.getX(), player.getY(), player.getZ(), ModSounds.RADAWAY.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
             giveEmptyIv(player);
         }

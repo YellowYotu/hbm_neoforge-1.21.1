@@ -1,5 +1,6 @@
 package com.yellowyotu.hbmneoforge.client.renderer;
 
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import com.yellowyotu.hbmneoforge.ModItems;
@@ -12,6 +13,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.core.Direction;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
@@ -27,34 +29,45 @@ public final class ChemicalPlantBlockEntityRenderer implements BlockEntityRender
 
     @Override
     public void render(ChemicalPlantBlockEntity machine, float partialTick, PoseStack poseStack, MultiBufferSource buffer, int packedLight, int packedOverlay) {
-        MachineLoopSoundManager.update(machine, machine.isProcessing(), ModSounds.CHEMICAL_PLANT.get(), 1.0F, machine::isProcessing);
-        AnimationState animation = ANIMATION.computeIfAbsent(machine, ignored -> new AnimationState());
-        animation.tick(machine.isProcessing(), partialTick);
+        RenderSystem.disableCull();
+        try {
+                MachineLoopSoundManager.update(machine, machine.isProcessing(), ModSounds.CHEMICAL_PLANT.get(), 1.0F, machine::isProcessing);
+                AnimationState animation = ANIMATION.computeIfAbsent(machine, ignored -> new AnimationState());
+                animation.tick(machine.isProcessing(), partialTick);
 
-        poseStack.pushPose();
-        poseStack.translate(0.5D, 0.0D, 0.5D);
-        Direction facing = machine.getBlockState().getValue(ChemicalPlantBlock.FACING);
-        poseStack.mulPose(Axis.YP.rotationDegrees(90.0F - facing.toYRot()));
-        poseStack.translate(-0.5D, 0.0D, -0.5D);
+                poseStack.pushPose();
+                poseStack.translate(0.5D, 0.0D, 0.5D);
+                Direction facing = machine.getBlockState().getValue(ChemicalPlantBlock.FACING);
+                poseStack.mulPose(Axis.YP.rotationDegrees(90.0F - facing.toYRot()));
+                poseStack.translate(-0.5D, 0.0D, -0.5D);
 
-        renderPart(machine, ModItems.CHEMICAL_PART_BASE.get(), poseStack, buffer, packedLight, packedOverlay);
-        if (machine.getBlockState().getValue(ChemicalPlantBlock.FRAME)) {
-            renderPart(machine, ModItems.CHEMICAL_PART_FRAME.get(), poseStack, buffer, packedLight, packedOverlay);
+                renderPart(machine, ModItems.CHEMICAL_PART_BASE.get(), poseStack, buffer, packedLight, packedOverlay);
+                if (machine.getBlockState().getValue(ChemicalPlantBlock.FRAME)) {
+                    renderPart(machine, ModItems.CHEMICAL_PART_FRAME.get(), poseStack, buffer, packedLight, packedOverlay);
+                }
+
+                poseStack.pushPose();
+                poseStack.translate(sps(animation.value * 0.125D) * 0.375D, 0.0D, 0.0D);
+                renderPart(machine, ModItems.CHEMICAL_PART_SLIDER.get(), poseStack, buffer, packedLight, packedOverlay);
+                poseStack.popPose();
+
+                poseStack.pushPose();
+                poseStack.translate(1.0D, 0.0D, 1.0D);
+                poseStack.mulPose(Axis.YP.rotationDegrees((float) ((animation.value * 15.0D) % 360.0D)));
+                poseStack.translate(-1.0D, 0.0D, -1.0D);
+                renderPart(machine, ModItems.CHEMICAL_PART_SPINNER.get(), poseStack, buffer, packedLight, packedOverlay);
+                poseStack.popPose();
+
+                poseStack.popPose();
+    
+        } finally {
+            RenderSystem.enableCull();
         }
+    }
 
-        poseStack.pushPose();
-        poseStack.translate(sps(animation.value * 0.125D) * 0.375D, 0.0D, 0.0D);
-        renderPart(machine, ModItems.CHEMICAL_PART_SLIDER.get(), poseStack, buffer, packedLight, packedOverlay);
-        poseStack.popPose();
-
-        poseStack.pushPose();
-        poseStack.translate(1.0D, 0.0D, 1.0D);
-        poseStack.mulPose(Axis.YP.rotationDegrees((float) ((animation.value * 15.0D) % 360.0D)));
-        poseStack.translate(-1.0D, 0.0D, -1.0D);
-        renderPart(machine, ModItems.CHEMICAL_PART_SPINNER.get(), poseStack, buffer, packedLight, packedOverlay);
-        poseStack.popPose();
-
-        poseStack.popPose();
+    @Override
+    public AABB getRenderBoundingBox(ChemicalPlantBlockEntity blockEntity) {
+        return AABB.INFINITE;
     }
 
     @Override

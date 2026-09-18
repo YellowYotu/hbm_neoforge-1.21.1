@@ -1,0 +1,36 @@
+{
+  "operation": "crafting",
+  "overlay": "construction",
+  "name": "anvil_recipe.hbm_neoforge.arc_welder",
+  "tier": 2,
+  "primary": {
+    "items": [
+      "hbm_neoforge:plate_steel_cast"
+    ],
+    "count": 4
+  },
+  "secondary": {
+    "items": [
+      "hbm_neoforge:ingot_tungsten"
+    ],
+    "count": 8
+  },
+  "extra_inputs": [
+    {
+      "items": [
+        "hbm_neoforge:machine_transformer"
+      ],
+      "count": 1
+    },
+    {
+      "items": [
+        "hbm_neoforge:arc_electrode"
+      ],
+      "count": 2
+    }
+  ],
+  "result": {
+    "item": "hbm_neoforge:machine_arc_welder",
+    "count": 1
+  }
+}

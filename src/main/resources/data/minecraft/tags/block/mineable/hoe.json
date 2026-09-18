@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "hbm_neoforge:hemp",
+    "hbm_neoforge:leaves_layer",
+    "hbm_neoforge:waste_leaves"
+  ]
+}

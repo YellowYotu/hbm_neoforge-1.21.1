@@ -2,6 +2,7 @@ package com.yellowyotu.hbmneoforge;
 
 import com.yellowyotu.hbmneoforge.menu.StorageCrateMenu;
 
+import com.yellowyotu.hbmneoforge.menu.ArcWelderMenu;
 import com.yellowyotu.hbmneoforge.menu.AssemblyMachineMenu;
 import com.yellowyotu.hbmneoforge.menu.BatterySocketMenu;
 import com.yellowyotu.hbmneoforge.menu.BlastFurnaceMenu;
@@ -14,9 +15,11 @@ import com.yellowyotu.hbmneoforge.menu.FatManMenu;
 import com.yellowyotu.hbmneoforge.menu.FluidPipeMenu;
 import com.yellowyotu.hbmneoforge.menu.FluidIdentifierMenu;
 import com.yellowyotu.hbmneoforge.menu.MachinePressMenu;
+import com.yellowyotu.hbmneoforge.menu.MixerMenu;
 import com.yellowyotu.hbmneoforge.menu.ShredderMenu;
 import com.yellowyotu.hbmneoforge.menu.SolderingStationMenu;
 import com.yellowyotu.hbmneoforge.menu.WoodBurnerMenu;
+import com.yellowyotu.hbmneoforge.menu.OilDerrickMenu;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.inventory.MenuType;
 import net.neoforged.bus.api.IEventBus;
@@ -38,6 +41,7 @@ public final class ModMenus {
     public static final Supplier<MenuType<FluidStorageMenu>> FLUID_STORAGE = MENUS.register("fluid_storage", () -> IMenuTypeExtension.create(FluidStorageMenu::new));
     public static final Supplier<MenuType<BlastFurnaceMenu>> BLAST_FURNACE = MENUS.register("machine_blast_furnace", () -> IMenuTypeExtension.create(BlastFurnaceMenu::new));
     public static final Supplier<MenuType<WoodBurnerMenu>> WOOD_BURNER = MENUS.register("machine_wood_burner", () -> IMenuTypeExtension.create(WoodBurnerMenu::new));
+    public static final Supplier<MenuType<OilDerrickMenu>> OIL_DERRICK = MENUS.register("machine_well", () -> IMenuTypeExtension.create(OilDerrickMenu::new));
     public static final Supplier<MenuType<ShredderMenu>> SHREDDER = MENUS.register("machine_shredder", () -> IMenuTypeExtension.create(ShredderMenu::new));
     public static final Supplier<MenuType<SolderingStationMenu>> SOLDERING_STATION = MENUS.register("machine_soldering_station", () -> IMenuTypeExtension.create(SolderingStationMenu::new));
     public static final Supplier<MenuType<HeaterMenu>> HEATER = MENUS.register("heater", () -> IMenuTypeExtension.create(HeaterMenu::new));
@@ -53,6 +57,8 @@ public final class ModMenus {
 
     public static final Supplier<MenuType<AssemblyMachineMenu>> ASSEMBLY_MACHINE = MENUS.register("assembly_machine", () -> IMenuTypeExtension.create(AssemblyMachineMenu::new));
     public static final Supplier<MenuType<ChemicalPlantMenu>> CHEMICAL_PLANT = MENUS.register("machine_chemical_plant", () -> IMenuTypeExtension.create(ChemicalPlantMenu::new));
+    public static final Supplier<MenuType<MixerMenu>> MIXER = MENUS.register("machine_mixer", () -> IMenuTypeExtension.create(MixerMenu::new));
+    public static final Supplier<MenuType<ArcWelderMenu>> ARC_WELDER = MENUS.register("machine_arc_welder", () -> IMenuTypeExtension.create(ArcWelderMenu::new));
     public static final Supplier<MenuType<BatterySocketMenu>> BATTERY_SOCKET = MENUS.register("battery_socket", () -> IMenuTypeExtension.create(BatterySocketMenu::new));
     public static final Supplier<MenuType<FatManMenu>> NUKE_MAN = MENUS.register("nuke_man", () -> IMenuTypeExtension.create(FatManMenu::new));
     public static final Supplier<MenuType<StorageCrateMenu>> STORAGE_CRATE = MENUS.register("storage_crate", () -> IMenuTypeExtension.create(StorageCrateMenu::new));

@@ -8,6 +8,8 @@ import com.yellowyotu.hbmneoforge.ModMenus;
 import com.yellowyotu.hbmneoforge.blockentity.SolderingStationBlockEntity;
 import com.yellowyotu.hbmneoforge.blockentity.SolderingStationRecipes;
 import com.yellowyotu.hbmneoforge.item.ItemMachineUpgrade;
+import com.yellowyotu.hbmneoforge.item.ItemFluidIdentifier;
+import com.yellowyotu.hbmneoforge.item.ItemFluidIdentifierMulti;
 import com.yellowyotu.hbmneoforge.item.ItemSolderingFluidCell;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.RegistryFriendlyByteBuf;
@@ -149,7 +151,7 @@ public final class SolderingStationMenu extends AbstractContainerMenu {
             if (!moveItemStackTo(source, SolderingStationBlockEntity.SLOT_BATTERY, SolderingStationBlockEntity.SLOT_BATTERY + 1, false)) {
                 return ItemStack.EMPTY;
             }
-        } else if (source.is(ModItems.CELL_EMPTY.get()) || source.getItem() instanceof ItemSolderingFluidCell) {
+        } else if (source.getItem() instanceof ItemFluidIdentifier || source.getItem() instanceof ItemFluidIdentifierMulti) {
             if (!moveItemStackTo(source, SolderingStationBlockEntity.SLOT_FLUID_CELL, SolderingStationBlockEntity.SLOT_FLUID_CELL + 1, false)) {
                 return ItemStack.EMPTY;
             }
@@ -222,7 +224,7 @@ public final class SolderingStationMenu extends AbstractContainerMenu {
 
         @Override
         public boolean mayPlace(ItemStack stack) {
-            return stack.is(ModItems.CELL_EMPTY.get()) || stack.getItem() instanceof ItemSolderingFluidCell;
+            return stack.getItem() instanceof ItemFluidIdentifier || stack.getItem() instanceof ItemFluidIdentifierMulti;
         }
 
         @Override

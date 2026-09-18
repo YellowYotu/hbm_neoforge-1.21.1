@@ -2,10 +2,13 @@ package com.yellowyotu.hbmneoforge.item;
 
 import com.yellowyotu.hbmneoforge.fluid.FluidNode;
 import com.yellowyotu.hbmneoforge.fluid.NTMFluidType;
+import java.util.List;
 import java.util.function.Supplier;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 
 public final class ItemEmptyPortableFluidContainer extends Item {
@@ -27,6 +30,11 @@ public final class ItemEmptyPortableFluidContainer extends Item {
     }
 
     @Override
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
+        tooltip.add(Component.literal("0 / " + capacity + " mB"));
+    }
+
+    @Override
     public InteractionResult useOn(UseOnContext context) {
         if (!(context.getLevel().getBlockEntity(context.getClickedPos()) instanceof FluidNode node)) {
             return InteractionResult.PASS;
@@ -35,15 +43,18 @@ public final class ItemEmptyPortableFluidContainer extends Item {
             return InteractionResult.SUCCESS;
         }
         NTMFluidType type = node.getFluidType();
-        if (type == null || node.getFluidAmount() <= 0) {
+        if (type == null || node.getFluidAmount() < capacity) {
             return InteractionResult.PASS;
         }
-        int moved = node.drain(type, Math.min(capacity, node.getFluidAmount()));
-        if (moved <= 0) {
+        int moved = node.drain(type, capacity);
+        if (moved != capacity) {
+            if (moved > 0) {
+                node.fill(type, moved);
+            }
             return InteractionResult.PASS;
         }
         ItemStack filled = new ItemStack(filledItem.get());
-        ItemPortableFluidContainer.setFluid(filled, type, moved);
+        ItemPortableFluidContainer.setFluid(filled, type, capacity);
         ItemStack held = context.getItemInHand();
         held.shrink(1);
         if (held.isEmpty()) {

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S",
+    "S",
+    "S"
+  ],
+  "key": {
+    "S": {
+      "item": "hbm_neoforge:ingot_steel"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:steel_beam",
+    "count": 8
+  }
+}

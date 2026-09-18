@@ -1,5 +1,6 @@
 package com.yellowyotu.hbmneoforge.client.renderer;
 
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import com.yellowyotu.hbmneoforge.ModItems;
@@ -10,6 +11,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.core.Direction;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemDisplayContext;
@@ -28,14 +30,20 @@ public final class AssemblyMachineBlockEntityRenderer implements BlockEntityRend
 
     @Override
     public void render(AssemblyMachineBlockEntity machine, float partialTick, PoseStack poseStack, MultiBufferSource buffer, int packedLight, int packedOverlay) {
-        poseStack.pushPose();
-        poseStack.translate(0.5D, 0.0D, 0.5D);
-        Direction facing = machine.getBlockState().getValue(AssemblyMachineBlock.FACING);
-        poseStack.mulPose(Axis.YP.rotationDegrees(-facing.toYRot()));
-        poseStack.translate(-0.5D, 0.0D, -0.5D);
-        renderRotatingMechanism(machine, partialTick, poseStack, buffer, packedLight, packedOverlay);
-        renderDisplayedItem(machine, poseStack, buffer, packedLight, packedOverlay);
-        poseStack.popPose();
+        RenderSystem.disableCull();
+        try {
+                poseStack.pushPose();
+                poseStack.translate(0.5D, 0.0D, 0.5D);
+                Direction facing = machine.getBlockState().getValue(AssemblyMachineBlock.FACING);
+                poseStack.mulPose(Axis.YP.rotationDegrees(-facing.toYRot()));
+                poseStack.translate(-0.5D, 0.0D, -0.5D);
+                renderRotatingMechanism(machine, partialTick, poseStack, buffer, packedLight, packedOverlay);
+                renderDisplayedItem(machine, poseStack, buffer, packedLight, packedOverlay);
+                poseStack.popPose();
+    
+        } finally {
+            RenderSystem.enableCull();
+        }
     }
 
     private static void renderRotatingMechanism(AssemblyMachineBlockEntity machine, float partialTick, PoseStack poseStack, MultiBufferSource buffer, int packedLight, int packedOverlay) {
@@ -121,6 +129,11 @@ public final class AssemblyMachineBlockEntityRenderer implements BlockEntityRend
         poseStack.scale(1.25F, 1.25F, 1.25F);
         Minecraft.getInstance().getItemRenderer().renderStatic(stack.copyWithCount(1), ItemDisplayContext.FIXED, packedLight, packedOverlay, poseStack, buffer, machine.getLevel(), 0);
         poseStack.popPose();
+    }
+
+    @Override
+    public AABB getRenderBoundingBox(AssemblyMachineBlockEntity blockEntity) {
+        return AABB.INFINITE;
     }
 
     @Override

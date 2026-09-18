@@ -47,8 +47,9 @@ public final class ItemPortableFluidContainer extends Item {
             tag.remove("Fluid");
             tag.remove("Amount");
         } else {
+            int storedAmount = stack.getItem() instanceof ItemPortableFluidContainer container ? container.getCapacity() : amount;
             tag.putString("Fluid", type.id());
-            tag.putInt("Amount", amount);
+            tag.putInt("Amount", storedAmount);
         }
         stack.set(DataComponents.CUSTOM_DATA, CustomData.of(tag));
     }
@@ -89,44 +90,22 @@ public final class ItemPortableFluidContainer extends Item {
         ItemStack stack = context.getItemInHand();
         NTMFluidType type = getFluidType(stack);
         int stored = getAmount(stack);
-        if (type != null && stored > 0 && node.accepts(type)) {
-            int room = Math.max(0, node.getFluidCapacity() - node.getFluidAmount());
-            if (stack.getCount() == 1 || room >= stored) {
-                int moved = node.fill(type, Math.min(stored, room));
-                if (moved > 0) {
-                    if (moved == stored) {
-                        ItemStack empty = new ItemStack(emptyItem.get());
-                        stack.shrink(1);
-                        if (stack.isEmpty()) {
-                            context.getPlayer().setItemInHand(context.getHand(), empty);
-                        } else if (!context.getPlayer().getInventory().add(empty)) {
-                            context.getPlayer().drop(empty, false);
-                        }
-                    } else if (stack.getCount() == 1) {
-                        setFluid(stack, type, stored - moved);
+        if (type != null && stored == capacity && node.accepts(type)) {
+            int room = node.getFluidCapacity() - node.getFluidAmount();
+            if (room >= capacity) {
+                int moved = node.fill(type, capacity);
+                if (moved == capacity) {
+                    ItemStack empty = new ItemStack(emptyItem.get());
+                    stack.shrink(1);
+                    if (stack.isEmpty()) {
+                        context.getPlayer().setItemInHand(context.getHand(), empty);
+                    } else if (!context.getPlayer().getInventory().add(empty)) {
+                        context.getPlayer().drop(empty, false);
                     }
                     return InteractionResult.sidedSuccess(context.getLevel().isClientSide());
                 }
-            }
-        }
-
-        NTMFluidType nodeType = node.getFluidType();
-        if (nodeType != null && node.getFluidAmount() > 0 && (type == null || type == nodeType)) {
-            int room = capacity - stored;
-            if (room > 0) {
-                int moved = node.drain(nodeType, room);
                 if (moved > 0) {
-                    if (stack.getCount() == 1) {
-                        setFluid(stack, nodeType, stored + moved);
-                    } else {
-                        ItemStack filled = stack.copyWithCount(1);
-                        setFluid(filled, nodeType, stored + moved);
-                        stack.shrink(1);
-                        if (!context.getPlayer().getInventory().add(filled)) {
-                            context.getPlayer().drop(filled, false);
-                        }
-                    }
-                    return InteractionResult.sidedSuccess(context.getLevel().isClientSide());
+                    node.drain(type, moved);
                 }
             }
         }

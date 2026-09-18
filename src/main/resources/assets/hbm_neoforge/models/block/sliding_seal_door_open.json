@@ -6,5 +6,6 @@
     "texture0": "hbm_neoforge:block/sliding_seal_door",
     "particle": "hbm_neoforge:block/sliding_seal_door"
   },
-  "shade_quads": true
+  "shade_quads": true,
+  "automatic_culling": false
 }

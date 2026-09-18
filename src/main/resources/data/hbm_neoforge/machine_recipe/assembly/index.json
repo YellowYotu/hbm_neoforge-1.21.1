@@ -20,5 +20,7 @@
   "machine_fluidtank",
   "chemical_plant",
   "chemical_plant_alt",
-  "fluid_pack_empty"
+  "fluid_pack_empty",
+  "titanium_drill",
+  "oil_derrick"
 ]

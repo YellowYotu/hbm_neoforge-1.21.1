@@ -5,31 +5,36 @@
   "display": {
     "gui": {
       "rotation": [
-        30,
+        25,
         225,
         0
       ],
       "translation": [
-        0,
-        -2,
+        1,
+        1,
         0
       ],
       "scale": [
-        0.28,
-        0.28,
-        0.28
+        0.2,
+        0.2,
+        0.2
       ]
     },
     "ground": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
       "translation": [
         0,
         2,
         0
       ],
       "scale": [
-        0.18,
-        0.18,
-        0.18
+        0.14,
+        0.14,
+        0.14
       ]
     },
     "fixed": {
@@ -38,10 +43,15 @@
         180,
         0
       ],
+      "translation": [
+        0,
+        0,
+        0
+      ],
       "scale": [
-        0.22,
-        0.22,
-        0.22
+        0.18,
+        0.18,
+        0.18
       ]
     },
     "firstperson_righthand": {
@@ -56,15 +66,15 @@
         0
       ],
       "scale": [
-        0.2,
-        0.2,
-        0.2
+        0.14,
+        0.14,
+        0.14
       ]
     },
     "firstperson_lefthand": {
       "rotation": [
         0,
-        135,
+        45,
         0
       ],
       "translation": [
@@ -73,35 +83,53 @@
         0
       ],
       "scale": [
-        0.2,
-        0.2,
-        0.2
+        0.14,
+        0.14,
+        0.14
       ]
     },
     "thirdperson_righthand": {
       "rotation": [
-        0,
+        75,
         225,
         0
       ],
+      "translation": [
+        0,
+        2,
+        0
+      ],
       "scale": [
-        0.16,
-        0.16,
-        0.16
+        0.12,
+        0.12,
+        0.12
       ]
     },
     "thirdperson_lefthand": {
       "rotation": [
+        75,
+        45,
+        0
+      ],
+      "translation": [
         0,
-        135,
+        2,
         0
       ],
       "scale": [
-        0.16,
-        0.16,
-        0.16
+        0.12,
+        0.12,
+        0.12
       ]
     }
   },
-  "shade_quads": true
+  "shade_quads": true,
+  "transform": {
+    "translation": [
+      0.5,
+      -1.46875,
+      0.5
+    ]
+  },
+  "automatic_culling": false
 }

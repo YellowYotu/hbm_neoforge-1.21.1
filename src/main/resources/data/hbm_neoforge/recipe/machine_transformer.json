@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SCS",
+    "MDM",
+    "SCS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:iron_ingot"
+    },
+    "C": {
+      "item": "hbm_neoforge:circuit_capacitor"
+    },
+    "M": {
+      "item": "hbm_neoforge:copper_coil"
+    },
+    "D": {
+      "item": "hbm_neoforge:ingot_red_copper"
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:machine_transformer",
+    "count": 1
+  }
+}
