@@ -209,6 +209,7 @@ public final class FoundryMaterialRegistry {
         String path = switch (shape) {
             case "ingot" -> vanillaOrMod(material, "ingot");
             case "nugget" -> vanillaOrMod(material, "nugget");
+            case "billet" -> "billet_" + itemMaterialName(material);
             case "block" -> vanillaOrMod(material, "block");
             case "plate" -> "plate_" + itemMaterialName(material);
             case "cast_plate" -> material.equals("iron") ? "plate_cast" : "plate_" + itemMaterialName(material) + "_cast";
