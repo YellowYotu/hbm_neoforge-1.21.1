@@ -149,17 +149,18 @@ public final class AnvilRecipeCategory implements IRecipeCategory<HBMAnvilRecipe
 
         builder.addSlot(
                         RecipeIngredientRole.CATALYST,
-                        120,
+                        12,
                         32)
                 .addItemStack(
                         anvilForTier(recipe.tier()));
 
-        builder.addSlot(
-                        RecipeIngredientRole.OUTPUT,
-                        138,
-                        24)
-                .addItemStack(
-                        recipe.displayResult());
+        for (int index = 0; index < recipe.outputs().size(); index++) {
+            HBMAnvilRecipes.Output output = recipe.outputs().get(index);
+            int outputX = 48 + index % 6 * 18;
+            int outputY = 24 + index / 6 * 18;
+            builder.addSlot(RecipeIngredientRole.OUTPUT, outputX, outputY)
+                    .addItemStack(output.stack().get());
+        }
     }
 
     private ItemStack anvilForTier(int tier) {

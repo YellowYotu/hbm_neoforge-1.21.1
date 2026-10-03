@@ -1,0 +1,4 @@
+{
+  "input": { "item": "hbm_neoforge:fragment_meteorite" },
+  "output": { "item": "hbm_neoforge:powder_meteorite_tiny", "count": 1 }
+}

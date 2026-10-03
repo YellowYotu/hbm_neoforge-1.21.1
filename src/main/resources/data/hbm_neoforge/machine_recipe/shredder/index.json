@@ -164,5 +164,18 @@
   "powder_desh_mix_recycle",
   "powder_cobalt_tiny_recycle",
   "stone_limestone",
-  "coil_tungsten"
+  "coil_tungsten",
+  "ore_gneiss_iron",
+  "ore_gneiss_gold",
+  "ore_gneiss_uranium",
+  "ore_gneiss_copper",
+  "ore_gneiss_asbestos",
+  "ore_gneiss_lithium",
+  "fragment_niobium",
+  "fragment_neodymium",
+  "fragment_cerium",
+  "fragment_lanthanium",
+  "fragment_actinium",
+  "fragment_boron",
+  "fragment_meteorite"
 ]
