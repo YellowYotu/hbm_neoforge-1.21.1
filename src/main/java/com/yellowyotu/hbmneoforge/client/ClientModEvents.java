@@ -190,6 +190,8 @@ public final class ClientModEvents {
             event.register((stack, tintIndex) -> stack.getItem() instanceof com.yellowyotu.hbmneoforge.item.MaterialFormItem form
                     ? 0xFF000000 | form.color() : 0xFFFFFFFF, materialForms);
         }
+        event.register((stack, tintIndex) -> 0xFF000000 | com.yellowyotu.hbmneoforge.item.ItemMaterialScraps.color(stack),
+                com.yellowyotu.hbmneoforge.ModItems.SCRAPS.get());
 
         event.register((stack, tintIndex) -> {
             com.yellowyotu.hbmneoforge.fluid.NTMFluidType type = com.yellowyotu.hbmneoforge.item.ItemFluidIcon.getFluidType(stack);

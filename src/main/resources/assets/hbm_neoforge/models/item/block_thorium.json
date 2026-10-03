@@ -1,3 +1,3 @@
 {
-	"parent": "hbm:block/block_thorium"
+  "parent": "hbm_neoforge:block/block_thorium"
 }

@@ -16,6 +16,8 @@ import com.yellowyotu.hbmneoforge.block.FalloutBlock;
 import com.yellowyotu.hbmneoforge.block.FoundryOutletBlock;
 import com.yellowyotu.hbmneoforge.block.FireboxBlock;
 import com.yellowyotu.hbmneoforge.block.HeatingOvenBlock;
+import com.yellowyotu.hbmneoforge.block.LargeBoilerBlock;
+import com.yellowyotu.hbmneoforge.block.LargeBoilerDummyBlock;
 import com.yellowyotu.hbmneoforge.block.HeaterDummyBlock;
 import com.yellowyotu.hbmneoforge.block.CrucibleBlock;
 import com.yellowyotu.hbmneoforge.block.CrucibleDummyBlock;
@@ -34,6 +36,8 @@ import com.yellowyotu.hbmneoforge.block.HBMAnvilBlock;
 import com.yellowyotu.hbmneoforge.block.MachinePressBlock;
 import com.yellowyotu.hbmneoforge.block.MixerBlock;
 import com.yellowyotu.hbmneoforge.block.MixerDummyBlock;
+import com.yellowyotu.hbmneoforge.block.RockMillBlock;
+import com.yellowyotu.hbmneoforge.block.RockMillDummyBlock;
 import com.yellowyotu.hbmneoforge.block.BlastFurnaceBlock;
 import com.yellowyotu.hbmneoforge.block.MachinePressDummyBlock;
 import com.yellowyotu.hbmneoforge.block.LeavesLayerBlock;
@@ -52,6 +56,7 @@ import com.yellowyotu.hbmneoforge.block.RedCableBlock;
 import com.yellowyotu.hbmneoforge.block.SlidingSealDoorBlock;
 import com.yellowyotu.hbmneoforge.block.QeContainmentDoorBlock;
 import com.yellowyotu.hbmneoforge.block.StorageCrateBlock;
+import com.yellowyotu.hbmneoforge.block.SupplyCrateBlock;
 import com.yellowyotu.hbmneoforge.block.ShredderBlock;
 import com.yellowyotu.hbmneoforge.block.SolderingStationBlock;
 import com.yellowyotu.hbmneoforge.block.SolderingStationDummyBlock;
@@ -61,6 +66,8 @@ import com.yellowyotu.hbmneoforge.block.SteelGrateBlock;
 import com.yellowyotu.hbmneoforge.block.ObsidianGravelBlock;
 import com.yellowyotu.hbmneoforge.block.OilDerrickBlock;
 import com.yellowyotu.hbmneoforge.block.OilDerrickDummyBlock;
+import com.yellowyotu.hbmneoforge.block.OilRefineryBlock;
+import com.yellowyotu.hbmneoforge.block.OilRefineryDummyBlock;
 import com.yellowyotu.hbmneoforge.block.OilDepositBlock;
 import com.yellowyotu.hbmneoforge.block.DrillingGasBlock;
 import net.minecraft.world.level.block.Block;
@@ -72,6 +79,7 @@ import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import java.util.Map;
 
 public final class ModBlocks {
 
@@ -152,12 +160,23 @@ public final class ModBlocks {
     public static final DeferredBlock<QeContainmentDoorBlock> QE_CONTAINMENT = BLOCKS.register("qe_containment", () -> new QeContainmentDoorBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(100.0F, 1000.0F).sound(SoundType.METAL).noOcclusion()));
     public static final DeferredBlock<StorageCrateBlock> CRATE_IRON = BLOCKS.register("crate_iron", () -> new StorageCrateBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(5.0F, 10.0F).sound(SoundType.METAL), 4));
     public static final DeferredBlock<StorageCrateBlock> CRATE_STEEL = BLOCKS.register("crate_steel", () -> new StorageCrateBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(5.0F, 20.0F).sound(SoundType.METAL), 6));
+    public static final DeferredBlock<SupplyCrateBlock> SUPPLY_CRATE = BLOCKS.register("crate", () -> new SupplyCrateBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(5.0F, 10.0F).sound(SoundType.WOOD), SupplyCrateBlock.Type.SUPPLY));
+    public static final DeferredBlock<SupplyCrateBlock> SUPPLY_CRATE_3D = BLOCKS.register("crate_supply_3d", () -> new SupplyCrateBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(5.0F, 10.0F).sound(SoundType.WOOD).noOcclusion(), SupplyCrateBlock.Type.SUPPLY));
+    public static final DeferredBlock<SupplyCrateBlock> SUPPLY_CRATE_METAL = BLOCKS.register("crate_metal", () -> new SupplyCrateBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(5.0F, 10.0F).sound(SoundType.METAL), SupplyCrateBlock.Type.METAL));
+    public static final DeferredBlock<SupplyCrateBlock> SUPPLY_CRATE_HAZMAT = BLOCKS.register("crate_lead", () -> new SupplyCrateBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(5.0F, 10.0F).sound(SoundType.METAL), SupplyCrateBlock.Type.HAZMAT));
+    public static final DeferredBlock<SupplyCrateBlock> CONSERVE_CRATE = BLOCKS.register("crate_can", () -> new SupplyCrateBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(1.0F, 2.5F).sound(SoundType.WOOD).noOcclusion(), SupplyCrateBlock.Type.CONSERVE));
     public static final DeferredBlock<FatManBlock> NUKE_MAN = BLOCKS.register("nuke_man", () -> new FatManBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(5.0F, 6000.0F).sound(SoundType.METAL).noOcclusion()));
     public static final DeferredBlock<AssemblyMachineBlock> ASSEMBLY_MACHINE = BLOCKS.register("assembly_machine", () -> new AssemblyMachineBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(5.0F, 30.0F).sound(SoundType.METAL).noOcclusion()));
     public static final DeferredBlock<ChemicalPlantBlock> CHEMICAL_PLANT = BLOCKS.register("machine_chemical_plant", () -> new ChemicalPlantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(5.0F, 30.0F).sound(SoundType.METAL).noOcclusion()));
     public static final DeferredBlock<ChemicalPlantDummyBlock> CHEMICAL_PLANT_DUMMY = BLOCKS.register("machine_chemical_plant_dummy", () -> new ChemicalPlantDummyBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(5.0F, 30.0F).sound(SoundType.METAL).noOcclusion().noLootTable()));
     public static final DeferredBlock<MixerBlock> MIXER = BLOCKS.register("machine_mixer", () -> new MixerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(5.0F, 30.0F).sound(SoundType.METAL).noOcclusion()));
     public static final DeferredBlock<MixerDummyBlock> MIXER_DUMMY = BLOCKS.register("machine_mixer_dummy", () -> new MixerDummyBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(5.0F, 30.0F).sound(SoundType.METAL).noOcclusion().noLootTable()));
+    public static final DeferredBlock<LargeBoilerBlock> LARGE_BOILER = BLOCKS.register("machine_boiler", () -> new LargeBoilerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(5.0F, 100.0F).sound(SoundType.METAL).noOcclusion().requiresCorrectToolForDrops()));
+    public static final DeferredBlock<LargeBoilerDummyBlock> LARGE_BOILER_DUMMY = BLOCKS.register("machine_boiler_dummy", () -> new LargeBoilerDummyBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(5.0F, 100.0F).sound(SoundType.METAL).noOcclusion().noLootTable().requiresCorrectToolForDrops()));
+    public static final DeferredBlock<OilRefineryBlock> OIL_REFINERY = BLOCKS.register("machine_refinery", () -> new OilRefineryBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(5.0F,100.0F).sound(SoundType.METAL).noOcclusion().requiresCorrectToolForDrops()));
+    public static final DeferredBlock<OilRefineryDummyBlock> OIL_REFINERY_DUMMY = BLOCKS.register("machine_refinery_dummy", () -> new OilRefineryDummyBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(5.0F,100.0F).sound(SoundType.METAL).noOcclusion().noLootTable().requiresCorrectToolForDrops()));
+    public static final DeferredBlock<RockMillBlock> ROCK_MILL = BLOCKS.register("machine_rockmill", () -> new RockMillBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(5.0F, 100.0F).sound(SoundType.METAL).noOcclusion().requiresCorrectToolForDrops()));
+    public static final DeferredBlock<RockMillDummyBlock> ROCK_MILL_DUMMY = BLOCKS.register("machine_rockmill_dummy", () -> new RockMillDummyBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(5.0F, 100.0F).sound(SoundType.METAL).noOcclusion().noLootTable().requiresCorrectToolForDrops()));
     public static final DeferredBlock<AirIntakeBlock> AIR_INTAKE = BLOCKS.register("machine_intake", () -> new AirIntakeBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(10.0F, 20.0F).sound(SoundType.METAL).noOcclusion().requiresCorrectToolForDrops()));
     public static final DeferredBlock<AirIntakeDummyBlock> AIR_INTAKE_DUMMY = BLOCKS.register("machine_intake_dummy", () -> new AirIntakeDummyBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(10.0F, 20.0F).sound(SoundType.METAL).noOcclusion().noLootTable().requiresCorrectToolForDrops()));
     public static final DeferredBlock<ArcWelderBlock> ARC_WELDER = BLOCKS.register("machine_arc_welder", () -> new ArcWelderBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(5.0F, 30.0F).sound(SoundType.METAL).noOcclusion().requiresCorrectToolForDrops()));
@@ -167,6 +186,16 @@ public final class ModBlocks {
     public static final DeferredBlock<SteelGrateBlock> STEEL_GRATE = BLOCKS.register("steel_grate", () -> new SteelGrateBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(2.0F, 5.0F).sound(SoundType.METAL).noOcclusion().requiresCorrectToolForDrops()));
     public static final DeferredBlock<AssemblyMachineDummyBlock> ASSEMBLY_MACHINE_DUMMY = BLOCKS.register("assembly_machine_dummy", () -> new AssemblyMachineDummyBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(5.0F, 30.0F).sound(SoundType.METAL).noOcclusion().noLootTable()));
     public static final DeferredBlock<Block> BLOCK_RED_COPPER = metalBlock("block_red_copper", MapColor.COLOR_ORANGE);
+    public static final DeferredBlock<Block> BLOCK_STEEL = metalBlock("block_steel", MapColor.METAL);
+    public static final DeferredBlock<Block> BLOCK_COPPER = metalBlock("block_copper", MapColor.COLOR_ORANGE);
+    public static final DeferredBlock<Block> BLOCK_TITANIUM = metalBlock("block_titanium", MapColor.METAL);
+    public static final DeferredBlock<Block> BLOCK_TUNGSTEN = metalBlock("block_tungsten", MapColor.COLOR_GRAY);
+    public static final DeferredBlock<Block> BLOCK_ALUMINIUM = metalBlock("block_aluminium", MapColor.METAL);
+    public static final DeferredBlock<Block> BLOCK_BERYLLIUM = metalBlock("block_beryllium", MapColor.COLOR_GREEN);
+    public static final DeferredBlock<Block> BLOCK_URANIUM = metalBlock("block_uranium", MapColor.COLOR_GREEN);
+    public static final DeferredBlock<Block> BLOCK_PLUTONIUM = metalBlock("block_plutonium", MapColor.COLOR_GREEN);
+    public static final DeferredBlock<Block> BLOCK_NIOBIUM = metalBlock("block_niobium", MapColor.COLOR_LIGHT_BLUE);
+    public static final DeferredBlock<Block> BLOCK_DURA_STEEL = metalBlock("block_dura_steel", MapColor.COLOR_GRAY);
     public static final DeferredBlock<RedCableBlock> RED_CABLE = BLOCKS.register("red_cable", () -> new RedCableBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).strength(5.0F, 10.0F).sound(SoundType.METAL).noOcclusion()));
     public static final DeferredBlock<BatterySocketBlock> MACHINE_BATTERY_SOCKET = BLOCKS.register("machine_battery_socket", () -> new BatterySocketBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(5.0F, 10.0F).sound(SoundType.METAL).noOcclusion()));
     public static final DeferredBlock<BatterySocketDummyBlock> MACHINE_BATTERY_SOCKET_DUMMY = BLOCKS.register("machine_battery_socket_dummy", () -> new BatterySocketDummyBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(5.0F, 10.0F).sound(SoundType.METAL).noOcclusion().noLootTable()));
@@ -193,6 +222,16 @@ public final class ModBlocks {
     public static final DeferredBlock<Block> ORE_ASBESTOS = oreBlock("ore_asbestos", MapColor.COLOR_LIGHT_GRAY);
     public static final DeferredBlock<Block> ORE_CINNEBAR = oreBlock("ore_cinnebar", MapColor.COLOR_RED);
     public static final DeferredBlock<Block> STONE_LIMESTONE = BLOCKS.register("stone_limestone", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(5.0F, 10.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> STONE_GNEISS = BLOCKS.register("stone_gneiss", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(1.5F, 10.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> ORE_GNEISS_IRON = oreBlock("ore_gneiss_iron", MapColor.METAL);
+    public static final DeferredBlock<Block> ORE_GNEISS_GOLD = oreBlock("ore_gneiss_gold", MapColor.GOLD);
+    public static final DeferredBlock<Block> ORE_GNEISS_URANIUM = oreBlock("ore_gneiss_uranium", MapColor.COLOR_GREEN);
+    public static final DeferredBlock<Block> ORE_GNEISS_COPPER = oreBlock("ore_gneiss_copper", MapColor.COLOR_ORANGE);
+    public static final DeferredBlock<Block> ORE_GNEISS_ASBESTOS = oreBlock("ore_gneiss_asbestos", MapColor.COLOR_LIGHT_GRAY);
+    public static final DeferredBlock<Block> ORE_GNEISS_LITHIUM = oreBlock("ore_gneiss_lithium", MapColor.COLOR_PINK);
+    public static final DeferredBlock<Block> ORE_GNEISS_RARE = oreBlock("ore_gneiss_rare", MapColor.COLOR_PURPLE);
+    public static final DeferredBlock<Block> ORE_GNEISS_GAS = oreBlock("ore_gneiss_gas", MapColor.COLOR_BLACK);
+    public static final DeferredBlock<Block> STONE_HEMATITE = BLOCKS.register("stone_hematite", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).strength(3.0F, 10.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
     public static final DeferredBlock<Block> BLOCK_COBALT = metalBlock("block_cobalt", MapColor.COLOR_BLUE);
     public static final DeferredBlock<Block> BLOCK_LEAD = shieldingMetalBlock("block_lead", MapColor.COLOR_PURPLE);
 
@@ -375,6 +414,9 @@ public final class ModBlocks {
     public static final DeferredBlock<SlabBlock> CONCRETE_COLORED_EXT_HAZARD_SLAB = concreteSlab("concrete_colored_ext_hazard_slab");
 
 
+    public static final Map<String, DeferredBlock<Block>> MATERIAL_BLOCKS =
+            com.yellowyotu.hbmneoforge.material.NeoForgeMaterialBlockRegistry.registerMissing(BLOCKS);
+
     private static BlockBehaviour.Properties foundryProperties() {
         return BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).strength(5.0F, 10.0F).sound(SoundType.METAL).requiresCorrectToolForDrops().noOcclusion();
     }
@@ -448,7 +490,7 @@ public final class ModBlocks {
     }
 
     private static DeferredBlock<Block> metalBlock(String name, MapColor color) {
-        return BLOCKS.register(name, () -> new RadiationShieldingBlock(metalProperties(name, color)));
+        return BLOCKS.register(name, () -> new Block(metalProperties(name, color)));
     }
 
     private static BlockBehaviour.Properties metalProperties(String name, MapColor color) {
@@ -480,3 +522,4 @@ public final class ModBlocks {
         BLOCKS.register(modEventBus);
     }
 }
+

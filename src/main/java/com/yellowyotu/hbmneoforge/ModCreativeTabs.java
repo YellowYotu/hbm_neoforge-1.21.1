@@ -16,13 +16,26 @@ public final class ModCreativeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, HBMsNuclearTechModUnofficialNeoForgeEdition.MODID);
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> RESOURCES_AND_PARTS = tab("resources_and_parts", "itemGroup.hbm_neoforge.resources_and_parts", () -> new ItemStack(ModItems.INGOT_URANIUM.get()), (p, o) -> {
+        ModItems.MATERIAL_FORMS.values().forEach(item -> o.accept(item.get()));
         o.accept(ModItems.INGOT_STEEL.get());
         o.accept(ModItems.INGOT_FIREBRICK.get());
+        o.accept(ModItems.INGOT_URANIUM.get());
+        o.accept(ModItems.INGOT_U233.get());
+        o.accept(ModItems.INGOT_U235.get());
+        o.accept(ModItems.INGOT_U238.get());
+        o.accept(ModItems.INGOT_PLUTONIUM.get());
+        o.accept(ModItems.INGOT_PLUTONIUM_239.get());
+        o.accept(ModItems.INGOT_PLUTONIUM_240.get());
+        o.accept(ModItems.INGOT_PLUTONIUM_241.get());
+        o.accept(ModItems.FALLOUT.get());
+        o.accept(ModItems.STEEL_SHELL.get());
         o.accept(ModItems.PLATE_STEEL.get());
         o.accept(ModItems.PLATE_COPPER.get());
         o.accept(ModItems.PLATE_IRON.get());
         o.accept(ModItems.INGOT_TITANIUM.get());
         o.accept(ModItems.PLATE_TITANIUM.get());
+        o.accept(ModItems.PISTON_SET_STEEL.get());
+        o.accept(ModItems.PISTON_SET_DURA.get());
         o.accept(ModItems.SCRAP.get());
         o.accept(ModItems.DUST.get());
         o.accept(ModItems.POWDER_IRON.get());
@@ -49,6 +62,11 @@ public final class ModCreativeTabs {
         o.accept(ModItems.POWDER_CEMENT.get());
         o.accept(ModItems.POWDER_ICE.get());
         o.accept(ModItems.POWDER_SAWDUST.get());
+        o.accept(ModItems.POWDER_FIRE.get());
+        o.accept(ModItems.SAFETY_FUSE.get());
+        o.accept(ModItems.DUCT_TAPE.get());
+        o.accept(ModItems.CORDITE.get());
+        o.accept(ModItems.BALL_DYNAMITE.get());
         o.accept(ModItems.POWDER_DESH_MIX.get());
         o.accept(ModItems.POWDER_COBALT_TINY.get());
         o.accept(ModItems.BIOMASS.get());
@@ -80,6 +98,24 @@ public final class ModCreativeTabs {
         o.accept(ModItems.BILLET_COBALT.get());
         o.accept(ModItems.FRAGMENT_COBALT.get());
         o.accept(ModItems.NUGGET_COBALT.get());
+        o.accept(ModItems.INGOT_NIOBIUM.get());
+        o.accept(ModItems.NUGGET_NIOBIUM.get());
+        o.accept(ModItems.POWDER_NIOBIUM_TINY.get());
+        o.accept(ModItems.FRAGMENT_NIOBIUM.get());
+        o.accept(ModItems.FRAGMENT_BORON.get());
+        o.accept(ModItems.FRAGMENT_LANTHANIUM.get());
+        o.accept(ModItems.FRAGMENT_CERIUM.get());
+        o.accept(ModItems.FRAGMENT_NEODYMIUM.get());
+        o.accept(ModItems.BILLET_BERYLLIUM.get());
+        o.accept(ModItems.BILLET_URANIUM.get());
+        o.accept(ModItems.BILLET_PLUTONIUM.get());
+        com.yellowyotu.hbmneoforge.material.HBMMaterialCatalog.all().stream()
+                .filter(com.yellowyotu.hbmneoforge.item.ItemMaterialScraps::supports)
+                .map(material -> com.yellowyotu.hbmneoforge.item.ItemMaterialScraps.create(
+                        ModItems.SCRAPS.get(), material, 72, false))
+                .forEach(o::accept);
+        o.accept(ModItems.SCRAPS_BISMUTH.get());
+        o.accept(ModItems.SCRAPS_ADDITIVE.get());
         o.accept(ModItems.INGOT_RED_COPPER.get());
         o.accept(ModItems.PLATE_POLYMER.get());
         o.accept(ModItems.BALL_RESIN.get());
@@ -105,8 +141,6 @@ public final class ModCreativeTabs {
         o.accept(ModItems.PLATE_GOLD_CAST.get());
         o.accept(ModItems.PLATE_TUNGSTEN_CAST.get());
         o.accept(ModItems.PLATE_DURA_STEEL_CAST.get());
-        o.accept(ModItems.BLADES_STEEL.get());
-        o.accept(ModItems.BLADES_TITANIUM.get());
         o.accept(ModItems.POWDER_GUNMETAL.get());
         o.accept(ModItems.COKE_COAL.get());
         o.accept(ModItems.COKE_LIGNITE.get());
@@ -122,6 +156,12 @@ public final class ModCreativeTabs {
         o.accept(ModItems.WIRE_DENSE_COPPER.get());
         o.accept(ModItems.WIRE_DENSE_MINGRADE.get());
         o.accept(ModItems.WIRE_DENSE_GOLD.get());
+        o.accept(ModItems.WIRE_DENSE_ALUMINIUM.get());
+        o.accept(ModItems.WIRE_DENSE_TUNGSTEN.get());
+        o.accept(ModItems.WIRE_DENSE_RED_COPPER.get());
+        o.accept(ModItems.CAPACITOR.get());
+        o.accept(ModItems.REDCOIL_CAPACITOR.get());
+        o.accept(ModItems.EUPHEMIUM_CAPACITOR.get());
         o.accept(ModItems.PLATE_WELDED_IRON.get());
         o.accept(ModItems.PLATE_WELDED_STEEL.get());
         o.accept(ModItems.PLATE_WELDED_COPPER.get());
@@ -189,11 +229,32 @@ public final class ModCreativeTabs {
         o.accept(ModItems.WASTE_EARTH.get());
         o.accept(ModItems.WASTE_LEAVES.get());
         o.accept(ModItems.ORE_CINNEBAR.get());
+        o.accept(ModItems.ORE_RARE_EARTH.get());
         o.accept(ModItems.STONE_LIMESTONE.get());
+        o.accept(ModItems.STONE_GNEISS.get());
+        o.accept(ModItems.ORE_GNEISS_IRON.get());
+        o.accept(ModItems.ORE_GNEISS_GOLD.get());
+        o.accept(ModItems.ORE_GNEISS_URANIUM.get());
+        o.accept(ModItems.ORE_GNEISS_COPPER.get());
+        o.accept(ModItems.ORE_GNEISS_ASBESTOS.get());
+        o.accept(ModItems.ORE_GNEISS_LITHIUM.get());
+        o.accept(ModItems.ORE_GNEISS_RARE.get());
+        o.accept(ModItems.ORE_GNEISS_GAS.get());
+        o.accept(ModItems.STONE_HEMATITE.get());
         o.accept(ModItems.HEMP.get());
     });
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> MACHINE_ITEMS_AND_FUEL = tab("machine_items_and_fuel", "itemGroup.hbm_neoforge.machine_items_and_fuel", () -> new ItemStack(ModItems.PELLET_RTG.get()), (p, o) -> {
+        o.accept(ModItems.STAMP_IRON_FLAT.get());
+        o.accept(ModItems.IRON_PLATE_STAMP.get());
+        o.accept(ModItems.STAMP_IRON_WIRE.get());
+        o.accept(ModItems.STAMP_IRON_CIRCUIT.get());
+        o.accept(ModItems.STAMP_STEEL_FLAT.get());
+        o.accept(ModItems.STAMP_STEEL_PLATE.get());
+        o.accept(ModItems.STAMP_STEEL_WIRE.get());
+        o.accept(ModItems.STAMP_STEEL_CIRCUIT.get());
+        o.accept(ModItems.BLADES_STEEL.get());
+        o.accept(ModItems.BLADES_TITANIUM.get());
         addBatteryPair(o, ModItems.BATTERY_PACK.get());
         addBatteryPair(o, ModItems.BATTERY_LEAD.get());
         addBatteryPair(o, ModItems.BATTERY_LITHIUM.get());
@@ -270,6 +331,17 @@ public final class ModCreativeTabs {
         o.accept(ModItems.REINFORCED_GLASS.get());
         o.accept(ModItems.REINFORCED_GLASS_PANE.get());
         o.accept(ModItems.BLOCK_RED_COPPER.get());
+        o.accept(ModItems.BLOCK_STEEL.get());
+        o.accept(ModItems.BLOCK_COPPER.get());
+        o.accept(ModItems.BLOCK_TITANIUM.get());
+        o.accept(ModItems.BLOCK_TUNGSTEN.get());
+        o.accept(ModItems.BLOCK_ALUMINIUM.get());
+        o.accept(ModItems.BLOCK_BERYLLIUM.get());
+        o.accept(ModItems.BLOCK_URANIUM.get());
+        o.accept(ModItems.BLOCK_PLUTONIUM.get());
+        o.accept(ModItems.BLOCK_NIOBIUM.get());
+        o.accept(ModItems.BLOCK_DURA_STEEL.get());
+        ModItems.MATERIAL_BLOCK_ITEMS.values().forEach(item -> o.accept(item.get()));
         o.accept(ModItems.BLOCK_COBALT.get());
         o.accept(ModItems.BLOCK_LEAD.get());
         o.accept(ModItems.BLOCK_BORON.get());
@@ -333,9 +405,6 @@ public final class ModCreativeTabs {
         o.accept(ModItems.BRICK_CONCRETE_MOSSY_SLAB.get());
         o.accept(ModItems.BRICK_CONCRETE_BROKEN_STAIRS.get());
         o.accept(ModItems.BRICK_CONCRETE_BROKEN_SLAB.get());
-        o.accept(ModItems.ORE_RARE_EARTH.get());
-        o.accept(ModItems.ORE_CINNEBAR.get());
-        o.accept(ModItems.STONE_LIMESTONE.get());
         o.accept(ModItems.LEAVES_LAYER.get());
         o.accept(ModItems.CONCRETE_WHITE.get());
         o.accept(ModItems.CONCRETE_ORANGE.get());
@@ -389,6 +458,7 @@ public final class ModCreativeTabs {
     });
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> MACHINES = tab("machines", "itemGroup.hbm_neoforge.machines", () -> new ItemStack(ModItems.PWR_CONTROLLER.get()), (p, o) -> {
+        o.accept(ModItems.OIL_REFINERY.get());
         o.accept(ModItems.FLUID_DUCT_PAINTABLE.get());
         o.accept(ModItems.FLUID_DUCT_GAUGE.get());
         o.accept(ModItems.FLUID_VALVE.get());
@@ -403,6 +473,8 @@ public final class ModCreativeTabs {
         o.accept(ModItems.CRATE_STEEL.get());
         o.accept(ModItems.CHEMICAL_PLANT.get());
         o.accept(ModItems.MIXER.get());
+        o.accept(ModItems.ROCK_MILL.get());
+        o.accept(ModItems.LARGE_BOILER.get());
         o.accept(ModItems.AIR_INTAKE.get());
         o.accept(ModItems.ARC_WELDER.get());
         o.accept(ModItems.MACHINE_TRANSFORMER.get());
@@ -431,13 +503,24 @@ public final class ModCreativeTabs {
         o.accept(ModItems.ASSEMBLY_MACHINE.get());
     });
 
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BOMBS = CREATIVE_MODE_TABS.register("bombs", () -> CreativeModeTab.builder()
+
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> WEAPONS_AND_TURRETS = tab("weapons_and_turrets", "itemGroup.hbm_neoforge.weapons_and_turrets", () -> new ItemStack(ModItems.GRENADE_FRAG.get()), (p, o) -> {
+        o.accept(ModItems.GRENADE_FRAG.get());
+        o.accept(ModItems.GRENADE_STICK_IMPACT.get());
+        o.accept(ModItems.GRENADE_INCENDIARY.get());
+    });
+
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BOMBS = CREATIVE_MODE_TABS.register("bombs", () -> orderedBuilder("bombs")
             .title(Component.translatable("itemGroup.hbm_neoforge.bombs"))
             .icon(() -> new ItemStack(ModItems.NUKE_MAN.get()))
             .backgroundTexture(ResourceLocation.fromNamespaceAndPath(HBMsNuclearTechModUnofficialNeoForgeEdition.MODID, "textures/gui/container/creative_inventory/tab_nuke.png"))
             .displayItems((p, o) -> {
                 o.accept(ModItems.NUKE_MAN.get());
                 o.accept(ModItems.YELLOW_BARREL.get());
+                o.accept(ModItems.GADGET_CORE.get());
+                o.accept(ModItems.MAN_IGNITER.get());
+                o.accept(ModItems.EARLY_EXPLOSIVE_LENSES.get());
+                o.accept(ModItems.MAN_CORE.get());
             }).build());
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> MISSILES_AND_SATELLITES = tab("missiles_and_satellites", "itemGroup.hbm_neoforge.missiles_and_satellites", () -> new ItemStack(ModItems.MISSILE_SOYUZ.get()), (p, o) -> {
@@ -446,21 +529,26 @@ public final class ModCreativeTabs {
         o.accept(ModItems.MISSILE_SOYUZ.get());
     });
 
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> TOOLS = tab("tools", "itemGroup.hbm_neoforge.tools", () -> new ItemStack(Items.SHEARS), (p, o) -> {
-
-    });
-
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> CONSUMABLES = tab("consumables", "itemGroup.hbm_neoforge.consumables", () -> new ItemStack(ModItems.BOTTLE_NUKA.get()), (p, o) -> {
+        o.accept(ModItems.SUPPLY_CRATE.get());
+        o.accept(ModItems.SUPPLY_CRATE_3D.get());
+        o.accept(ModItems.SUPPLY_CRATE_METAL.get());
+        o.accept(ModItems.SUPPLY_CRATE_HAZMAT.get());
+        o.accept(ModItems.CONSERVE_CRATE.get());
+        for (var food : ModItems.CONSERVE_ITEMS) o.accept(food.get());
         o.accept(ModItems.SYRINGE_EMPTY.get());
         o.accept(ModItems.SYRINGE_AWESOME.get());
+        o.accept(ModItems.SYRINGE_METAL_STIMPAK.get());
+        o.accept(ModItems.SYRINGE_ANTIDOTE.get());
         o.accept(ModItems.RAD_X.get());
         o.accept(ModItems.GAS_MASK_FILTER.get());
         o.accept(ModItems.BOTTLE_NUKA.get());
+        o.accept(ModItems.BOTTLE_EMPTY.get());
+        o.accept(ModItems.CAP_NUKA.get());
         o.accept(ModItems.CIGARETTE.get());
         o.accept(ModItems.GEIGER_COUNTER.get());
         o.accept(ModItems.OIL_DETECTOR.get());
         o.accept(ModItems.SCREWDRIVER.get());
-        o.accept(ModItems.CELL_EMPTY.get());
         o.accept(ModItems.IV_BAG.get());
         o.accept(ModItems.RADAWAY.get());
     });
@@ -486,11 +574,62 @@ public final class ModCreativeTabs {
     }
 
     private static DeferredHolder<CreativeModeTab, CreativeModeTab> tab(String id, String title, java.util.function.Supplier<ItemStack> icon, CreativeModeTab.DisplayItemsGenerator items) {
-        return CREATIVE_MODE_TABS.register(id, () -> CreativeModeTab.builder().title(Component.translatable(title)).icon(icon).displayItems(items).build());
+        return CREATIVE_MODE_TABS.register(id, () -> orderedBuilder(id).title(Component.translatable(title)).icon(icon).displayItems(items).build());
+    }
+
+    private static CreativeModeTab.Builder orderedBuilder(String id) {
+        // Match CE's MainRegistry tab order, independently of registry sorting.
+        String previous = switch (id) {
+            case "machine_items_and_fuel" -> "resources_and_parts";
+            case "templates" -> "machine_items_and_fuel";
+            case "ntm_resources" -> "templates";
+            case "ores_and_blocks" -> "ntm_resources";
+            case "machines" -> "ores_and_blocks";
+            case "weapons_and_turrets" -> "machines";
+            case "bombs" -> "weapons_and_turrets";
+            case "missiles_and_satellites" -> "bombs";
+            case "consumables" -> "missiles_and_satellites";
+            default -> null;
+        };
+        CreativeModeTab.Builder builder = CreativeModeTab.builder();
+        if (previous != null) {
+            builder.withTabsBefore(ResourceLocation.fromNamespaceAndPath(HBMsNuclearTechModUnofficialNeoForgeEdition.MODID, previous));
+        }
+        return builder;
     }
 
     private static void addVanillaTabItems(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+            event.accept(ModItems.STEEL_PICKAXE.get());
+            event.accept(ModItems.STEEL_AXE.get());
+            event.accept(ModItems.STEEL_SHOVEL.get());
+            event.accept(ModItems.STEEL_HOE.get());
+            event.accept(ModItems.TITANIUM_PICKAXE.get());
+            event.accept(ModItems.TITANIUM_AXE.get());
+            event.accept(ModItems.TITANIUM_SHOVEL.get());
+            event.accept(ModItems.TITANIUM_HOE.get());
+            event.accept(ModItems.COBALT_PICKAXE.get());
+            event.accept(ModItems.COBALT_AXE.get());
+            event.accept(ModItems.COBALT_SHOVEL.get());
+            event.accept(ModItems.COBALT_HOE.get());
+            event.accept(ModItems.CROWBAR.get());
+        }
         if (event.getTabKey() == CreativeModeTabs.COMBAT) {
+            event.accept(ModItems.STEEL_SWORD.get());
+            event.accept(ModItems.TITANIUM_SWORD.get());
+            event.accept(ModItems.COBALT_SWORD.get());
+            event.accept(ModItems.STEEL_HELMET.get());
+            event.accept(ModItems.STEEL_PLATE.get());
+            event.accept(ModItems.STEEL_LEGS.get());
+            event.accept(ModItems.STEEL_BOOTS.get());
+            event.accept(ModItems.TITANIUM_HELMET.get());
+            event.accept(ModItems.TITANIUM_PLATE_ARMOR.get());
+            event.accept(ModItems.TITANIUM_LEGS.get());
+            event.accept(ModItems.TITANIUM_BOOTS.get());
+            event.accept(ModItems.COBALT_HELMET.get());
+            event.accept(ModItems.COBALT_PLATE.get());
+            event.accept(ModItems.COBALT_LEGS.get());
+            event.accept(ModItems.COBALT_BOOTS.get());
             event.accept(ModItems.HAZMAT_HELMET.get());
             event.accept(ModItems.HAZMAT_PLATE.get());
             event.accept(ModItems.HAZMAT_LEGS.get());
@@ -510,3 +649,4 @@ public final class ModCreativeTabs {
         modEventBus.addListener(ModCreativeTabs::addVanillaTabItems);
     }
 }
+

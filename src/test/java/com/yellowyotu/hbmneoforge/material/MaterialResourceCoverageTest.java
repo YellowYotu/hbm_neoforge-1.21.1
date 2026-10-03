@@ -17,6 +17,19 @@ class MaterialResourceCoverageTest {
         }
     }
 
+    @Test void everyMaterialBlockHasPlacedBlockResourcesAndLoot() {
+        for (MaterialForm form : HBMMaterialCatalog.forms()) {
+            if (form.shape() != MaterialShape.BLOCK) continue;
+            String id = form.registryName();
+            assertTrue(Files.isRegularFile(ASSETS.resolve("blockstates/" + id + ".json")),
+                    () -> "Missing blockstate: " + id);
+            assertTrue(Files.isRegularFile(ASSETS.resolve("models/block/" + id + ".json")),
+                    () -> "Missing block model: " + id);
+            assertTrue(Files.isRegularFile(Path.of("src/main/resources/data/hbm_neoforge/loot_table/blocks/" + id + ".json")),
+                    () -> "Missing block loot table: " + id);
+        }
+    }
+
     @Test void originalTexturesUsedByGeneratedModelsExist() throws Exception {
         for (MaterialForm form : HBMMaterialCatalog.forms()) {
             Path model = ASSETS.resolve("models/item/" + form.registryName() + ".json");

@@ -9,7 +9,7 @@ import com.yellowyotu.hbmneoforge.item.ItemFluidIdentifierMulti;
 import com.yellowyotu.hbmneoforge.item.ItemBatteryPack;
 
 import com.yellowyotu.hbmneoforge.item.*;
-import com.yellowyotu.hbmneoforge.material.MaterialFormRegistry;
+import com.yellowyotu.hbmneoforge.material.NeoForgeMaterialFormRegistry;
 import com.yellowyotu.hbmneoforge.radiation.RadiationValues;
 import com.yellowyotu.hbmneoforge.fluid.NTMFluidType;
 import net.minecraft.world.item.ArmorItem;
@@ -232,7 +232,7 @@ public final class ModItems {
     public static final DeferredItem<Item> BILLET_BERYLLIUM = simple("billet_beryllium");
     public static final DeferredItem<Item> BILLET_URANIUM = simple("billet_uranium");
     public static final DeferredItem<Item> BILLET_PLUTONIUM = simple("billet_plutonium");
-    public static final DeferredItem<Item> SCRAPS = simple("scraps");
+    public static final DeferredItem<ItemMaterialScraps> SCRAPS = ITEMS.register("scraps", () -> new ItemMaterialScraps(new Item.Properties()));
     public static final DeferredItem<Item> SCRAPS_BISMUTH = simple("scraps_bismuth");
     public static final DeferredItem<Item> SCRAPS_ADDITIVE = simple("scraps_additive");
     public static final DeferredItem<Item> RARE_EARTH_ORE_CHUNK = simple("rare_earth_ore_chunk");
@@ -689,7 +689,15 @@ public final class ModItems {
     public static final DeferredItem<BlockItem> CONCRETE_COLORED_EXT_HAZARD_STAIRS = ITEMS.register("concrete_colored_ext_hazard_stairs", () -> new HBMBlockItem(ModBlocks.CONCRETE_COLORED_EXT_HAZARD_STAIRS.get(), new Item.Properties()));
     public static final DeferredItem<BlockItem> CONCRETE_COLORED_EXT_HAZARD_SLAB = ITEMS.register("concrete_colored_ext_hazard_slab", () -> new HBMBlockItem(ModBlocks.CONCRETE_COLORED_EXT_HAZARD_SLAB.get(), new Item.Properties()));
 
-    public static final Map<String, DeferredItem<Item>> MATERIAL_FORMS = MaterialFormRegistry.registerMissing(ITEMS);
+    public static final Map<String, DeferredItem<BlockItem>> MATERIAL_BLOCK_ITEMS = registerMaterialBlockItems();
+    public static final Map<String, DeferredItem<Item>> MATERIAL_FORMS = NeoForgeMaterialFormRegistry.registerMissing(ITEMS);
+
+    private static Map<String, DeferredItem<BlockItem>> registerMaterialBlockItems() {
+        java.util.LinkedHashMap<String, DeferredItem<BlockItem>> result = new java.util.LinkedHashMap<>();
+        ModBlocks.MATERIAL_BLOCKS.forEach((id, block) -> result.put(id,
+                ITEMS.register(id, () -> new HBMBlockItem(block.get(), new Item.Properties()))));
+        return java.util.Collections.unmodifiableMap(result);
+    }
 
     public static Item identifierFor(NTMFluidType type) {
         return switch (type) {

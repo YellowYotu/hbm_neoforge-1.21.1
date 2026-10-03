@@ -1,0 +1,17 @@
+{
+  "key": {
+    "I": {
+      "item": ""
+    }
+  },
+  "result": {
+    "id": "hbm_neoforge:ingot_niobium",
+    "count": 1
+  },
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "type": "minecraft:crafting_shaped"
+}

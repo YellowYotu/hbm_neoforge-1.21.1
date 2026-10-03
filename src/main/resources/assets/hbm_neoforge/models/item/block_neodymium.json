@@ -1,1 +1,3 @@
-{"parent":"minecraft:item/generated","textures":{"layer0":"hbm_neoforge:item/material/block"}}
+{
+  "parent": "hbm_neoforge:block/block_neodymium"
+}

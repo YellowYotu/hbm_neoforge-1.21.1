@@ -1,0 +1,12 @@
+{
+  "ingredients": [
+    {
+      "item": ""
+    }
+  ],
+  "result": {
+    "id": "hbm_neoforge:ingot_u238",
+    "count": 9
+  },
+  "type": "minecraft:crafting_shapeless"
+}

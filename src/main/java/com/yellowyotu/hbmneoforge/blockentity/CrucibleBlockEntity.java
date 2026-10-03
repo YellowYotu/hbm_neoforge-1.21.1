@@ -2,9 +2,12 @@ package com.yellowyotu.hbmneoforge.blockentity;
 
 import com.yellowyotu.hbmneoforge.ModBlockEntities;
 import com.yellowyotu.hbmneoforge.ModBlocks;
+import com.yellowyotu.hbmneoforge.ModItems;
 import com.yellowyotu.hbmneoforge.block.CrucibleBlock;
 import com.yellowyotu.hbmneoforge.foundry.CrucibleRecipeRegistry;
 import com.yellowyotu.hbmneoforge.foundry.FoundryMaterialRegistry;
+import com.yellowyotu.hbmneoforge.item.ItemMaterialScraps;
+import com.yellowyotu.hbmneoforge.material.HBMMaterialCatalog;
 import com.yellowyotu.hbmneoforge.heat.HeatSource;
 import com.yellowyotu.hbmneoforge.menu.CrucibleMenu;
 import java.util.Iterator;
@@ -472,6 +475,24 @@ public final class CrucibleBlockEntity extends BlockEntity implements MenuProvid
             if (!stack.isEmpty()) {
                 Containers.dropItemStack(level, worldPosition.getX() + 0.5D, worldPosition.getY() + 0.5D, worldPosition.getZ() + 0.5D, stack.copy());
             }
+        }
+        dropMoltenScraps(recipeStack);
+        dropMoltenScraps(wasteStack);
+        recipeStack.clear();
+        wasteStack.clear();
+    }
+
+    private void dropMoltenScraps(Map<String, Integer> materials) {
+        if (level == null) return;
+        for (Map.Entry<String, Integer> entry : materials.entrySet()) {
+            String normalized = FoundryMaterialRegistry.normalize(entry.getKey());
+            if (normalized.equals("mingrade")) normalized = "red_copper";
+            HBMMaterialCatalog.get(normalized).ifPresent(material -> Containers.dropItemStack(
+                    level,
+                    worldPosition.getX() + 0.5D,
+                    worldPosition.getY() + 0.5D,
+                    worldPosition.getZ() + 0.5D,
+                    ItemMaterialScraps.create(ModItems.SCRAPS.get(), material, entry.getValue(), true)));
         }
     }
 

@@ -1,6 +1,8 @@
 package com.yellowyotu.hbmneoforge.foundry;
 
 import com.yellowyotu.hbmneoforge.HBMsNuclearTechModUnofficialNeoForgeEdition;
+import com.yellowyotu.hbmneoforge.item.ItemMaterialScraps;
+import com.yellowyotu.hbmneoforge.material.MaterialFormRegistry;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
@@ -58,6 +60,9 @@ public final class FoundryMaterialRegistry {
         if (stack.isEmpty()) {
             return null;
         }
+        if (stack.getItem() instanceof ItemMaterialScraps) {
+            return new MaterialAmount(ItemMaterialScraps.material(stack).id(), ItemMaterialScraps.amount(stack));
+        }
         ResourceLocation id = BuiltInRegistries.ITEM.getKey(stack.getItem());
         if (id == null) {
             return null;
@@ -74,6 +79,10 @@ public final class FoundryMaterialRegistry {
         }
         if (path.equals("redstone")) {
             return new MaterialAmount("redstone", INGOT);
+        }
+        var generated = MaterialFormRegistry.formByRegistryName(path);
+        if (generated.isPresent()) {
+            return new MaterialAmount(generated.get().material().id(), generated.get().shape().units());
         }
         return prefixed(path);
     }

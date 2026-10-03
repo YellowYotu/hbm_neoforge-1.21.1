@@ -1,0 +1,12 @@
+{
+  "ingredients": [
+    {
+      "item": ""
+    }
+  ],
+  "result": {
+    "id": "hbm_neoforge:powder_neodymium_tiny",
+    "count": 9
+  },
+  "type": "minecraft:crafting_shapeless"
+}

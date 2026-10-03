@@ -1,0 +1,12 @@
+{
+  "ingredients": [
+    {
+      "item": ""
+    }
+  ],
+  "result": {
+    "id": "hbm_neoforge:nugget_uranium",
+    "count": 9
+  },
+  "type": "minecraft:crafting_shapeless"
+}
