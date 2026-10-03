@@ -79,6 +79,8 @@ public final class HBMMaterialCatalog {
     public static Optional<HBMMaterialDefinition> get(String id) { return Optional.ofNullable(MATERIALS.get(id)); }
     public static Set<String> dedicatedFragmentMaterials() { return DEDICATED_FRAGMENTS; }
     public static List<MaterialForm> forms() {
-        return MATERIALS.values().stream().flatMap(m -> m.shapes().stream().map(s -> new MaterialForm(m, s))).toList();
+        return MATERIALS.values().stream().flatMap(m -> m.shapes().stream()
+                .filter(s -> s != FRAGMENT || DEDICATED_FRAGMENTS.contains(m.id()))
+                .map(s -> new MaterialForm(m, s))).toList();
     }
 }

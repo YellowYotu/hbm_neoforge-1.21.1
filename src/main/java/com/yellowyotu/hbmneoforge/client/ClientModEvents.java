@@ -2,12 +2,15 @@ package com.yellowyotu.hbmneoforge.client;
 
 import com.yellowyotu.hbmneoforge.HBMsNuclearTechModUnofficialNeoForgeEdition;
 import com.yellowyotu.hbmneoforge.ModBlockEntities;
+import com.yellowyotu.hbmneoforge.ModEntities;
 import com.yellowyotu.hbmneoforge.ModMenus;
 import com.yellowyotu.hbmneoforge.ModParticles;
+import com.yellowyotu.hbmneoforge.ModItems;
 import com.yellowyotu.hbmneoforge.client.particle.DeadLeafParticle;
 import com.yellowyotu.hbmneoforge.client.particle.SolderTauParticle;
 import com.yellowyotu.hbmneoforge.client.particle.NukeFlareParticle;
 import com.yellowyotu.hbmneoforge.client.particle.NukeTorexParticle;
+import com.yellowyotu.hbmneoforge.client.particle.ExplosionSmallParticle;
 import com.yellowyotu.hbmneoforge.client.model.DuctOverlayBakedModel;
 import com.yellowyotu.hbmneoforge.client.model.PaintableDuctBakedModel;
 import com.yellowyotu.hbmneoforge.client.renderer.ArcWelderBlockEntityRenderer;
@@ -38,10 +41,13 @@ import com.yellowyotu.hbmneoforge.client.screen.FluidPipeScreen;
 import com.yellowyotu.hbmneoforge.client.screen.FluidIdentifierScreen;
 import com.yellowyotu.hbmneoforge.client.screen.MachinePressScreen;
 import com.yellowyotu.hbmneoforge.client.screen.MixerScreen;
+import com.yellowyotu.hbmneoforge.client.screen.RockMillScreen;
+import com.yellowyotu.hbmneoforge.client.renderer.RockMillBlockEntityRenderer;
 import com.yellowyotu.hbmneoforge.client.screen.ShredderScreen;
 import com.yellowyotu.hbmneoforge.client.screen.SolderingStationScreen;
 import com.yellowyotu.hbmneoforge.client.screen.WoodBurnerScreen;
 import com.yellowyotu.hbmneoforge.client.screen.OilDerrickScreen;
+import com.yellowyotu.hbmneoforge.client.screen.OilRefineryScreen;
 import com.yellowyotu.hbmneoforge.client.screen.StorageCrateScreen;
 import com.yellowyotu.hbmneoforge.item.ItemFluidIdentifierMulti;
 import com.yellowyotu.hbmneoforge.blockentity.FluidPipeBlockEntity;
@@ -49,6 +55,7 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.minecraft.client.renderer.texture.TextureAtlas;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.client.resources.model.Material;
 import net.minecraft.client.resources.model.ModelResourceLocation;
@@ -58,12 +65,30 @@ import net.neoforged.neoforge.client.event.ModelEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.client.event.RegisterGuiLayersEvent;
+import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraft.client.renderer.item.ItemProperties;
 
 @EventBusSubscriber(modid = HBMsNuclearTechModUnofficialNeoForgeEdition.MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public final class ClientModEvents {
 
     private ClientModEvents() {
+    }
+
+    @SubscribeEvent
+    public static void clientSetup(FMLClientSetupEvent event) {
+        event.enqueueWork(() -> {
+            ResourceLocation stage = ResourceLocation.fromNamespaceAndPath(HBMsNuclearTechModUnofficialNeoForgeEdition.MODID, "grenade_stage");
+            var property = (net.minecraft.client.renderer.item.ClampedItemPropertyFunction) (stack, level, entity, seed) -> {
+                if (!(stack.getItem() instanceof com.yellowyotu.hbmneoforge.item.ItemHBMGrenade grenade)) return 0.0F;
+                return Math.min(1.0F, com.yellowyotu.hbmneoforge.item.ItemHBMGrenade.getDeployment(stack) / (float) grenade.getKind().drawDuration());
+            };
+            ItemProperties.register(ModItems.GRENADE_FRAG.get(), stage, property);
+            ItemProperties.register(ModItems.GRENADE_STICK_IMPACT.get(), stage, property);
+            ItemProperties.register(ModItems.GRENADE_INCENDIARY.get(), stage, property);
+
+        });
     }
 
     private static final ResourceLocation DUCT_OVERLAY_STITCH_MODEL = ResourceLocation.fromNamespaceAndPath(
@@ -80,7 +105,11 @@ public final class ClientModEvents {
         event.registerAboveAll(
                 ResourceLocation.fromNamespaceAndPath(HBMsNuclearTechModUnofficialNeoForgeEdition.MODID, "gas_mask_overlay"),
                 (graphics, deltaTracker) -> GasMaskOverlay.render(graphics));
+        event.registerAboveAll(ResourceLocation.fromNamespaceAndPath(HBMsNuclearTechModUnofficialNeoForgeEdition.MODID, "tool_ability_hud"), (graphics, deltaTracker) -> ToolAbilityHud.render(graphics));
+        event.registerAboveAll(ResourceLocation.fromNamespaceAndPath(HBMsNuclearTechModUnofficialNeoForgeEdition.MODID, "machine_info_hud"), (graphics, deltaTracker) -> MachineInfoOverlay.render(graphics));
     }
+
+    @SubscribeEvent public static void registerKeys(RegisterKeyMappingsEvent event) { event.register(CobaltPickaxeClientEvents.ABILITY_ALT); }
 
     @SubscribeEvent
     public static void registerMenuScreens(RegisterMenuScreensEvent event) {
@@ -91,6 +120,7 @@ public final class ClientModEvents {
         event.register(ModMenus.BLAST_FURNACE.get(), BlastFurnaceScreen::new);
         event.register(ModMenus.WOOD_BURNER.get(), WoodBurnerScreen::new);
         event.register(ModMenus.OIL_DERRICK.get(), OilDerrickScreen::new);
+        event.register(ModMenus.OIL_REFINERY.get(), OilRefineryScreen::new);
         event.register(ModMenus.SHREDDER.get(), ShredderScreen::new);
         event.register(ModMenus.SOLDERING_STATION.get(), SolderingStationScreen::new);
         event.register(ModMenus.HEATER.get(), HeaterScreen::new);
@@ -99,6 +129,7 @@ public final class ClientModEvents {
         event.register(ModMenus.ASSEMBLY_MACHINE.get(), AssemblyMachineScreen::new);
         event.register(ModMenus.CHEMICAL_PLANT.get(), ChemicalPlantScreen::new);
         event.register(ModMenus.MIXER.get(), MixerScreen::new);
+        event.register(ModMenus.ROCK_MILL.get(), RockMillScreen::new);
         event.register(ModMenus.ARC_WELDER.get(), ArcWelderScreen::new);
         event.register(ModMenus.BATTERY_SOCKET.get(), BatterySocketScreen::new);
         event.register(ModMenus.NUKE_MAN.get(), FatManScreen::new);
@@ -107,12 +138,15 @@ public final class ClientModEvents {
 
     @SubscribeEvent
     public static void registerBlockEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerEntityRenderer(ModEntities.GRENADE.get(), ThrownItemRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.MACHINE_PRESS.get(), MachinePressBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.SOLDERING_STATION.get(), SolderingStationBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.ASSEMBLY_MACHINE.get(), AssemblyMachineBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.BATTERY_SOCKET.get(), BatterySocketBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.CHEMICAL_PLANT.get(), ChemicalPlantBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.MIXER.get(), MixerBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.ROCK_MILL.get(), RockMillBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.LARGE_BOILER.get(), com.yellowyotu.hbmneoforge.client.renderer.LargeBoilerBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.AIR_INTAKE.get(), AirIntakeBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.ARC_WELDER.get(), ArcWelderBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.OIL_DERRICK.get(), OilDerrickBlockEntityRenderer::new);
@@ -149,10 +183,18 @@ public final class ClientModEvents {
 
     @SubscribeEvent
     public static void registerItemColors(RegisterColorHandlersEvent.Item event) {
+        net.minecraft.world.item.Item[] materialForms = com.yellowyotu.hbmneoforge.ModItems.MATERIAL_FORMS.values().stream()
+                .map(net.neoforged.neoforge.registries.DeferredItem::get)
+                .toArray(net.minecraft.world.item.Item[]::new);
+        if (materialForms.length > 0) {
+            event.register((stack, tintIndex) -> stack.getItem() instanceof com.yellowyotu.hbmneoforge.item.MaterialFormItem form
+                    ? 0xFF000000 | form.color() : 0xFFFFFFFF, materialForms);
+        }
+
         event.register((stack, tintIndex) -> {
             com.yellowyotu.hbmneoforge.fluid.NTMFluidType type = com.yellowyotu.hbmneoforge.item.ItemFluidIcon.getFluidType(stack);
             return type == null ? 0xFFFFFFFF : 0xFF000000 | type.color();
-        }, com.yellowyotu.hbmneoforge.ModItems.FLUID_ICON.get());
+        }, com.yellowyotu.hbmneoforge.ModItems.FLUID_ICON.get(), com.yellowyotu.hbmneoforge.ModItems.JEI_FLUID_PROXY.get());
 
         event.register((stack, tintIndex) -> {
             if (tintIndex != 1) {
@@ -204,5 +246,7 @@ public final class ClientModEvents {
         event.registerSpriteSet(ModParticles.SOLDER_TAU.get(), SolderTauParticle.Provider::new);
         event.registerSpriteSet(ModParticles.NUKE_TOREX.get(), NukeTorexParticle.Provider::new);
         event.registerSpriteSet(ModParticles.NUKE_FLARE.get(), NukeFlareParticle.Provider::new);
+        event.registerSpriteSet(ModParticles.EXPLOSION_SMALL.get(), ExplosionSmallParticle.Provider::new);
     }
 }
+

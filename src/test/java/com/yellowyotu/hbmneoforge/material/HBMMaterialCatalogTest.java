@@ -27,6 +27,8 @@ class HBMMaterialCatalogTest {
 
     @Test void neverGeneratesBedrockOreFragments() {
         assertTrue(HBMMaterialCatalog.forms().stream().noneMatch(form -> form.registryName().contains("bedrock")));
+        assertTrue(HBMMaterialCatalog.forms().stream().noneMatch(form -> form.registryName().equals("fragment_iron")));
+        assertTrue(HBMMaterialCatalog.forms().stream().anyMatch(form -> form.registryName().equals("fragment_niobium")));
     }
 
     @Test void catalogAndFormsAreDeterministicAndUnique() {

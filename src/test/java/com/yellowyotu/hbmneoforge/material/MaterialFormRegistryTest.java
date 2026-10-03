@@ -13,7 +13,7 @@ class MaterialFormRegistryTest {
         assertFalse(planned.contains("fragment_cobalt"));
         assertFalse(planned.contains("ingot_neodymium"));
         assertTrue(planned.contains("wire_dense_neodymium"));
-        assertTrue(planned.contains("powder_tiny_niobium"));
+        assertTrue(planned.contains("powder_niobium_tiny"));
         assertEquals(planned.size(), Set.copyOf(planned).size());
     }
 
@@ -27,9 +27,14 @@ class MaterialFormRegistryTest {
 
     @Test void registryNamesFollowExistingHbmConventions() {
         assertEquals("fragment_cobalt", MaterialFormRegistry.registryName("cobalt", MaterialShape.FRAGMENT));
-        assertEquals("powder_tiny_boron", MaterialFormRegistry.registryName("boron", MaterialShape.TINY_POWDER));
+        assertEquals("powder_boron_tiny", MaterialFormRegistry.registryName("boron", MaterialShape.TINY_POWDER));
         assertEquals("wire_dense_tungsten", MaterialFormRegistry.registryName("tungsten", MaterialShape.DENSE_WIRE));
         assertEquals("plate_titanium_cast", MaterialFormRegistry.registryName("titanium", MaterialShape.CAST_PLATE));
         assertEquals("plate_titanium_welded", MaterialFormRegistry.registryName("titanium", MaterialShape.WELDED_PLATE));
+    }
+
+    @Test void generatedFormsCarryTheirOriginalMaterialColor() {
+        MaterialForm form = MaterialFormRegistry.formByRegistryName("wire_dense_neodymium").orElseThrow();
+        assertEquals(0x8F8F5F, form.material().color());
     }
 }

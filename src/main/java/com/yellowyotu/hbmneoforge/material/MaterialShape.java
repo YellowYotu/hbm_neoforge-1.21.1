@@ -1,7 +1,7 @@
 package com.yellowyotu.hbmneoforge.material;
 
 public enum MaterialShape {
-    QUANTUM("quantum", 1), NUGGET("nugget", 8), TINY("tiny", 8), FRAGMENT("fragment", 24),
+    QUANTUM("quantum", 1), NUGGET("nugget", 8), TINY("tiny", 8), FRAGMENT("fragment", 8),
     TINY_POWDER("powder_tiny", 8), WIRE("wire", 9), BOLT("bolt", 9), BILLET("billet", 48),
     INGOT("ingot", 72), GEM("gem", 72), CRYSTAL("crystal", 72), DUST("powder", 72),
     DENSE_WIRE("wire_dense", 72), PLATE("plate", 72), CAST_PLATE("plate_cast", 216),
