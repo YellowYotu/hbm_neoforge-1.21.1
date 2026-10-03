@@ -68,14 +68,30 @@ Tests must verify that the canister recipe JSON uses registered item IDs and the
 
 The existing refinery recipe registry is the shared data source for processing and JEI. Tests assert all four HBM CE recipes, input/output quantities, energy cost, and byproduct interval.
 
+## Rare Earth Fragment Recipe
+
+Keep the single HBM CE Steel Anvil recycling recipe for one `rare_earth_ore_chunk`; do not invent separate fragment recipes. The recipe requires an anvil of tier 2 and produces the exact HBM CE result rolls already represented by the project data:
+
+- one Boron Fragment guaranteed, plus one Boron Fragment at `50%`;
+- one Cobalt Fragment guaranteed, plus one Cobalt Fragment at `50%`;
+- one Lanthanium Fragment at `10%`;
+- one Cerium Fragment at `10%`;
+- one Neodymium Fragment at `50%`;
+- one Niobium Fragment at `50%`.
+
+These six types are every dedicated rare-earth fragment item currently registered by this port. The anvil runtime must grant every successful roll when the output is taken. Results enter the player's inventory and fall into the world only when the inventory cannot accept them.
+
+The JEI anvil category must render every output entry instead of only `displayResult()`. Each output slot shows its item count and a tooltip with its probability; duplicate guaranteed and probabilistic entries remain distinct so JEI describes the original roll behavior accurately. The tier-2 Steel Anvil remains visible as the catalyst.
+
 ## Validation
 
 - Unit tests for canister capacity, saved fluid identity, supported variant enumeration, and full-only transfer rules.
 - Unit tests for exact refinery quantities and filter-removal persistence.
+- Unit tests for all eight Rare Earth Chunk output rolls, their exact probabilities, tier requirement, and delivery of extra results.
 - Resource checks for the shaped recipe, item models, textures, localization keys, and JEI registration.
 - `gradlew test` and `gradlew compileJava` must pass.
 - In-game verification confirms the recipe crafts two canisters, JEI shows all filled variants, the refinery category opens from the machine, and fluid tooltips show correct names and quantities.
 
 ## Out of Scope
 
-This design does not add new fluid types, change refinery geometry, or alter pipe connection positions. Full refinery runtime processing and sound changes remain a separate implementation stage unless they are already required to make the registered refinery recipes operational.
+This design does not add new fluid types, new fragment materials, change refinery geometry, or alter pipe connection positions. Full refinery runtime processing and sound changes remain a separate implementation stage unless they are already required to make the registered refinery recipes operational.
