@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
+import java.util.concurrent.ThreadLocalRandom;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.Item;
@@ -56,13 +57,13 @@ public final class HBMAnvilRecipes {
         ItemStack secondary = inventory.getStackInSlot(HBMAnvilBlockEntity.SLOT_SECONDARY);
 
         ItemStack result = recipe.matches(primary, secondary)
-                ? recipe.result().get().copy()
+                ? recipe.displayResult()
                 : ItemStack.EMPTY;
 
         inventory.setStackInSlot(HBMAnvilBlockEntity.SLOT_OUTPUT, result);
     }
 
-    public static ItemStack craft(ItemStackHandler inventory, int selectedRecipe, int anvilTier) {
+    public static List<ItemStack> craft(ItemStackHandler inventory, int selectedRecipe, int anvilTier) {
         Recipe recipe = findTopSlotRecipe(inventory);
 
         if (recipe == null) {
@@ -70,7 +71,7 @@ public final class HBMAnvilRecipes {
         }
 
         if (recipe.tier() > anvilTier) {
-            return ItemStack.EMPTY;
+            return List.of();
         }
 
         ItemStack primary = inventory.getStackInSlot(HBMAnvilBlockEntity.SLOT_PRIMARY);
@@ -78,10 +79,8 @@ public final class HBMAnvilRecipes {
 
         if (!recipe.matches(primary, secondary)) {
             updateOutput(inventory, selectedRecipe, anvilTier);
-            return ItemStack.EMPTY;
+            return List.of();
         }
-
-        ItemStack result = recipe.result().get().copy();
 
         primary.shrink(recipe.primaryCount());
 
@@ -99,7 +98,7 @@ public final class HBMAnvilRecipes {
 
         updateOutput(inventory, selectedRecipe, anvilTier);
 
-        return result;
+        return recipe.rollExtraResults();
     }
 
     public static ItemStack craftFromPlayerInventory(Inventory inventory, int selectedRecipe, int anvilTier) {
@@ -132,7 +131,7 @@ public final class HBMAnvilRecipes {
 
         inventory.setChanged();
 
-        return recipe.result().get().copy();
+        return recipe.displayResult();
     }
 
     private static Recipe findTopSlotRecipe(ItemStackHandler inventory) {
@@ -224,8 +223,19 @@ public final class HBMAnvilRecipes {
             Input primary = readInput(json.getAsJsonObject("primary"));
             Input secondary = readInput(json.getAsJsonObject("secondary"));
 
-            ItemStack resultStack = MachineRecipeJsonLoader.readStack(
-                    json.getAsJsonObject("result"));
+            List<Output> outputs = new ArrayList<>();
+            if (json.has("results")) {
+                JsonArray resultsJson = json.getAsJsonArray("results");
+                for (int resultIndex = 0; resultIndex < resultsJson.size(); resultIndex++) {
+                    JsonObject outputJson = resultsJson.get(resultIndex).getAsJsonObject();
+                    ItemStack stack = MachineRecipeJsonLoader.readStack(outputJson);
+                    float chance = outputJson.has("chance") ? outputJson.get("chance").getAsFloat() : 1.0F;
+                    outputs.add(new Output(() -> stack.copy(), chance));
+                }
+            } else {
+                ItemStack stack = MachineRecipeJsonLoader.readStack(json.getAsJsonObject("result"));
+                outputs.add(new Output(() -> stack.copy(), 1.0F));
+            }
 
             boolean selectable = !json.has("selectable")
                     || json.get("selectable").getAsBoolean();
@@ -257,7 +267,7 @@ public final class HBMAnvilRecipes {
                     primary.display(),
                     secondary.display(),
                     List.copyOf(extraInputs),
-                    () -> resultStack.copy());
+                    List.copyOf(outputs));
 
             recipes.add(new LoadedRecipe(recipe, selectable));
         }
@@ -321,7 +331,7 @@ public final class HBMAnvilRecipes {
             Supplier<ItemStack> primaryDisplay,
             Supplier<ItemStack> secondaryDisplay,
             List<Input> extraInputs,
-            Supplier<ItemStack> result) {
+            List<Output> outputs) {
 
         public boolean matches(ItemStack primaryStack, ItemStack secondaryStack) {
             if (!extraInputs.isEmpty()) {
@@ -341,8 +351,22 @@ public final class HBMAnvilRecipes {
         }
 
         public ItemStack displayResult() {
-            return result.get().copy();
+            return outputs.getFirst().stack().get().copy();
         }
+
+        public List<ItemStack> rollExtraResults() {
+            List<ItemStack> rolled = new ArrayList<>();
+            for (int index = 1; index < outputs.size(); index++) {
+                Output output = outputs.get(index);
+                if (output.chance() >= 1.0F || ThreadLocalRandom.current().nextFloat() < output.chance()) {
+                    rolled.add(output.stack().get().copy());
+                }
+            }
+            return rolled;
+        }
+    }
+
+    public record Output(Supplier<ItemStack> stack, float chance) {
     }
 
     public record Input(

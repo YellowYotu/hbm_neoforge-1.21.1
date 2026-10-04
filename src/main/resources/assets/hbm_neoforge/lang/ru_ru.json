@@ -1232,5 +1232,7 @@
   "material_form.hbm_neoforge.billet": "Заготовка: %s",
   "material_form.hbm_neoforge.plate": "Пластина: %s",
   "material_form.hbm_neoforge.block": "Блок: %s",
-  "material_form.hbm_neoforge.shell": "Оболочка: %s"
+  "material_form.hbm_neoforge.shell": "Оболочка: %s",
+  "item.hbm_neoforge.canister_empty": "Пустая канистра",
+  "item.hbm_neoforge.canister_full": "Канистра"
 }

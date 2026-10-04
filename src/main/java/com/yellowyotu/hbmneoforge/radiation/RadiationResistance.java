@@ -8,7 +8,6 @@ import java.util.UUID;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 
 public final class RadiationResistance {
 
@@ -17,14 +16,10 @@ public final class RadiationResistance {
     private static final float CHESTPLATE_SHARE = 0.4F;
     private static final float LEGGINGS_SHARE = 0.3F;
     private static final float BOOTS_SHARE = 0.1F;
-    private static final float IRON_RESISTANCE = 0.0225F;
-    private static final float GOLD_RESISTANCE = 0.0225F;
     private static final float HAZMAT_RESISTANCE = 0.6F;
     private static final Map<Item, Float> ARMOR_RESISTANCE = new IdentityHashMap<>();
 
     static {
-        registerArmorSet(Items.IRON_HELMET, Items.IRON_CHESTPLATE, Items.IRON_LEGGINGS, Items.IRON_BOOTS, IRON_RESISTANCE);
-        registerArmorSet(Items.GOLDEN_HELMET, Items.GOLDEN_CHESTPLATE, Items.GOLDEN_LEGGINGS, Items.GOLDEN_BOOTS, GOLD_RESISTANCE);
         registerArmorSet(ModItems.HAZMAT_HELMET.get(), ModItems.HAZMAT_PLATE.get(), ModItems.HAZMAT_LEGS.get(), ModItems.HAZMAT_BOOTS.get(), HAZMAT_RESISTANCE);
     }
 

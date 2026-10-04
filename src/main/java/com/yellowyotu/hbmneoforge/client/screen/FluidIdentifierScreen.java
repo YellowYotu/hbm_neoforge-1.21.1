@@ -115,6 +115,27 @@ public final class FluidIdentifierScreen extends AbstractContainerScreen<FluidId
     }
 
     @Override
+    public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
+        if (search != null && search.isFocused()) {
+            if (keyCode == minecraft.options.keyInventory.getKey().getValue()) {
+                return true;
+            }
+            if (search.keyPressed(keyCode, scanCode, modifiers)) {
+                return true;
+            }
+        }
+        return super.keyPressed(keyCode, scanCode, modifiers);
+    }
+
+    @Override
+    public boolean charTyped(char codePoint, int modifiers) {
+        if (search != null && search.isFocused()) {
+            return search.charTyped(codePoint, modifiers);
+        }
+        return super.charTyped(codePoint, modifiers);
+    }
+
+    @Override
     public void render(GuiGraphics g, int mouseX, int mouseY, float partialTick) {
         renderBackground(g, mouseX, mouseY, partialTick);
         super.render(g, mouseX, mouseY, partialTick);

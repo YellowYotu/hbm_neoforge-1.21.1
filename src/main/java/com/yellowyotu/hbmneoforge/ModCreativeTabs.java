@@ -554,11 +554,13 @@ public final class ModCreativeTabs {
     });
 
     private static void addPortableFluidVariants(CreativeModeTab.Output output) {
+        output.accept(ModItems.CANISTER_EMPTY.get());
         output.accept(ModItems.FLUID_TANK_EMPTY.get());
         output.accept(ModItems.FLUID_TANK_LEAD_EMPTY.get());
         output.accept(ModItems.FLUID_BARREL_EMPTY.get());
         output.accept(ModItems.FLUID_PACK_EMPTY.get());
         for (com.yellowyotu.hbmneoforge.fluid.NTMFluidType type : com.yellowyotu.hbmneoforge.fluid.NTMFluidType.values()) {
+            if (type.canisterColor() >= 0) output.accept(com.yellowyotu.hbmneoforge.item.ItemPortableFluidContainer.configured(ModItems.CANISTER_FULL.get(), type, 1_000));
             output.accept(com.yellowyotu.hbmneoforge.item.ItemPortableFluidContainer.configured(ModItems.FLUID_TANK_FULL.get(), type, 1_000));
             output.accept(com.yellowyotu.hbmneoforge.item.ItemPortableFluidContainer.configured(ModItems.FLUID_TANK_LEAD_FULL.get(), type, 1_000));
             output.accept(com.yellowyotu.hbmneoforge.item.ItemPortableFluidContainer.configured(ModItems.FLUID_BARREL_FULL.get(), type, 16_000));

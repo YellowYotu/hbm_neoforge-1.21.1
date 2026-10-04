@@ -3,7 +3,6 @@ package com.yellowyotu.hbmneoforge.blockentity;
 import com.yellowyotu.hbmneoforge.ModBlockEntities;
 import com.yellowyotu.hbmneoforge.ModBlocks;
 import com.yellowyotu.hbmneoforge.ModItems;
-import com.yellowyotu.hbmneoforge.block.OilDerrickBlock;
 import com.yellowyotu.hbmneoforge.fluid.FluidNetworkUtil;
 import com.yellowyotu.hbmneoforge.fluid.NTMFluidType;
 import com.yellowyotu.hbmneoforge.item.ItemBatteryPack;
@@ -265,6 +264,7 @@ public final class OilDerrickBlockEntity extends BlockEntity implements MenuProv
 
     private void chargeFromBattery() {
         ItemStack stack = inventory.getStackInSlot(SLOT_BATTERY);
+        if (ItemBatteryPack.isInfinite(stack)) { energy = MAX_ENERGY; return; }
         if (!ItemBatteryPack.isBattery(stack) || energy >= MAX_ENERGY) {
             return;
         }
@@ -288,10 +288,9 @@ public final class OilDerrickBlockEntity extends BlockEntity implements MenuProv
         }
         Set<BlockPos> visited = new HashSet<>();
         ArrayDeque<BlockPos> queue = new ArrayDeque<>();
-        for (BlockPos part : OilDerrickBlock.getMachinePositions(worldPosition)) {
-            for (Direction direction : Direction.Plane.HORIZONTAL) {
-                queue.add(part.relative(direction));
-            }
+        // Use the same four lower side-center connection positions as fluid pipes.
+        for (Direction direction : Direction.Plane.HORIZONTAL) {
+            queue.add(worldPosition.relative(direction));
         }
         int scanned = 0;
         while (!queue.isEmpty() && scanned++ < 4_096) {

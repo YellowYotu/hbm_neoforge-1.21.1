@@ -166,7 +166,7 @@ public final class FluidNetworkUtil {
         }
         FluidNode node = resolveNode(blockEntity);
         BlockPos targetPos = resolveCorePos(blockEntity);
-        if (node == null || targetPos == null || !visitedTargets.add(targetPos) || node.getFluidType() != type) {
+        if (node == null || targetPos == null || !visitedTargets.add(targetPos) || (!(node instanceof com.yellowyotu.hbmneoforge.blockentity.OilRefineryBlockEntity) && node.getFluidType() != type)) {
             return 0;
         }
         return node.drain(type, requested);
@@ -175,6 +175,14 @@ public final class FluidNetworkUtil {
     private static boolean canAccessTarget(BlockEntity blockEntity, BlockPos fromPos) {
         if (blockEntity == null || fromPos == null) {
             return false;
+        }
+        if (blockEntity instanceof com.yellowyotu.hbmneoforge.blockentity.LargeBoilerDummyBlockEntity dummy) {
+            BlockEntity source = dummy.getLevel() == null ? null : dummy.getLevel().getBlockEntity(fromPos);
+            return source instanceof FluidPipeBlockEntity pipe && dummy.canConnectPipe(fromPos, pipe.getFilter());
+        }
+        if (blockEntity instanceof com.yellowyotu.hbmneoforge.blockentity.OilRefineryDummyBlockEntity dummy) {
+            BlockEntity source = dummy.getLevel() == null ? null : dummy.getLevel().getBlockEntity(fromPos);
+            return source instanceof FluidPipeBlockEntity pipe && dummy.canConnectPipe(fromPos, pipe.getFilter());
         }
         if (blockEntity instanceof FluidStorageDummyBlockEntity dummy) {
             BlockPos core = dummy.getController();
@@ -210,11 +218,20 @@ public final class FluidNetworkUtil {
         if (blockEntity instanceof FluidStorageDummyBlockEntity dummy) {
             return dummy.getCoreStorage();
         }
+        if (blockEntity instanceof com.yellowyotu.hbmneoforge.blockentity.OilRefineryDummyBlockEntity dummy) {
+            return dummy.getCoreRefinery();
+        }
         return blockEntity instanceof FluidNode node ? node : null;
     }
 
     private static BlockPos resolveCorePos(BlockEntity blockEntity) {
+        if (blockEntity instanceof com.yellowyotu.hbmneoforge.blockentity.LargeBoilerDummyBlockEntity dummy && dummy.getController() != null) {
+            return dummy.getController();
+        }
         if (blockEntity instanceof FluidStorageDummyBlockEntity dummy && dummy.getController() != null) {
+            return dummy.getController();
+        }
+        if (blockEntity instanceof com.yellowyotu.hbmneoforge.blockentity.OilRefineryDummyBlockEntity dummy && dummy.getController() != null) {
             return dummy.getController();
         }
         return blockEntity.getBlockPos();

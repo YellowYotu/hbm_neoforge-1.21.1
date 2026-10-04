@@ -50,6 +50,7 @@ public final class SlidingSealDoorBlock extends BaseEntityBlock implements Radia
     public static final EnumProperty<DoubleBlockHalf> HALF = BlockStateProperties.DOUBLE_BLOCK_HALF;
     public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
     public static final IntegerProperty PROGRESS = IntegerProperty.create("progress", 0, MAX_PROGRESS);
+    public static final IntegerProperty SKIN = IntegerProperty.create("skin", 0, 3);
     private static final double MAX_SLIDE = 14.4D;
 
     private final boolean radiationShielding;
@@ -61,7 +62,7 @@ public final class SlidingSealDoorBlock extends BaseEntityBlock implements Radia
     public SlidingSealDoorBlock(BlockBehaviour.Properties properties, boolean radiationShielding) {
         super(properties);
         this.radiationShielding = radiationShielding;
-        registerDefaultState(stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(HALF, DoubleBlockHalf.LOWER).setValue(OPEN, false).setValue(PROGRESS, 0));
+        registerDefaultState(stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(HALF, DoubleBlockHalf.LOWER).setValue(OPEN, false).setValue(PROGRESS, 0).setValue(SKIN, 0));
     }
 
     @Override
@@ -107,16 +108,22 @@ public final class SlidingSealDoorBlock extends BaseEntityBlock implements Radia
 
     @Override
     protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
-        if (!stack.is(ModItems.SCREWDRIVER.get()) || !player.isShiftKeyDown()) {
+        if (!player.isShiftKeyDown()
+                || (!stack.is(ModItems.TEMPLATE_FOLDER.get()) && !stack.is(ModItems.SCREWDRIVER.get()))) {
             return super.useItemOn(stack, state, level, pos, player, hand, hitResult);
         }
 
         BlockPos lowerPos = getLowerPos(state, pos);
         if (level.getBlockEntity(lowerPos) instanceof SlidingSealDoorBlockEntity door) {
             if (!level.isClientSide()) {
-                DoorAccessMode mode = door.cycleAccessMode();
-                player.displayClientMessage(net.minecraft.network.chat.Component.translatable("message.hbm_neoforge.door_mode", mode.displayName()), true);
-                updateRedstone(level, lowerPos, level.getBlockState(lowerPos), door);
+                if (stack.is(ModItems.TEMPLATE_FOLDER.get())) {
+                    DoorAccessMode mode = door.cycleAccessMode();
+                    player.displayClientMessage(net.minecraft.network.chat.Component.translatable("message.hbm_neoforge.door_mode", mode.displayName()), true);
+                    updateRedstone(level, lowerPos, level.getBlockState(lowerPos), door);
+                } else if (cycleSkin(level, lowerPos)) {
+                    player.displayClientMessage(net.minecraft.network.chat.Component.translatable("message.hbm_neoforge.door_skin",
+                            level.getBlockState(lowerPos).getValue(SKIN) + 1, 4), true);
+                }
             }
             return ItemInteractionResult.sidedSuccess(level.isClientSide());
         }
@@ -175,7 +182,7 @@ public final class SlidingSealDoorBlock extends BaseEntityBlock implements Radia
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(FACING, HALF, OPEN, PROGRESS);
+        builder.add(FACING, HALF, OPEN, PROGRESS, SKIN);
     }
 
     @Override
@@ -183,7 +190,7 @@ public final class SlidingSealDoorBlock extends BaseEntityBlock implements Radia
         DoubleBlockHalf half = state.getValue(HALF);
         if (direction.getAxis() == Direction.Axis.Y && (half == DoubleBlockHalf.LOWER) == (direction == Direction.UP)) {
             if (neighborState.is(this) && neighborState.getValue(HALF) != half) {
-                return state.setValue(FACING, neighborState.getValue(FACING)).setValue(OPEN, neighborState.getValue(OPEN)).setValue(PROGRESS, neighborState.getValue(PROGRESS));
+                return state.setValue(FACING, neighborState.getValue(FACING)).setValue(OPEN, neighborState.getValue(OPEN)).setValue(PROGRESS, neighborState.getValue(PROGRESS)).setValue(SKIN, neighborState.getValue(SKIN));
             }
             return Blocks.AIR.defaultBlockState();
         }
@@ -288,5 +295,16 @@ public final class SlidingSealDoorBlock extends BaseEntityBlock implements Radia
 
     public static BlockPos getLowerPos(BlockState state, BlockPos pos) {
         return state.getValue(HALF) == DoubleBlockHalf.LOWER ? pos : pos.below();
+    }
+
+    public static boolean cycleSkin(Level level, BlockPos lowerPos) {
+        BlockState lower = level.getBlockState(lowerPos);
+        if (!lower.is(ModBlocks.SLIDING_SEAL_DOOR.get())) return false;
+        int skin = (lower.getValue(SKIN) + 1) % 4;
+        level.setBlock(lowerPos, lower.setValue(SKIN, skin), 3);
+        BlockPos upperPos = lowerPos.above();
+        BlockState upper = level.getBlockState(upperPos);
+        if (upper.is(lower.getBlock())) level.setBlock(upperPos, upper.setValue(SKIN, skin), 3);
+        return true;
     }
 }

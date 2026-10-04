@@ -40,6 +40,11 @@ base {
 // Mojang ships Java 21 to end users in 1.21.1, so mods should target Java 21.
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
+// Opt-in integration tests run in a real NeoForge server, never in release jars.
+if (providers.gradleProperty('equipmentGameTests').isPresent()) {
+    sourceSets.main.java.srcDir('src/gametest/java')
+}
+
 neoForge {
     // Specify the version of NeoForge to use.
     version = project.neo_version
@@ -57,6 +62,10 @@ neoForge {
     runs {
         client {
             client()
+
+            if (providers.gradleProperty('quickPlayWorld').isPresent()) {
+                programArguments.addAll '--quickPlaySingleplayer', providers.gradleProperty('quickPlayWorld').get()
+            }
 
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
             systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
@@ -125,6 +134,13 @@ dependencies {
     compileOnly "mezz.jei:jei-1.21.1-neoforge-api:19.21.2.313"
 
     runtimeOnly "mezz.jei:jei-1.21.1-neoforge:19.21.2.313"
+    testImplementation platform("org.junit:junit-bom:5.11.4")
+    testImplementation "org.junit.jupiter:junit-jupiter"
+    testRuntimeOnly "org.junit.platform:junit-platform-launcher"
+}
+
+tasks.named('test', Test).configure {
+    useJUnitPlatform()
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

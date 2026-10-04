@@ -14,6 +14,7 @@ public final class ModParticles {
     public static final DeferredHolder<ParticleType<?>, SimpleParticleType> SOLDER_TAU = PARTICLE_TYPES.register("solder_tau", () -> new SimpleParticleType(false));
     public static final DeferredHolder<ParticleType<?>, SimpleParticleType> NUKE_TOREX = PARTICLE_TYPES.register("nuke_torex", () -> new SimpleParticleType(true));
     public static final DeferredHolder<ParticleType<?>, SimpleParticleType> NUKE_FLARE = PARTICLE_TYPES.register("nuke_flare", () -> new SimpleParticleType(true));
+    public static final DeferredHolder<ParticleType<?>, SimpleParticleType> EXPLOSION_SMALL = PARTICLE_TYPES.register("explosion_small", () -> new SimpleParticleType(true));
 
     private ModParticles() {
     }

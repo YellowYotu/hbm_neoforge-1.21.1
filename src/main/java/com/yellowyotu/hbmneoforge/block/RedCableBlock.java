@@ -59,18 +59,21 @@ public final class RedCableBlock extends Block {
 
     @Override
     protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos currentPos, BlockPos neighborPos) {
-        return state.setValue(property(direction), canConnect(neighborState));
+        return state.setValue(property(direction), canConnect(neighborState, direction));
     }
 
     private BlockState stateForConnections(BlockState state, LevelAccessor level, BlockPos pos) {
         for (Direction direction : Direction.values()) {
-            state = state.setValue(property(direction), canConnect(level.getBlockState(pos.relative(direction))));
+            state = state.setValue(property(direction), canConnect(level.getBlockState(pos.relative(direction)), direction));
         }
         return state;
     }
 
-    private static boolean canConnect(BlockState state) {
-        return state.is(ModBlocks.RED_CABLE.get()) || state.is(ModBlocks.ASSEMBLY_MACHINE.get()) || state.is(ModBlocks.ASSEMBLY_MACHINE_DUMMY.get()) || state.is(ModBlocks.CHEMICAL_PLANT.get()) || state.is(ModBlocks.CHEMICAL_PLANT_DUMMY.get()) || state.is(ModBlocks.MACHINE_BATTERY_SOCKET.get()) || state.is(ModBlocks.MACHINE_BATTERY_SOCKET_DUMMY.get()) || state.is(ModBlocks.SHREDDER.get()) || state.is(ModBlocks.SOLDERING_STATION.get()) || state.is(ModBlocks.SOLDERING_STATION_DUMMY.get()) || state.is(ModBlocks.WOOD_BURNER.get()) || state.is(ModBlocks.WOOD_BURNER_DUMMY.get()) || state.is(ModBlocks.AIR_INTAKE.get()) || state.is(ModBlocks.AIR_INTAKE_DUMMY.get()) || state.is(ModBlocks.ARC_WELDER.get()) || state.is(ModBlocks.ARC_WELDER_DUMMY.get());
+    private static boolean canConnect(BlockState state, Direction direction) {
+        if (state.is(ModBlocks.OIL_DERRICK.get())) {
+            return direction.getAxis().isHorizontal();
+        }
+        return state.is(ModBlocks.RED_CABLE.get()) || state.is(ModBlocks.OIL_REFINERY.get()) || state.is(ModBlocks.OIL_REFINERY_DUMMY.get()) || state.is(ModBlocks.ASSEMBLY_MACHINE.get()) || state.is(ModBlocks.ASSEMBLY_MACHINE_DUMMY.get()) || state.is(ModBlocks.CHEMICAL_PLANT.get()) || state.is(ModBlocks.CHEMICAL_PLANT_DUMMY.get()) || state.is(ModBlocks.MACHINE_BATTERY_SOCKET.get()) || state.is(ModBlocks.MACHINE_BATTERY_SOCKET_DUMMY.get()) || state.is(ModBlocks.SHREDDER.get()) || state.is(ModBlocks.SOLDERING_STATION.get()) || state.is(ModBlocks.SOLDERING_STATION_DUMMY.get()) || state.is(ModBlocks.WOOD_BURNER.get()) || state.is(ModBlocks.WOOD_BURNER_DUMMY.get()) || state.is(ModBlocks.AIR_INTAKE.get()) || state.is(ModBlocks.AIR_INTAKE_DUMMY.get()) || state.is(ModBlocks.ARC_WELDER.get()) || state.is(ModBlocks.ARC_WELDER_DUMMY.get());
     }
 
     private static BooleanProperty property(Direction direction) {
@@ -95,3 +98,4 @@ public final class RedCableBlock extends Block {
         return shape;
     }
 }
+

@@ -47,9 +47,11 @@ public final class ItemFluidIcon extends Item {
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
+        NTMFluidType type = getFluidType(stack);
         int amount = getAmount(stack);
         if (amount > 0) {
             tooltip.add(Component.literal(amount + " mB"));
         }
+        if (type != null) type.appendOriginalInfo(tooltip);
     }
 }

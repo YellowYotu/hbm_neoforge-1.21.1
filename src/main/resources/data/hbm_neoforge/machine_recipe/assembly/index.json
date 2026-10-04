@@ -22,5 +22,8 @@
   "chemical_plant_alt",
   "fluid_pack_empty",
   "titanium_drill",
-  "oil_derrick"
+  "oil_derrick",
+  "piston_set_steel",
+  "piston_set_dura",
+  "oil_refinery"
 ]

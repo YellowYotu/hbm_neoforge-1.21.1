@@ -26,30 +26,12 @@ public final class ItemScrewdriver extends Item {
             return super.useOn(context);
         }
 
-        BlockState state = context.getLevel().getBlockState(context.getClickedPos());
-        BlockPos core = null;
-        if (state.getBlock() instanceof QeContainmentDoorBlock) {
-            core = QeContainmentDoorBlock.getCorePos(state, context.getClickedPos());
-        } else if (state.getBlock() instanceof SlidingSealDoorBlock) {
-            core = SlidingSealDoorBlock.getLowerPos(state, context.getClickedPos());
-        }
+        return super.useOn(context);
+    }
 
-        if (core == null) {
-            return super.useOn(context);
-        }
-
-        if (!context.getLevel().isClientSide()) {
-            if (context.getLevel().getBlockEntity(core) instanceof QeContainmentDoorBlockEntity door) {
-                var mode = door.cycleAccessMode();
-                context.getPlayer().displayClientMessage(
-                        Component.translatable("message.hbm_neoforge.door_mode", mode.displayName()), true);
-            } else if (context.getLevel().getBlockEntity(core) instanceof SlidingSealDoorBlockEntity door) {
-                var mode = door.cycleAccessMode();
-                context.getPlayer().displayClientMessage(
-                        Component.translatable("message.hbm_neoforge.door_mode", mode.displayName()), true);
-            }
-        }
-        return InteractionResult.sidedSuccess(context.getLevel().isClientSide());
+    @Override
+    public InteractionResult onItemUseFirst(ItemStack stack, UseOnContext context) {
+        return DoorToolInteraction.use(context, DoorToolInteraction.Action.SKIN);
     }
 
     @Override

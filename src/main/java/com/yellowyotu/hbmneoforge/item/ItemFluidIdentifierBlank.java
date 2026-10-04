@@ -17,7 +17,7 @@ public final class ItemFluidIdentifierBlank extends Item {
             return InteractionResult.PASS;
         }
         if (!context.getLevel().isClientSide() && context.getPlayer() != null) {
-            ItemStack replacement = new ItemStack(ModItems.identifierFor(storage.getFluidType()));
+            ItemStack replacement = ItemFluidIdentifierMulti.configured(storage.getFluidType());
             InteractionHand hand = context.getHand();
             context.getPlayer().setItemInHand(hand, replacement);
         }

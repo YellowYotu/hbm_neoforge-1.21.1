@@ -13,7 +13,10 @@ import com.yellowyotu.hbmneoforge.block.CrucibleBlock;
 import com.yellowyotu.hbmneoforge.block.FluidTankMultiblockBlock;
 import com.yellowyotu.hbmneoforge.block.MachinePressBlock;
 import com.yellowyotu.hbmneoforge.block.MixerBlock;
+import com.yellowyotu.hbmneoforge.block.LargeBoilerBlock;
+import com.yellowyotu.hbmneoforge.block.RockMillBlock;
 import com.yellowyotu.hbmneoforge.block.OilDerrickBlock;
+import com.yellowyotu.hbmneoforge.block.OilRefineryBlock;
 import com.yellowyotu.hbmneoforge.block.SolderingStationBlock;
 import com.yellowyotu.hbmneoforge.block.WoodBurnerBlock;
 import java.util.ArrayList;
@@ -139,7 +142,10 @@ public final class ClientWorldRenderEvents {
                 || block instanceof FluidTankMultiblockBlock
                 || block instanceof MachinePressBlock
                 || block instanceof MixerBlock
+                || block instanceof LargeBoilerBlock
+                || block instanceof RockMillBlock
                 || block instanceof OilDerrickBlock
+                || block instanceof OilRefineryBlock
                 || block instanceof SolderingStationBlock
                 || block instanceof WoodBurnerBlock;
     }
@@ -180,8 +186,20 @@ public final class ClientWorldRenderEvents {
             return List.of(origin, origin.above(), origin.above(2));
         }
 
+        if (block instanceof RockMillBlock) {
+            return centeredBox(origin, 5, 3, 5);
+        }
+
+        if (block instanceof LargeBoilerBlock) {
+            return centeredBox(origin, 3, 4, 3);
+        }
+
         if (block instanceof OilDerrickBlock) {
             return OilDerrickBlock.getMachinePositions(origin);
+        }
+
+        if (block instanceof OilRefineryBlock) {
+            return OilRefineryBlock.getPreviewPositions(origin, playerDirection.getOpposite());
         }
 
         if (block instanceof SolderingStationBlock) {

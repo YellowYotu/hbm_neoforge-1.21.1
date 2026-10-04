@@ -74,7 +74,7 @@ public final class AssemblyRecipeSelectionScreen extends Screen {
         // transparent overlay instead, which is why the main assembler GUI never blurs. This
         // screen extends Screen directly, so without this override it fell back to the blurred
         // variant, making the world visibly blur every time the recipe catalog was opened.
-        renderTransparentBackground(graphics);
+        // Original CE keeps the world bright behind this panel.
     }
 
     @Override

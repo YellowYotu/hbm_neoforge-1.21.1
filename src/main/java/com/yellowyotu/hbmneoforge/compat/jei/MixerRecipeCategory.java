@@ -5,6 +5,7 @@ import com.yellowyotu.hbmneoforge.ModBlocks;
 import com.yellowyotu.hbmneoforge.ModItems;
 import com.yellowyotu.hbmneoforge.blockentity.MixerRecipes;
 import com.yellowyotu.hbmneoforge.fluid.NTMFluidType;
+import com.yellowyotu.hbmneoforge.item.ItemFluidIcon;
 import com.yellowyotu.hbmneoforge.item.ItemPortableFluidContainer;
 import java.util.List;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
@@ -97,6 +98,7 @@ public final class MixerRecipeCategory implements IRecipeCategory<MixerRecipes.R
 
     private static void addFluidSearchIngredients(IRecipeLayoutBuilder builder, RecipeIngredientRole role, NTMFluidType type) {
         builder.addInvisibleIngredients(role).addItemStacks(List.of(
+                ItemFluidIcon.make(type, 1_000),
                 ItemPortableFluidContainer.configured(ModItems.FLUID_TANK_FULL.get(), type, 1_000),
                 ItemPortableFluidContainer.configured(ModItems.FLUID_TANK_LEAD_FULL.get(), type, 1_000),
                 ItemPortableFluidContainer.configured(ModItems.FLUID_BARREL_FULL.get(), type, 16_000),

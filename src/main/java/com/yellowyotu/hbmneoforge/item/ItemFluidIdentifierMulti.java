@@ -37,9 +37,13 @@ public final class ItemFluidIdentifierMulti extends Item {
     }
 
     public static ItemStack configured(NTMFluidType primary) {
+        return configured(primary, null);
+    }
+
+    public static ItemStack configured(NTMFluidType primary, NTMFluidType secondary) {
         ItemStack stack = new ItemStack(ModItems.FLUID_IDENTIFIER.get());
         setType(stack, primary, true);
-        setType(stack, null, false);
+        setType(stack, secondary, false);
         return stack;
     }
 
@@ -163,6 +167,7 @@ public final class ItemFluidIdentifierMulti extends Item {
         NTMFluidType secondary = getType(stack, false);
         tooltip.add(Component.translatable("tooltip.hbm_neoforge.fluid_identifier.primary").withStyle(ChatFormatting.GRAY));
         tooltip.add(Component.literal("   ").append(primary == null ? Component.translatable("fluid.hbm_neoforge.none") : primary.displayName()).withStyle(ChatFormatting.AQUA));
+        if (primary != null) primary.appendOriginalInfo(tooltip);
         tooltip.add(Component.translatable("tooltip.hbm_neoforge.fluid_identifier.secondary").withStyle(ChatFormatting.GRAY));
         tooltip.add(Component.literal("   ").append(secondary == null ? Component.translatable("fluid.hbm_neoforge.none") : secondary.displayName()).withStyle(ChatFormatting.DARK_AQUA));
         tooltip.add(Component.translatable("tooltip.hbm_neoforge.fluid_identifier.controls").withStyle(ChatFormatting.DARK_GRAY));

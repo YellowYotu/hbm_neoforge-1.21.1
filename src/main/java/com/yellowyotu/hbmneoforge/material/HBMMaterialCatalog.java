@@ -9,6 +9,13 @@ public final class HBMMaterialCatalog {
     private static final LinkedHashMap<String, HBMMaterialDefinition> MATERIALS = new LinkedHashMap<>();
     private static final Set<String> DEDICATED_FRAGMENTS = Set.of(
             "neodymium", "cobalt", "niobium", "cerium", "lanthanium", "actinium", "meteorite", "boron", "coltan");
+    /** Materials for which CE actually registers a placeable block_<material>. */
+    private static final Set<String> CE_MATERIAL_BLOCKS = Set.of(
+            "actinium", "aluminium", "beryllium", "bismuth", "boron", "cobalt", "coltan",
+            "copper", "dura_steel", "fluorite", "lanthanium", "lead", "lithium", "neptunium",
+            "niobium", "plutonium", "polonium", "red_copper", "schrabidium", "slag", "steel",
+            "sulfur", "tantalium", "thorium", "titanium", "tungsten", "u233", "u235", "u238",
+            "uranium", "zirconium");
 
     static {
         add("wood", "Wood", 0x896727, NON_SMELTABLE, STOCK, GRIP);
@@ -32,7 +39,7 @@ public final class HBMMaterialCatalog {
         add("polonium", "Polonium-210", 0x715E4A, SMELTABLE, FRAGMENT, NUGGET, BILLET, DUST, BLOCK);
         add("technetium", "Technetium-99", 0xCADFDF, SMELTABLE, FRAGMENT, NUGGET, BILLET, BLOCK);
         add("radium", "Radium-226", 0xE9FAF6, SMELTABLE, FRAGMENT, NUGGET, BILLET, DUST, BLOCK);
-        add("actinium", "Actinium-227", 0x958989, SMELTABLE, NUGGET, BILLET);
+        add("actinium", "Actinium-227", 0x958989, SMELTABLE, FRAGMENT, NUGGET, TINY_POWDER, BILLET, DUST);
         add("schrabidium", "Schrabidium", 0x32FFFF, SMELTABLE, NUGGET, WIRE, BILLET, DUST, DENSE_WIRE, PLATE, CAST_PLATE, BLOCK);
         add("titanium", "Titanium", 0xA99E79, SMELTABLE, FRAGMENT, DUST, PLATE, DENSE_WIRE, CAST_PLATE, WELDED_PLATE, SHELL, BLOCK);
         add("copper", "Copper", 0xC18336, SMELTABLE, FRAGMENT, WIRE, DUST, PLATE, DENSE_WIRE, CAST_PLATE, WELDED_PLATE, SHELL, PIPE, BLOCK);
@@ -48,7 +55,7 @@ public final class HBMMaterialCatalog {
         add("cobalt", "Cobalt", 0x8F72AE, SMELTABLE, FRAGMENT, NUGGET, TINY_POWDER, BILLET, DUST, BLOCK);
         add("boron", "Boron", 0xAD72AE, SMELTABLE, FRAGMENT, TINY_POWDER, DUST, BLOCK);
         add("borax", "Borax", 0xFFECC6, SMELTABLE, FRAGMENT, INGOT, DUST);
-        add("lanthanium", "Lanthanium", 0xA1B9B9, SMELTABLE, FRAGMENT, BLOCK);
+        add("lanthanium", "Lanthanium", 0xA1B9B9, SMELTABLE, FRAGMENT, TINY_POWDER, DUST, BLOCK);
         add("zirconium", "Zirconium", 0xADA688, SMELTABLE, FRAGMENT, NUGGET, WIRE, TINY_POWDER, BILLET, DUST, CAST_PLATE, WELDED_PLATE, BLOCK);
         add("sodium", "Sodium", 0x7E9493, SMELTABLE, FRAGMENT, INGOT, DUST);
         add("strontium", "Strontium", 0xCAC193, SMELTABLE, FRAGMENT, INGOT, DUST);
@@ -63,9 +70,9 @@ public final class HBMMaterialCatalog {
         add("slag", "Slag", 0x6C6562, SMELTABLE, INGOT, BLOCK);
         add("rubber", "Rubber", 0x4B4A3F, NON_SMELTABLE, PIPE, GRIP);
         // Dedicated CE fragment items which are not material autogen shapes.
-        add("cerium", "Cerium", 0xD6D0B8, SMELTABLE, FRAGMENT);
-        add("meteorite", "Meteorite", 0x575757, NON_SMELTABLE, FRAGMENT);
-        add("coltan", "Coltan", 0x5D4332, NON_SMELTABLE, FRAGMENT);
+        add("cerium", "Cerium", 0xD6D0B8, SMELTABLE, FRAGMENT, TINY_POWDER, DUST);
+        add("meteorite", "Meteorite", 0x575757, NON_SMELTABLE, FRAGMENT, TINY_POWDER, DUST);
+        add("coltan", "Coltan", 0x5D4332, NON_SMELTABLE, FRAGMENT, DUST);
     }
 
     private HBMMaterialCatalog() {}
@@ -78,9 +85,11 @@ public final class HBMMaterialCatalog {
     public static List<HBMMaterialDefinition> all() { return List.copyOf(MATERIALS.values()); }
     public static Optional<HBMMaterialDefinition> get(String id) { return Optional.ofNullable(MATERIALS.get(id)); }
     public static Set<String> dedicatedFragmentMaterials() { return DEDICATED_FRAGMENTS; }
+    public static Set<String> originalBlockMaterials() { return CE_MATERIAL_BLOCKS; }
     public static List<MaterialForm> forms() {
         return MATERIALS.values().stream().flatMap(m -> m.shapes().stream()
                 .filter(s -> s != FRAGMENT || DEDICATED_FRAGMENTS.contains(m.id()))
+                .filter(s -> s != BLOCK || CE_MATERIAL_BLOCKS.contains(m.id()))
                 .map(s -> new MaterialForm(m, s))).toList();
     }
 }

@@ -1,5 +1,6 @@
 package com.yellowyotu.hbmneoforge.item;
 
+import com.yellowyotu.hbmneoforge.ModBlocks;
 import com.yellowyotu.hbmneoforge.fluid.FluidNode;
 import com.yellowyotu.hbmneoforge.fluid.NTMFluidType;
 import java.util.List;
@@ -47,7 +48,7 @@ public final class ItemPortableFluidContainer extends Item {
             tag.remove("Fluid");
             tag.remove("Amount");
         } else {
-            int storedAmount = stack.getItem() instanceof ItemPortableFluidContainer container ? container.getCapacity() : amount;
+            int storedAmount = stack.getItem() instanceof ItemPortableFluidContainer container ? Math.min(container.getCapacity(), amount) : amount;
             tag.putString("Fluid", type.id());
             tag.putInt("Amount", storedAmount);
         }
@@ -80,6 +81,20 @@ public final class ItemPortableFluidContainer extends Item {
 
     @Override
     public InteractionResult useOn(UseOnContext context) {
+        NTMFluidType oreFluid = getSpecialOreFluid(context);
+        if (oreFluid != null) {
+            ItemStack stack = context.getItemInHand();
+            NTMFluidType current = getFluidType(stack);
+            int stored = getAmount(stack);
+            if (current != oreFluid || stored >= capacity) {
+                return InteractionResult.PASS;
+            }
+            if (!context.getLevel().isClientSide()) {
+                context.getLevel().destroyBlock(context.getClickedPos(), false);
+                setFluid(stack, oreFluid, Math.min(capacity, stored + 250));
+            }
+            return InteractionResult.sidedSuccess(context.getLevel().isClientSide());
+        }
         if (!(context.getLevel().getBlockEntity(context.getClickedPos()) instanceof FluidNode node)) {
             return InteractionResult.PASS;
         }
@@ -110,5 +125,15 @@ public final class ItemPortableFluidContainer extends Item {
             }
         }
         return InteractionResult.PASS;
+    }
+
+    private static NTMFluidType getSpecialOreFluid(UseOnContext context) {
+        if (context.getLevel().getBlockState(context.getClickedPos()).is(ModBlocks.ORE_GNEISS_GAS.get())) {
+            return NTMFluidType.PETROLEUM;
+        }
+        if (context.getLevel().getBlockState(context.getClickedPos()).is(ModBlocks.ORE_OIL.get())) {
+            return NTMFluidType.OIL;
+        }
+        return null;
     }
 }

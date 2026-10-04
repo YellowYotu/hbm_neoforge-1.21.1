@@ -46,5 +46,6 @@ public final class ItemFluidIdentifier extends Item {
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
         tooltip.add(Component.translatable("tooltip.hbm_neoforge.fluid_identifier", type.displayName()).withStyle(ChatFormatting.AQUA));
+        type.appendOriginalInfo(tooltip);
     }
 }

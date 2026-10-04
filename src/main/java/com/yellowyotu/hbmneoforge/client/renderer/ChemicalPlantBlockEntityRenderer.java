@@ -42,9 +42,6 @@ public final class ChemicalPlantBlockEntityRenderer implements BlockEntityRender
                 poseStack.translate(-0.5D, 0.0D, -0.5D);
 
                 renderPart(machine, ModItems.CHEMICAL_PART_BASE.get(), poseStack, buffer, packedLight, packedOverlay);
-                if (machine.getBlockState().getValue(ChemicalPlantBlock.FRAME)) {
-                    renderPart(machine, ModItems.CHEMICAL_PART_FRAME.get(), poseStack, buffer, packedLight, packedOverlay);
-                }
 
                 poseStack.pushPose();
                 poseStack.translate(sps(animation.value * 0.125D) * 0.375D, 0.0D, 0.0D);

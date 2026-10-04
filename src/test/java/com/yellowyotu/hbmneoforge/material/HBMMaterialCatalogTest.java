@@ -15,7 +15,7 @@ class HBMMaterialCatalogTest {
         assertEquals(Set.of(FRAGMENT, NUGGET, TINY_POWDER, DUST, DENSE_WIRE, BLOCK), shapes("niobium"));
         assertEquals(Set.of(FRAGMENT, NUGGET, TINY_POWDER, BILLET, DUST, BLOCK), shapes("cobalt"));
         assertEquals(Set.of(FRAGMENT, TINY_POWDER, DUST, BLOCK), shapes("boron"));
-        assertEquals(Set.of(FRAGMENT, BLOCK), shapes("lanthanium"));
+        assertEquals(Set.of(FRAGMENT, TINY_POWDER, DUST, BLOCK), shapes("lanthanium"));
     }
 
     @Test void containsAllNineDedicatedFragments() {
@@ -36,6 +36,19 @@ class HBMMaterialCatalogTest {
         List<String> second = HBMMaterialCatalog.forms().stream().map(MaterialForm::registryName).toList();
         assertEquals(first, second);
         assertEquals(first.size(), Set.copyOf(first).size());
+    }
+
+    @Test void onlyGeneratesBlocksThatExistInCe() {
+        Set<String> generated = HBMMaterialCatalog.forms().stream()
+                .filter(form -> form.shape() == BLOCK)
+                .map(form -> form.material().id())
+                .collect(java.util.stream.Collectors.toSet());
+        assertTrue(HBMMaterialCatalog.originalBlockMaterials().containsAll(generated));
+        assertTrue(generated.contains("lanthanium"));
+        assertTrue(generated.contains("schrabidium"));
+        assertFalse(generated.contains("technetium"));
+        assertFalse(generated.contains("iron"));
+        assertFalse(generated.contains("gold"));
     }
 
     private static Set<MaterialShape> shapes(String id) {

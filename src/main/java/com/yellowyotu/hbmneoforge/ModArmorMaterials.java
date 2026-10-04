@@ -33,6 +33,28 @@ public final class ModArmorMaterials {
             0.0F
     ));
 
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> STEEL = ARMOR_MATERIALS.register("steel", () -> metalMaterial("steel", 5, 0.0F, ModItems.INGOT_STEEL));
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> TITANIUM = ARMOR_MATERIALS.register("titanium", () -> metalMaterial("titanium", 9, 2.0F, ModItems.INGOT_TITANIUM));
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> COBALT = ARMOR_MATERIALS.register("cobalt", () -> metalMaterial("cobalt", 25, 2.0F, ModItems.INGOT_COBALT));
+
+    private static ArmorMaterial metalMaterial(String texture, int enchantmentValue, float toughness, java.util.function.Supplier<? extends net.minecraft.world.level.ItemLike> repairItem) {
+        return new ArmorMaterial(
+                Util.make(new EnumMap<>(ArmorItem.Type.class), defense -> {
+                    defense.put(ArmorItem.Type.BOOTS, 3);
+                    defense.put(ArmorItem.Type.LEGGINGS, 6);
+                    defense.put(ArmorItem.Type.CHESTPLATE, 8);
+                    defense.put(ArmorItem.Type.HELMET, 3);
+                    defense.put(ArmorItem.Type.BODY, 8);
+                }),
+                enchantmentValue,
+                SoundEvents.ARMOR_EQUIP_GENERIC,
+                () -> Ingredient.of(repairItem.get()),
+                List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(HBMsNuclearTechModUnofficialNeoForgeEdition.MODID, texture))),
+                toughness,
+                0.0F
+        );
+    }
+
 
     private static ArmorMaterial gasMaskMaterial(String texture) {
         return new ArmorMaterial(

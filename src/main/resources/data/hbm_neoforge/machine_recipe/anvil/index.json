@@ -49,5 +49,8 @@
   "heater_firebox",
   "heater_oven",
   "machine_crucible",
-  "arc_welder"
+  "arc_welder",
+  "machine_rockmill",
+  "machine_boiler",
+  "rare_earth_chunk_recycling"
 ]

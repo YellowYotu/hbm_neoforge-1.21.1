@@ -5,6 +5,7 @@ import com.yellowyotu.hbmneoforge.ModBlocks;
 import com.yellowyotu.hbmneoforge.ModItems;
 import com.yellowyotu.hbmneoforge.fluid.NTMFluidType;
 import com.yellowyotu.hbmneoforge.item.ItemFluidIcon;
+import com.yellowyotu.hbmneoforge.item.ItemFluidIdentifierMulti;
 import com.yellowyotu.hbmneoforge.item.ItemPortableFluidContainer;
 import com.yellowyotu.hbmneoforge.blockentity.ArcWelderRecipes;
 import com.yellowyotu.hbmneoforge.blockentity.BlastFurnaceRecipes;
@@ -19,6 +20,7 @@ import com.yellowyotu.hbmneoforge.client.screen.ChemicalPlantScreen;
 import com.yellowyotu.hbmneoforge.client.screen.HBMAnvilScreen;
 import com.yellowyotu.hbmneoforge.client.screen.MachinePressScreen;
 import com.yellowyotu.hbmneoforge.client.screen.MixerScreen;
+import com.yellowyotu.hbmneoforge.client.screen.OilRefineryScreen;
 import com.yellowyotu.hbmneoforge.client.screen.ShredderScreen;
 import com.yellowyotu.hbmneoforge.client.screen.SolderingStationScreen;
 import java.util.List;
@@ -51,9 +53,23 @@ public final class HBMJeiPlugin implements IModPlugin {
         registration.registerSubtypeInterpreter(ModItems.FLUID_ICON.get(), iconInterpreter);
         registration.registerSubtypeInterpreter(ModItems.JEI_FLUID_PROXY.get(), iconInterpreter);
         registration.registerSubtypeInterpreter(ModItems.FLUID_TANK_FULL.get(), containerInterpreter);
+        registration.registerSubtypeInterpreter(ModItems.CANISTER_FULL.get(), containerInterpreter);
         registration.registerSubtypeInterpreter(ModItems.FLUID_TANK_LEAD_FULL.get(), containerInterpreter);
         registration.registerSubtypeInterpreter(ModItems.FLUID_BARREL_FULL.get(), containerInterpreter);
         registration.registerSubtypeInterpreter(ModItems.FLUID_PACK_FULL.get(), containerInterpreter);
+        registration.registerSubtypeInterpreter(ModItems.FLUID_IDENTIFIER.get(), new mezz.jei.api.ingredients.subtypes.ISubtypeInterpreter<>() {
+            @Override
+            public Object getSubtypeData(ItemStack ingredient, mezz.jei.api.ingredients.subtypes.UidContext context) {
+                NTMFluidType primary = ItemFluidIdentifierMulti.getType(ingredient, true);
+                NTMFluidType secondary = ItemFluidIdentifierMulti.getType(ingredient, false);
+                return (primary == null ? "" : primary.id()) + ":" + (secondary == null ? "" : secondary.id());
+            }
+
+            @Override
+            public String getLegacyStringSubtypeInfo(ItemStack ingredient, mezz.jei.api.ingredients.subtypes.UidContext context) {
+                return String.valueOf(getSubtypeData(ingredient, context));
+            }
+        });
     }
 
     private static mezz.jei.api.ingredients.subtypes.ISubtypeInterpreter<ItemStack> fluidSubtypeInterpreter(boolean icon) {
@@ -76,8 +92,10 @@ public final class HBMJeiPlugin implements IModPlugin {
     public void registerExtraIngredients(IExtraIngredientRegistration registration) {
         List<ItemStack> stacks = new java.util.ArrayList<>();
         for (NTMFluidType type : NTMFluidType.values()) {
-            stacks.add(ItemFluidIcon.make(type, 0));
+            stacks.add(ItemFluidIcon.make(type, 1_000));
+            stacks.add(ItemFluidIdentifierMulti.configured(type));
             stacks.add(ItemPortableFluidContainer.configured(ModItems.FLUID_TANK_FULL.get(), type, 1_000));
+            if (type.canisterColor() >= 0) stacks.add(ItemPortableFluidContainer.configured(ModItems.CANISTER_FULL.get(), type, 1_000));
             stacks.add(ItemPortableFluidContainer.configured(ModItems.FLUID_TANK_LEAD_FULL.get(), type, 1_000));
             stacks.add(ItemPortableFluidContainer.configured(ModItems.FLUID_BARREL_FULL.get(), type, 16_000));
             stacks.add(ItemPortableFluidContainer.configured(ModItems.FLUID_PACK_FULL.get(), type, 32_000));
@@ -96,6 +114,10 @@ public final class HBMJeiPlugin implements IModPlugin {
         registration.addRecipeCategories(new MixerRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new ArcWelderRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new FoundryCastingRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+        registration.addRecipeCategories(new FluidContainerRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+        registration.addRecipeCategories(new RockMillRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+        registration.addRecipeCategories(new LargeBoilerRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+        registration.addRecipeCategories(new OilRefineryRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
     }
 
     @Override
@@ -110,6 +132,10 @@ public final class HBMJeiPlugin implements IModPlugin {
         registration.addRecipes(MixerRecipeCategory.RECIPE_TYPE, com.yellowyotu.hbmneoforge.blockentity.MixerRecipes.RECIPES);
         registration.addRecipes(ArcWelderRecipeCategory.RECIPE_TYPE, ArcWelderRecipes.all());
         registration.addRecipes(FoundryCastingRecipeCategory.RECIPE_TYPE, FoundryCastingRecipes.all());
+        registration.addRecipes(FluidContainerRecipeCategory.RECIPE_TYPE, FluidContainerRecipeCategory.all());
+        registration.addRecipes(RockMillRecipeCategory.RECIPE_TYPE, com.yellowyotu.hbmneoforge.blockentity.RockMillRecipes.RECIPES);
+        registration.addRecipes(LargeBoilerRecipeCategory.RECIPE_TYPE, com.yellowyotu.hbmneoforge.blockentity.LargeBoilerRecipe.RECIPES);
+        registration.addRecipes(OilRefineryRecipeCategory.RECIPE_TYPE, com.yellowyotu.hbmneoforge.blockentity.OilRefineryRecipe.RECIPES);
     }
 
     @Override
@@ -120,6 +146,8 @@ public final class HBMJeiPlugin implements IModPlugin {
     public void registerGuiHandlers(IGuiHandlerRegistration registration) {
         registration.addRecipeClickArea(MixerScreen.class, 62, 36, 53, 44, MixerRecipeCategory.RECIPE_TYPE);
         registration.addRecipeClickArea(ArcWelderScreen.class, 68, 32, 46, 24, ArcWelderRecipeCategory.RECIPE_TYPE);
+        // The refinery has no dedicated recipe-arrow button in the original GUI. A large
+        // click area covered its tanks and made JEI's "Recipes" hint overlap tank tooltips.
     }
 
     @Override
@@ -136,5 +164,8 @@ public final class HBMJeiPlugin implements IModPlugin {
         registration.addRecipeCatalyst(new ItemStack(ModBlocks.CRUCIBLE.get()), FoundryCastingRecipeCategory.RECIPE_TYPE);
         registration.addRecipeCatalyst(new ItemStack(ModBlocks.FOUNDRY_MOLD.get()), FoundryCastingRecipeCategory.RECIPE_TYPE);
         registration.addRecipeCatalyst(new ItemStack(ModBlocks.FOUNDRY_BASIN.get()), FoundryCastingRecipeCategory.RECIPE_TYPE);
+        registration.addRecipeCatalyst(new ItemStack(ModBlocks.ROCK_MILL.get()), RockMillRecipeCategory.RECIPE_TYPE);
+        registration.addRecipeCatalyst(new ItemStack(ModBlocks.LARGE_BOILER.get()), LargeBoilerRecipeCategory.RECIPE_TYPE);
+        registration.addRecipeCatalyst(new ItemStack(ModBlocks.OIL_REFINERY.get()), OilRefineryRecipeCategory.RECIPE_TYPE);
     }
 }

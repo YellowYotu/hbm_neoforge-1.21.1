@@ -59,6 +59,8 @@ public final class ModSounds {
     public static final Supplier<SoundEvent> ASSEMBLER_STOP = sound("block.assembler_stop");
     public static final Supplier<SoundEvent> ASSEMBLER_STRIKE = sound("block.assembler_strike");
     public static final Supplier<SoundEvent> CHEMICAL_PLANT = sound("block.chemical_plant");
+    public static final Supplier<SoundEvent> BOILER = sound("block.boiler");
+    public static final Supplier<SoundEvent> BOILER_GROAN = sound("block.boiler_groan");
     public static final Supplier<SoundEvent> MOTOR = sound("block.motor");
     public static final Supplier<SoundEvent> SLIDING_SEAL_OPEN = sound("door.sliding_seal_open");
     public static final Supplier<SoundEvent> SLIDING_SEAL_STOP = sound("door.sliding_seal_stop");
@@ -70,6 +72,14 @@ public final class ModSounds {
     public static final Supplier<SoundEvent> QE_CONTAINMENT_STOP = sound("block.door.wgh_stop");
     public static final Supplier<SoundEvent> CRATE_OPEN = sound("block.crate_open");
     public static final Supplier<SoundEvent> CRATE_CLOSE = sound("block.crate_close");
+    public static final Supplier<SoundEvent> CRATE_BREAK = sound("block.crate_break");
+    public static final Supplier<SoundEvent> GRENADE_BOUNCE = sound("weapon.grenade_bounce");
+    public static final Supplier<SoundEvent> GRENADE_REVOLVER_COCK = sound("weapon.reload.revolver_cock");
+    public static final Supplier<SoundEvent> GRENADE_BOLT_OPEN = sound("weapon.reload.bolt_open");
+    public static final Supplier<SoundEvent> GRENADE_EXPLOSION = sound("weapon.grenade_explosion");
+    public static final Supplier<SoundEvent> CROWBAR_SWING = sound("weapon.crowbar_swing");
+    public static final Supplier<SoundEvent> CROWBAR_HIT = sound("weapon.crowbar_hit");
+    public static final Supplier<SoundEvent> CROWBAR_DRAW = sound("weapon.crowbar_draw");
     
     private static Supplier<SoundEvent> sound(String id) {
         return SOUNDS.register(id, () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(HBMsNuclearTechModUnofficialNeoForgeEdition.MODID, id)));
@@ -94,3 +104,4 @@ public final class ModSounds {
         SOUNDS.register(modEventBus);
     }
 }
+

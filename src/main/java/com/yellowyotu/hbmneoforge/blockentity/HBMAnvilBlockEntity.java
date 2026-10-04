@@ -16,6 +16,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.items.ItemStackHandler;
+import java.util.List;
 
 public final class HBMAnvilBlockEntity extends BlockEntity implements MenuProvider {
     public static final int SLOT_PRIMARY = 0;
@@ -55,15 +56,13 @@ public final class HBMAnvilBlockEntity extends BlockEntity implements MenuProvid
         setChanged();
     }
 
-    public ItemStack craftSelected() {
-        ItemStack result = HBMAnvilRecipes.craft(inventory, selectedRecipe, getTier());
-        if (!result.isEmpty()) {
-            setChanged();
-            if (level != null) {
-                level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), Block.UPDATE_CLIENTS);
-            }
+    public List<ItemStack> craftSelected() {
+        List<ItemStack> extraResults = HBMAnvilRecipes.craft(inventory, selectedRecipe, getTier());
+        setChanged();
+        if (level != null) {
+            level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), Block.UPDATE_CLIENTS);
         }
-        return result;
+        return extraResults;
     }
 
     public void dropContents(Level level, BlockPos pos) {

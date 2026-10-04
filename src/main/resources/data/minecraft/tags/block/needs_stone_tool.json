@@ -7,6 +7,8 @@
     "hbm_neoforge:ore_fluorite",
     "hbm_neoforge:ore_niter",
     "hbm_neoforge:ore_sulfur",
-    "hbm_neoforge:ore_uranium"
+    "hbm_neoforge:ore_uranium",
+    "hbm_neoforge:stone_gneiss",
+    "hbm_neoforge:stone_hematite"
   ]
 }

@@ -1,5 +1,13 @@
 {
-  "parent": "hbm_neoforge:block/assembly_machine",
+  "loader": "neoforge:obj",
+  "model": "hbm_neoforge:models/block/assembly_machine.obj",
+  "flip_v": true,
+  "automatic_culling": false,
+  "shade_quads": true,
+  "textures": {
+    "particle": "hbm_neoforge:block/assembly_machine",
+    "texture0": "hbm_neoforge:block/assembly_machine"
+  },
   "display": {
     "gui": {
       "rotation": [

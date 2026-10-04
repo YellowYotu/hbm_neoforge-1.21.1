@@ -1,4 +1,5 @@
 newmtl door
 illum 0
 Kd 1.000000 1.000000 1.000000
-map_Kd hbm_neoforge:block/sliding_seal_door
+map_Kd #texture0
+

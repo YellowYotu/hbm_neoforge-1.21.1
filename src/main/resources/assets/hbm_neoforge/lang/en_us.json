@@ -1230,5 +1230,7 @@
   "material_form.hbm_neoforge.billet": "%s Billet",
   "material_form.hbm_neoforge.plate": "%s Plate",
   "material_form.hbm_neoforge.block": "%s Block",
-  "material_form.hbm_neoforge.shell": "%s Shell"
+  "material_form.hbm_neoforge.shell": "%s Shell",
+  "item.hbm_neoforge.canister_empty": "Empty Canister",
+  "item.hbm_neoforge.canister_full": "Canister"
 }

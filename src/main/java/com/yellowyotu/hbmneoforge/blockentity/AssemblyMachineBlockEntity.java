@@ -249,6 +249,7 @@ public final class AssemblyMachineBlockEntity extends BlockEntity implements Men
 
     private void chargeFromBattery() {
         ItemStack stack = inventory.getStackInSlot(SLOT_BATTERY);
+        if (ItemBatteryPack.isInfinite(stack)) { energy = MAX_ENERGY; return; }
 
         if (!ItemBatteryPack.isBattery(stack) || energy >= MAX_ENERGY) {
             return;

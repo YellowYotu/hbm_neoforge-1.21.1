@@ -1,6 +1,9 @@
 package com.yellowyotu.hbmneoforge.fluid;
 
 import com.yellowyotu.hbmneoforge.HBMsNuclearTechModUnofficialNeoForgeEdition;
+import com.yellowyotu.hbmneoforge.blockentity.LargeBoilerRecipe;
+import java.util.List;
+import java.util.Locale;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -180,6 +183,41 @@ public enum NTMFluidType {
 
     public String id() { return id; }
     public int color() { return color; }
+    /** Exact tint used by CE's CD_Canister. A negative value means CE has no canister for this fluid. */
+    public int canisterColor() {
+        return switch (this) {
+            case OIL, CRACKOIL, COALOIL, OIL_DS, CRACKOIL_DS -> 0x424242;
+            case HEAVYOIL, HEAVYOIL_VACUUM -> 0x513F39;
+            case BITUMEN -> 0x5A5877;
+            case SMEAR -> 0x624F3B;
+            case HEATINGOIL, HEATINGOIL_VACUUM -> 0x694235;
+            case RECLAIMED -> 0xF65723;
+            case PETROIL -> 0x2369F6;
+            case PETROIL_LEADED -> 0x2331F6;
+            case LUBRICANT -> 0xF1CC05;
+            case NAPHTHA, NAPHTHA_CRACK, NAPHTHA_DS -> 0x5F6D44;
+            case DIESEL, DIESEL_CRACK -> 0xFF2C2C;
+            case DIESEL_REFORM, DIESEL_CRACK_REFORM -> 0xFFC500;
+            case LIGHTOIL, LIGHTOIL_CRACK, LIGHTOIL_VACUUM, LIGHTOIL_DS -> 0xB46B52;
+            case KEROSENE, KEROSENE_REFORM -> 0xFF377D;
+            case BIOFUEL -> 0x9EB623;
+            case NITAN -> 0x6B238C;
+            case GASOLINE -> 0x2F7747;
+            case GASOLINE_LEADED -> 0x2F775A;
+            case COALGAS -> 0x2E155F;
+            case COALGAS_LEADED -> 0x1E155F;
+            case FRACKSOL -> 0x4F887F;
+            case ETHANOL -> 0xEAFFF3;
+            case WOODOIL -> 0xBF7E4F;
+            case COALCREOSOTE -> 0x285A3F;
+            case SEEDSLURRY -> 0x7CC35E;
+            case SOLVENT -> 0xE4E3EF;
+            case HYDRAZINE -> 0x31517D;
+            case REFORMATE -> 0xD180D6;
+            case XYLENE -> 0xA380D6;
+            default -> -1;
+        };
+    }
     public FluidClass fluidClass() { return fluidClass; }
     public int temperature() { return temperature; }
     public boolean isGas() { return fluidClass == FluidClass.GAS; }
@@ -205,6 +243,88 @@ public enum NTMFluidType {
     public ResourceLocation iconTexture() { return ResourceLocation.fromNamespaceAndPath(HBMsNuclearTechModUnofficialNeoForgeEdition.MODID, "textures/gui/fluids/" + icon + ".png"); }
     public Component displayName() { return Component.translatable("fluid.hbm_neoforge." + id); }
     public Component bracketedName() { return Component.literal("[").append(displayName()).append("]").withStyle(ChatFormatting.AQUA); }
+
+    public void appendOriginalInfo(List<Component> tooltip) {
+        tooltip.add(Component.literal("[").append(Component.translatable(isGas() ? "hbmfluid.trait.gaseous" : "hbmfluid.trait.liquid")).append("]").withStyle(ChatFormatting.BLUE));
+        if (isCorrosive()) tooltip.add(Component.literal("[").append(Component.translatable("hbmfluid.trait.corrosive")).append("]").withStyle(ChatFormatting.YELLOW));
+        if (isFlammable()) tooltip.add(Component.literal("[").append(Component.translatable("hbmfluid.trait.flammable")).append("]").withStyle(ChatFormatting.YELLOW));
+        if (isAntimatter()) tooltip.add(Component.literal("[").append(Component.translatable("hbmfluid.trait.antimatter")).append("]").withStyle(ChatFormatting.DARK_RED));
+        tooltip.add(Component.translatable("hbmfluid.trait.temperature", temperature).withStyle(temperature >= 300 ? ChatFormatting.RED : temperature < 0 ? ChatFormatting.AQUA : ChatFormatting.GRAY));
+        LargeBoilerRecipe recipe = LargeBoilerRecipe.forInput(this);
+        if (recipe != null) {
+            tooltip.add(Component.literal("[").append(Component.translatable("hbmfluid.trait.heatable")).append("]").withStyle(ChatFormatting.RED));
+            tooltip.add(Component.translatable("hbmfluid.trait.heatsInto", recipe.output().displayName(), recipe.outputAmount(), recipe.inputAmount()).withStyle(ChatFormatting.GOLD));
+            tooltip.add(Component.translatable("hbmfluid.trait.thermalLine", recipe.heat(), recipe.inputAmount()).withStyle(ChatFormatting.RED));
+            tooltip.add(Component.translatable("hbmfluid.trait.boilerEfficiency").withStyle(ChatFormatting.AQUA));
+        }
+    }
+
+    /** FluidTankNTM tooltip order and formatting used by HBM CE machine tanks. */
+    public void appendOriginalTankInfo(List<Component> tooltip, boolean shiftHeld) {
+        if (temperature != 20) {
+            tooltip.add(Component.literal(temperature + "°C").withStyle(temperature < 0 ? ChatFormatting.BLUE : ChatFormatting.RED));
+        }
+
+        FuelInfo fuel = refineryFuelInfo();
+        if (fuel != null && fuel.flammableEnergy > 0) {
+            tooltip.add(Component.literal("[").append(Component.translatable("hbmfluid.trait.flammable")).append("]").withStyle(ChatFormatting.YELLOW));
+            tooltip.add(Component.translatable("hbmfluid.trait.flammable.desc", shortNumber(fuel.flammableEnergy)).withStyle(ChatFormatting.YELLOW));
+        }
+        if (fuel != null && fuel.combustionEnergy > 0) {
+            tooltip.add(Component.literal("[").append(Component.translatable("hbmfluid.trait.combustible")).append("]").withStyle(ChatFormatting.GOLD));
+            tooltip.add(Component.translatable("hbmfluid.trait.combustible.desc", shortNumber(fuel.combustionEnergy)).withStyle(ChatFormatting.GOLD));
+            tooltip.add(Component.translatable("hbmfluid.trait.combustible.grade", Component.translatable("hbmfluid.trait.grade." + fuel.grade).withStyle(ChatFormatting.RED)).withStyle(ChatFormatting.GOLD));
+        }
+
+        if (hasRefineryPollution()) {
+            tooltip.add(Component.literal("[").append(Component.translatable("hbmfluid.trait.polluting")).append("]").withStyle(ChatFormatting.GOLD));
+            if (shiftHeld) {
+                tooltip.add(Component.translatable("hbmfluid.trait.pollution.spill").withStyle(ChatFormatting.GREEN));
+                tooltip.add(Component.translatable("hbmfluid.trait.pollution.poison", "5.0E-5").withStyle(ChatFormatting.GREEN));
+                tooltip.add(Component.translatable("hbmfluid.trait.pollution.burn").withStyle(ChatFormatting.RED));
+                tooltip.add(Component.translatable("hbmfluid.trait.pollution.soot", isRefinedFuel() ? "0.001" : "0.004").withStyle(ChatFormatting.RED));
+            } else {
+                tooltip.add(Component.translatable("hbmfluid.trait.hold_shift", Component.literal("LSHIFT").withStyle(ChatFormatting.YELLOW, ChatFormatting.ITALIC)).withStyle(ChatFormatting.DARK_GRAY, ChatFormatting.ITALIC));
+            }
+        }
+    }
+
+    private FuelInfo refineryFuelInfo() {
+        return switch (this) {
+            case HEAVYOIL -> new FuelInfo(55_000, 68_700, "low");
+            case NAPHTHA -> new FuelInfo(110_000, 165_000, "medium");
+            case NAPHTHA_DS -> new FuelInfo(220_000, 330_000, "medium");
+            case NAPHTHA_CRACK -> new FuelInfo(85_900, 128_000, "medium");
+            case LIGHTOIL -> new FuelInfo(1_460_000, 2_190_000, "medium");
+            case LIGHTOIL_DS -> new FuelInfo(2_930_000, 4_390_000, "medium");
+            case LIGHTOIL_CRACK -> new FuelInfo(916_000, 1_370_000, "medium");
+            case PETROLEUM -> new FuelInfo(1_650_000, 2_470_000, "gas");
+            case AROMATICS -> new FuelInfo(458_000, 0, "");
+            case UNSATURATEDS -> new FuelInfo(3_660_000, 0, "");
+            default -> null;
+        };
+    }
+
+    private boolean hasRefineryPollution() {
+        return switch (this) {
+            case HOTOIL, HOTCRACKOIL, HOTOIL_DS, HOTCRACKOIL_DS, HEAVYOIL, NAPHTHA, NAPHTHA_DS,
+                 NAPHTHA_CRACK, LIGHTOIL, LIGHTOIL_DS, LIGHTOIL_CRACK, PETROLEUM, AROMATICS, UNSATURATEDS -> true;
+            default -> false;
+        };
+    }
+
+    private boolean isRefinedFuel() {
+        return this != HOTOIL && this != HOTCRACKOIL && this != HOTOIL_DS && this != HOTCRACKOIL_DS;
+    }
+
+    private static String shortNumber(long number) {
+        if (number < 1_000) return Long.toString(number);
+        if (number < 1_000_000) return String.format(Locale.ROOT, "%.2fk", number / 1_000D);
+        if (number < 1_000_000_000) return String.format(Locale.ROOT, "%.2fM", number / 1_000_000D);
+        return String.format(Locale.ROOT, "%.2fG", number / 1_000_000_000D);
+    }
+
+    private record FuelInfo(long flammableEnergy, long combustionEnergy, String grade) {}
 
     public static NTMFluidType byId(String id) {
         if (id == null) {

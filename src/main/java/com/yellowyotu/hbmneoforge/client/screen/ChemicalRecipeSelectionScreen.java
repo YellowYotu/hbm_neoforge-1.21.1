@@ -86,7 +86,7 @@ public final class ChemicalRecipeSelectionScreen extends Screen {
         return false;
     }
 
-    @Override public void renderBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) { renderTransparentBackground(graphics); }
+    @Override public void renderBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) { }
 
     @Override
     public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {

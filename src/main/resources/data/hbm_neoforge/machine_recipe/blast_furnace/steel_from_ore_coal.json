@@ -2,7 +2,8 @@
   "input_a": {
     "items": [
       "minecraft:iron_ore",
-      "minecraft:deepslate_iron_ore"
+      "minecraft:deepslate_iron_ore",
+      "hbm_neoforge:ore_gneiss_iron"
     ]
   },
   "input_b": {

@@ -1,5 +1,5 @@
 {
-  "parent": "hbm_neoforge:block/sliding_seal_door_0",
+  "parent": "hbm_neoforge:block/sliding_seal_door_item",
   "display": {
     "gui": {
       "rotation": [

@@ -31,10 +31,12 @@ public final class AnvilRecipeCategory implements IRecipeCategory<HBMAnvilRecipe
 
     private final IDrawable icon;
     private final IDrawableStatic background;
+    private final IDrawableStatic slotBackground;
 
     public AnvilRecipeCategory(IGuiHelper guiHelper) {
         icon = guiHelper.createDrawableItemStack(
                 new ItemStack(ModBlocks.ANVIL_IRON.get()));
+        slotBackground = guiHelper.getSlotDrawable();
 
         background = guiHelper.createDrawable(
                 TEXTURE,
@@ -74,91 +76,43 @@ public final class AnvilRecipeCategory implements IRecipeCategory<HBMAnvilRecipe
             IRecipeLayoutBuilder builder,
             HBMAnvilRecipes.Recipe recipe,
             IFocusGroup focuses) {
-
-        if (recipe.overlayType() == HBMAnvilRecipes.OverlayType.SMITHING) {
-            builder.addSlot(
-                            RecipeIngredientRole.INPUT,
-                            48,
-                            24)
-                    .addItemStack(
-                            withCount(
-                                    recipe.primaryDisplay().get(),
-                                    recipe.primaryCount()));
-
-            builder.addSlot(
-                            RecipeIngredientRole.CATALYST,
-                            75,
-                            32)
-                    .addItemStack(
-                            anvilForTier(recipe.tier()));
-
-            builder.addSlot(
-                            RecipeIngredientRole.OUTPUT,
-                            102,
-                            24)
-                    .addItemStack(
-                            recipe.displayResult());
-
-            return;
+        int inputX;
+        int inputY;
+        int inputColumns;
+        int outputX;
+        int outputY;
+        int outputColumns;
+        int anvilX;
+        int anvilY = 32;
+        switch (recipe.overlayType()) {
+            case SMITHING -> { inputX = 48; inputY = 24; inputColumns = 1; outputX = 102; outputY = 24; outputColumns = 1; anvilX = 75; }
+            case RECYCLING -> { inputX = 12; inputY = 24; inputColumns = 1; outputX = 48; outputY = 6; outputColumns = 6; anvilX = 30; }
+            case CONSTRUCTION -> { inputX = 12; inputY = 6; inputColumns = 6; outputX = 138; outputY = 24; outputColumns = 1; anvilX = 120; }
+            default -> { inputX = 3; inputY = 6; inputColumns = 4; outputX = 93; outputY = 6; outputColumns = 4; anvilX = 75; }
         }
 
-        int slotX = 12;
-        int slotY = 6;
-
-        builder.addSlot(
-                        RecipeIngredientRole.INPUT,
-                        slotX,
-                        slotY)
-                .addItemStack(
-                        withCount(
-                                recipe.primaryDisplay().get(),
-                                recipe.primaryCount()));
-
-        slotX += 18;
-
-        if (recipe.secondaryCount() > 0) {
-            builder.addSlot(
-                            RecipeIngredientRole.INPUT,
-                            slotX,
-                            slotY)
-                    .addItemStack(
-                            withCount(
-                                    recipe.secondaryDisplay().get(),
-                                    recipe.secondaryCount()));
-
-            slotX += 18;
+        java.util.ArrayList<ItemStack> inputs = new java.util.ArrayList<>();
+        inputs.add(withCount(recipe.primaryDisplay().get(), recipe.primaryCount()));
+        if (recipe.secondaryCount() > 0) inputs.add(withCount(recipe.secondaryDisplay().get(), recipe.secondaryCount()));
+        for (HBMAnvilRecipes.Input input : recipe.extraInputs()) inputs.add(withCount(input.display().get(), input.count()));
+        for (int index = 0; index < inputs.size(); index++) {
+            builder.addSlot(RecipeIngredientRole.INPUT,
+                    inputX + index % inputColumns * 18,
+                    inputY + index / inputColumns * 18)
+                    .setBackground(slotBackground, -1, -1)
+                    .addItemStack(inputs.get(index));
         }
 
-        for (HBMAnvilRecipes.Input input : recipe.extraInputs()) {
-            builder.addSlot(
-                            RecipeIngredientRole.INPUT,
-                            slotX,
-                            slotY)
-                    .addItemStack(
-                            withCount(
-                                    input.display().get(),
-                                    input.count()));
-
-            slotX += 18;
-
-            if (slotX > 102) {
-                slotX = 12;
-                slotY += 18;
-            }
-        }
-
-        builder.addSlot(
-                        RecipeIngredientRole.CATALYST,
-                        12,
-                        32)
-                .addItemStack(
-                        anvilForTier(recipe.tier()));
+        builder.addSlot(RecipeIngredientRole.CATALYST, anvilX, anvilY)
+                .setBackground(slotBackground, -1, -1)
+                .addItemStack(anvilForTier(recipe.tier()));
 
         for (int index = 0; index < recipe.outputs().size(); index++) {
             HBMAnvilRecipes.Output output = recipe.outputs().get(index);
-            int outputX = 48 + index % 6 * 18;
-            int outputY = 24 + index / 6 * 18;
-            builder.addSlot(RecipeIngredientRole.OUTPUT, outputX, outputY)
+            builder.addSlot(RecipeIngredientRole.OUTPUT,
+                            outputX + index % outputColumns * 18,
+                            outputY + index / outputColumns * 18)
+                    .setBackground(slotBackground, -1, -1)
                     .addItemStack(output.stack().get());
         }
     }
@@ -181,75 +135,28 @@ public final class AnvilRecipeCategory implements IRecipeCategory<HBMAnvilRecipe
 
         background.draw(graphics, 0, 0);
 
-        if (recipe.overlayType() == HBMAnvilRecipes.OverlayType.SMITHING) {
-            graphics.blit(
-                    TEXTURE,
-                    47,
-                    23,
-                    113,
-                    105,
-                    18,
-                    18,
-                    256,
-                    256);
-
-            graphics.blit(
-                    TEXTURE,
-                    101,
-                    23,
-                    113,
-                    105,
-                    18,
-                    18,
-                    256,
-                    256);
-
-            graphics.blit(
-                    TEXTURE,
-                    74,
-                    14,
-                    149,
-                    96,
-                    18,
-                    36,
-                    256,
-                    256);
-
-            return;
+        switch (recipe.overlayType()) {
+            case SMITHING -> {
+                graphics.blit(TEXTURE, 47, 23, 113, 105, 18, 18, 256, 256);
+                graphics.blit(TEXTURE, 101, 23, 113, 105, 18, 18, 256, 256);
+                graphics.blit(TEXTURE, 74, 14, 149, 96, 18, 36, 256, 256);
+            }
+            case RECYCLING -> {
+                graphics.blit(TEXTURE, 11, 23, 113, 105, 18, 18, 256, 256);
+                graphics.blit(TEXTURE, 47, 5, 5, 87, 108, 54, 256, 256);
+                graphics.blit(TEXTURE, 29, 14, 185, 96, 18, 36, 256, 256);
+            }
+            case CONSTRUCTION -> {
+                graphics.blit(TEXTURE, 11, 5, 5, 87, 108, 54, 256, 256);
+                graphics.blit(TEXTURE, 137, 23, 113, 105, 18, 18, 256, 256);
+                graphics.blit(TEXTURE, 119, 14, 167, 96, 18, 36, 256, 256);
+            }
+            default -> {
+                graphics.blit(TEXTURE, 2, 5, 5, 87, 72, 54, 256, 256);
+                graphics.blit(TEXTURE, 92, 5, 5, 87, 72, 54, 256, 256);
+                graphics.blit(TEXTURE, 74, 14, 131, 96, 18, 36, 256, 256);
+            }
         }
-
-        graphics.blit(
-                TEXTURE,
-                11,
-                5,
-                5,
-                87,
-                108,
-                54,
-                256,
-                256);
-
-        graphics.blit(
-                TEXTURE,
-                137,
-                23,
-                113,
-                105,
-                18,
-                18,
-                256,
-                256);
-
-        graphics.blit(
-                TEXTURE,
-                119,
-                14,
-                167,
-                96,
-                18,
-                36,
-                256,
-                256);
     }
 
     private static ItemStack withCount(ItemStack stack, int count) {

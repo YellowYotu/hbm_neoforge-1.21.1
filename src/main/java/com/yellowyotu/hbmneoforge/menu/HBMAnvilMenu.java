@@ -174,7 +174,11 @@ public final class HBMAnvilMenu extends AbstractContainerMenu {
 
         @Override
         public void onTake(Player player, ItemStack stack) {
-            anvil.craftSelected();
+            for (ItemStack extra : anvil.craftSelected()) {
+                if (!player.getInventory().add(extra)) {
+                    player.drop(extra, false);
+                }
+            }
             super.onTake(player, stack);
         }
     }

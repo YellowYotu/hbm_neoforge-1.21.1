@@ -2,6 +2,7 @@ package com.yellowyotu.hbmneoforge.block;
 
 import com.mojang.serialization.MapCodec;
 import com.yellowyotu.hbmneoforge.ModBlocks;
+import com.yellowyotu.hbmneoforge.ModItems;
 import com.yellowyotu.hbmneoforge.blockentity.FluidStorageDummyBlockEntity;
 import com.yellowyotu.hbmneoforge.fluid.NTMFluidType;
 import com.yellowyotu.hbmneoforge.item.ItemFluidIdentifier;
@@ -29,6 +30,16 @@ public final class FluidStorageDummyBlock extends BaseEntityBlock {
     @Nullable @Override public BlockEntity newBlockEntity(BlockPos pos, BlockState state) { return new FluidStorageDummyBlockEntity(pos, state); }
     @Override protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, net.minecraft.world.InteractionHand hand, BlockHitResult hit) {
         if (level.getBlockEntity(pos) instanceof FluidStorageDummyBlockEntity dummy) {
+            BlockPos controller = dummy.getController();
+            if (controller != null && level.getBlockEntity(controller) instanceof com.yellowyotu.hbmneoforge.blockentity.FluidStorageBlockEntity tank) {
+                NTMFluidType convertible = stack.is(ModItems.ORE_GNEISS_GAS.get()) ? NTMFluidType.PETROLEUM
+                        : stack.is(ModItems.BIOMASS.get()) ? NTMFluidType.BIOGAS : null;
+                int conversionAmount = stack.is(ModItems.ORE_GNEISS_GAS.get()) ? 250 : 125;
+                if (convertible != null) {
+                    if (!level.isClientSide() && tank.insertFluid(convertible, conversionAmount) == conversionAmount && !player.getAbilities().instabuild) stack.shrink(1);
+                    return ItemInteractionResult.sidedSuccess(level.isClientSide());
+                }
+            }
             NTMFluidType selected = null;
             if (stack.getItem() instanceof ItemFluidIdentifier identifier) { selected = identifier.getFluidType(); }
             if (stack.getItem() instanceof ItemFluidIdentifierMulti) { selected = ItemFluidIdentifierMulti.getType(stack, true); }

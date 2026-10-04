@@ -1,5 +1,5 @@
 {
-  "parent": "hbm_neoforge:block/qe_containment_0",
+  "parent": "hbm_neoforge:block/qe_containment_item",
   "display": {
     "gui": {
       "rotation": [

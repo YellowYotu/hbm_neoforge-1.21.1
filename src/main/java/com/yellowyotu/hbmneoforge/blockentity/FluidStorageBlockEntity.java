@@ -133,6 +133,10 @@ public class FluidStorageBlockEntity extends BlockEntity implements FluidNode, M
         setChangedAndSync();
     }
 
+    public int insertFluid(NTMFluidType fluid, int requested) {
+        return fillInternal(fluid, requested);
+    }
+
     public int getTransferRate() {
         if (getBlockState().getBlock() instanceof FluidStorageBlock block) {
             return switch (block.getKind()) {

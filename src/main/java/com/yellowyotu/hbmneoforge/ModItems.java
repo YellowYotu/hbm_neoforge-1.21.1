@@ -64,6 +64,10 @@ public final class ModItems {
     public static final DeferredItem<ItemInfiniteFluid> INF_WATER_MK2 = ITEMS.register("inf_water_mk2", () -> new ItemInfiniteFluid(new Item.Properties().stacksTo(1), null, 500));
     public static final DeferredItem<ItemInfiniteFluid> FLUID_BARREL_INFINITE = ITEMS.register("fluid_barrel_infinite", () -> new ItemInfiniteFluid(new Item.Properties().stacksTo(1), null, 1_000_000_000));
 
+    /** CE's 1,000 mB utility canister. Fluid identity is stored in CUSTOM_DATA. */
+    public static final DeferredItem<ItemEmptyPortableFluidContainer> CANISTER_EMPTY = ITEMS.register("canister_empty", () -> new ItemEmptyPortableFluidContainer(new Item.Properties(), 1_000, () -> ModItems.CANISTER_FULL.get()));
+    public static final DeferredItem<ItemPortableFluidContainer> CANISTER_FULL = ITEMS.register("canister_full", () -> new ItemPortableFluidContainer(new Item.Properties(), 1_000, () -> ModItems.CANISTER_EMPTY.get()));
+
     public static final DeferredItem<ItemEmptyPortableFluidContainer> FLUID_TANK_EMPTY = ITEMS.register("fluid_tank_empty", () -> new ItemEmptyPortableFluidContainer(new Item.Properties(), 1_000, () -> ModItems.FLUID_TANK_FULL.get()));
     public static final DeferredItem<ItemPortableFluidContainer> FLUID_TANK_FULL = ITEMS.register("fluid_tank_full", () -> new ItemPortableFluidContainer(new Item.Properties(), 1_000, () -> ModItems.FLUID_TANK_EMPTY.get()));
     public static final DeferredItem<ItemEmptyPortableFluidContainer> FLUID_TANK_LEAD_EMPTY = ITEMS.register("fluid_tank_lead_empty", () -> new ItemEmptyPortableFluidContainer(new Item.Properties(), 1_000, () -> ModItems.FLUID_TANK_LEAD_FULL.get()));
@@ -695,7 +699,9 @@ public final class ModItems {
     private static Map<String, DeferredItem<BlockItem>> registerMaterialBlockItems() {
         java.util.LinkedHashMap<String, DeferredItem<BlockItem>> result = new java.util.LinkedHashMap<>();
         ModBlocks.MATERIAL_BLOCKS.forEach((id, block) -> result.put(id,
-                ITEMS.register(id, () -> new HBMBlockItem(block.get(), new Item.Properties()))));
+                ITEMS.register(id, () -> new com.yellowyotu.hbmneoforge.item.MaterialBlockItem(
+                        block.get(), new Item.Properties(),
+                        com.yellowyotu.hbmneoforge.material.MaterialFormRegistry.formByRegistryName(id).orElseThrow()))));
         return java.util.Collections.unmodifiableMap(result);
     }
 

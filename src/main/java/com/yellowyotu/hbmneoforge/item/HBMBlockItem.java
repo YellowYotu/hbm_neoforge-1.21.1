@@ -14,6 +14,11 @@ public class HBMBlockItem extends BlockItem {
     public HBMBlockItem(Block block, Properties properties) { super(block, properties); }
     @Override public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
         super.appendHoverText(stack, context, tooltip, flag);
+        if (getBlock() == com.yellowyotu.hbmneoforge.ModBlocks.LARGE_BOILER.get()) {
+            tooltip.add(Component.translatable("tooltip.hbm_neoforge.machine_boiler.category").withStyle(ChatFormatting.GOLD));
+            tooltip.add(Component.translatable("tooltip.hbm_neoforge.machine_boiler.description").withStyle(ChatFormatting.YELLOW));
+            tooltip.add(Component.translatable("tooltip.hbm_neoforge.machine_boiler.heat_rate").withStyle(ChatFormatting.YELLOW));
+        }
         if (getBlock() instanceof RadiationShielding shielding && shielding.isRadiationShielding(getBlock().defaultBlockState(), null, BlockPos.ZERO)) {
             tooltip.add(Component.translatable("trait.radshield").withStyle(ChatFormatting.YELLOW));
         }

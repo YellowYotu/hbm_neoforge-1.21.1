@@ -7,6 +7,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -130,4 +131,6 @@ public abstract class AbstractHeaterBlockEntity extends BlockEntity implements M
     @Override public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) { return new HeaterMenu(id, inventory, this, data); }
     @Override protected void saveAdditional(CompoundTag tag, HolderLookup.Provider provider) { super.saveAdditional(tag, provider); tag.put("Inventory", inventory.serializeNBT(provider)); tag.putInt("MaxBurnTime", maxBurnTime); tag.putInt("BurnTime", burnTime); tag.putInt("BurnHeat", burnHeat); tag.putInt("HeatEnergy", heatEnergy); }
     @Override protected void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) { super.loadAdditional(tag, provider); if (tag.contains("Inventory")) { inventory.deserializeNBT(provider, tag.getCompound("Inventory")); } maxBurnTime = tag.getInt("MaxBurnTime"); burnTime = tag.getInt("BurnTime"); burnHeat = tag.getInt("BurnHeat"); heatEnergy = tag.getInt("HeatEnergy"); burning = burnTime > 0; }
+    @Override public CompoundTag getUpdateTag(HolderLookup.Provider provider) { CompoundTag tag = new CompoundTag(); saveAdditional(tag, provider); return tag; }
+    @Override public ClientboundBlockEntityDataPacket getUpdatePacket() { return ClientboundBlockEntityDataPacket.create(this); }
 }

@@ -325,6 +325,7 @@ public final class ArcWelderBlockEntity extends BlockEntity implements MenuProvi
 
     private void chargeFromBattery() {
         ItemStack stack = inventory.getStackInSlot(SLOT_BATTERY);
+        if (ItemBatteryPack.isInfinite(stack)) { energy = maxEnergy; return; }
         if (!ItemBatteryPack.isBattery(stack) || energy >= maxEnergy) {
             return;
         }

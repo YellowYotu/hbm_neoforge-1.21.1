@@ -198,6 +198,16 @@
       }
     ]
   },
+  "block.crate_break": {
+    "category": "block",
+    "sounds": [
+      "hbm_neoforge:block/cratebreak1",
+      "hbm_neoforge:block/cratebreak2",
+      "hbm_neoforge:block/cratebreak3",
+      "hbm_neoforge:block/cratebreak4",
+      "hbm_neoforge:block/cratebreak5"
+    ]
+  },
   "block.motor": {
     "subtitle": "subtitles.block.motor",
     "sounds": [
@@ -232,6 +242,72 @@
     "category": "player",
     "sounds": [
       "hbm_neoforge:tool/techbleep"
+    ]
+  },
+  "weapon.grenade_bounce": {
+    "category": "player",
+    "sounds": [
+      "hbm_neoforge:weapon/grenade_bounce1",
+      "hbm_neoforge:weapon/grenade_bounce2",
+      "hbm_neoforge:weapon/grenade_bounce3"
+    ]
+  },
+  "weapon.reload.revolver_cock": {
+    "category": "player",
+    "sounds": [
+      "hbm_neoforge:weapon/reload/revolver_cock"
+    ]
+  },
+  "weapon.reload.bolt_open": {
+    "category": "player",
+    "sounds": [
+      "hbm_neoforge:weapon/reload/bolt_open"
+    ]
+  },
+  "weapon.crowbar_swing": {
+    "category": "player",
+    "sounds": [
+      "hbm_neoforge:weapon/c_swing"
+    ]
+  },
+  "weapon.crowbar_hit": {
+    "category": "player",
+    "sounds": [
+      "hbm_neoforge:block/metal_impact1",
+      "hbm_neoforge:block/metal_impact2"
+    ]
+  },
+  "weapon.crowbar_draw": {
+    "category": "player",
+    "sounds": [
+      "hbm_neoforge:weapon/reload/impact1",
+      "hbm_neoforge:weapon/reload/impact2",
+      "hbm_neoforge:weapon/reload/impact3"
+    ]
+  },
+  "weapon.grenade_explosion": {
+    "category": "hostile",
+    "sounds": [
+      "hbm_neoforge:weapon/grenade_explosion1",
+      "hbm_neoforge:weapon/grenade_explosion2",
+      "hbm_neoforge:weapon/grenade_explosion3"
+    ]
+  },
+  "block.boiler": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "hbm_neoforge:block/boiler_mono",
+        "stream": false
+      }
+    ]
+  },
+  "block.boiler_groan": {
+    "category": "block",
+    "sounds": [
+      "hbm_neoforge:block/boilergroan0",
+      "hbm_neoforge:block/boilergroan1",
+      "hbm_neoforge:block/boilergroan2"
     ]
   }
 }

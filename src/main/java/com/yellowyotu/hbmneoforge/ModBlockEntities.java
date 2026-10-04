@@ -3,6 +3,8 @@ package com.yellowyotu.hbmneoforge;
 import com.yellowyotu.hbmneoforge.blockentity.AirIntakeBlockEntity;
 import com.yellowyotu.hbmneoforge.blockentity.OilDerrickBlockEntity;
 import com.yellowyotu.hbmneoforge.blockentity.OilDerrickDummyBlockEntity;
+import com.yellowyotu.hbmneoforge.blockentity.OilRefineryDummyBlockEntity;
+import com.yellowyotu.hbmneoforge.blockentity.OilRefineryBlockEntity;
 import com.yellowyotu.hbmneoforge.blockentity.ArcWelderDummyBlockEntity;
 import com.yellowyotu.hbmneoforge.blockentity.ArcWelderBlockEntity;
 import com.yellowyotu.hbmneoforge.blockentity.AirIntakeDummyBlockEntity;
@@ -35,6 +37,10 @@ import com.yellowyotu.hbmneoforge.blockentity.WoodBurnerDummyBlockEntity;
 import java.util.function.Supplier;
 import com.yellowyotu.hbmneoforge.blockentity.MixerBlockEntity;
 import com.yellowyotu.hbmneoforge.blockentity.MixerDummyBlockEntity;
+import com.yellowyotu.hbmneoforge.blockentity.RockMillBlockEntity;
+import com.yellowyotu.hbmneoforge.blockentity.LargeBoilerBlockEntity;
+import com.yellowyotu.hbmneoforge.blockentity.LargeBoilerDummyBlockEntity;
+import com.yellowyotu.hbmneoforge.blockentity.RockMillDummyBlockEntity;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.bus.api.IEventBus;
@@ -51,6 +57,8 @@ public final class ModBlockEntities {
     public static final Supplier<BlockEntityType<WoodBurnerBlockEntity>> WOOD_BURNER = BLOCK_ENTITIES.register("machine_wood_burner", () -> BlockEntityType.Builder.of(WoodBurnerBlockEntity::new, ModBlocks.WOOD_BURNER.get()).build(null));
     public static final Supplier<BlockEntityType<OilDerrickBlockEntity>> OIL_DERRICK = BLOCK_ENTITIES.register("machine_well", () -> BlockEntityType.Builder.of(OilDerrickBlockEntity::new, ModBlocks.OIL_DERRICK.get()).build(null));
     public static final Supplier<BlockEntityType<OilDerrickDummyBlockEntity>> OIL_DERRICK_DUMMY = BLOCK_ENTITIES.register("machine_well_dummy", () -> BlockEntityType.Builder.of(OilDerrickDummyBlockEntity::new, ModBlocks.OIL_DERRICK_DUMMY.get()).build(null));
+    public static final Supplier<BlockEntityType<OilRefineryDummyBlockEntity>> OIL_REFINERY_DUMMY = BLOCK_ENTITIES.register("machine_refinery_dummy", () -> BlockEntityType.Builder.of(OilRefineryDummyBlockEntity::new, ModBlocks.OIL_REFINERY_DUMMY.get()).build(null));
+    public static final Supplier<BlockEntityType<OilRefineryBlockEntity>> OIL_REFINERY = BLOCK_ENTITIES.register("machine_refinery", () -> BlockEntityType.Builder.of(OilRefineryBlockEntity::new, ModBlocks.OIL_REFINERY.get()).build(null));
     public static final Supplier<BlockEntityType<WoodBurnerDummyBlockEntity>> WOOD_BURNER_DUMMY = BLOCK_ENTITIES.register("machine_wood_burner_dummy", () -> BlockEntityType.Builder.of(WoodBurnerDummyBlockEntity::new, ModBlocks.WOOD_BURNER_DUMMY.get()).build(null));
     public static final Supplier<BlockEntityType<ShredderBlockEntity>> SHREDDER = BLOCK_ENTITIES.register("machine_shredder", () -> BlockEntityType.Builder.of(ShredderBlockEntity::new, ModBlocks.SHREDDER.get()).build(null));
     public static final Supplier<BlockEntityType<SolderingStationBlockEntity>> SOLDERING_STATION = BLOCK_ENTITIES.register("machine_soldering_station", () -> BlockEntityType.Builder.of(SolderingStationBlockEntity::new, ModBlocks.SOLDERING_STATION.get()).build(null));
@@ -77,6 +85,10 @@ public final class ModBlockEntities {
     public static final Supplier<BlockEntityType<ChemicalPlantDummyBlockEntity>> CHEMICAL_PLANT_DUMMY = BLOCK_ENTITIES.register("machine_chemical_plant_dummy", () -> BlockEntityType.Builder.of(ChemicalPlantDummyBlockEntity::new, ModBlocks.CHEMICAL_PLANT_DUMMY.get()).build(null));
     public static final Supplier<BlockEntityType<MixerBlockEntity>> MIXER = BLOCK_ENTITIES.register("machine_mixer", () -> BlockEntityType.Builder.of(MixerBlockEntity::new, ModBlocks.MIXER.get()).build(null));
     public static final Supplier<BlockEntityType<MixerDummyBlockEntity>> MIXER_DUMMY = BLOCK_ENTITIES.register("machine_mixer_dummy", () -> BlockEntityType.Builder.of(MixerDummyBlockEntity::new, ModBlocks.MIXER_DUMMY.get()).build(null));
+    public static final Supplier<BlockEntityType<LargeBoilerBlockEntity>> LARGE_BOILER = BLOCK_ENTITIES.register("machine_boiler", () -> BlockEntityType.Builder.of(LargeBoilerBlockEntity::new, ModBlocks.LARGE_BOILER.get()).build(null));
+    public static final Supplier<BlockEntityType<LargeBoilerDummyBlockEntity>> LARGE_BOILER_DUMMY = BLOCK_ENTITIES.register("machine_boiler_dummy", () -> BlockEntityType.Builder.of(LargeBoilerDummyBlockEntity::new, ModBlocks.LARGE_BOILER_DUMMY.get()).build(null));
+    public static final Supplier<BlockEntityType<RockMillBlockEntity>> ROCK_MILL = BLOCK_ENTITIES.register("machine_rockmill", () -> BlockEntityType.Builder.of(RockMillBlockEntity::new, ModBlocks.ROCK_MILL.get()).build(null));
+    public static final Supplier<BlockEntityType<RockMillDummyBlockEntity>> ROCK_MILL_DUMMY = BLOCK_ENTITIES.register("machine_rockmill_dummy", () -> BlockEntityType.Builder.of(RockMillDummyBlockEntity::new, ModBlocks.ROCK_MILL_DUMMY.get()).build(null));
     public static final Supplier<BlockEntityType<AirIntakeBlockEntity>> AIR_INTAKE = BLOCK_ENTITIES.register("machine_intake", () -> BlockEntityType.Builder.of(AirIntakeBlockEntity::new, ModBlocks.AIR_INTAKE.get()).build(null));
     public static final Supplier<BlockEntityType<AirIntakeDummyBlockEntity>> AIR_INTAKE_DUMMY = BLOCK_ENTITIES.register("machine_intake_dummy", () -> BlockEntityType.Builder.of(AirIntakeDummyBlockEntity::new, ModBlocks.AIR_INTAKE_DUMMY.get()).build(null));
     public static final Supplier<BlockEntityType<ArcWelderBlockEntity>> ARC_WELDER = BLOCK_ENTITIES.register("machine_arc_welder", () -> BlockEntityType.Builder.of(ArcWelderBlockEntity::new, ModBlocks.ARC_WELDER.get()).build(null));
@@ -104,3 +116,4 @@ public final class ModBlockEntities {
         BLOCK_ENTITIES.register(modEventBus);
     }
 }
+

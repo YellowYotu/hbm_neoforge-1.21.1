@@ -147,6 +147,7 @@ public final class ClientModEvents {
         event.registerBlockEntityRenderer(ModBlockEntities.MIXER.get(), MixerBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.ROCK_MILL.get(), RockMillBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.LARGE_BOILER.get(), com.yellowyotu.hbmneoforge.client.renderer.LargeBoilerBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.OIL_REFINERY.get(), com.yellowyotu.hbmneoforge.client.renderer.OilRefineryBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.AIR_INTAKE.get(), AirIntakeBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.ARC_WELDER.get(), ArcWelderBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.OIL_DERRICK.get(), OilDerrickBlockEntityRenderer::new);
@@ -211,8 +212,10 @@ public final class ClientModEvents {
                 return 0xFFFFFFFF;
             }
             com.yellowyotu.hbmneoforge.fluid.NTMFluidType type = com.yellowyotu.hbmneoforge.item.ItemPortableFluidContainer.getFluidType(stack);
-            return type == null ? 0xFFFFFFFF : 0xFF000000 | type.color();
-        }, com.yellowyotu.hbmneoforge.ModItems.FLUID_TANK_FULL.get(), com.yellowyotu.hbmneoforge.ModItems.FLUID_TANK_LEAD_FULL.get(), com.yellowyotu.hbmneoforge.ModItems.FLUID_BARREL_FULL.get(), com.yellowyotu.hbmneoforge.ModItems.FLUID_PACK_FULL.get());
+            if (type == null) return 0xFFFFFFFF;
+            int color = stack.is(com.yellowyotu.hbmneoforge.ModItems.CANISTER_FULL.get()) ? type.canisterColor() : type.color();
+            return color < 0 ? 0xFFFFFFFF : 0xFF000000 | color;
+        }, com.yellowyotu.hbmneoforge.ModItems.CANISTER_FULL.get(), com.yellowyotu.hbmneoforge.ModItems.FLUID_TANK_FULL.get(), com.yellowyotu.hbmneoforge.ModItems.FLUID_TANK_LEAD_FULL.get(), com.yellowyotu.hbmneoforge.ModItems.FLUID_BARREL_FULL.get(), com.yellowyotu.hbmneoforge.ModItems.FLUID_PACK_FULL.get());
 
         event.register((stack, tintIndex) -> {
             if (tintIndex != 1) {

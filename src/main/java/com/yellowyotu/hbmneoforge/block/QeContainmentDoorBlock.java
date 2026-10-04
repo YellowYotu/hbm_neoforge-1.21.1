@@ -46,6 +46,7 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public final class QeContainmentDoorBlock extends BaseEntityBlock implements RadiationShielding {
@@ -54,6 +55,7 @@ public final class QeContainmentDoorBlock extends BaseEntityBlock implements Rad
     public static final BooleanProperty OPEN = BooleanProperty.create("open");
     public static final IntegerProperty FRAME = IntegerProperty.create("frame", 0, 160);
     public static final IntegerProperty PART = IntegerProperty.create("part", 0, 8);
+    public static final IntegerProperty SKIN = IntegerProperty.create("skin", 0, 2);
     public static final int CORE_PART = 1;
 
     private static boolean removing;
@@ -64,7 +66,8 @@ public final class QeContainmentDoorBlock extends BaseEntityBlock implements Rad
                 .setValue(FACING, Direction.NORTH)
                 .setValue(OPEN, false)
                 .setValue(FRAME, 0)
-                .setValue(PART, CORE_PART));
+                .setValue(PART, CORE_PART)
+                .setValue(SKIN, 0));
     }
 
     @Override
@@ -127,15 +130,21 @@ public final class QeContainmentDoorBlock extends BaseEntityBlock implements Rad
 
     @Override
     protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
-        if (!stack.is(ModItems.SCREWDRIVER.get()) || !player.isShiftKeyDown()) {
+        if (!player.isShiftKeyDown()
+                || (!stack.is(ModItems.TEMPLATE_FOLDER.get()) && !stack.is(ModItems.SCREWDRIVER.get()))) {
             return super.useItemOn(stack, state, level, pos, player, hand, hitResult);
         }
         BlockPos core = getCorePos(state, pos);
         if (level.getBlockEntity(core) instanceof QeContainmentDoorBlockEntity door) {
             if (!level.isClientSide()) {
-                DoorAccessMode mode = door.cycleAccessMode();
-                player.displayClientMessage(Component.translatable("message.hbm_neoforge.door_mode", mode.displayName()), true);
-                updateRedstone(level, core, level.getBlockState(core), door);
+                if (stack.is(ModItems.TEMPLATE_FOLDER.get())) {
+                    DoorAccessMode mode = door.cycleAccessMode();
+                    player.displayClientMessage(Component.translatable("message.hbm_neoforge.door_mode", mode.displayName()), true);
+                    updateRedstone(level, core, level.getBlockState(core), door);
+                } else if (cycleSkin(level, core)) {
+                    player.displayClientMessage(Component.translatable("message.hbm_neoforge.door_skin",
+                            level.getBlockState(core).getValue(SKIN) + 1, 3), true);
+                }
             }
             return ItemInteractionResult.sidedSuccess(level.isClientSide());
         }
@@ -248,23 +257,29 @@ public final class QeContainmentDoorBlock extends BaseEntityBlock implements Rad
         int row = state.getValue(PART) / 3;
         BlockPos core = getCorePos(state, pos);
         BlockState coreState = level.getBlockState(core);
-        boolean open = coreState.is(ModBlocks.QE_CONTAINMENT.get()) && coreState.getValue(FRAME) >= QeContainmentDoorBlockEntity.OPEN_TIME;
-        if (open) {
-            if (row == 1) {
-                return net.minecraft.world.phys.shapes.Shapes.empty();
-            }
-            if (row == 2) {
-                return facing.getAxis() == Direction.Axis.Z
-                        ? box(0, 8, 8, 16, 16, 16)
-                        : box(8, 8, 0, 16, 16, 16);
-            }
-            return facing.getAxis() == Direction.Axis.Z
-                    ? box(0, 0, 8, 16, 1.6, 16)
-                    : box(8, 0, 0, 16, 1.6, 16);
+        int frame = coreState.is(ModBlocks.QE_CONTAINMENT.get()) ? coreState.getValue(FRAME) : 0;
+        double shift = 48.0D * frame / QeContainmentDoorBlockEntity.OPEN_TIME;
+        double rowBottom = row * 16.0D;
+        double movingMin = Math.max(0.0D, shift - rowBottom);
+        double movingMax = Math.min(16.0D, 48.0D + shift - rowBottom);
+        VoxelShape result = Shapes.empty();
+        if (movingMax > movingMin) {
+            result = planeAtEdge(facing, movingMin, movingMax);
         }
-        return facing.getAxis() == Direction.Axis.Z
-                ? box(0, 0, 8, 16, 16, 16)
-                : box(8, 0, 0, 16, 16, 16);
+        // The fixed threshold and lintel remain after the moving slab has retracted.
+        if (row == 0) result = Shapes.or(result, planeAtEdge(facing, 0.0D, 1.6D));
+        if (row == 2) result = Shapes.or(result, planeAtEdge(facing, 8.0D, 16.0D));
+        return result;
+    }
+
+    private static VoxelShape planeAtEdge(Direction facing, double minY, double maxY) {
+        return switch (facing) {
+            case NORTH -> box(0, minY, 0, 16, maxY, 8);
+            case SOUTH -> box(0, minY, 8, 16, maxY, 16);
+            case WEST -> box(0, minY, 0, 8, maxY, 16);
+            case EAST -> box(8, minY, 0, 16, maxY, 16);
+            default -> Shapes.empty();
+        };
     }
 
     @Override
@@ -313,7 +328,7 @@ public final class QeContainmentDoorBlock extends BaseEntityBlock implements Rad
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(FACING, OPEN, FRAME, PART);
+        builder.add(FACING, OPEN, FRAME, PART, SKIN);
     }
 
     @Override
@@ -327,5 +342,20 @@ public final class QeContainmentDoorBlock extends BaseEntityBlock implements Rad
         int col = part % 3;
         Direction right = state.getValue(FACING).getClockWise();
         return pos.below(row).relative(right, -(col - 1));
+    }
+
+    public static boolean cycleSkin(Level level, BlockPos core) {
+        BlockState coreState = level.getBlockState(core);
+        if (!coreState.is(ModBlocks.QE_CONTAINMENT.get())) return false;
+        int skin = (coreState.getValue(SKIN) + 1) % 3;
+        Direction right = coreState.getValue(FACING).getClockWise();
+        for (int y = 0; y < 3; y++) {
+            for (int w = -1; w <= 1; w++) {
+                BlockPos target = core.above(y).relative(right, w);
+                BlockState part = level.getBlockState(target);
+                if (part.is(ModBlocks.QE_CONTAINMENT.get())) level.setBlock(target, part.setValue(SKIN, skin), 3);
+            }
+        }
+        return true;
     }
 }

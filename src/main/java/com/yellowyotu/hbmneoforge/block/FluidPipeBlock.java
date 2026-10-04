@@ -153,6 +153,15 @@ public class FluidPipeBlock extends BaseEntityBlock {
             NTMFluidType filter = self.getFilter();
             return filter == NTMFluidType.OIL || filter == NTMFluidType.GAS;
         }
+        if (selfEntity instanceof FluidPipeBlockEntity self && neighborEntity instanceof com.yellowyotu.hbmneoforge.blockentity.LargeBoilerDummyBlockEntity dummy) {
+            return dummy.canConnectPipe(pos, self.getFilter());
+        }
+        if (selfEntity instanceof FluidPipeBlockEntity self && neighborEntity instanceof com.yellowyotu.hbmneoforge.blockentity.OilRefineryDummyBlockEntity dummy) {
+            return dummy.canConnectPipe(pos, self.getFilter());
+        }
+        if (selfEntity instanceof FluidPipeBlockEntity self && neighborEntity instanceof com.yellowyotu.hbmneoforge.blockentity.OilRefineryBlockEntity refinery) {
+            return refinery.canConnectPipe(pos, self.getFilter());
+        }
         if (selfEntity instanceof FluidPipeBlockEntity self && neighborEntity instanceof com.yellowyotu.hbmneoforge.blockentity.FluidStorageDummyBlockEntity dummy) {
             NTMFluidType filter = self.getFilter();
             com.yellowyotu.hbmneoforge.blockentity.FluidStorageBlockEntity storage = dummy.getCoreStorage();

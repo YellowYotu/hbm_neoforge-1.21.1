@@ -1,6 +1,7 @@
 package com.yellowyotu.hbmneoforge;
 
 import com.yellowyotu.hbmneoforge.radiation.RadiationConfig;
+import com.yellowyotu.hbmneoforge.network.ModNetworking;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
@@ -14,8 +15,10 @@ public final class HBMsNuclearTechModUnofficialNeoForgeEdition {
         modContainer.registerConfig(ModConfig.Type.COMMON, RadiationConfig.SPEC, "hbm_neoforge-radiation.toml");
 
         ModBlocks.register(modEventBus);
+        ModFeatures.register(modEventBus);
         ModArmorMaterials.register(modEventBus);
         ModItems.register(modEventBus);
+        ModEntities.register(modEventBus);
         ModEffects.register(modEventBus);
         ModBlockEntities.register(modEventBus);
         ModCapabilities.register(modEventBus);
@@ -24,5 +27,6 @@ public final class HBMsNuclearTechModUnofficialNeoForgeEdition {
         ModAttachments.register(modEventBus);
         ModSounds.register(modEventBus);
         ModParticles.register(modEventBus);
+        modEventBus.addListener(ModNetworking::register);
     }
 }

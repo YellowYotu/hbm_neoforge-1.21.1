@@ -311,6 +311,7 @@ public final class MixerBlockEntity extends BlockEntity implements MenuProvider,
 
     private void chargeFromBattery() {
         ItemStack stack = inventory.getStackInSlot(SLOT_BATTERY);
+        if (ItemBatteryPack.isInfinite(stack)) { energy = MAX_ENERGY; return; }
         if (!ItemBatteryPack.isBattery(stack) || energy >= MAX_ENERGY) {
             return;
         }

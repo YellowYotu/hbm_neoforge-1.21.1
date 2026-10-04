@@ -19,6 +19,8 @@ public final class MachineLoopSoundInstance extends AbstractTickableSoundInstanc
         this.volume = volume;
         this.pitch = 1.0F;
         this.looping = true;
+        this.relative = false;
+        this.attenuation = SoundInstance.Attenuation.LINEAR;
         updatePosition();
     }
 
